@@ -1,6 +1,1 @@
-{
-  "rewrites": [
-    { "source": "/vila-olimpia", "destination": "/vila-olimpia.html" },
-    { "source": "/locar", "destination": "/locar.html" }
-  ]
-}
+{}
