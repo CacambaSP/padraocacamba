@@ -319,20 +319,12 @@ function aplicarMarca(m){
   document.documentElement.style.setProperty('--marca-cor', m.cor);
 
   // Header
-  document.getElementById('marcaNomeEl').textContent = m.nome;
-  document.getElementById('marcaSloganEl').textContent = m.slogan || 'Solicitação de serviço';
+  // document.getElementById('marcaNomeEl').textContent = m.nome;
+  // marcaSlogan fixo
   document.title = m.nome + ' — Solicitar Serviço';
 
   // Logo
-  const iconEl = document.getElementById('logoIcon');
-  if(m.logo){
-    iconEl.innerHTML = `<img src="${m.logo}" alt="${m.nome}">`;
-    iconEl.style.background = 'transparent';
-    iconEl.style.border = '2px solid rgba(255,255,255,.08)';
-  } else {
-    iconEl.innerHTML = '🪣';
-    iconEl.style.background = m.cor;
-  }
+  // logo fixo no HTML — não sobrescrever
 
   // Tel de contato no rodapé
   const telFmt = m.tel ? m.tel.replace(/^\+/,'').replace(/^55/,'').replace(/^(\d{2})(\d{4,5})(\d{4})$/,'($1) $2-$3') : '(11) 4237-8757';
