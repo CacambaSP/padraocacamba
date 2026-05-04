@@ -92,20 +92,20 @@ nav{position:sticky;top:0;z-index:200;background:rgba(10,10,10,0.97);backdrop-fi
 .pc-info p{font-size:11px;color:#6a8fc4;display:flex;align-items:center;gap:5px;margin-top:2px}
 .pc-online{width:6px;height:6px;background:#39d353;border-radius:50%;display:inline-block;animation:pulse-dot 2s infinite}
 @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
-.pc-chat-msgs{padding:10px 12px;min-height:60px;max-height:260px;overflow-y:auto}
-.pc-msg{font-size:14px;line-height:1.55;padding:9px 13px;border-radius:12px;margin-bottom:8px;max-width:88%;word-break:break-word}
-.pc-msg.bot{background:#1a2a4a;color:#e8f0fe;border-radius:4px 12px 12px 12px}
+.pc-chat-msgs{padding:10px 12px;min-height:60px;max-height:260px;overflow-y:auto;background:#fff}
+.pc-msg{font-size:16px;line-height:1.6;padding:11px 15px;border-radius:12px;margin-bottom:8px;max-width:88%;word-break:break-word}
+.pc-msg.bot{background:#1E3A8A;color:#fff;border-radius:4px 12px 12px 12px;font-size:16px}
 .pc-msg.user{background:var(--blue);color:#fff;margin-left:auto;border-radius:12px 4px 12px 12px}
-.pc-msg.sys{background:#1a1a1a;color:#888;font-size:12px;text-align:center;border-radius:8px;margin:0 auto 8px}
+.pc-msg.sys{background:#f0f0f0;color:#666;font-size:13px;text-align:center;border-radius:8px;margin:0 auto 8px}
 .pc-typing{display:flex;gap:4px;padding:10px 13px;background:#1a2a4a;border-radius:4px 12px 12px 12px;width:fit-content;margin-bottom:8px}
 .pc-typing span{width:7px;height:7px;background:#6a8fc4;border-radius:50%;animation:typing .9s infinite}
 .pc-typing span:nth-child(2){animation-delay:.2s}
 .pc-typing span:nth-child(3){animation-delay:.4s}
 @keyframes typing{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
-.pc-input-row{display:flex;gap:8px;padding:10px 12px;border-top:1px solid #1a2a4a;background:#0d1520}
-.pc-input{flex:1;background:#1a2a4a;border:1px solid #2a3a6a;border-radius:10px;padding:10px 13px;color:#fff;font-size:14px;font-family:'DM Sans',sans-serif;outline:none}
-.pc-input::placeholder{color:#4a6080}
-.pc-input:focus{border-color:#3a5aaa}
+.pc-input-row{display:flex;gap:8px;padding:10px 12px;border-top:1px solid #ddd;background:#f8f8f8}
+.pc-input{flex:1;background:#fff;border:1px solid #ddd;border-radius:10px;padding:10px 13px;color:#111;font-size:15px;font-family:'DM Sans',sans-serif;outline:none}
+.pc-input::placeholder{color:#aaa}
+.pc-input:focus{border-color:#1E3A8A}
 .pc-send{background:var(--blue);border:none;border-radius:10px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
 .pc-send:active{opacity:.8}
 .pc-btn-full{display:block;width:100%;padding:12px;background:#39d353;color:#000;border:none;border-radius:10px;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;margin-top:8px;text-align:center}
@@ -115,7 +115,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(10,10,10,0.97);backdrop-fi
 .hero{padding:28px 18px 24px;background:linear-gradient(160deg,#0a0a16 0%,#0A0A0A 70%)}
 .eyebrow{display:inline-flex;align-items:center;gap:6px;background:#111628;border:1px solid #1e2d5a;border-radius:20px;padding:5px 12px;font-size:11px;color:#6a8fc4;letter-spacing:.5px;text-transform:uppercase;margin-bottom:16px;font-weight:500}
 .eyebrow-dot{width:6px;height:6px;background:#39d353;border-radius:50%;animation:pulse-dot 2s infinite}
-h1{font-family:'DM Serif Display',serif;font-size:32px;line-height:1.12;margin-bottom:12px;font-weight:400;color:#fff}
+h1{font-family:'DM Serif Display',serif;font-size:32px;line-height:1.12;margin-bottom:12px;font-weight:400;color:#fff;text-align:center}
 h1 em{color:var(--silver);font-style:normal}
 .hero-sub{font-size:15px;color:#aaa;line-height:1.65;margin-bottom:22px}
 .hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
@@ -233,7 +233,7 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
 
 <!-- BANNER ROTATIVO COM IMAGEM -->
 <div id="top-banner" onclick="focarPC()" style="position:relative;width:100%;height:80px;overflow:hidden;cursor:pointer;display:block">
-  <img src="/image/banner-cacamba-vila-olimpia-padrao-cacamba.webp"
+  <img src="/image/banner-cacamba-vila-olimpia-padrao-cacamba.webp.png"
        alt="Padrão Caçamba — Locação de caçamba 4m³ em Vila Olímpia SP"
        style="width:100%;height:80px;object-fit:cover;object-position:left center;display:block"
        onerror="this.style.display='none';document.getElementById('top-banner').style.background='#0A0A0A'">
@@ -351,7 +351,6 @@ bannerInit();
   <div class="sec-label">Contexto local</div>
   <h2>Vila Olímpia e a Berrini</h2>
   <p class="body-text">Vila Olímpia concentra sedes corporativas da Faria Lima, Berrini e JK. Reformas de apartamentos na planta entregues, lajes corporativas e obras em condomínios de alto padrão são constantes na região. A Subprefeitura Pinheiros regula permanência de caçambas em vias públicas — prazo máximo de 3 dias. A Padrão Caçamba opera aqui com logística ajustada ao rodízio da JK e ao acesso restrito de condomínios corporativos.</p>
-  <p class="updated-tag">Atualizado em 04/05/2026</p>
 </section>
 
 <!-- B2B -->
@@ -363,11 +362,11 @@ bannerInit();
     <div class="b2b-title">Solução completa para obras</div>
     <div class="b2b-sub">Atendemos incorporadoras, construtoras, engenheiros e administradoras de condomínio com documentação completa em 100% das entregas.</div>
     <div class="b2b-items">
-      <div class="b2b-item"><div class="b2b-icon">📄</div><div>Nota Fiscal eletrônica por OS — obrigatório para CNPJ</div></div>
-      <div class="b2b-item"><div class="b2b-icon">📋</div><div>CTR (Controle de Transporte de Resíduos) incluso sempre</div></div>
-      <div class="b2b-item"><div class="b2b-icon">💳</div><div>Faturamento PJ com 7 dias — a partir da 4ª locação</div></div>
-      <div class="b2b-item"><div class="b2b-icon">🏗️</div><div>Múltiplas obras simultâneas — cobertura em toda Zona Sul</div></div>
-      <div class="b2b-item"><div class="b2b-icon">🌙</div><div>Entrega noturna (22h–4h) para obras com restrição de acesso</div></div>
+      <div class="b2b-item"><div class="b2b-icon" style="display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#93b8f0" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div>Nota Fiscal eletrônica por OS — obrigatório para CNPJ</div></div>
+      <div class="b2b-item"><div class="b2b-icon" style="display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#93b8f0" stroke-width="2" stroke-linecap="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div>CTR (Controle de Transporte de Resíduos) incluso sempre</div></div>
+      <div class="b2b-item"><div class="b2b-icon" style="display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#93b8f0" stroke-width="2" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div><div>Faturamento PJ com 7 dias — a partir da 4ª locação</div></div>
+      <div class="b2b-item"><div class="b2b-icon" style="display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#93b8f0" stroke-width="2" stroke-linecap="round"><polygon points="3 9 12 2 21 9 21 20 3 20 3 9"/></svg></div><div>Múltiplas obras simultâneas — cobertura em toda Zona Sul</div></div>
+      <div class="b2b-item"><div class="b2b-icon" style="display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#93b8f0" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div><div>Entrega noturna (22h–4h) para obras com restrição de acesso</div></div>
     </div>
     <button class="btn-b2b" onclick="focarPC();setTimeout(()=>{document.getElementById('pc-txt').value='Sou incorporadora e preciso de caçamba com NF';pcEnviar();},700)">Falar sobre contrato PJ</button>
   </div>
@@ -571,7 +570,7 @@ bannerInit();
     Padrão Caçamba — Locação de Caçambas Estacionárias<br>
     CNPJ: 44.538.708/0001-76 — Luciana Cristina Testa<br>
     Rua Juan Vicente, 482 — Bandeiras, Osasco/SP<br>
-    padraocacamba.com.br · Desde 2004 · Atualizado 04/05/2026
+    padraocacamba.com.br · Desde 2004
   </div>
 </footer>
 
