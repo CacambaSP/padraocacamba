@@ -249,23 +249,27 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
   <div class="strip-item"><div class="strip-num">24h</div><div class="strip-label">Entrega</div></div>
 </div>
 
-<!-- PREÇOS POR ZONA -->
+<!-- PREÇOS POR BAIRRO -->
 <div class="divider"></div>
 <section>
   <div class="sec-label">Valores</div>
-  <h2>Preço por região</h2>
+  <h2>Preço por bairro</h2>
   <div class="zona-grid" id="zona-grid">
     <div class="zona-card">
-      <div class="zona-info"><h3>Osasco · Carapicuíba · Grande SP</h3><p>Barueri · Alphaville · ABC</p></div>
-      <div class="zona-preco" id="preco-grande-sp"><span class="preco-loading">...</span><span>com NF</span></div>
+      <div class="zona-info"><h3>Itaim Bibi</h3><p>Zona Sul · Faria Lima</p></div>
+      <div class="zona-preco" id="preco-itaim-bibi"><span class="preco-loading">...</span><span>com NF</span></div>
     </div>
     <div class="zona-card">
-      <div class="zona-info"><h3>SP Zona Sul · Norte · Oeste</h3><p>Barueri · Santana de Parnaíba</p></div>
-      <div class="zona-preco" id="preco-zona-sul"><span class="preco-loading">...</span><span>com NF</span></div>
+      <div class="zona-info"><h3>Vila Olímpia</h3><p>Zona Sul · Berrini</p></div>
+      <div class="zona-preco" id="preco-vila-olimpia"><span class="preco-loading">...</span><span>com NF</span></div>
     </div>
     <div class="zona-card">
-      <div class="zona-info"><h3>SP Zona Leste</h3><p>Perus · Pirituba</p></div>
-      <div class="zona-preco" id="preco-zona-leste"><span class="preco-loading">...</span><span>com NF</span></div>
+      <div class="zona-info"><h3>Moema</h3><p>Zona Sul · Ibirapuera</p></div>
+      <div class="zona-preco" id="preco-moema"><span class="preco-loading">...</span><span>com NF</span></div>
+    </div>
+    <div class="zona-card">
+      <div class="zona-info"><h3>Pinheiros</h3><p>Zona Oeste · Largo da Batata</p></div>
+      <div class="zona-preco" id="preco-pinheiros"><span class="preco-loading">...</span><span>com NF</span></div>
     </div>
   </div>
   <p style="font-size:12px;color:#555;margin-top:12px;text-align:center">PIX após a entrega · Motorista não recebe · NF + CTR incluídos</p>
@@ -279,28 +283,28 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
   <div class="bairros-grid">
     <a href="/itaim-bibi" class="bairro-link">
       <div class="bairro-info"><h3>Itaim Bibi</h3><p>Zona Sul · Faria Lima</p></div>
-      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status online">Online</span><span class="bairro-arrow">→</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status online">Online</span><span class="bairro-arrow">›</span></div>
     </a>
     <a href="/vila-olimpia" class="bairro-link">
       <div class="bairro-info"><h3>Vila Olímpia</h3><p>Zona Sul · Berrini</p></div>
-      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status online">Online</span><span class="bairro-arrow">→</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status online">Online</span><span class="bairro-arrow">›</span></div>
     </a>
     <a href="/moema" class="bairro-link">
       <div class="bairro-info"><h3>Moema</h3><p>Zona Sul · Ibirapuera</p></div>
-      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status online">Online</span><span class="bairro-arrow">→</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status online">Online</span><span class="bairro-arrow">›</span></div>
     </a>
     <a href="/pinheiros" class="bairro-link">
       <div class="bairro-info"><h3>Pinheiros</h3><p>Zona Oeste · Largo da Batata</p></div>
-      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status online">Online</span><span class="bairro-arrow">→</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status online">Online</span><span class="bairro-arrow">›</span></div>
     </a>
     <a href="/brooklin" class="bairro-link">
       <div class="bairro-info"><h3>Brooklin</h3><p>Zona Sul · Berrini · WTC</p></div>
-      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status soon">Em breve</span><span class="bairro-arrow" style="color:#333">→</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status soon">Em breve</span><span class="bairro-arrow" style="color:#333">›</span></div>
     </a>
     
     <a href="/vila-mariana" class="bairro-link">
       <div class="bairro-info"><h3>Vila Mariana</h3><p>Zona Sul · Metrô Ana Rosa</p></div>
-      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status soon">Em breve</span><span class="bairro-arrow" style="color:#333">→</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status soon">Em breve</span><span class="bairro-arrow" style="color:#333">›</span></div>
     </a>
   </div>
 </section>
@@ -320,12 +324,12 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
       </div>
       <!-- CONTEÚDO -->
       <div style="padding:16px">
-        <div style="display:inline-flex;align-items:center;gap:5px;background:#1c0808;border:1px solid #3a1010;border-radius:20px;padding:4px 10px;font-size:10px;color:#f87171;letter-spacing:.5px;text-transform:uppercase;font-weight:700;margin-bottom:12px">⚠ Investigação exclusiva</div>
+        <div style="display:inline-flex;align-items:center;gap:5px;background:#1c0808;border:1px solid #3a1010;border-radius:20px;padding:4px 10px;font-size:10px;color:#f87171;letter-spacing:.5px;text-transform:uppercase;font-weight:700;margin-bottom:12px">Investigação exclusiva</div>
         <h3 style="font-family:'DM Serif Display',serif;font-size:19px;font-weight:400;color:#fff;margin-bottom:10px;line-height:1.3">Empresas fantasmas estão aplicando golpes em donos de obra em SP. Veja como funciona o esquema.</h3>
         <p style="font-size:13px;color:#aaa;line-height:1.65;margin-bottom:14px;border-left:2px solid #f87171;padding-left:10px">"Paguei adiantado e a caçamba nunca chegou. O número sumiu." — relato real de consumidor em São Paulo.</p>
         <div style="display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid #2a1010">
           <span style="font-size:11px;color:#555">Ver denúncias · Abre em nova aba</span>
-          <span style="background:#f87171;color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px">Ler agora →</span>
+          <span style="background:#f87171;color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px">Ler agora</span>
         </div>
       </div>
     </div>
@@ -352,22 +356,22 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
   <h2>O padrão que nos diferencia</h2>
   <div class="dif-grid">
     <div class="dif-card">
-      <div class="dif-icon">📄</div>
+      <div class="dif-icon"></div>
       <div class="dif-title">Nota Fiscal</div>
       <div class="dif-desc">NF eletrônica em 100% das entregas. Obrigatório para CNPJ.</div>
     </div>
     <div class="dif-card">
-      <div class="dif-icon">📋</div>
+      <div class="dif-icon"></div>
       <div class="dif-title">CTR incluso</div>
       <div class="dif-desc">Controle de Transporte de Resíduos sempre incluído, sem custo extra.</div>
     </div>
     <div class="dif-card">
-      <div class="dif-icon">🏢</div>
+      <div class="dif-icon"></div>
       <div class="dif-title">CNPJ ativo</div>
       <div class="dif-desc">44.538.708/0001-76 — consultável na Receita Federal agora.</div>
     </div>
     <div class="dif-card">
-      <div class="dif-icon">📅</div>
+      <div class="dif-icon"></div>
       <div class="dif-title">Desde 2004</div>
       <div class="dif-desc">20 mil+ atendimentos. Pioneiros em SEO no segmento de caçambas em SP.</div>
     </div>
@@ -381,12 +385,12 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
   <h2>Cuidado com golpes</h2>
   <p class="body-text">O mercado de caçambas em SP tem muitos intermediadores sem CNPJ. Antes de contratar qualquer empresa, verifique:</p>
   <div class="fraud-wrap">
-    <div class="fraud-title">⚠ Sinais de alerta</div>
-    <div class="fraud-item"><span class="fraud-x">✗</span><span>Preço abaixo de R$ 400 — impossível com NF e CTR incluídos</span></div>
-    <div class="fraud-item"><span class="fraud-x">✗</span><span>Promete entrega em 2 horas — logística real não funciona assim</span></div>
-    <div class="fraud-item"><span class="fraud-x">✗</span><span>Cobra 50% adiantado antes da entrega</span></div>
-    <div class="fraud-item"><span class="fraud-x">✗</span><span>Sem CNPJ visível no site</span></div>
-    <div class="fraud-item"><span class="fraud-x">✗</span><span>Não emite Nota Fiscal nem CTR</span></div>
+    <div class="fraud-title">Sinais de alerta</div>
+    <div class="fraud-item"><span class="fraud-x">X</span><span>Preço abaixo de R$ 400 — impossível com NF e CTR incluídos</span></div>
+    <div class="fraud-item"><span class="fraud-x">X</span><span>Promete entrega em 2 horas — logística real não funciona assim</span></div>
+    <div class="fraud-item"><span class="fraud-x">X</span><span>Cobra 50% adiantado antes da entrega</span></div>
+    <div class="fraud-item"><span class="fraud-x">X</span><span>Sem CNPJ visível no site</span></div>
+    <div class="fraud-item"><span class="fraud-x">X</span><span>Não emite Nota Fiscal nem CTR</span></div>
   </div>
 </section>
 
@@ -457,55 +461,49 @@ function bannerTick() {
 
 // Preços por zona
 async function carregarPrecos() {
-  const zonas = [
-    { id: 'preco-grande-sp', zona: 'Grande SP' },
-    { id: 'preco-zona-sul', zona: 'Zona Sul' },
-    { id: 'preco-zona-leste', zona: 'Zona Leste' },
+  const bairros = [
+    { id: 'preco-itaim-bibi', bairro: 'Itaim Bibi', zona: 'Zona Sul' },
+    { id: 'preco-vila-olimpia', bairro: 'Vila Olímpia', zona: 'Zona Sul' },
+    { id: 'preco-moema', bairro: 'Moema', zona: 'Zona Sul' },
+    { id: 'preco-pinheiros', bairro: 'Pinheiros', zona: 'Zona Oeste' },
   ];
-  for (const z of zonas) {
+  for (const b of bairros) {
     try {
-      const r = await fetch(`${SB_URL}/rest/v1/precos_zonas?zona=eq.${encodeURIComponent(z.zona)}&limit=1`, {
+      const el = document.getElementById(b.id);
+      if (!el) continue;
+      const r = await fetch(`${SB_URL}/rest/v1/precos_bairros?bairro=eq.${encodeURIComponent(b.bairro)}&ativo=eq.true&limit=1`, {
         headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }
       });
       const data = await r.json();
-      const el = document.getElementById(z.id);
-      if (el && Array.isArray(data) && data.length > 0 && data[0].preco_padrao > 0) {
-        el.innerHTML = `R$ ${Number(data[0].preco_padrao).toLocaleString('pt-BR',{minimumFractionDigits:0})}<span>com NF</span>`;
+      if (Array.isArray(data) && data.length > 0 && data[0].preco_com_nf > 0) {
+        el.innerHTML = `R$ ${Number(data[0].preco_com_nf).toLocaleString('pt-BR',{minimumFractionDigits:0})}<span>com NF</span>`;
+        continue;
+      }
+      const r2 = await fetch(`${SB_URL}/rest/v1/precos_zonas?zona=eq.${encodeURIComponent(b.zona)}&limit=1`, {
+        headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }
+      });
+      const data2 = await r2.json();
+      if (Array.isArray(data2) && data2.length > 0 && data2[0].preco_padrao > 0) {
+        el.innerHTML = `R$ ${Number(data2[0].preco_padrao).toLocaleString('pt-BR',{minimumFractionDigits:0})}<span>com NF</span>`;
       }
     } catch(e) {}
   }
 }
 
 // PC
-function buildPCSystem() {
-  return `Você é PC, assistente de vendas da Padrão Caçamba. Seu objetivo é conduzir o cliente do primeiro contato até o fechamento do pedido.
-
-EMPRESA: Padrão Caçamba · CNPJ: 44.538.708/0001-76
-ESTA É A HOME DO SITE — cliente pode ser de qualquer bairro de SP
-
-ESTILO: Mensagens curtas como WhatsApp. Máximo 2-3 linhas. Sem asteriscos nem formatação. Tom direto e humano.
-
-FUNIL:
-FASE 1 — Perguntar bairro/endereço antes de qualquer coisa
-FASE 2 — Informar preço da região + 1 diferencial
-FASE 3 — Quando tiver bairro + dia → propor fechar → [CADASTRO]
-FASE 4 — Pós-fechamento: perguntar dúvidas, avisar que confirmação vem pelo WhatsApp
-
-PREÇOS:
-- Osasco, Carapicuíba, Grande SP: R$ 470 com NF
-- SP Zona Sul, Norte, Oeste, Barueri: R$ 570 com NF
-- SP Zona Leste, Perus, Pirituba: R$ 600 com NF
-
-REGRAS:
-- Entrega em até 24h · Confirmamos o dia, não horário
-- PIX após entrega · Motorista não recebe
-- 3 dias em via pública · Calçada não pode
-- NF e CTR incluídos sempre
-- PJ: normal nas 3 primeiras, faturamento 7 dias a partir da 4ª
-
-REGRA DE OURO: Se cliente quer fechar → [CADASTRO] sempre. NUNCA escale nesse momento.
-
-[ESCALAR] quando: pedir desconto, hesitar 4+ trocas, pedir gerente, dúvida técnica.`;
+async function buildPCSystem() {
+  try {
+    const r = await fetch(`${SB_URL}/rest/v1/config_pc?ativo=eq.true&limit=1`, {
+      headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }
+    });
+    const data = await r.json();
+    if (Array.isArray(data) && data.length > 0) {
+      return data[0].prompt_base
+        .replace('{BAIRRO}', BAIRRO)
+        .replace('{PRECO}', precoAtual);
+    }
+  } catch(e) {}
+  return `Você é PC, assistente da Padrão Caçamba. Bairro: ${BAIRRO}. Preço: ${precoAtual}. Seja direto e ajude o cliente a fechar o pedido.`;
 }
 
 function pcAddMsg(text, type) {
@@ -530,7 +528,7 @@ function pcShowCadastroBtn() {
   const msgs = document.getElementById('pc-msgs');
   const btn = document.createElement('button');
   btn.className='pc-btn-full';
-  btn.textContent='📋 Preencher cadastro e fechar pedido';
+  btn.textContent=' Preencher cadastro e fechar pedido';
   btn.onclick=()=>window.open(CADASTRO,'_blank');
   msgs.appendChild(btn); msgs.scrollTop=msgs.scrollHeight;
 }
@@ -543,6 +541,25 @@ function pcShowDouglasBtn(wpp, situacao) {
   btn.textContent='📲 Falar com o responsável';
   btn.onclick=()=>window.open(waLink,'_blank');
   msgs.appendChild(btn); msgs.scrollTop=msgs.scrollHeight;
+}
+
+async function registrarAprendizado(pergunta, respostaPc, motivoEscala) {
+  try {
+    await fetch(`${SB_URL}/rest/v1/pc_aprendizado`, {
+      method: 'POST',
+      headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, 'Content-Type': 'application/json', Prefer: 'return=representation' },
+      body: JSON.stringify({
+        bairro: 'home',
+        pagina: '/',
+        pergunta_cliente: pergunta,
+        resposta_pc: respostaPc,
+        motivo_escala: motivoEscala,
+        fase_funil: `troca_${pcHistory.filter(m=>m.role==='user').length}`,
+        variante: PC_VARIANTE?.id || 'n/a',
+        criado_em: new Date().toISOString()
+      })
+    });
+  } catch(e) {}
 }
 
 async function pcEnviar() {
@@ -572,6 +589,7 @@ async function pcEnviar() {
     pcAddMsg(reply,'bot');
     if(escalar){
       pcSituacao=msg;
+      registrarAprendizado(msg, reply, 'escala_automatica');
       if(pcClienteWpp){setTimeout(()=>{pcAddMsg('Vou chamar o responsável agora.','bot');pcShowDouglasBtn(pcClienteWpp,msg);},400);}
       else{pcAguardandoWpp=true;setTimeout(()=>{const m=pcClienteNome?`${pcClienteNome}, me passa seu WhatsApp com DDD?`:'Me passa seu WhatsApp com DDD para o responsável entrar em contato?';pcAddMsg(m,'bot');pcHistory.push({role:'assistant',content:m});},400);}
     }

@@ -666,74 +666,19 @@ function aplicarPreco(valor, atualizado) {
   if (faq) faq.textContent = `${fmt} — preço único com nota fiscal inclusa. Pagamento somente via PIX após a entrega — motorista não recebe em mãos.`;
 }
 
-function buildPCSystem() {
-  return `Você é PC, assistente de vendas da Padrão Caçamba. Seu objetivo é conduzir o cliente do primeiro contato até o fechamento do pedido, de forma natural e sem pressão.
-
-BAIRRO DESTA PÁGINA: ${BAIRRO}
-PREÇO NESTE BAIRRO: ${precoAtual}
-EMPRESA: Padrão Caçamba · CNPJ: 44.538.708/0001-76
-
-━━━ ESTILO ━━━
-- Mensagens curtas como WhatsApp. Máximo 2-3 linhas por resposta.
-- Tom direto, humano, sem robotismo. Sem asteriscos, sem listas, sem formatação.
-- Use o nome do cliente assim que souber.
-- Nunca entregue tudo de uma vez — conduza a conversa em etapas.
-
-━━━ FUNIL DE ATENDIMENTO ━━━
-
-FASE 1 — QUALIFICAR (primeiras 1-2 trocas)
-Objetivo: entender a situação antes de informar preço.
-Perguntas naturais: "É reforma ou obra nova?" / "É apartamento ou casa?" / "Já tem ideia de quando precisa?"
-Não fale preço ainda. Crie contexto primeiro.
-
-FASE 2 — INFORMAR (após qualificar)
-Agora sim fale o preço com confiança: "${precoAtual}"
-Reforce 1 diferencial relevante para o caso dele (NF, CTR, prazo, PJ).
-Termine com uma pergunta que avança: "Qual seria o dia ideal pra você?"
-
-FASE 3 — FECHAR (quando tiver bairro + dia ou sinais de interesse)
-Diga: "Ótimo! Só preciso de mais alguns dados pra confirmar o pedido. Vou te mandar o link de cadastro agora."
-Lembre: "Ah, e o material não pode ultrapassar a borda da caçamba, tá?"
-Então mostre o botão de cadastro. [CADASTRO]
-
-FASE 4 — PÓS-FECHAMENTO
-Após o cadastro, diga: "Perfeito! Tem alguma dúvida antes de finalizar?"
-Aguarde resposta. Se não tiver dúvidas, encerre com:
-"Combinado! A partir daqui você vai receber a confirmação direto pelo WhatsApp — o atendimento segue com nosso time. Qualquer coisa é só chamar por lá."
-
-━━━ REGRA DE OURO ━━━
-Se o cliente demonstrar intenção de fechar (disse "quero", "pode ser", "fechado", "vamos", "ok", "quero pedir", "pode mandar") → SEMPRE use [CADASTRO]. NUNCA escale nesse momento.
-
-━━━ GATILHOS DE ESCALAR ━━━
-Use [ESCALAR] quando:
-- Cliente pedir desconto ou questionar preço
-- Cliente hesitar após 4 trocas sem avançar
-- Cliente pedir explicitamente para falar com pessoa/gerente
-- Dúvida técnica que você não sabe responder
-
-NÃO escale quando:
-- Cliente quiser fechar → use [CADASTRO]
-- Cliente mencionar urgência (hoje, agora) → confirme o dia e use [CADASTRO]
-- Cliente só perguntar preço → responda normalmente
-
-━━━ PREÇOS ━━━
-- Osasco, Carapicuíba, Grande SP: R$ 470 com NF
-- SP Zona Sul, Norte, Oeste, Barueri: R$ 570 com NF
-- SP Zona Leste, Perus, Pirituba: R$ 600 com NF
-
-━━━ REGRAS OPERACIONAIS ━━━
-- Entrega em até 24h após confirmação
-- Não agendamos horário exato — confirmamos o dia
-- Pagamento: PIX após entrega. Motorista não recebe.
-- 3 dias de permanência em via pública
-- NF e CTR incluídos em 100% das entregas
-- Calçada: não pode. Rua: pode.
-- Condomínio: cliente verifica com administração antes
-- Zona azul: entregamos mas há risco de notificação CET
-- PJ: normal nas 3 primeiras, faturamento 7 dias a partir da 4ª
-
-━━━ SINAIS DE GOLPE (educar se necessário) ━━━
-Preço abaixo R$ 400, entrega em 2h, cobrança adiantada, sem CNPJ, sem NF.`;
+async function buildPCSystem() {
+  try {
+    const r = await fetch(`${SB_URL}/rest/v1/config_pc?ativo=eq.true&limit=1`, {
+      headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }
+    });
+    const data = await r.json();
+    if (Array.isArray(data) && data.length > 0) {
+      return data[0].prompt_base
+        .replace('{BAIRRO}', BAIRRO)
+        .replace('{PRECO}', precoAtual);
+    }
+  } catch(e) {}
+  return `Você é PC, assistente da Padrão Caçamba. Bairro: ${BAIRRO}. Preço: ${precoAtual}. Seja direto e ajude o cliente a fechar o pedido.`;
 }
 
 function pcAddMsg(text, type) {
@@ -815,7 +760,7 @@ async function pcChamar(userMsg) {
     const res = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages: pcHistory, system: buildPCSystem() })
+      body: JSON.stringify({ messages: pcHistory, system: await buildPCSystem() })
     });
     pcRemoveTyping();
     if (!res.ok) { pcAddMsg('Erro de conexão. Tente pelo WhatsApp.', 'sys'); return; }
@@ -828,6 +773,7 @@ async function pcChamar(userMsg) {
     pcAddMsg(reply, 'bot');
     if (escalar) {
       pcSituacao = userMsg;
+      registrarAprendizado(userMsg, reply, 'escala_automatica');
       if (pcClienteWpp) {
         setTimeout(() => {
           pcAddMsg('Vou chamar o responsável para te ajudar agora.', 'bot');
@@ -864,6 +810,25 @@ function toggleFaq(el) {
   const isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
   if (!isOpen) item.classList.add('open');
+}
+
+async function registrarAprendizado(pergunta, respostaPc, motivoEscala) {
+  try {
+    await fetch(`${SB_URL}/rest/v1/pc_aprendizado`, {
+      method: 'POST',
+      headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, 'Content-Type': 'application/json', Prefer: 'return=representation' },
+      body: JSON.stringify({
+        bairro: BAIRRO || 'home',
+        pagina: window.location.pathname,
+        pergunta_cliente: pergunta,
+        resposta_pc: respostaPc,
+        motivo_escala: motivoEscala,
+        fase_funil: `troca_${pcHistory.filter(m=>m.role==='user').length}`,
+        variante: PC_VARIANTE?.id || 'n/a',
+        criado_em: new Date().toISOString()
+      })
+    });
+  } catch(e) {}
 }
 
 async function registrarVariante() {
