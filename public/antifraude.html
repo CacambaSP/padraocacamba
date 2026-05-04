@@ -428,6 +428,7 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
       <label>Descreva o que aconteceu *</label>
       <textarea id="f-desc" placeholder="Conte o que aconteceu com o máximo de detalhes possível. Seu relato ajuda outros consumidores."></textarea>
     </div>
+    <div id="aviso-reincidencia" style="display:none;background:#1a0a00;border:1px solid #f87171;border-radius:8px;padding:12px 14px;font-size:13px;color:#f87171;line-height:1.6;margin-bottom:12px"></div>
     <button class="btn-denunciar" id="btn-denunciar" onclick="enviarDenuncia()">Publicar denúncia</button>
     <div class="form-msg" id="form-msg"></div>
   </div>
@@ -533,6 +534,20 @@ async function carregarDenuncias() {
       return;
     }
     if (total) total.textContent = data.length + '+';
+
+    // Calcular reincidência por telefone e site
+    const contagemTel = {}, contagemSite = {};
+    data.forEach(d => {
+      if (d.empresa_telefone) contagemTel[d.empresa_telefone] = (contagemTel[d.empresa_telefone] || 0) + 1;
+      if (d.empresa_site) contagemSite[d.empresa_site] = (contagemSite[d.empresa_site] || 0) + 1;
+    });
+    data.forEach(d => {
+      d._count = Math.max(
+        d.empresa_telefone ? (contagemTel[d.empresa_telefone] || 1) : 1,
+        d.empresa_site ? (contagemSite[d.empresa_site] || 1) : 1
+      );
+    });
+
     lista.innerHTML = data.map(d => `
       <div class="denuncia-card">
         <div class="denuncia-header">
@@ -544,6 +559,7 @@ async function carregarDenuncias() {
         <div class="denuncia-meta">
           ${d.empresa_site ? `<span class="denuncia-tag destaque">${d.empresa_site}</span>` : ''}
           ${d.empresa_telefone ? `<span class="denuncia-tag destaque">${d.empresa_telefone}</span>` : ''}
+          ${d._count > 1 ? `<span class="denuncia-tag" style="background:#1a0505;color:#f87171;border-color:#3a1010;font-weight:700">Reincidente: ${d._count}x denunciado</span>` : ''}
           ${d.cidade ? `<span class="denuncia-tag">${d.cidade}</span>` : ''}
           ${d.valor_prejuizo ? `<span class="denuncia-tag destaque">Prejuízo: R$ ${Number(d.valor_prejuizo).toLocaleString('pt-BR')}</span>` : ''}
         </div>
@@ -554,18 +570,56 @@ async function carregarDenuncias() {
   }
 }
 
+async function verificarReincidencia(telefone, site) {
+  const avisos = [];
+  try {
+    if (telefone && telefone.trim()) {
+      const tel = telefone.replace(/\D/g, '');
+      const r = await fetch(`${SB_URL}/rest/v1/denuncias?empresa_telefone=ilike.*${tel}*&aprovado=eq.true&select=id`, {
+        headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }
+      });
+      const data = await r.json();
+      if (Array.isArray(data) && data.length > 0) {
+        avisos.push(`Este telefone já foi denunciado ${data.length} vez${data.length > 1 ? 'es' : ''} anteriormente.`);
+      }
+    }
+    if (site && site.trim()) {
+      const r2 = await fetch(`${SB_URL}/rest/v1/denuncias?empresa_site=ilike.*${encodeURIComponent(site.trim())}*&aprovado=eq.true&select=id`, {
+        headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }
+      });
+      const data2 = await r2.json();
+      if (Array.isArray(data2) && data2.length > 0) {
+        avisos.push(`Este site já foi denunciado ${data2.length} vez${data2.length > 1 ? 'es' : ''} anteriormente.`);
+      }
+    }
+  } catch(e) {}
+  return avisos;
+}
+
 async function enviarDenuncia() {
   const tipo = document.getElementById('f-tipo').value;
   const desc = document.getElementById('f-desc').value.trim();
+  const tel = document.getElementById('f-tel').value.trim();
+  const site = document.getElementById('f-site').value.trim();
   const msg = document.getElementById('form-msg');
   const btn = document.getElementById('btn-denunciar');
 
   if (!tipo) { msg.className = 'form-msg err'; msg.textContent = 'Selecione o tipo de golpe.'; return; }
   if (desc.length < 20) { msg.className = 'form-msg err'; msg.textContent = 'Descreva o que aconteceu com mais detalhes (mínimo 20 caracteres).'; return; }
 
+  // Verificar reincidência antes de publicar
   btn.disabled = true;
-  btn.textContent = 'Publicando...';
+  btn.textContent = 'Verificando...';
   msg.className = 'form-msg';
+
+  const avisos = await verificarReincidencia(tel, site);
+  if (avisos.length > 0) {
+    const aviso = document.getElementById('aviso-reincidencia');
+    aviso.style.display = 'block';
+    aviso.innerHTML = '<strong>Atenção — golpista reincidente:</strong><br>' + avisos.join('<br>');
+  }
+
+  btn.textContent = 'Publicando...';
 
   const payload = {
     empresa_nome: document.getElementById('f-empresa').value.trim() || null,
