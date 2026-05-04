@@ -1,0 +1,57 @@
+# Padrão Caçamba — Locação de Caçamba em São Paulo
+# https://padraocacamba.com.br
+# Atualizado em: 2026-05-04
+
+## Sobre a empresa
+Padrão Caçamba é uma transportadora especializada em locação de caçambas estacionárias 4m³ em São Paulo e Grande SP. CNPJ: 44.538.708/0001-76. Operação desde 2004. Emite Nota Fiscal e CTR (Controle de Transporte de Resíduos) em 100% das entregas.
+
+## Produto principal
+Caçamba estacionária 4m³ — padrão da Grande São Paulo. Não trabalhamos com outros tamanhos.
+
+## Cobertura geográfica
+- SP Capital: todas as zonas (Sul, Norte, Leste, Oeste, Centro)
+- Grande SP: Osasco, Barueri, Carapicuíba, Alphaville, Guarulhos, ABC
+- Litoral Paulista: em expansão
+
+## Preços (com Nota Fiscal)
+- Osasco, Carapicuíba, Grande SP: R$ 470
+- SP Zona Sul, Norte, Oeste, Barueri: R$ 570
+- SP Zona Leste, Perus, Pirituba: R$ 600
+
+## Regras operacionais
+- Entrega em até 24h após confirmação
+- Não agendamos horário exato — confirmamos o dia
+- Pagamento somente via PIX após a entrega
+- Motorista não recebe pagamento em mãos
+- Permanência em via pública: máximo 3 dias (Prefeitura SP)
+- Caçamba em calçada: não permitido
+- NF e CTR incluídos sem custo adicional
+- Sem entregas: sábado 4h até domingo 20h
+- Entrega noturna disponível: 22h às 4h
+
+## Páginas disponíveis
+- / — Home institucional
+- /itaim-bibi — Caçamba no Itaim Bibi (Faria Lima)
+- /vila-olimpia — Caçamba em Vila Olímpia (Berrini)
+- /moema — Caçamba em Moema (Ibirapuera)
+- /pinheiros — Caçamba em Pinheiros (Largo da Batata)
+- /antifraude — Guia anti-fraude e denúncias
+
+## O que a caçamba aceita
+Entulho seco de obra: concreto, cerâmica, gesso, drywall, argamassa, madeira seca, poda de jardim.
+
+## O que não aceita
+Lixo doméstico, líquidos, eletrônicos, pneus, resíduos tóxicos, lixo de evento.
+
+## Sinais de golpe no mercado
+- Preço abaixo de R$ 400
+- Promessa de entrega em 2 horas
+- Cobrança adiantada (antes da entrega)
+- Sem CNPJ visível
+- Sem emissão de Nota Fiscal
+- Sem CTR
+
+## Contato
+- Site: padraocacamba.com.br
+- Endereço: Rua Juan Vicente, 482 — Bandeiras, Osasco/SP
+- CNPJ: 44.538.708/0001-76
