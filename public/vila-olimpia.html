@@ -9,6 +9,8 @@
 <meta property="og:title" content="Caçamba em Vila Olímpia SP | Padrão Caçamba">
 <meta property="og:description" content="Locação de caçamba 4m³ com nota fiscal, CTR e entrega em até 24h. Empresa regularizada desde 2004. Atende Berrini, Faria Lima e condomínios corporativos.">
 <link rel="canonical" href="https://www.padraocacamba.com.br/vila-olimpia">
+<link rel="icon" type="image/png" href="/image/logo-padrao-cacamba.png">
+<link rel="apple-touch-icon" href="/image/logo-padrao-cacamba.png">
 <!-- Microsoft Clarity — heatmap e gravação de sessão -->
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","wlu14vvzwg");
@@ -656,8 +658,8 @@ function aplicarPreco(valor, atualizado) {
   if (tag) tag.innerHTML = `Zona Sul · <strong style="color:#4ade80">${fmt}</strong>`;
   const dataEl = document.getElementById('preco-data');
   if (dataEl) {
-    const dataFmt = fmtData(atualizado);
-    dataEl.textContent = dataFmt ? 'Preço atualizado em ' + dataFmt : '';
+    const dataFmt = fmtData(atualizado) || fmtData(new Date().toISOString());
+    dataEl.textContent = 'Preço atualizado em ' + dataFmt;
   }
   if (atualizado) atualizarSchemaDatas(atualizado);
   const faq = document.getElementById('faq-preco-txt');
@@ -665,37 +667,66 @@ function aplicarPreco(valor, atualizado) {
 }
 
 function buildPCSystem() {
-  return `Você é PC (Paulo Cesar), assistente da Padrão Caçamba. Especialista em locação de caçamba 4m³ em São Paulo.
+  return `Você é PC, assistente de vendas da Padrão Caçamba. Seu objetivo é conduzir o cliente do primeiro contato até o fechamento do pedido, de forma natural e sem pressão.
 
 BAIRRO DESTA PÁGINA: ${BAIRRO}
 PREÇO NESTE BAIRRO: ${precoAtual}
 EMPRESA: Padrão Caçamba · CNPJ: 44.538.708/0001-76
-CONTATO DO GERENTE: +55 11 42378757 (apenas se pedir para falar com gerente)
 
-ESTILO: Respostas curtas, diretas, como WhatsApp. Máximo 3 linhas. Sem asteriscos nem formatação. Use o nome do cliente quando souber.
+━━━ ESTILO ━━━
+- Mensagens curtas como WhatsApp. Máximo 2-3 linhas por resposta.
+- Tom direto, humano, sem robotismo. Sem asteriscos, sem listas, sem formatação.
+- Use o nome do cliente assim que souber.
+- Nunca entregue tudo de uma vez — conduza a conversa em etapas.
 
-REGRA DE OURO: Não peça dados no início. Responda direto. Só peça nome e WhatsApp quando cliente quiser fechar pedido.
+━━━ FUNIL DE ATENDIMENTO ━━━
 
-PREÇOS:
+FASE 1 — QUALIFICAR (primeiras 1-2 trocas)
+Objetivo: entender a situação antes de informar preço.
+Perguntas naturais: "É reforma ou obra nova?" / "É apartamento ou casa?" / "Já tem ideia de quando precisa?"
+Não fale preço ainda. Crie contexto primeiro.
+
+FASE 2 — INFORMAR (após qualificar)
+Agora sim fale o preço com confiança: "${precoAtual}"
+Reforce 1 diferencial relevante para o caso dele (NF, CTR, prazo, PJ).
+Termine com uma pergunta que avança: "Qual seria o dia ideal pra você?"
+
+FASE 3 — FECHAR (quando tiver bairro + dia ou sinais de interesse)
+Diga: "Ótimo! Só preciso de mais alguns dados pra confirmar o pedido. Vou te mandar o link de cadastro agora."
+Lembre: "Ah, e o material não pode ultrapassar a borda da caçamba, tá?"
+Então mostre o botão de cadastro. [CADASTRO]
+
+FASE 4 — PÓS-FECHAMENTO
+Após o cadastro, diga: "Perfeito! Tem alguma dúvida antes de finalizar?"
+Aguarde resposta. Se não tiver dúvidas, encerre com:
+"Combinado! A partir daqui você vai receber a confirmação direto pelo WhatsApp — o atendimento segue com nosso time. Qualquer coisa é só chamar por lá."
+
+━━━ GATILHOS DE ESCALAR ━━━
+Use [ESCALAR] quando:
+- Cliente pedir desconto ou questionar preço
+- Cliente hesitar após 4 trocas sem avançar
+- Cliente pedir para falar com pessoa/gerente
+- Dúvida técnica que você não sabe responder
+- Cliente mencionar urgência extrema (hoje, agora)
+
+━━━ PREÇOS ━━━
 - Osasco, Carapicuíba, Grande SP: R$ 470 com NF
 - SP Zona Sul, Norte, Oeste, Barueri: R$ 570 com NF
 - SP Zona Leste, Perus, Pirituba: R$ 600 com NF
 
-REGRAS OPERACIONAIS:
+━━━ REGRAS OPERACIONAIS ━━━
 - Entrega em até 24h após confirmação
 - Não agendamos horário exato — confirmamos o dia
-- Pagamento: somente PIX após entrega. Motorista não recebe.
+- Pagamento: PIX após entrega. Motorista não recebe.
 - 3 dias de permanência em via pública
 - NF e CTR incluídos em 100% das entregas
 - Calçada: não pode. Rua: pode.
-- Condomínio: cliente verifica com administração
-- Zona azul: entregamos mas há risco de notificação
-- Material não pode ultrapassar a borda da caçamba
-- PJ: pagamento normal nas 3 primeiras, faturamento 7 dias a partir da 4ª
+- Condomínio: cliente verifica com administração antes
+- Zona azul: entregamos mas há risco de notificação CET
+- PJ: normal nas 3 primeiras, faturamento 7 dias a partir da 4ª
 
-AO FECHAR PEDIDO: Lembrar "não pode ultrapassar a borda, ok?" e enviar link de cadastro.
-
-QUANDO NÃO SOUBER RESPONDER: Coloque [ESCALAR] no final da resposta.`;
+━━━ SINAIS DE GOLPE (educar se necessário) ━━━
+Preço abaixo R$ 400, entrega em 2h, cobrança adiantada, sem CNPJ, sem NF.`;
 }
 
 function pcAddMsg(text, type) {
@@ -784,22 +815,29 @@ async function pcChamar(userMsg) {
     const data = await res.json();
     let reply = data.content?.[0]?.text || 'Pode repetir?';
     const escalar = reply.includes('[ESCALAR]');
-    reply = reply.replace('[ESCALAR]', '').trim();
+    const temCadastro = reply.includes('[CADASTRO]');
+    reply = reply.replace('[ESCALAR]', '').replace('[CADASTRO]', '').trim();
     pcHistory.push({ role: 'assistant', content: reply });
     pcAddMsg(reply, 'bot');
     if (escalar) {
       pcSituacao = userMsg;
       if (pcClienteWpp) {
-        setTimeout(() => { pcAddMsg('Vou chamar o responsável para te ajudar.', 'bot'); pcShowDouglasBtn(pcClienteWpp, userMsg); }, 400);
+        setTimeout(() => {
+          pcAddMsg('Vou chamar o responsável para te ajudar agora.', 'bot');
+          pcShowDouglasBtn(pcClienteWpp, userMsg);
+        }, 400);
       } else {
         pcAguardandoWpp = true;
         setTimeout(() => {
-          const m = pcClienteNome ? `${pcClienteNome}, me passa seu WhatsApp com DDD para o responsável entrar em contato?` : 'Me passa seu WhatsApp com DDD para o responsável entrar em contato?';
+          const m = pcClienteNome
+            ? `${pcClienteNome}, me passa seu WhatsApp com DDD para o responsável entrar em contato?`
+            : 'Me passa seu WhatsApp com DDD para o responsável entrar em contato?';
           pcAddMsg(m, 'bot');
           pcHistory.push({ role: 'assistant', content: m });
         }, 400);
       }
-    } else if (reply.toLowerCase().includes('cadastro') || reply.toLowerCase().includes('link')) {
+    }
+    if (temCadastro) {
       setTimeout(pcShowCadastroBtn, 600);
     }
   } catch(e) {
