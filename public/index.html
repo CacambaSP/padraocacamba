@@ -9,11 +9,11 @@
 <meta name="description" content="Locação de caçamba 4m³ em São Paulo e Grande SP. Nota fiscal, CTR incluído, entrega em até 24h. CNPJ 44.538.708/0001-76. Empresa regularizada desde 2004.">
 <meta property="og:title" content="Padrão Caçamba — Locação de Caçamba em São Paulo">
 <meta property="og:description" content="Caçamba 4m³ com nota fiscal e CTR. Atendemos SP Capital, Grande SP e Litoral. Desde 2004.">
-<meta property="og:image" content="https://padraocacamba.com.br/image/golpes-cacamba-sp-padrao-cacamba.webp.png.png">
+<meta property="og:image" content="https://padraocacamba.com.br/image/golpes-cacamba-sp-padrao-cacamba.webp">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://padraocacamba.com.br/image/golpes-cacamba-sp-padrao-cacamba.webp.png.png">
+<meta name="twitter:image" content="https://padraocacamba.com.br/image/golpes-cacamba-sp-padrao-cacamba.webp">
 <link rel="canonical" href="https://www.padraocacamba.com.br">
 <link rel="icon" type="image/png" href="/image/logo-padrao-cacamba.png">
 <link rel="apple-touch-icon" href="/image/logo-padrao-cacamba.png">
@@ -291,7 +291,7 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
 
 <!-- BANNER -->
 <div id="top-banner" onclick="focarPC()">
-  <img src="/image/banner-cacamba-vila-olimpia-padrao-cacamba.webp.png"
+  <img src="/image/banner-cacamba-vila-olimpia-padrao-cacamba.webp"
        alt="Padrão Caçamba — Locação de caçamba 4m³ em São Paulo"
        onerror="this.style.display='none';document.getElementById('top-banner').style.background='#0A0A0A'">
   <div class="banner-txt-wrap">
@@ -356,56 +356,57 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
   <div class="sec-label">Valores</div>
   <h2>Preço por bairro</h2>
   <div class="zona-grid" id="zona-grid">
-    <div class="zona-card">
-      <div class="zona-info"><h3>Itaim Bibi</h3><p>Zona Sul · Faria Lima</p></div>
-      <div class="zona-preco" id="preco-itaim-bibi"><span class="preco-loading">...</span><span>com NF</span></div>
-    </div>
-    <div class="zona-card">
-      <div class="zona-info"><h3>Vila Olímpia</h3><p>Zona Sul · Berrini</p></div>
-      <div class="zona-preco" id="preco-vila-olimpia"><span class="preco-loading">...</span><span>com NF</span></div>
-    </div>
-    <div class="zona-card">
-      <div class="zona-info"><h3>Moema</h3><p>Zona Sul · Ibirapuera</p></div>
-      <div class="zona-preco" id="preco-moema"><span class="preco-loading">...</span><span>com NF</span></div>
-    </div>
-    <div class="zona-card">
-      <div class="zona-info"><h3>Pinheiros</h3><p>Zona Oeste · Largo da Batata</p></div>
-      <div class="zona-preco" id="preco-pinheiros"><span class="preco-loading">...</span><span>com NF</span></div>
-    </div>
+    <a href="/itaim-bibi" class="zona-card" style="text-decoration:none;cursor:pointer;">
+      <div class="zona-info"><h3>Itaim Bibi <span class="bairro-status online" style="font-size:11px;font-weight:500;vertical-align:middle;margin-left:6px;">Online</span></h3><p>Zona Sul · Faria Lima</p></div>
+      <div style="display:flex;align-items:center;gap:10px"><div class="zona-preco" id="preco-itaim-bibi"><span class="preco-loading">...</span><span>com NF</span></div><span style="color:#444;font-size:18px;">›</span></div>
+    </a>
+    <a href="/vila-olimpia" class="zona-card" style="text-decoration:none;cursor:pointer;">
+      <div class="zona-info"><h3>Vila Olímpia <span class="bairro-status online" style="font-size:11px;font-weight:500;vertical-align:middle;margin-left:6px;">Online</span></h3><p>Zona Sul · Berrini</p></div>
+      <div style="display:flex;align-items:center;gap:10px"><div class="zona-preco" id="preco-vila-olimpia"><span class="preco-loading">...</span><span>com NF</span></div><span style="color:#444;font-size:18px;">›</span></div>
+    </a>
+    <a href="/moema" class="zona-card" style="text-decoration:none;cursor:pointer;">
+      <div class="zona-info"><h3>Moema <span class="bairro-status online" style="font-size:11px;font-weight:500;vertical-align:middle;margin-left:6px;">Online</span></h3><p>Zona Sul · Ibirapuera</p></div>
+      <div style="display:flex;align-items:center;gap:10px"><div class="zona-preco" id="preco-moema"><span class="preco-loading">...</span><span>com NF</span></div><span style="color:#444;font-size:18px;">›</span></div>
+    </a>
+    <a href="/pinheiros" class="zona-card" style="text-decoration:none;cursor:pointer;">
+      <div class="zona-info"><h3>Pinheiros <span class="bairro-status online" style="font-size:11px;font-weight:500;vertical-align:middle;margin-left:6px;">Online</span></h3><p>Zona Oeste · Largo da Batata</p></div>
+      <div style="display:flex;align-items:center;gap:10px"><div class="zona-preco" id="preco-pinheiros"><span class="preco-loading">...</span><span>com NF</span></div><span style="color:#444;font-size:18px;">›</span></div>
+    </a>
   </div>
   <p style="font-size:12px;color:#555;margin-top:12px;text-align:center">PIX após a entrega · Motorista não recebe · NF + CTR incluídos</p>
 </section>
 
-<!-- BAIRROS -->
+
+
+<!-- BAIRROS INTERNOS -->
 <div class="divider"></div>
 <section>
-  <div class="sec-label">Páginas por bairro</div>
-  <h2>Escolha seu bairro</h2>
+  <div class="sec-label">Cobertura SP</div>
+  <h2>Também atendemos</h2>
   <div class="bairros-grid">
-    <a href="/itaim-bibi" class="bairro-link">
-      <div class="bairro-info"><h3>Itaim Bibi</h3><p>Zona Sul · Faria Lima</p></div>
-      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status online">Online</span><span class="bairro-arrow">›</span></div>
-    </a>
-    <a href="/vila-olimpia" class="bairro-link">
-      <div class="bairro-info"><h3>Vila Olímpia</h3><p>Zona Sul · Berrini</p></div>
-      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status online">Online</span><span class="bairro-arrow">›</span></div>
-    </a>
-    <a href="/moema" class="bairro-link">
-      <div class="bairro-info"><h3>Moema</h3><p>Zona Sul · Ibirapuera</p></div>
-      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status online">Online</span><span class="bairro-arrow">›</span></div>
-    </a>
-    <a href="/pinheiros" class="bairro-link">
-      <div class="bairro-info"><h3>Pinheiros</h3><p>Zona Oeste · Largo da Batata</p></div>
-      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status online">Online</span><span class="bairro-arrow">›</span></div>
-    </a>
     <a href="/brooklin" class="bairro-link">
       <div class="bairro-info"><h3>Brooklin</h3><p>Zona Sul · Berrini · WTC</p></div>
-      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status soon">Em breve</span><span class="bairro-arrow" style="color:#333">›</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status soon">Em breve</span><span class="bairro-arrow">›</span></div>
     </a>
-    
     <a href="/vila-mariana" class="bairro-link">
       <div class="bairro-info"><h3>Vila Mariana</h3><p>Zona Sul · Metrô Ana Rosa</p></div>
-      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status soon">Em breve</span><span class="bairro-arrow" style="color:#333">›</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status soon">Em breve</span><span class="bairro-arrow">›</span></div>
+    </a>
+    <a href="/lapa" class="bairro-link">
+      <div class="bairro-info"><h3>Lapa</h3><p>Zona Oeste · Estádio Palestra</p></div>
+      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status soon">Em breve</span><span class="bairro-arrow">›</span></div>
+    </a>
+    <a href="/higienopolis" class="bairro-link">
+      <div class="bairro-info"><h3>Higienópolis</h3><p>Centro · Mackenzie</p></div>
+      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status soon">Em breve</span><span class="bairro-arrow">›</span></div>
+    </a>
+    <a href="/santana" class="bairro-link">
+      <div class="bairro-info"><h3>Santana</h3><p>Zona Norte · Metrô Santana</p></div>
+      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status soon">Em breve</span><span class="bairro-arrow">›</span></div>
+    </a>
+    <a href="/tatuape" class="bairro-link">
+      <div class="bairro-info"><h3>Tatuapé</h3><p>Zona Leste · Metrô Tatuapé</p></div>
+      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status soon">Em breve</span><span class="bairro-arrow">›</span></div>
     </a>
   </div>
 </section>
@@ -419,7 +420,7 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
     <div style="background:#140a0a;border:1px solid #3a1010;border-radius:14px;overflow:hidden">
       <!-- IMAGEM THUMB -->
       <div style="width:100%;height:200px;background:#1a0505;overflow:hidden">
-        <img src="/image/golpes-cacamba-sp-padrao-cacamba.webp.png.png"
+        <img src="/image/golpes-cacamba-sp-padrao-cacamba.webp"
              alt="Golpes no aluguel de caçamba em São Paulo"
              style="width:100%;height:200px;object-fit:cover;display:block;filter:brightness(.75)">
       </div>
