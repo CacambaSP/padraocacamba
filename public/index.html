@@ -595,6 +595,35 @@ async function carregarPrecos() {
   }
 }
 
+
+// Busca todos os preços válidos do Supabase
+async function buscarPrecosValidos() {
+  try {
+    const r = await fetch(`${SB_URL}/rest/v1/precos_bairros?ativo=eq.true&select=preco_com_nf`, {
+      headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }
+    });
+    const data = await r.json();
+    if (Array.isArray(data)) return data.map(d => Number(d.preco_com_nf));
+    return [];
+  } catch(e) { return []; }
+}
+
+// Valida se preço na resposta está nos preços cadastrados
+async function validarPrecosNaResposta(reply) {
+  const matches = reply.match(/R\$\s*[\d.,]+/g);
+  if (!matches) return true; // sem preço na resposta — ok
+  
+  const precosValidos = await buscarPrecosValidos();
+  if (!precosValidos.length) return true; // sem cadastro — deixa passar
+  
+  for (const match of matches) {
+    const valor = Number(match.replace(/[R$\s.]/g,'').replace(',','.'));
+    const valido = precosValidos.some(p => Math.abs(p - valor) < 5); // tolerância R$5
+    if (!valido) return false; // preço inválido encontrado
+  }
+  return true;
+}
+
 // Busca preço do bairro no Supabase dinamicamente
 async function buscarPrecoBairro(nomeBairro) {
   try {
@@ -769,8 +798,17 @@ async function pcEnviar() {
     const regiaoSemPagina=reply.includes('[REGIAO]');
     const temCadastro=reply.includes('[CADASTRO]');
     reply=reply.replace('[ESCALAR]','').replace('[CADASTRO]','').replace('[REGIAO]','').trim();
-    pcHistory.push({role:'assistant',content:reply});
-    pcAddMsg(reply,'bot');
+    // Valida preço na resposta antes de exibir
+    const precoValido = await validarPrecosNaResposta(reply);
+    if (!precoValido) {
+      const msgSegura = 'Provavelmente atendemos essa região sim! Nosso site ainda está em expansão e nem todos os bairros estão cadastrados. Para te passar as informações certinhas, deixa eu te conectar com nosso responsável — quer que eu chame?';
+      pcAguardandoConfirmacaoRegiao = true;
+      pcHistory.push({role:'assistant', content: msgSegura});
+      pcAddMsg(msgSegura,'bot');
+    } else {
+      pcHistory.push({role:'assistant',content:reply});
+      pcAddMsg(reply,'bot');
+    }
     if(regiaoSemPagina){ pcAguardandoConfirmacaoRegiao=true; }
     if(escalar){
       pcSituacao=msg;
