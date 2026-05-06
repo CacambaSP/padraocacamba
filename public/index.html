@@ -535,7 +535,7 @@ const PC_VARIANTES = [
 ];
 const PC_VARIANTE = PC_VARIANTES[Math.floor(Math.random() * PC_VARIANTES.length)];
 
-let pcHistory = [], pcClienteWpp = null, pcClienteNome = null, pcAguardandoWpp = false, pcSituacao = '';
+let pcHistory = [], pcClienteWpp = null, pcClienteNome = null, pcAguardandoWpp = false, pcSituacao = '', pcAguardandoConfirmacaoRegiao = false;
 
 // Banner
 const BANNER_MSGS = [
@@ -595,8 +595,41 @@ async function carregarPrecos() {
   }
 }
 
+// Busca preço do bairro no Supabase dinamicamente
+async function buscarPrecoBairro(nomeBairro) {
+  try {
+    const r = await fetch(`${SB_URL}/rest/v1/precos_bairros?bairro=ilike.${encodeURIComponent(nomeBairro)}&ativo=eq.true&limit=1`, {
+      headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }
+    });
+    const data = await r.json();
+    if (Array.isArray(data) && data.length > 0 && data[0].preco_com_nf > 0) {
+      return { encontrado: true, bairro: data[0].bairro, preco: `R$ ${Number(data[0].preco_com_nf).toLocaleString('pt-BR',{minimumFractionDigits:0})}` };
+    }
+    return { encontrado: false };
+  } catch(e) { return { encontrado: false }; }
+}
+
+// Detecta bairro mencionado na última mensagem do usuário
+async function detectarBairroNaMensagem(msg) {
+  try {
+    const r = await fetch(`${SB_URL}/rest/v1/precos_bairros?ativo=eq.true&select=bairro`, {
+      headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }
+    });
+    const lista = await r.json();
+    if (!Array.isArray(lista)) return null;
+    const msgLower = msg.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+    for (const b of lista) {
+      const nome = b.bairro.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+      if (msgLower.includes(nome)) return b.bairro;
+    }
+    return null;
+  } catch(e) { return null; }
+}
+
 // PC
-async function buildPCSystem() {
+async function buildPCSystem(bairroDetectado, precoDetectado) {
+  const bairroFinal = bairroDetectado || BAIRRO;
+  const precoFinal = precoDetectado || precoAtual;
   try {
     const r = await fetch(`${SB_URL}/rest/v1/config_pc?ativo=eq.true&limit=1`, {
       headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }
@@ -604,11 +637,11 @@ async function buildPCSystem() {
     const data = await r.json();
     if (Array.isArray(data) && data.length > 0) {
       return data[0].prompt_base
-        .replace('{BAIRRO}', BAIRRO)
-        .replace('{PRECO}', precoAtual);
+        .replace('{BAIRRO}', bairroFinal)
+        .replace('{PRECO}', precoFinal);
     }
   } catch(e) {}
-  return `Você é PC, assistente da Padrão Caçamba. Bairro: ${BAIRRO}. Preço: ${precoAtual}. Seja direto e ajude o cliente a fechar o pedido.`;
+  return `Você é PC, assistente da Padrão Caçamba. Bairro: ${bairroFinal}. Preço: ${precoFinal}. Seja direto e ajude o cliente a fechar o pedido.`;
 }
 
 function pcAddMsg(text, type) {
@@ -674,6 +707,37 @@ async function pcEnviar() {
   if(!msg) return;
   input.value='';
   pcAddMsg(msg,'user');
+
+  // Se PC já perguntou se quer falar com responsável por região sem página
+  if(pcAguardandoConfirmacaoRegiao) {
+    const sim = /sim|quero|pode|ok|chama|chame|manda|yes|claro|por favor/i.test(msg);
+    const nao = /nao|não|depois|agora não|tranquilo|tudo bem/i.test(msg);
+    if(sim) {
+      pcAguardandoConfirmacaoRegiao = false;
+      pcSituacao = 'Região sem página — cliente quer atendimento';
+      registrarAprendizado(msg, '', 'regiao_sem_pagina');
+      if(pcClienteWpp) {
+        pcAddMsg('Ótimo! Vou chamar o responsável agora.','bot');
+        setTimeout(()=>pcShowDouglasBtn(pcClienteWpp, pcSituacao),400);
+      } else {
+        pcAguardandoWpp = true;
+        pcAddMsg('Ótimo! Me passa seu WhatsApp com DDD que o responsável entra em contato.','bot');
+        pcHistory.push({role:'assistant', content:'Ótimo! Me passa seu WhatsApp com DDD que o responsável entra em contato.'});
+      }
+      return;
+    } else if(nao) {
+      pcAguardandoConfirmacaoRegiao = false;
+      pcAddMsg('Sem problema! Quando quiser é só voltar aqui.','bot');
+      pcHistory.push({role:'assistant', content:'Sem problema! Quando quiser é só voltar aqui.'});
+      return;
+    } else {
+      // Cliente ignorou a pergunta e mandou outra coisa — repete a pergunta
+      pcAddMsg('Quer que eu chame o responsável para te atender?','bot');
+      pcHistory.push({role:'assistant', content:'Quer que eu chame o responsável para te atender?'});
+      return;
+    }
+  }
+
   if(pcAguardandoWpp && /\d{8,}/.test(msg.replace(/\D/g,''))) {
     pcAguardandoWpp=false; pcClienteWpp=msg.replace(/\D/g,'');
     pcAddMsg('Obrigado! Notificando o responsável...','sys');
@@ -683,16 +747,31 @@ async function pcEnviar() {
   pcHistory.push({role:'user',content:msg});
   pcShowTyping();
   try {
-    const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:pcHistory,system:await buildPCSystem()})});
+    // Detecta bairro na mensagem e busca preço no Supabase
+    let bairroMsg = await detectarBairroNaMensagem(msg);
+    let precoMsg = precoAtual;
+    if (bairroMsg) {
+      const resultado = await buscarPrecoBairro(bairroMsg);
+      if (resultado.encontrado) {
+        precoMsg = resultado.preco;
+      } else {
+        // Bairro mencionado mas não cadastrado — seta flag de região
+        pcAguardandoConfirmacaoRegiao = true;
+        precoMsg = 'undefined';
+      }
+    }
+    const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:pcHistory,system:await buildPCSystem(bairroMsg, precoMsg)})});
     pcRemoveTyping();
     if(!res.ok){pcAddMsg('Erro de conexão.','sys');return;}
     const data=await res.json();
     let reply=data.content?.[0]?.text||'Pode repetir?';
     const escalar=reply.includes('[ESCALAR]');
+    const regiaoSemPagina=reply.includes('[REGIAO]');
     const temCadastro=reply.includes('[CADASTRO]');
-    reply=reply.replace('[ESCALAR]','').replace('[CADASTRO]','').trim();
+    reply=reply.replace('[ESCALAR]','').replace('[CADASTRO]','').replace('[REGIAO]','').trim();
     pcHistory.push({role:'assistant',content:reply});
     pcAddMsg(reply,'bot');
+    if(regiaoSemPagina){ pcAguardandoConfirmacaoRegiao=true; }
     if(escalar){
       pcSituacao=msg;
       registrarAprendizado(msg, reply, 'escala_automatica');
