@@ -667,6 +667,46 @@ async function registrarAprendizado(pergunta, respostaPc, motivoEscala) {
   } catch(e) {}
 }
 
+
+// Verifica se mensagem contém bairro e se está cadastrado
+async function verificarBairroNaMensagem(msg) {
+  try {
+    // Busca todos os bairros cadastrados
+    const r = await fetch(`${SB_URL}/rest/v1/precos_bairros?ativo=eq.true&select=bairro,preco_com_nf`, {
+      headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }
+    });
+    const bairros = await r.json();
+    if (!Array.isArray(bairros)) return null;
+    
+    const msgLower = msg.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    for (const b of bairros) {
+      const nomeLower = b.bairro.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+      if (msgLower.includes(nomeLower)) {
+        return { encontrado: true, bairro: b.bairro, preco: b.preco_com_nf };
+      }
+    }
+    // Mensagem tem palavras que parecem bairro mas não está cadastrado?
+    // Heurística: se histórico já tem 1+ troca e ainda sem preço, verificar
+    return null;
+  } catch(e) { return null; }
+}
+
+async function escalaBairroNaoCadastrado(bairro, msg) {
+  const texto = bairro 
+    ? `Essa região ainda não está disponível no nosso site. Quer falar com o responsável?`
+    : `Deixa eu verificar essa região pra você. Quer falar com o responsável?`;
+  pcAddMsg(texto, 'bot');
+  pcHistory.push({role:'assistant', content: texto});
+  registrarAprendizado(msg, texto, 'bairro_nao_cadastrado');
+  pcSituacao = msg;
+  pcAguardandoWpp = true;
+  setTimeout(() => {
+    const m = 'Me passa seu WhatsApp com DDD para o responsável entrar em contato.';
+    pcAddMsg(m, 'bot');
+    pcHistory.push({role:'assistant', content: m});
+  }, 600);
+}
+
 async function pcEnviar() {
   const input=document.getElementById('pc-txt');
   const msg=input.value.trim();
@@ -680,6 +720,28 @@ async function pcEnviar() {
   }
   if(!pcClienteWpp){const n=msg.replace(/\D/g,'');if(n.length>=10)pcClienteWpp=n;}
   pcHistory.push({role:'user',content:msg});
+  
+  // Verifica se o cliente mencionou um bairro não cadastrado
+  const bairroCheck = await verificarBairroNaMensagem(msg);
+  if (bairroCheck === null && pcHistory.filter(m=>m.role==='user').length >= 1) {
+    // Tenta detectar se parece um bairro (palavra capitalizada ou contexto de localização)
+    const pareceEndereco = /([A-Z][a-z]+ ?){1,3}/.test(msg) || 
+      /bairro|rua|av |avenida|vila |jardim |mooca|lapa|penha|tatuap|bras|bela vista|pari|liberdade|morumbi|perdizes|higienopolis|consolacao|cerqueira|campo belo|brooklin|granja|santo amaro|jurubatuba|saude|ipiranga|sacomã|cursino|vila mariana|bom retiro|luz|se |centro|anhangabau|republica|bexiga|barra funda|agua branca|jaguara|butanta|real parque|lausanne|jd. paulista/i.test(msg.toLowerCase());
+    if (pareceEndereco) {
+      pcShowTyping();
+      await new Promise(r=>setTimeout(r,800));
+      pcRemoveTyping();
+      await escalaBairroNaoCadastrado(null, msg);
+      return;
+    }
+  } else if (bairroCheck && bairroCheck.encontrado === false) {
+    pcShowTyping();
+    await new Promise(r=>setTimeout(r,800));
+    pcRemoveTyping();
+    await escalaBairroNaoCadastrado(msg, msg);
+    return;
+  }
+
   pcShowTyping();
   try {
     const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:pcHistory,system:await buildPCSystem()})});
