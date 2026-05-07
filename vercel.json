@@ -1,8 +1,3 @@
 {
-  "cleanUrls": [
-    "!/image/**",
-    "!/*.webp",
-    "!/*.png",
-    "!/*.jpg"
-  ]
+  "cleanUrls": true
 }
