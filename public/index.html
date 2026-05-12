@@ -183,7 +183,21 @@ h2{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;color:#ff
 footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
 .footer-txt{font-size:11px;color:#444;text-align:center;line-height:2.2}
 
-/* BOTÃO FLUTUANTE */
+/* CARROSSEL */
+#carrossel-track::-webkit-scrollbar{display:none}
+.carrossel-card{flex:0 0 220px;scroll-snap-align:start;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:border-color .2s}
+.carrossel-card:active{border-color:var(--blue-light)}
+.carrossel-card-top{background:linear-gradient(135deg,#0d1a30,#0a1220);padding:16px 14px 12px}
+.carrossel-card-nome{font-family:'DM Serif Display',serif;font-size:18px;color:#fff;line-height:1.1;margin-bottom:4px}
+.carrossel-card-ref{font-size:11px;color:#6a8fc4;text-transform:uppercase;letter-spacing:.5px}
+.carrossel-card-bottom{padding:12px 14px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border)}
+.carrossel-card-preco{font-family:'DM Serif Display',serif;font-size:22px;color:#4ade80;line-height:1}
+.carrossel-card-preco span{font-size:11px;font-family:'DM Sans',sans-serif;color:#666;display:block;font-weight:400}
+.carrossel-card-cta{background:var(--blue);color:#fff;font-size:12px;font-weight:600;padding:7px 12px;border-radius:8px;font-family:'DM Sans',sans-serif}
+.carrossel-dot{width:6px;height:6px;border-radius:50%;background:#2a2a2a;transition:background .3s;cursor:pointer}
+.carrossel-dot.active{background:var(--blue-light)}
+
+
 .pc-fixed{position:fixed;bottom:24px;right:18px;z-index:999;background:var(--green);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(0,255,127,.3)}
 
 /* ===== RESPONSIVO DESKTOP ===== */
@@ -350,85 +364,37 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
   <div class="strip-item"><div class="strip-num">24h</div><div class="strip-label">Entrega</div></div>
 </div>
 
-<!-- PREÇOS POR BAIRRO -->
+<!-- CARROSSEL DE BAIRROS -->
 <div class="divider"></div>
-<section>
-  <div class="sec-label">Valores</div>
-  <h2>Preço por bairro</h2>
-  <div class="zona-grid" id="zona-grid">
-    <a href="/itaim-bibi" class="zona-card" style="text-decoration:none;cursor:pointer;">
-      <div class="zona-info"><h3>Itaim Bibi <span class="bairro-status online" style="font-size:11px;font-weight:500;vertical-align:middle;margin-left:6px;">Online</span></h3><p>Zona Sul · Faria Lima</p></div>
-      <div style="display:flex;align-items:center;gap:10px"><div class="zona-preco" id="preco-itaim-bibi"><span class="preco-loading">...</span><span>com NF</span></div><span style="color:#444;font-size:18px;">›</span></div>
-    </a>
-    <a href="/vila-olimpia" class="zona-card" style="text-decoration:none;cursor:pointer;">
-      <div class="zona-info"><h3>Vila Olímpia <span class="bairro-status online" style="font-size:11px;font-weight:500;vertical-align:middle;margin-left:6px;">Online</span></h3><p>Zona Sul · Berrini</p></div>
-      <div style="display:flex;align-items:center;gap:10px"><div class="zona-preco" id="preco-vila-olimpia"><span class="preco-loading">...</span><span>com NF</span></div><span style="color:#444;font-size:18px;">›</span></div>
-    </a>
-    <a href="/moema" class="zona-card" style="text-decoration:none;cursor:pointer;">
-      <div class="zona-info"><h3>Moema <span class="bairro-status online" style="font-size:11px;font-weight:500;vertical-align:middle;margin-left:6px;">Online</span></h3><p>Zona Sul · Ibirapuera</p></div>
-      <div style="display:flex;align-items:center;gap:10px"><div class="zona-preco" id="preco-moema"><span class="preco-loading">...</span><span>com NF</span></div><span style="color:#444;font-size:18px;">›</span></div>
-    </a>
-    <a href="/pinheiros" class="zona-card" style="text-decoration:none;cursor:pointer;">
-      <div class="zona-info"><h3>Pinheiros <span class="bairro-status online" style="font-size:11px;font-weight:500;vertical-align:middle;margin-left:6px;">Online</span></h3><p>Zona Oeste · Largo da Batata</p></div>
-      <div style="display:flex;align-items:center;gap:10px"><div class="zona-preco" id="preco-pinheiros"><span class="preco-loading">...</span><span>com NF</span></div><span style="color:#444;font-size:18px;">›</span></div>
-    </a>
-    <a href="/vila-madalena" class="zona-card" style="text-decoration:none;cursor:pointer;">
-      <div class="zona-info"><h3>Vila Madalena <span class="bairro-status online" style="font-size:11px;font-weight:500;vertical-align:middle;margin-left:6px;">Online</span></h3><p>Zona Oeste · Beco do Batman</p></div>
-      <div style="display:flex;align-items:center;gap:10px"><div class="zona-preco" id="preco-vila-madalena"><span class="preco-loading">...</span><span>com NF</span></div><span style="color:#444;font-size:18px;">›</span></div>
-    </a>
-    <a href="/brooklin" class="zona-card" style="text-decoration:none;cursor:pointer;">
-      <div class="zona-info"><h3>Brooklin <span class="bairro-status online" style="font-size:11px;font-weight:500;vertical-align:middle;margin-left:6px;">Online</span></h3><p>Zona Sul · Berrini · WTC</p></div>
-      <div style="display:flex;align-items:center;gap:10px"><div class="zona-preco" id="preco-brooklin"><span class="preco-loading">...</span><span>com NF</span></div><span style="color:#444;font-size:18px;">›</span></div>
-    </a>
-    <a href="/vila-mariana" class="zona-card" style="text-decoration:none;cursor:pointer;">
-      <div class="zona-info"><h3>Vila Mariana <span class="bairro-status online" style="font-size:11px;font-weight:500;vertical-align:middle;margin-left:6px;">Online</span></h3><p>Zona Sul · Metrô Ana Rosa</p></div>
-      <div style="display:flex;align-items:center;gap:10px"><div class="zona-preco" id="preco-vila-mariana"><span class="preco-loading">...</span><span>com NF</span></div><span style="color:#444;font-size:18px;">›</span></div>
-    </a>
-    <a href="/campo-belo" class="zona-card" style="text-decoration:none;cursor:pointer;">
-      <div class="zona-info"><h3>Campo Belo <span class="bairro-status online" style="font-size:11px;font-weight:500;vertical-align:middle;margin-left:6px;">Online</span></h3><p>Zona Sul · Congonhas</p></div>
-      <div style="display:flex;align-items:center;gap:10px"><div class="zona-preco" id="preco-campo-belo"><span class="preco-loading">...</span><span>com NF</span></div><span style="color:#444;font-size:18px;">›</span></div>
-    </a>
-    <a href="/higienopolis" class="zona-card" style="text-decoration:none;cursor:pointer;">
-      <div class="zona-info"><h3>Higienópolis <span class="bairro-status online" style="font-size:11px;font-weight:500;vertical-align:middle;margin-left:6px;">Online</span></h3><p>Zona Oeste · Mackenzie</p></div>
-      <div style="display:flex;align-items:center;gap:10px"><div class="zona-preco" id="preco-higienopolis"><span class="preco-loading">...</span><span>com NF</span></div><span style="color:#444;font-size:18px;">›</span></div>
-    </a>
-  </div>
-  <p style="font-size:12px;color:#555;margin-top:12px;text-align:center">PIX após a entrega · Motorista não recebe · NF + CTR incluídos</p>
-</section>
-
-
-
-<!-- BAIRROS INTERNOS -->
-<div class="divider"></div>
-<section>
+<section style="padding-bottom:0">
   <div class="sec-label">Cobertura SP</div>
-  <h2>Também atendemos</h2>
-  <div class="bairros-grid">
-    <a href="/perdizes" class="bairro-link">
-      <div class="bairro-info"><h3>Perdizes</h3><p>Zona Oeste · Cardoso de Almeida</p></div>
-      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status soon">Em breve</span><span class="bairro-arrow">›</span></div>
-    </a>
-    <a href="/lapa" class="bairro-link">
-      <div class="bairro-info"><h3>Lapa</h3><p>Zona Oeste · Estádio Palestra</p></div>
-      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status soon">Em breve</span><span class="bairro-arrow">›</span></div>
-    </a>
-    <a href="/santana" class="bairro-link">
-      <div class="bairro-info"><h3>Santana</h3><p>Zona Norte · Metrô Santana</p></div>
-      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status soon">Em breve</span><span class="bairro-arrow">›</span></div>
-    </a>
-    <a href="/tatuape" class="bairro-link">
-      <div class="bairro-info"><h3>Tatuapé</h3><p>Zona Leste · Metrô Tatuapé</p></div>
-      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status soon">Em breve</span><span class="bairro-arrow">›</span></div>
-    </a>
-    <a href="/santo-andre" class="bairro-link">
-      <div class="bairro-info"><h3>Santo André</h3><p>Grande SP · ABC</p></div>
-      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status soon">Em breve</span><span class="bairro-arrow">›</span></div>
-    </a>
-    <a href="/guarulhos" class="bairro-link">
-      <div class="bairro-info"><h3>Guarulhos</h3><p>Grande SP · Aeroporto</p></div>
-      <div style="display:flex;align-items:center;gap:8px"><span class="bairro-status soon">Em breve</span><span class="bairro-arrow">›</span></div>
-    </a>
+  <h2>Seu bairro, sua página</h2>
+  <p class="body-text" style="margin-bottom:20px">Cada bairro tem preço, regras locais e FAQ específico. Deslize para encontrar o seu.</p>
+
+  <!-- FALLBACK SEO — visível para crawlers, oculto visualmente pelo JS -->
+  <div id="bairros-seo" style="display:none" aria-hidden="true">
+    <a href="/itaim-bibi">Caçamba Itaim Bibi</a>
+    <a href="/vila-olimpia">Caçamba Vila Olímpia</a>
+    <a href="/moema">Caçamba Moema</a>
+    <a href="/pinheiros">Caçamba Pinheiros</a>
+    <a href="/vila-madalena">Caçamba Vila Madalena</a>
+    <a href="/brooklin">Caçamba Brooklin</a>
+    <a href="/vila-mariana">Caçamba Vila Mariana</a>
+    <a href="/campo-belo">Caçamba Campo Belo</a>
+    <a href="/higienopolis">Caçamba Higienópolis</a>
   </div>
+
+  <!-- CARROSSEL -->
+  <div style="position:relative;margin:0 -18px">
+    <div id="carrossel-track" style="display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 18px 20px;scroll-padding-left:18px">
+      <!-- Cards injetados pelo JS -->
+    </div>
+  </div>
+
+  <!-- DOTS INDICADORES -->
+  <div id="carrossel-dots" style="display:flex;justify-content:center;gap:6px;padding-bottom:8px"></div>
+
+  <p style="font-size:12px;color:#555;margin-top:4px;text-align:center;padding-bottom:24px">PIX após a entrega · NF + CTR incluídos · Deslize para ver mais</p>
 </section>
 
 <!-- REPORTAGEM ANTIFRAUDE -->
@@ -581,40 +547,94 @@ function bannerTick() {
   }, 300);
 }
 
-// Preços por zona
-async function carregarPrecos() {
-  const bairros = [
-    { id: 'preco-itaim-bibi', bairro: 'Itaim Bibi', zona: 'Zona Sul' },
-    { id: 'preco-vila-olimpia', bairro: 'Vila Olímpia', zona: 'Zona Sul' },
-    { id: 'preco-moema', bairro: 'Moema', zona: 'Zona Sul' },
-    { id: 'preco-pinheiros', bairro: 'Pinheiros', zona: 'Zona Oeste' },
-    { id: 'preco-vila-madalena', bairro: 'Vila Madalena', zona: 'Zona Oeste' },
-    { id: 'preco-brooklin', bairro: 'Brooklin', zona: 'Zona Sul' },
-    { id: 'preco-vila-mariana', bairro: 'Vila Mariana', zona: 'Zona Sul' },
-    { id: 'preco-campo-belo', bairro: 'Campo Belo', zona: 'Zona Sul' },
-    { id: 'preco-higienopolis', bairro: 'Higienópolis', zona: 'Zona Oeste' },
-  ];
-  for (const b of bairros) {
-    try {
-      const el = document.getElementById(b.id);
-      if (!el) continue;
-      const r = await fetch(`${SB_URL}/rest/v1/precos_bairros?bairro=eq.${encodeURIComponent(b.bairro)}&ativo=eq.true&limit=1`, {
-        headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }
-      });
-      const data = await r.json();
-      if (Array.isArray(data) && data.length > 0 && data[0].preco_com_nf > 0) {
-        el.innerHTML = `R$ ${Number(data[0].preco_com_nf).toLocaleString('pt-BR',{minimumFractionDigits:0})}<span>com NF</span>`;
-        continue;
-      }
-      const r2 = await fetch(`${SB_URL}/rest/v1/precos_zonas?zona=eq.${encodeURIComponent(b.zona)}&limit=1`, {
-        headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }
-      });
-      const data2 = await r2.json();
-      if (Array.isArray(data2) && data2.length > 0 && data2[0].preco_padrao > 0) {
-        el.innerHTML = `R$ ${Number(data2[0].preco_padrao).toLocaleString('pt-BR',{minimumFractionDigits:0})}<span>com NF</span>`;
-      }
-    } catch(e) {}
+// Carrossel automático via Supabase
+async function carregarCarrossel() {
+  const track = document.getElementById('carrossel-track');
+  const dotsEl = document.getElementById('carrossel-dots');
+  if (!track) return;
+
+  // Busca bairros ativos do Supabase
+  let bairros = [];
+  try {
+    const r = await fetch(`${SB_URL}/rest/v1/bairros_paginas?ativo=eq.true&order=bairro.asc`, {
+      headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }
+    });
+    bairros = await r.json();
+  } catch(e) {}
+
+  // Fallback hardcoded se Supabase falhar
+  if (!Array.isArray(bairros) || bairros.length === 0) {
+    bairros = [
+      { bairro: 'Itaim Bibi', zona: 'Zona Sul', url: '/itaim-bibi', referencia_local: 'Faria Lima', preco_com_nf: 570 },
+      { bairro: 'Vila Olímpia', zona: 'Zona Sul', url: '/vila-olimpia', referencia_local: 'Berrini', preco_com_nf: 570 },
+      { bairro: 'Moema', zona: 'Zona Sul', url: '/moema', referencia_local: 'Ibirapuera', preco_com_nf: 570 },
+      { bairro: 'Pinheiros', zona: 'Zona Oeste', url: '/pinheiros', referencia_local: 'Largo da Batata', preco_com_nf: 570 },
+      { bairro: 'Vila Madalena', zona: 'Zona Oeste', url: '/vila-madalena', referencia_local: 'Beco do Batman', preco_com_nf: 570 },
+      { bairro: 'Brooklin', zona: 'Zona Sul', url: '/brooklin', referencia_local: 'Berrini / WTC', preco_com_nf: 570 },
+      { bairro: 'Vila Mariana', zona: 'Zona Sul', url: '/vila-mariana', referencia_local: 'Metrô Ana Rosa', preco_com_nf: 570 },
+      { bairro: 'Campo Belo', zona: 'Zona Sul', url: '/campo-belo', referencia_local: 'Congonhas', preco_com_nf: 570 },
+      { bairro: 'Higienópolis', zona: 'Zona Oeste', url: '/higienopolis', referencia_local: 'Mackenzie', preco_com_nf: 570 },
+    ];
   }
+
+  // Renderiza cards
+  track.innerHTML = '';
+  dotsEl.innerHTML = '';
+
+  bairros.forEach((b, i) => {
+    const preco = b.preco_com_nf ? 'R$ ' + Number(b.preco_com_nf).toLocaleString('pt-BR', {minimumFractionDigits:0}) : '...';
+    const url = b.url || '/' + b.bairro.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,'-');
+
+    const card = document.createElement('a');
+    card.href = url;
+    card.className = 'carrossel-card';
+    card.innerHTML = `
+      <div class="carrossel-card-top">
+        <div class="carrossel-card-nome">${b.bairro}</div>
+        <div class="carrossel-card-ref">${b.zona} · ${b.referencia_local || ''}</div>
+      </div>
+      <div class="carrossel-card-bottom">
+        <div class="carrossel-card-preco">${preco}<span>com NF</span></div>
+        <div class="carrossel-card-cta">Ver página →</div>
+      </div>`;
+    track.appendChild(card);
+
+    // Dot
+    const dot = document.createElement('div');
+    dot.className = 'carrossel-dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => {
+      const cards = track.querySelectorAll('.carrossel-card');
+      if (cards[i]) cards[i].scrollIntoView({behavior:'smooth', block:'nearest', inline:'start'});
+    };
+    dotsEl.appendChild(dot);
+  });
+
+  // Atualiza dots no scroll
+  track.addEventListener('scroll', () => {
+    const cards = track.querySelectorAll('.carrossel-card');
+    const trackLeft = track.getBoundingClientRect().left;
+    let closest = 0, minDist = Infinity;
+    cards.forEach((c, i) => {
+      const dist = Math.abs(c.getBoundingClientRect().left - trackLeft);
+      if (dist < minDist) { minDist = dist; closest = i; }
+    });
+    dotsEl.querySelectorAll('.carrossel-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === closest);
+    });
+  }, { passive: true });
+
+  // Atualiza fallback SEO com links dinâmicos
+  const seoEl = document.getElementById('bairros-seo');
+  if (seoEl) {
+    seoEl.innerHTML = bairros.map(b => {
+      const url = b.url || '/' + b.bairro.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,'-');
+      return `<a href="${url}">Caçamba ${b.bairro}</a>`;
+    }).join('');
+  }
+}
+
+async function carregarPrecos() {
+  await carregarCarrossel();
 }
 
 // PC
