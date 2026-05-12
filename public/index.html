@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<meta http-equiv="last-modified" content="Mon, 11 May 2026 08:00:00 GMT">
+<meta http-equiv="last-modified" content="Tue, 12 May 2026 08:00:00 GMT">
 <title>Padrão Caçamba — Locação de Caçamba em São Paulo</title>
 <meta name="description" content="Locação de caçamba 4m³ em São Paulo e Grande SP. Nota fiscal, CTR incluído, entrega em até 24h. CNPJ 44.538.708/0001-76. Empresa regularizada desde 2004.">
 <meta property="og:title" content="Padrão Caçamba — Locação de Caçamba em São Paulo">
@@ -295,7 +295,7 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
     {"@type":"Question","name":"Quanto custa o aluguel de caçamba em São Paulo?","acceptedAnswer":{"@type":"Answer","text":"O preço varia por região: Grande SP a partir de R$ 470, SP Capital (Zona Sul, Norte, Oeste) R$ 570, Zona Leste R$ 600. Todos os preços incluem Nota Fiscal e CTR."}},
     {"@type":"Question","name":"Como funciona o aluguel de caçamba em SP?","acceptedAnswer":{"@type":"Answer","text":"Fale com o PC no chat, informe o endereço e o dia desejado. Confirmamos o dia de entrega em até 24h. Pagamento somente via PIX após a entrega. NF e CTR incluídos em 100% das entregas."}},
     {"@type":"Question","name":"A empresa emite nota fiscal?","acceptedAnswer":{"@type":"Answer","text":"Sim. Nota Fiscal eletrônica e CTR (Controle de Transporte de Resíduos) incluídos em 100% das entregas. CNPJ: 44.538.708/0001-76."}},
-    {"@type":"Question","name":"Quais bairros de São Paulo são atendidos?","acceptedAnswer":{"@type":"Answer","text":"Atendemos SP Capital (todas as zonas), Grande SP (Osasco, Barueri, Guarulhos, ABC) e Litoral Paulista. Bairros com página dedicada: Itaim Bibi, Vila Olímpia, Moema, Pinheiros, Vila Madalena, Brooklin, Vila Mariana, Campo Belo e Higienópolis."}},
+    {"@type":"Question","name":"Quais bairros de São Paulo são atendidos?","acceptedAnswer":{"@type":"Answer","text":"Atendemos SP Capital (todas as zonas), Grande SP e Litoral Paulista. Bairros com página dedicada: Itaim Bibi, Vila Olímpia, Moema, Pinheiros, Vila Madalena, Brooklin, Vila Mariana, Campo Belo, Higienópolis, Perdizes, Lapa, Alto de Pinheiros, Saúde, Jabaquara, Santo Amaro, Cursino, Santana, Tucuruvi, Vila Guilherme, Tatuapé, Penha e Vila Formosa."}},
     {"@type":"Question","name":"Como identificar golpe no aluguel de caçamba?","acceptedAnswer":{"@type":"Answer","text":"Sinais de golpe: preço abaixo de R$ 400, promessa de entrega em 2h, cobrança adiantada, sem CNPJ visível, sem nota fiscal. Empresas legítimas cobram via PIX somente após a entrega."}}
   ]
 }
@@ -574,6 +574,19 @@ async function carregarCarrossel() {
       { bairro: 'Vila Mariana', zona: 'Zona Sul', url: '/vila-mariana', referencia_local: 'Metrô Ana Rosa', preco_com_nf: 570 },
       { bairro: 'Campo Belo', zona: 'Zona Sul', url: '/campo-belo', referencia_local: 'Congonhas', preco_com_nf: 570 },
       { bairro: 'Higienópolis', zona: 'Zona Oeste', url: '/higienopolis', referencia_local: 'Mackenzie', preco_com_nf: 570 },
+      { bairro: 'Perdizes', zona: 'Zona Oeste', url: '/perdizes', referencia_local: 'Cardoso de Almeida', preco_com_nf: 570 },
+      { bairro: 'Lapa', zona: 'Zona Oeste', url: '/lapa', referencia_local: 'Estádio Palestra', preco_com_nf: 570 },
+      { bairro: 'Alto de Pinheiros', zona: 'Zona Oeste', url: '/alto-de-pinheiros', referencia_local: 'Rio Pinheiros', preco_com_nf: 570 },
+      { bairro: 'Saúde', zona: 'Zona Sul', url: '/saude', referencia_local: 'Metrô Saúde', preco_com_nf: 570 },
+      { bairro: 'Jabaquara', zona: 'Zona Sul', url: '/jabaquara', referencia_local: 'Terminal Jabaquara', preco_com_nf: 570 },
+      { bairro: 'Santo Amaro', zona: 'Zona Sul', url: '/santo-amaro', referencia_local: 'Shopping Sto Amaro', preco_com_nf: 570 },
+      { bairro: 'Cursino', zona: 'Zona Sul', url: '/cursino', referencia_local: 'Metrô Cursino', preco_com_nf: 570 },
+      { bairro: 'Santana', zona: 'Zona Norte', url: '/santana', referencia_local: 'Metrô Santana', preco_com_nf: 570 },
+      { bairro: 'Tucuruvi', zona: 'Zona Norte', url: '/tucuruvi', referencia_local: 'Metrô Tucuruvi', preco_com_nf: 570 },
+      { bairro: 'Vila Guilherme', zona: 'Zona Norte', url: '/vila-guilherme', referencia_local: 'Metrô Vila Guilherme', preco_com_nf: 570 },
+      { bairro: 'Tatuapé', zona: 'Zona Leste', url: '/tatuape', referencia_local: 'Metrô Tatuapé', preco_com_nf: 600 },
+      { bairro: 'Penha', zona: 'Zona Leste', url: '/penha', referencia_local: 'Metrô Penha', preco_com_nf: 600 },
+      { bairro: 'Vila Formosa', zona: 'Zona Leste', url: '/vila-formosa', referencia_local: 'Metrô Vila Formosa', preco_com_nf: 600 },
     ];
   }
 

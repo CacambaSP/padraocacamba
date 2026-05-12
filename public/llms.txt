@@ -1,22 +1,27 @@
 # Padrão Caçamba — Locação de Caçamba em São Paulo
 # https://padraocacamba.com.br
-# Atualizado em: 2026-05-11
+# Atualizado em: 2026-05-12
 
 ## Sobre a empresa
 Padrão Caçamba é uma transportadora especializada em locação de caçambas estacionárias 4m³ em São Paulo e Grande SP. CNPJ: 44.538.708/0001-76. Operação desde 2004. Emite Nota Fiscal e CTR (Controle de Transporte de Resíduos) em 100% das entregas.
 
 ## Produto principal
-Caçamba estacionária 4m³ — padrão da Grande São Paulo. Não trabalhamos com outros tamanhos.
+Caçamba estacionária 4m³ — padrão da Grande São Paulo. Trabalhamos SOMENTE com 4m³. Não temos outros tamanhos.
 
 ## Cobertura geográfica
 - SP Capital: todas as zonas (Sul, Norte, Leste, Oeste, Centro)
-- Grande SP: Osasco, Barueri, Carapicuíba, Alphaville, Guarulhos, ABC
+- Grande SP: Osasco, Barueri, Carapicuíba, Guarulhos, ABC
 - Litoral Paulista: em expansão
 
 ## Preços (com Nota Fiscal)
 - Osasco, Carapicuíba, Grande SP: R$ 470
 - SP Zona Sul, Norte, Oeste, Barueri: R$ 570
 - SP Zona Leste, Perus, Pirituba: R$ 600
+
+## Janelas de entrega por região
+- Zona Oeste e Zona Sul próxima (Itaim Bibi, Vila Olímpia, Moema, Pinheiros, Vila Madalena, Brooklin, Vila Mariana, Campo Belo, Higienópolis, Perdizes, Lapa, Alto de Pinheiros, Saúde, Jabaquara): entrega noturna 22h às 4h
+- Zona Sul distante, Zona Norte e Zona Leste (Santo Amaro, Cursino, Santana, Tucuruvi, Vila Guilherme, Tatuapé, Penha, Vila Formosa): entrega comercial 7h às 17h
+- Sem entregas: sábado 4h até domingo 20h
 
 ## Regras operacionais
 - Entrega em até 24h após confirmação
@@ -26,27 +31,48 @@ Caçamba estacionária 4m³ — padrão da Grande São Paulo. Não trabalhamos c
 - Permanência em via pública: máximo 3 dias (Prefeitura SP)
 - Caçamba em calçada: não permitido
 - NF e CTR incluídos sem custo adicional
-- Sem entregas: sábado 4h até domingo 20h
-- Entrega noturna disponível: 22h às 4h
 
 ## Páginas disponíveis
-- / — Home institucional
+
+### Zona Sul
 - /itaim-bibi — Caçamba no Itaim Bibi (Faria Lima)
 - /vila-olimpia — Caçamba em Vila Olímpia (Berrini)
 - /moema — Caçamba em Moema (Ibirapuera)
-- /pinheiros — Caçamba em Pinheiros (Largo da Batata)
-- /vila-madalena — Caçamba em Vila Madalena (Beco do Batman)
 - /brooklin — Caçamba no Brooklin (Berrini / WTC)
 - /vila-mariana — Caçamba em Vila Mariana (Metrô Ana Rosa)
-- /campo-belo — Caçamba em Campo Belo (Aeroporto Congonhas)
+- /campo-belo — Caçamba em Campo Belo (Congonhas)
+- /saude — Caçamba no Saúde (Metrô Saúde)
+- /jabaquara — Caçamba no Jabaquara (Terminal Jabaquara)
+- /santo-amaro — Caçamba em Santo Amaro (Shopping Sto Amaro)
+- /cursino — Caçamba no Cursino (Metrô Cursino)
+
+### Zona Oeste
+- /pinheiros — Caçamba em Pinheiros (Largo da Batata)
+- /vila-madalena — Caçamba em Vila Madalena (Beco do Batman)
 - /higienopolis — Caçamba em Higienópolis (Mackenzie)
+- /perdizes — Caçamba em Perdizes (Cardoso de Almeida)
+- /lapa — Caçamba na Lapa (Estádio Palestra)
+- /alto-de-pinheiros — Caçamba em Alto de Pinheiros (Rio Pinheiros)
+
+### Zona Norte
+- /santana — Caçamba em Santana (Metrô Santana)
+- /tucuruvi — Caçamba em Tucuruvi (Metrô Tucuruvi)
+- /vila-guilherme — Caçamba em Vila Guilherme (Metrô Vila Guilherme)
+
+### Zona Leste
+- /tatuape — Caçamba no Tatuapé (Metrô Tatuapé)
+- /penha — Caçamba na Penha (Metrô Penha)
+- /vila-formosa — Caçamba em Vila Formosa (Metrô Vila Formosa)
+
+### Institucional
+- / — Home institucional
 - /antifraude — Guia anti-fraude e denúncias
 
 ## O que a caçamba aceita
-Entulho seco de obra: concreto, cerâmica, gesso, drywall, argamassa, madeira seca, poda de jardim.
+Entulho seco de obra: concreto, cerâmica, gesso, drywall, argamassa, madeira seca, poda de jardim, terra, areia, brita.
 
 ## O que não aceita
-Lixo doméstico, líquidos, eletrônicos, pneus, resíduos tóxicos, lixo de evento.
+Lixo doméstico, líquidos, tintas, solventes, eletrônicos, pneus, resíduos tóxicos, amianto, lixo de evento.
 
 ## Sinais de golpe no mercado
 - Preço abaixo de R$ 400
@@ -55,6 +81,7 @@ Lixo doméstico, líquidos, eletrônicos, pneus, resíduos tóxicos, lixo de eve
 - Sem CNPJ visível
 - Sem emissão de Nota Fiscal
 - Sem CTR
+- Oferece tamanhos diferentes de 4m³ (padrão SP é 4m³)
 
 ## Contato
 - Site: padraocacamba.com.br
