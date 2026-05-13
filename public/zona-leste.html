@@ -29,7 +29,7 @@
   --zona:#fb923c;
   --zona2:#f97316;
   --card:#0f0f0f;
-  --border:#1c1c1c;
+  --border:#2a2a2a;
   --border2:#242424;
   --white:#fff;
   --muted:#555;
@@ -84,27 +84,27 @@ nav{position:sticky;top:0;z-index:200;background:rgba(8,8,8,0.97);backdrop-filte
 .hero-tag::before{content:'';width:16px;height:1px;background:var(--zona)}
 .hero h1{font-family:var(--display);font-size:52px;letter-spacing:3px;line-height:.95;color:#fff;text-transform:uppercase;margin-bottom:18px}
 .hero h1 span{color:var(--zona);display:block}
-.hero-lead{font-size:14px;color:#666;line-height:1.8;border-left:2px solid var(--border2);padding-left:14px}
+.hero-lead{font-size:15px;color:#999;line-height:1.8;border-left:2px solid var(--border2);padding-left:14px}
 
 .zona-img-wrap{padding:0 20px 28px}
 .zona-img{width:100%;border-radius:12px;display:block;border:1px solid var(--border2)}
 
 .ed-div{display:flex;align-items:center;gap:10px;padding:0 20px;margin:4px 0}
 .ed-div-line{flex:1;height:1px;background:var(--border)}
-.ed-div-txt{font-family:var(--mono);font-size:8px;color:#2a2a2a;letter-spacing:2px;text-transform:uppercase;white-space:nowrap}
+.ed-div-txt{font-family:var(--mono);font-size:8px;color:#555;letter-spacing:2px;text-transform:uppercase;white-space:nowrap}
 
 .section{padding:28px 20px}
 .sec-tag{font-family:var(--mono);font-size:9px;color:var(--zona);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
 .sec-tag::before{content:'//';color:var(--border2)}
 .sec-h2{font-family:var(--display);font-size:34px;letter-spacing:2px;color:#fff;text-transform:uppercase;margin-bottom:6px;line-height:1}
-.sec-sub{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:20px}
+.sec-sub{font-size:14px;color:#888;line-height:1.7;margin-bottom:20px}
 
 .bairros-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .bairro-card{background:var(--card);border:1px solid var(--border2);border-radius:12px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:border-color .2s}
 .bairro-card:hover{border-color:var(--zona)}
 .bairro-card-top{padding:14px 12px 10px}
 .bairro-nome{font-size:14px;font-weight:700;color:#ddd;margin-bottom:3px}
-.bairro-ref{font-size:10px;color:#444;font-family:var(--mono)}
+.bairro-ref{font-size:10px;color:#888;font-family:var(--mono)}
 .bairro-card-bottom{padding:10px 12px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
 .bairro-preco{font-family:var(--mono);font-size:15px;font-weight:700;line-height:1}
 .bairro-preco span{font-size:9px;color:#444;display:block;font-weight:400;margin-top:2px}
@@ -114,30 +114,30 @@ nav{position:sticky;top:0;z-index:200;background:rgba(8,8,8,0.97);backdrop-filte
 .strip-item{padding:14px 8px;text-align:center;border-right:1px solid #1a2030}
 .strip-item:last-child{border-right:none}
 .strip-num{font-family:var(--display);font-size:22px;letter-spacing:1px;color:#fff;line-height:1}
-.strip-label{font-size:9px;color:#4a6a9a;margin-top:3px;text-transform:uppercase;letter-spacing:1px;font-family:var(--mono)}
+.strip-label{font-size:10px;color:#6a8aaa;margin-top:3px;text-transform:uppercase;letter-spacing:1px;font-family:var(--mono)}
 
 .faq-item{border-bottom:1px solid var(--border)}
 .faq-item:last-child{border-bottom:none}
-.faq-q{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:14px 0;font-size:14px;font-weight:600;color:#999;cursor:pointer;line-height:1.4}
+.faq-q{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:14px 0;font-size:15px;font-weight:600;color:#bbb;cursor:pointer;line-height:1.4}
 .faq-q:hover{color:#fff}
 .faq-arr{font-family:var(--mono);font-size:16px;color:var(--zona);flex-shrink:0;transition:transform .2s;line-height:1.2}
-.faq-a{display:none;font-size:13px;color:#555;line-height:1.8;padding-bottom:14px}
+.faq-a{display:none;font-size:14px;color:#888;line-height:1.8;padding-bottom:14px}
 .faq-item.open .faq-arr{transform:rotate(45deg)}
 .faq-item.open .faq-q{color:#fff}
 .faq-item.open .faq-a{display:block}
 
 .zonas-nav{display:flex;flex-direction:column;gap:8px}
-.zona-link{display:flex;align-items:center;gap:10px;padding:13px 16px;background:var(--card);border:1px solid var(--border2);border-radius:10px;text-decoration:none;font-size:14px;font-weight:600;color:#888;transition:all .15s;font-family:var(--mono)}
+.zona-link{display:flex;align-items:center;gap:10px;padding:13px 16px;background:var(--card);border:1px solid var(--border2);border-radius:10px;text-decoration:none;font-size:15px;font-weight:600;color:#aaa;transition:all .15s;font-family:var(--mono)}
 .zona-link:hover{color:#fff;border-color:var(--zona)}
 
 .cta-final{margin:0 20px 28px;background:linear-gradient(135deg,#040d1c,#071428);border:1px solid #1a2d4a;border-radius:14px;padding:28px 20px;text-align:center}
 .cta-tag{font-family:var(--mono);font-size:9px;color:var(--zona);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
 .cta-h2{font-family:var(--display);font-size:32px;letter-spacing:2px;color:#fff;text-transform:uppercase;margin-bottom:8px;line-height:1.1}
-.cta-sub{font-size:11px;color:#4a6a9a;margin-bottom:20px;font-family:var(--mono)}
+.cta-sub{font-size:12px;color:#6a8aaa;margin-bottom:20px;font-family:var(--mono)}
 .btn-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;background:var(--zona);color:#000;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:var(--mono);letter-spacing:1px;text-transform:uppercase}
 
 footer{background:#030303;padding:22px 20px;border-top:1px solid var(--border)}
-.footer-txt{font-family:var(--mono);font-size:10px;color:#2a2a2a;text-align:center;line-height:2.4;letter-spacing:.5px;text-transform:uppercase}
+.footer-txt{font-family:var(--mono);font-size:10px;color:#555;text-align:center;line-height:2.4;letter-spacing:.5px;text-transform:uppercase}
 .footer-links{display:flex;justify-content:center;gap:16px;margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
 .footer-links a{font-size:10px;color:#333;text-decoration:none;font-family:var(--mono);letter-spacing:.5px}
 
