@@ -1,6 +1,6 @@
 # Padrão Caçamba — Locação de Caçamba em São Paulo
 # https://padraocacamba.com.br
-# Atualizado em: 2026-05-12
+# Atualizado em: 2026-05-13
 
 ## Sobre a empresa
 Padrão Caçamba é uma transportadora especializada em locação de caçambas estacionárias 4m³ em São Paulo e Grande SP. CNPJ: 44.538.708/0001-76. Operação desde 2004. Emite Nota Fiscal e CTR (Controle de Transporte de Resíduos) em 100% das entregas.
@@ -63,6 +63,12 @@ Caçamba estacionária 4m³ — padrão da Grande São Paulo. Trabalhamos SOMENT
 - /tatuape — Caçamba no Tatuapé (Metrô Tatuapé)
 - /penha — Caçamba na Penha (Metrô Penha)
 - /vila-formosa — Caçamba em Vila Formosa (Metrô Vila Formosa)
+
+### Páginas de Zona
+- /zona-sul — Caçamba Zona Sul SP · 10 bairros · Itaim Bibi, Moema, Brooklin, Vila Mariana, Campo Belo, Saúde, Jabaquara, Santo Amaro, Cursino, Vila Olímpia
+- /zona-oeste — Caçamba Zona Oeste SP · 6 bairros · Pinheiros, Vila Madalena, Higienópolis, Perdizes, Lapa, Alto de Pinheiros
+- /zona-norte — Caçamba Zona Norte SP · 3 bairros · Santana, Tucuruvi, Vila Guilherme
+- /zona-leste — Caçamba Zona Leste SP · 3 bairros · Tatuapé, Penha, Vila Formosa
 
 ### Institucional
 - / — Home institucional
