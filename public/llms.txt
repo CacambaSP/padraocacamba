@@ -66,6 +66,7 @@ Caçamba estacionária 4m³ — padrão da Grande São Paulo. Trabalhamos SOMENT
 
 ### Institucional
 - / — Home institucional
+- /precos — Tabela de preços por zona · Como é calculado o preço · Por que preço baixo é golpe
 - /antifraude — Guia anti-fraude e denúncias
 
 ## O que a caçamba aceita
