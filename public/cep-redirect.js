@@ -21,8 +21,8 @@
           }
           const rua = data.logradouro ? data.logradouro + (data.bairro ? ', ' + data.bairro : '') : (data.bairro || '');
           const cidade = data.localidade;
-          const bairro = typeof BAIRRO !== 'undefined' ? BAIRRO : cidade;
-          const preco = typeof precoAtual !== 'undefined' ? precoAtual : 'R$ 570';
+    const bairro = typeof BAIRRO !== 'undefined' ? BAIRRO : (typeof ZONA !== 'undefined' ? ZONA : cidade);
+    const preco = typeof precoAtual !== 'undefined' ? precoAtual : (typeof ZONA !== 'undefined' ? 'a partir de R$ 470' : 'R$ 570');
           const msg = 'CEP: ' + cep + ' · ' + bairro + ' · Preço ' + preco + (rua ? ' · Endereço: ' + rua : '') + ' · Fechar pedido, pedir só o número do imóvel';
           pcEnviarDireto(msg);
         })

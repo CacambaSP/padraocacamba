@@ -395,8 +395,10 @@ async function pcChamar(userMsg){if(pcAguardandoWpp&&/\d{8,}/.test(userMsg.repla
 function focarPC(){document.getElementById('pc-chat').scrollIntoView({behavior:'smooth'});setTimeout(()=>document.getElementById('pc-txt').focus(),600)}
 function toggleFaq(el){const item=el.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open')}
 async function registrarVariante(){try{await fetch(`${SB_URL}/rest/v1/juca_conversas`,{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json',Prefer:'return=representation'},body:JSON.stringify({pagina:ZONA,variante:PC_VARIANTE.id,mensagem_inicial:PC_VARIANTE.msg,criado_em:new Date().toISOString()})})}catch(e){}}
-async function init(){registrarVariante();await new Promise(r=>setTimeout(r,800));pcShowTyping();await new Promise(r=>setTimeout(r,1000));pcRemoveTyping();pcAddMsg(PC_VARIANTE.msg,'bot');pcHistory.push({role:'assistant',content:PC_VARIANTE.msg})}
+let pcPronto=false;
+async function init(){registrarVariante();await new Promise(r=>setTimeout(r,800));pcShowTyping();await new Promise(r=>setTimeout(r,1000));pcRemoveTyping();pcAddMsg(PC_VARIANTE.msg,'bot');pcHistory.push({role:'assistant',content:PC_VARIANTE.msg});pcPronto=true;}
 init();
 </script>
+<script src="/cep-redirect.js" defer></script>
 </body>
 </html>
