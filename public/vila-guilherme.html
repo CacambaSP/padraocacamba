@@ -341,6 +341,7 @@ async function registrarVariante(){try{await fetch(`${SB_URL}/rest/v1/juca_conve
 async function pcIniciar(){await carregarPreco();registrarVariante();await new Promise(r=>setTimeout(r,800));pcShowTyping();await new Promise(r=>setTimeout(r,1000));pcRemoveTyping();pcAddMsg(PC_VARIANTE.msg,'bot');pcHistory.push({role:'assistant',content:PC_VARIANTE.msg});pcPronto=true;}
 pcIniciar();
 </script>
+<script src="/schema-inject.js" defer></script>
 <script src="/cep-redirect.js" defer></script>
 </body>
 </html>
