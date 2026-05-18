@@ -183,6 +183,16 @@ h2{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;color:#ff
 footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
 .footer-txt{font-size:11px;color:#444;text-align:center;line-height:2.2}
 
+/* CEP RESULT */
+.cep-card{background:#0d1520;border:1.5px solid #1e3a6a;border-radius:12px;padding:16px;animation:fadeIn .3s ease}
+.cep-card.erro{background:#140a0a;border-color:#3a1010}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.cep-zona-badge{display:inline-flex;align-items:center;gap:6px;border-radius:20px;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:10px}
+.cep-rua{font-size:13px;color:#6a8fc4;margin-bottom:12px}
+.cep-preco-row{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #1a2a4a;padding-top:12px;margin-top:4px}
+.cep-preco-val{font-family:'DM Serif Display',serif;font-size:32px;color:#4ade80}
+.cep-preco-sub{font-size:11px;color:#555;margin-top:2px}
+
 /* CARROSSEL */
 #carrossel-track::-webkit-scrollbar{display:none}
 .carrossel-card{flex:0 0 220px;scroll-snap-align:start;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:border-color .2s}
@@ -363,6 +373,25 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
   <div class="strip-item"><div class="strip-num">4m³</div><div class="strip-label">Padrão SP</div></div>
   <div class="strip-item"><div class="strip-num">24h</div><div class="strip-label">Entrega</div></div>
 </div>
+
+<!-- BUSCA POR CEP -->
+<div class="divider"></div>
+<section id="busca-cep" style="padding-bottom:20px">
+  <div class="sec-label">Consulta rápida</div>
+  <h2>Atendemos seu CEP?</h2>
+  <p class="body-text" style="margin-bottom:16px">Digite o CEP da obra e veja o preço e a zona na hora.</p>
+  <div style="display:flex;gap:8px;margin-bottom:12px">
+    <input id="cep-input" type="tel" inputmode="numeric" maxlength="9" placeholder="Ex: 04545-003"
+      style="flex:1;background:#161616;border:1.5px solid #2a2a2a;border-radius:10px;padding:13px 14px;color:#fff;font-size:16px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s"
+      onfocus="this.style.borderColor='#1E3A8A'" onblur="this.style.borderColor='#2a2a2a'"
+      oninput="cepMask(this)">
+    <button onclick="buscarCep()" id="cep-btn"
+      style="background:#1E3A8A;color:#fff;border:none;border-radius:10px;padding:13px 18px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;white-space:nowrap;min-width:80px">
+      Consultar
+    </button>
+  </div>
+  <div id="cep-result" style="display:none"></div>
+</section>
 
 <!-- CARROSSEL DE BAIRROS -->
 <div class="divider"></div>
@@ -823,6 +852,253 @@ async function pcIniciar() {
   pcAddMsg(PC_VARIANTE.msg,'bot');
   pcHistory.push({role:'assistant',content:PC_VARIANTE.msg});
 }
+
+// ===== BUSCA CEP =====
+
+// Mapa de faixas CEP → bairro com página
+// Formato: [inicio, fim, slug, nome, zona, preco, cor]
+const CEP_BAIRROS = [
+  // ZONA SUL
+  [1400, 1499, '/itaim-bibi',   'Jardim Paulista / Itaim',  'Zona Sul',   570, '#00FF7F'],
+  [4000, 4099, '/vila-mariana', 'Vila Mariana / Moema',      'Zona Sul',   570, '#00FF7F'],
+  [4100, 4199, '/saude',        'Saúde',                     'Zona Sul',   570, '#00FF7F'],
+  [4300, 4399, '/jabaquara',    'Jabaquara',                 'Zona Sul',   570, '#00FF7F'],
+  [4500, 4599, '/itaim-bibi',   'Itaim Bibi / Vila Olímpia', 'Zona Sul',   570, '#00FF7F'],
+  [4600, 4699, '/campo-belo',   'Campo Belo / Brooklin',     'Zona Sul',   570, '#00FF7F'],
+  [4700, 4799, '/santo-amaro',  'Santo Amaro',               'Zona Sul',   570, '#00FF7F'],
+  // ZONA OESTE
+  [1300, 1399, '/higienopolis', 'Higienópolis / Santa Cecília','Zona Oeste',570, '#60a5fa'],
+  [1200, 1299, '/higienopolis', 'Centro / Bom Retiro',       'Zona Oeste', 570, '#60a5fa'],
+  [5000, 5099, '/lapa',         'Lapa / Perdizes',           'Zona Oeste', 570, '#60a5fa'],
+  [5400, 5499, '/pinheiros',    'Pinheiros / Vila Madalena / Alto de Pinheiros','Zona Oeste',570,'#60a5fa'],
+  [5500, 5599, '/pinheiros',    'Butantã / Pinheiros',       'Zona Oeste', 570, '#60a5fa'],
+  // ZONA NORTE
+  [2000, 2099, '/santana',      'Santana / Vila Guilherme',  'Zona Norte', 570, '#a78bfa'],
+  [2200, 2299, '/tucuruvi',     'Tucuruvi / Jaçanã',         'Zona Norte', 570, '#a78bfa'],
+  // ZONA LESTE
+  [3000, 3099, '/tatuape',      'Tatuapé',                   'Zona Leste', 600, '#fb923c'],
+  [3300, 3399, '/penha',        'Penha',                     'Zona Leste', 600, '#fb923c'],
+  [3800, 3899, '/vila-formosa', 'Vila Formosa / Carrão',     'Zona Leste', 600, '#fb923c'],
+];
+
+// Mapa de prefixos 3 dígitos → zona (fallback quando não bate em bairro específico)
+const CEP_ZONAS = {
+  '010':{'zona':'Centro','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '011':{'zona':'Centro','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '012':{'zona':'Centro','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '013':{'zona':'Centro','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '014':{'zona':'Centro','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '015':{'zona':'Centro','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '016':{'zona':'Centro','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '017':{'zona':'Centro','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '018':{'zona':'Centro','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '019':{'zona':'Centro','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '020':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '021':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '022':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '023':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '024':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '025':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '026':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '027':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '028':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '029':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '030':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '031':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '032':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '033':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '034':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '035':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '036':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '037':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '038':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '039':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '040':{'zona':'Zona Sul','preco':570,'slug':'/zona-sul','cor':'#00FF7F'},
+  '041':{'zona':'Zona Sul','preco':570,'slug':'/zona-sul','cor':'#00FF7F'},
+  '042':{'zona':'Zona Sul','preco':570,'slug':'/zona-sul','cor':'#00FF7F'},
+  '043':{'zona':'Zona Sul','preco':570,'slug':'/zona-sul','cor':'#00FF7F'},
+  '044':{'zona':'Zona Sul','preco':570,'slug':'/zona-sul','cor':'#00FF7F'},
+  '045':{'zona':'Zona Sul','preco':570,'slug':'/zona-sul','cor':'#00FF7F'},
+  '046':{'zona':'Zona Sul','preco':570,'slug':'/zona-sul','cor':'#00FF7F'},
+  '047':{'zona':'Zona Sul','preco':570,'slug':'/zona-sul','cor':'#00FF7F'},
+  '048':{'zona':'Zona Sul','preco':570,'slug':'/zona-sul','cor':'#00FF7F'},
+  '049':{'zona':'Zona Sul','preco':570,'slug':'/zona-sul','cor':'#00FF7F'},
+  '050':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '051':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '052':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '053':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '054':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '055':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '056':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '057':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '058':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '059':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '060':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '061':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '062':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '063':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '064':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '065':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '066':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '067':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '068':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '069':{'zona':'Zona Oeste','preco':570,'slug':'/zona-oeste','cor':'#60a5fa'},
+  '070':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '071':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '072':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '073':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '074':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '075':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '076':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '077':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '078':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '079':{'zona':'Zona Norte','preco':570,'slug':'/zona-norte','cor':'#a78bfa'},
+  '080':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '081':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '082':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '083':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '084':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '085':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '086':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '087':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '088':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'},
+  '089':{'zona':'Zona Leste','preco':600,'slug':'/zona-leste','cor':'#fb923c'}
+};
+
+// Osasco / Grande SP
+const CEP_GRANDE_SP = ['060','061','062','063','064','065','066','067','068','069','060'];
+// Prefixos Osasco: 06000-06299 = Grande SP R$470
+const CEP_OSASCO = ['060','061','062'];
+
+function cepMask(el) {
+  let v = el.value.replace(/\D/g,'');
+  if (v.length > 5) v = v.slice(0,5) + '-' + v.slice(5,8);
+  el.value = v;
+  if (v.replace('-','').length === 8) buscarCep();
+}
+
+async function buscarCep() {
+  const raw = document.getElementById('cep-input').value.replace(/\D/g,'');
+  const resultEl = document.getElementById('cep-result');
+  const btn = document.getElementById('cep-btn');
+
+  if (raw.length !== 8) {
+    resultEl.style.display = 'block';
+    resultEl.innerHTML = `<div class="cep-card erro"><p style="color:#f87171;font-size:14px">CEP inválido — digite 8 números.</p></div>`;
+    return;
+  }
+
+  btn.textContent = '...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch(`https://viacep.com.br/ws/${raw}/json/`);
+    const data = await res.json();
+    btn.textContent = 'Consultar';
+    btn.disabled = false;
+
+    if (data.erro) {
+      resultEl.style.display = 'block';
+      resultEl.innerHTML = `<div class="cep-card erro"><p style="color:#f87171;font-size:14px">CEP não encontrado. Verifique e tente novamente.</p></div>`;
+      return;
+    }
+
+    const uf = data.uf;
+    const prefixo = raw.slice(0,3);
+    const numCep = parseInt(raw.slice(0,5));
+    const rua = data.logradouro ? `${data.logradouro}${data.bairro ? ', ' + data.bairro : ''}` : (data.bairro || '');
+    const cidade = data.localidade;
+    const cepFormatado = raw.slice(0,5) + '-' + raw.slice(5);
+
+    // Grande SP
+    const GRANDES_SP = ['Osasco','Carapicuíba','Barueri','Guarulhos','São Bernardo do Campo','Santo André','São Caetano do Sul','Mauá','Diadema'];
+    if (uf === 'SP' && GRANDES_SP.includes(cidade)) {
+      resultEl.style.display = 'block';
+      resultEl.innerHTML = `<div class="cep-card">
+        <div class="cep-zona-badge" style="background:#00FF7F22;color:#00FF7F;border:1px solid #00FF7F44">Grande SP</div>
+        ${rua ? `<div class="cep-rua">${rua} · ${cidade}</div>` : `<div class="cep-rua">${cidade}</div>`}
+        <div class="cep-preco-row">
+          <div>
+            <div class="cep-preco-val">R$ 470</div>
+            <div class="cep-preco-sub">com Nota Fiscal inclusa</div>
+          </div>
+          <button onclick="focarPC();setTimeout(()=>{const i=document.getElementById('pc-txt');i.value='Meu CEP é ${cepFormatado} em ${cidade}, preciso de caçamba';pcEnviar();},800)"
+            style="background:var(--green);color:#000;border:none;border-radius:10px;padding:12px 16px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif">
+            Pedir agora
+          </button>
+        </div>
+      </div>`;
+      return;
+    }
+
+    if (uf !== 'SP' || cidade !== 'São Paulo') {
+      resultEl.style.display = 'block';
+      resultEl.innerHTML = `<div class="cep-card erro">
+        <p style="color:#f87171;font-size:15px;font-weight:600;margin-bottom:4px">Fora da nossa cobertura atual</p>
+        <p style="font-size:13px;color:#aaa;margin-bottom:12px">${cidade}${uf !== 'SP' ? ' / ' + uf : ''} ainda não está na nossa área de atendimento.</p>
+        <button onclick="focarPC()" style="background:#1E3A8A;color:#fff;border:none;border-radius:8px;padding:10px 16px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;width:100%">Falar com PC mesmo assim</button>
+      </div>`;
+      return;
+    }
+
+    // SP Capital — tenta bairro específico primeiro
+    let bairroMatch = null;
+    for (const [ini, fim, slug, nome, zona, preco, cor] of CEP_BAIRROS) {
+      if (numCep >= ini && numCep <= fim) {
+        bairroMatch = { slug, nome, zona, preco, cor };
+        break;
+      }
+    }
+
+    // Fallback: zona pelo prefixo
+    const zonaFallback = CEP_ZONAS[prefixo] || null;
+    const info = bairroMatch || zonaFallback;
+
+    if (!info) {
+      resultEl.style.display = 'block';
+      resultEl.innerHTML = `<div class="cep-card erro">
+        <p style="color:#f87171;font-size:15px;font-weight:600;margin-bottom:4px">Região não mapeada ainda</p>
+        <p style="font-size:13px;color:#aaa;margin-bottom:12px">Fale com o PC — provavelmente atendemos.</p>
+        <button onclick="focarPC();setTimeout(()=>{const i=document.getElementById('pc-txt');i.value='Meu CEP é ${cepFormatado}, vocês atendem?';pcEnviar();},800)" style="background:#1E3A8A;color:#fff;border:none;border-radius:8px;padding:10px 16px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;width:100%">Perguntar ao PC</button>
+      </div>`;
+      return;
+    }
+
+    // Tem bairro com página? Mostra botão de ir para a página
+    const temPagina = !!bairroMatch;
+    const enderecoMsg = rua ? `${rua}, ${cepFormatado}` : cepFormatado;
+
+    resultEl.style.display = 'block';
+    resultEl.innerHTML = `<div class="cep-card">
+      <div class="cep-zona-badge" style="background:${info.cor}22;color:${info.cor};border:1px solid ${info.cor}44">${info.zona}</div>
+      ${rua ? `<div class="cep-rua">${rua} · São Paulo</div>` : ''}
+      <div class="cep-preco-row">
+        <div>
+          <div class="cep-preco-val">R$ ${info.preco}</div>
+          <div class="cep-preco-sub">com Nota Fiscal inclusa</div>
+        </div>
+        ${temPagina
+          ? `<a href="${info.slug}?cep=${cepFormatado}" style="background:var(--green);color:#000;text-decoration:none;border-radius:10px;padding:12px 16px;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;display:inline-flex;align-items:center;gap:6px">
+              Ver página →
+             </a>`
+          : `<button onclick="focarPC();setTimeout(()=>{const i=document.getElementById('pc-txt');i.value='Meu CEP é ${cepFormatado}, preciso de caçamba';pcEnviar();},800)"
+              style="background:var(--green);color:#000;border:none;border-radius:10px;padding:12px 16px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif">
+              Pedir agora
+             </button>`
+        }
+      </div>
+      ${temPagina ? `<p style="font-size:12px;color:#555;margin-top:10px;text-align:center">Ou <button onclick="focarPC();setTimeout(()=>{const i=document.getElementById('pc-txt');i.value='Meu CEP é ${cepFormatado}, preciso de caçamba';pcEnviar();},800)" style="background:none;border:none;color:#6a8fc4;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:underline">fale direto com o PC</button></p>` : ''}
+    </div>`;
+
+  } catch(e) {
+    btn.textContent = 'Consultar';
+    btn.disabled = false;
+    resultEl.style.display = 'block';
+    resultEl.innerHTML = `<div class="cep-card erro"><p style="color:#f87171;font-size:14px">Erro ao consultar. Tente novamente.</p></div>`;
+  }
+}
+
+// ===== FIM BUSCA CEP =====
 
 bannerInit();
 pcIniciar();
