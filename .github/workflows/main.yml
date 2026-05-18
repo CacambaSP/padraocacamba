@@ -1,10 +1,12 @@
 name: Replace CADASTRO link
 on: workflow_dispatch
+permissions:
+  contents: write
 jobs:
   replace:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Find and replace
         run: |
           find public/ -name "*.html" -exec sed -i 's/v=6b691e8b-b9e8-4fe7-959a-ee04f03f0803/v=49b0c48a-6f8f-4921-9be2-53d4fce47e80/g' {} +
