@@ -846,7 +846,7 @@ async function pcEnviar() {
   pcHistory.push({role:'user',content:msg});
   pcShowTyping();
   try {
-    const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:pcHistory,system:buildPCSystem()})});
+    const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:pcHistory,system:await buildPCSystem()})});
     pcRemoveTyping();
     if(!res.ok){pcAddMsg('Erro de conexão.','sys');return;}
     const data=await res.json();
