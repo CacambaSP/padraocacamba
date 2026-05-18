@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<meta http-equiv="last-modified" content="Sun, 18 May 2026 12:30:00 GMT">
+<meta http-equiv="last-modified" content="Sun, 18 May 2026 12:55:00 GMT">
 <title>Padrão Caçamba — Locação de Caçamba em São Paulo</title>
 <meta name="description" content="Locação de caçamba 4m³ em São Paulo e Grande SP. Nota fiscal, CTR incluído, entrega em até 24h. CNPJ 44.538.708/0001-76. Empresa regularizada desde 2004.">
 <meta property="og:title" content="Padrão Caçamba — Locação de Caçamba em São Paulo">
@@ -735,11 +735,11 @@ async function buildPCSystem() {
     const data = await r.json();
     if (Array.isArray(data) && data.length > 0) {
       return data[0].prompt_base
-        .replace('{BAIRRO}', BAIRRO)
-        .replace('{PRECO}', precoAtual);
+        .replace('{BAIRRO}', 'São Paulo (home)')
+        .replace('{PRECO}', 'a partir de R$ 470');
     }
   } catch(e) {}
-  return `Você é PC, assistente da Padrão Caçamba. Bairro: ${BAIRRO}. Preço: ${precoAtual}. Seja direto e ajude o cliente a fechar o pedido.`;
+  return `Você é PC, assistente da Padrão Caçamba. O cliente está na home — ainda não informou o bairro. Peça o bairro ou CEP para dar o preço correto. Seja direto.`;
 }
 
 function pcAddMsg(text, type) {
@@ -875,9 +875,6 @@ function focarPC() {
 
 async function pcIniciar() {
   await carregarPrecos();
-  try {
-    await fetch(`${SB_URL}/rest/v1/juca_conversas`,{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json',Prefer:'return=representation'},body:JSON.stringify({pagina:'home',variante:PC_VARIANTE.id,mensagem_inicial:PC_VARIANTE.msg,criado_em:new Date().toISOString()})});
-  } catch(e){}
   await new Promise(r=>setTimeout(r,800));
   pcShowTyping();
   await new Promise(r=>setTimeout(r,1000));
@@ -885,6 +882,10 @@ async function pcIniciar() {
   pcAddMsg(PC_VARIANTE.msg,'bot');
   pcHistory.push({role:'assistant',content:PC_VARIANTE.msg});
   pcPronto = true;
+  // Registra variante no Supabase (não bloqueia)
+  try {
+    fetch(`${SB_URL}/rest/v1/juca_conversas`,{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json',Prefer:'return=representation'},body:JSON.stringify({pagina:'home',variante:PC_VARIANTE.id,mensagem_inicial:PC_VARIANTE.msg,criado_em:new Date().toISOString()})});
+  } catch(e){}
 }
 
 // ===== BUSCA CEP =====
