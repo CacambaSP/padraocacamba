@@ -3,9 +3,10 @@
 
 (function () {
   function injetarBotoes() {
-    // Remove botão flutuante existente (wa-fixed)
-    const antigo = document.querySelector('.wa-fixed');
-    if (antigo) antigo.remove();
+    // Remove botões flutuantes existentes
+    ['.wa-fixed', '.pc-fixed', '.home-fixed'].forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => el.remove());
+    });
 
     // Pega CADASTRO do escopo global (definido em cada página)
     const cadastroUrl = typeof CADASTRO !== 'undefined'
@@ -24,6 +25,7 @@
       'flex-direction:column',
       'align-items:flex-end',
       'gap:10px',
+      'max-width:calc(100vw - 36px)',
     ].join(';');
 
     // Botão 1 — Formulário direto
