@@ -10,10 +10,12 @@ jobs:
       - name: Find and replace
         run: |
           find public/ -name "*.html" -exec sed -i 's/v=6b691e8b-b9e8-4fe7-959a-ee04f03f0803/v=49b0c48a-6f8f-4921-9be2-53d4fce47e80/g' {} +
+          find public/ -name "*.html" -exec sed -i 's|<script src="/floating-buttons.js" defer></script>||g' {} +
+          find public/ -name "*.html" -exec sed -i 's|</body>|<script src="/floating-buttons.js" defer></script>\n</body>|g' {} +
       - name: Commit changes
         run: |
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
           git add -A
-          git commit -m "Atualiza link CADASTRO para novo CRM" || echo "Nada a commitar"
+          git commit -m "Adiciona floating-buttons.js em todas as páginas" || echo "Nada a commitar"
           git push
