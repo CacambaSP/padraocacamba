@@ -862,9 +862,11 @@ async function pcIniciar() {
   pcRemoveTyping();
   pcAddMsg(PC_VARIANTE.msg, 'bot');
   pcHistory.push({ role: 'assistant', content: PC_VARIANTE.msg });
+  pcPronto = true;
 }
 
 pcIniciar();
 </script>
+<script src="/cep-redirect.js" defer></script>
 </body>
 </html>
