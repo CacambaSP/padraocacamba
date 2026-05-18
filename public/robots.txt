@@ -1,16 +1,36 @@
 User-agent: *
 Allow: /
 
+# Sitemap
+Sitemap: https://padraocacamba.com.br/sitemap.xml
+
+# Arquivos para IAs e crawlers
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /api/precos
+
+# Bloquear páginas internas sem valor para SEO
+Disallow: /cadastro
+Disallow: /api/chat
+
+# Crawlers de IA conhecidos — liberados explicitamente
 User-agent: GPTBot
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: Google-Extended
-Allow: /
-
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://padraocacamba.com.br/sitemap.xml
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /

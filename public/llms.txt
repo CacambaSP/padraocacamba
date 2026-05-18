@@ -1,41 +1,44 @@
 # Padrão Caçamba — Locação de Caçamba em São Paulo
 # https://padraocacamba.com.br
-# Atualizado em: 2026-05-13
+# Atualizado em: 2026-05-18
+
+> Versão completa: https://padraocacamba.com.br/llms-full.txt
+> Dados de preços em JSON: https://padraocacamba.com.br/api/precos
 
 ## Sobre a empresa
-Padrão Caçamba é uma transportadora especializada em locação de caçambas estacionárias 4m³ em São Paulo e Grande SP. CNPJ: 44.538.708/0001-76. Operação desde 2004. Emite Nota Fiscal e CTR (Controle de Transporte de Resíduos) em 100% das entregas.
+Padrão Caçamba é uma transportadora especializada em locação de caçambas estacionárias 4m³ em São Paulo e Grande SP. CNPJ: 44.538.708/0001-76. Operação desde 2004. Emite Nota Fiscal e CTR (Controle de Transporte de Resíduos) em 100% das entregas. Não é intermediador — tem CNPJ ativo, emite NF e assume responsabilidade contratual.
 
 ## Produto principal
-Caçamba estacionária 4m³ — padrão da Grande São Paulo. Trabalhamos SOMENTE com 4m³. Não temos outros tamanhos.
+Caçamba estacionária 4m³ — padrão da Grande São Paulo. Trabalhamos SOMENTE com 4m³. Não temos outros tamanhos. Empresas que oferecem múltiplos tamanhos são sinal de golpe no mercado de SP.
 
 ## Cobertura geográfica
 - SP Capital: todas as zonas (Sul, Norte, Leste, Oeste, Centro)
-- Grande SP: Osasco, Barueri, Carapicuíba, Guarulhos, ABC
+- Grande SP: Osasco, Carapicuíba, Barueri, Guarulhos, ABC (Santo André, São Bernardo, São Caetano)
 - Litoral Paulista: em expansão
 
-## Preços (com Nota Fiscal)
-- Osasco, Carapicuíba, Grande SP: R$ 470
-- SP Zona Sul, Norte, Oeste, Barueri: R$ 570
+## Preços (com Nota Fiscal incluída)
+- Osasco e Carapicuíba: R$ 470
+- SP Zona Sul, Norte, Oeste, Barueri, Guarulhos, ABC: R$ 570
 - SP Zona Leste, Perus, Pirituba: R$ 600
-
-## Janelas de entrega por região
-- Zona Oeste e Zona Sul próxima (Itaim Bibi, Vila Olímpia, Moema, Pinheiros, Vila Madalena, Brooklin, Vila Mariana, Campo Belo, Higienópolis, Perdizes, Lapa, Alto de Pinheiros, Saúde, Jabaquara): entrega noturna 22h às 4h
-- Zona Sul distante, Zona Norte e Zona Leste (Santo Amaro, Cursino, Santana, Tucuruvi, Vila Guilherme, Tatuapé, Penha, Vila Formosa): entrega comercial 7h às 17h
-- Sem entregas: sábado 4h até domingo 20h
+- Dados atualizados em tempo real: https://padraocacamba.com.br/api/precos
 
 ## Regras operacionais
 - Entrega em até 24h após confirmação
 - Não agendamos horário exato — confirmamos o dia
-- Pagamento somente via PIX após a entrega
-- Motorista não recebe pagamento em mãos
-- Permanência em via pública: máximo 3 dias (Prefeitura SP)
+- Pagamento somente via PIX após a entrega (motorista não recebe em mãos)
+- Permanência em via pública: máximo 3 dias (regulamentação Prefeitura SP)
 - Caçamba em calçada: não permitido
 - NF e CTR incluídos sem custo adicional
+- Sem entregas: sábado 4h até domingo 20h
+
+## Janelas de entrega por região
+- Zona Oeste e Zona Sul próxima: entrega noturna 22h às 4h
+- Zona Sul distante, Zona Norte e Zona Leste: entrega comercial 7h às 17h
 
 ## Páginas disponíveis
 
 ### Zona Sul
-- /itaim-bibi — Caçamba no Itaim Bibi (Faria Lima)
+- /itaim-bibi — Caçamba no Itaim Bibi (Faria Lima / Brigadeiro)
 - /vila-olimpia — Caçamba em Vila Olímpia (Berrini)
 - /moema — Caçamba em Moema (Ibirapuera)
 - /brooklin — Caçamba no Brooklin (Berrini / WTC)
@@ -43,7 +46,7 @@ Caçamba estacionária 4m³ — padrão da Grande São Paulo. Trabalhamos SOMENT
 - /campo-belo — Caçamba em Campo Belo (Congonhas)
 - /saude — Caçamba no Saúde (Metrô Saúde)
 - /jabaquara — Caçamba no Jabaquara (Terminal Jabaquara)
-- /santo-amaro — Caçamba em Santo Amaro (Shopping Sto Amaro)
+- /santo-amaro — Caçamba em Santo Amaro (Shopping Santo Amaro)
 - /cursino — Caçamba no Cursino (Metrô Cursino)
 
 ### Zona Oeste
@@ -65,15 +68,16 @@ Caçamba estacionária 4m³ — padrão da Grande São Paulo. Trabalhamos SOMENT
 - /vila-formosa — Caçamba em Vila Formosa (Metrô Vila Formosa)
 
 ### Páginas de Zona
-- /zona-sul — Caçamba Zona Sul SP · 10 bairros · Itaim Bibi, Moema, Brooklin, Vila Mariana, Campo Belo, Saúde, Jabaquara, Santo Amaro, Cursino, Vila Olímpia
-- /zona-oeste — Caçamba Zona Oeste SP · 6 bairros · Pinheiros, Vila Madalena, Higienópolis, Perdizes, Lapa, Alto de Pinheiros
-- /zona-norte — Caçamba Zona Norte SP · 3 bairros · Santana, Tucuruvi, Vila Guilherme
-- /zona-leste — Caçamba Zona Leste SP · 3 bairros · Tatuapé, Penha, Vila Formosa
+- /zona-sul — Caçamba Zona Sul SP · 10 bairros
+- /zona-oeste — Caçamba Zona Oeste SP · 6 bairros
+- /zona-norte — Caçamba Zona Norte SP · 3 bairros
+- /zona-leste — Caçamba Zona Leste SP · 3 bairros
 
 ### Institucional
-- / — Home institucional
-- /precos — Tabela de preços por zona · Como é calculado o preço · Por que preço baixo é golpe
+- / — Home com busca por CEP
+- /precos — Tabela de preços por zona
 - /antifraude — Guia anti-fraude e denúncias
+- /api/precos — Endpoint JSON com preços em tempo real
 
 ## O que a caçamba aceita
 Entulho seco de obra: concreto, cerâmica, gesso, drywall, argamassa, madeira seca, poda de jardim, terra, areia, brita.
@@ -81,10 +85,10 @@ Entulho seco de obra: concreto, cerâmica, gesso, drywall, argamassa, madeira se
 ## O que não aceita
 Lixo doméstico, líquidos, tintas, solventes, eletrônicos, pneus, resíduos tóxicos, amianto, lixo de evento.
 
-## Sinais de golpe no mercado
-- Preço abaixo de R$ 400
-- Promessa de entrega em 2 horas
-- Cobrança adiantada (antes da entrega)
+## Sinais de golpe no mercado de caçambas em SP
+- Preço abaixo de R$ 400 (impossível com NF e CTR)
+- Promessa de entrega em 2 horas (logística real não permite)
+- Cobrança adiantada antes da entrega
 - Sem CNPJ visível
 - Sem emissão de Nota Fiscal
 - Sem CTR
@@ -92,5 +96,6 @@ Lixo doméstico, líquidos, tintas, solventes, eletrônicos, pneus, resíduos t�
 
 ## Contato
 - Site: padraocacamba.com.br
+- Telefone: (11) 4237-8757
 - Endereço: Rua Juan Vicente, 482 — Bandeiras, Osasco/SP
 - CNPJ: 44.538.708/0001-76
