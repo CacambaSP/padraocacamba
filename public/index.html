@@ -594,7 +594,7 @@ const PC_VARIANTES = [
 ];
 const PC_VARIANTE = PC_VARIANTES[Math.floor(Math.random() * PC_VARIANTES.length)];
 
-let pcHistory = [], pcClienteWpp = null, pcClienteNome = null, pcAguardandoWpp = false, pcSituacao = '';
+let pcHistory = [], pcClienteWpp = null, pcClienteNome = null, pcAguardandoWpp = false, pcSituacao = '', pcPronto = false;
 
 // Banner
 const BANNER_MSGS = [
@@ -801,7 +801,12 @@ async function registrarAprendizado(pergunta, respostaPc, motivoEscala) {
 // Função para enviar mensagem programaticamente (usada pelo botão CEP)
 async function pcEnviarDireto(mensagem) {
   focarPC();
-  await new Promise(r => setTimeout(r, 700));
+  // Aguarda PC inicializar (máx 4s)
+  let tentativas = 0;
+  while (!pcPronto && tentativas < 40) {
+    await new Promise(r => setTimeout(r, 100));
+    tentativas++;
+  }
   pcAddMsg(mensagem, 'user');
   pcHistory.push({role:'user', content: mensagem});
   pcShowTyping();
@@ -879,6 +884,7 @@ async function pcIniciar() {
   pcRemoveTyping();
   pcAddMsg(PC_VARIANTE.msg,'bot');
   pcHistory.push({role:'assistant',content:PC_VARIANTE.msg});
+  pcPronto = true;
 }
 
 // ===== BUSCA CEP =====
