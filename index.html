@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<meta http-equiv="last-modified" content="Sun, 18 May 2026 12:55:00 GMT">
+<meta http-equiv="last-modified" content="Sun, 18 May 2026 13:10:00 GMT">
 <title>Padrão Caçamba — Locação de Caçamba em São Paulo</title>
 <meta name="description" content="Locação de caçamba 4m³ em São Paulo e Grande SP. Nota fiscal, CTR incluído, entrega em até 24h. CNPJ 44.538.708/0001-76. Empresa regularizada desde 2004.">
 <meta property="og:title" content="Padrão Caçamba — Locação de Caçamba em São Paulo">
@@ -1057,7 +1057,7 @@ async function buscarCep() {
             <div class="cep-preco-val">R$ 470</div>
             <div class="cep-preco-sub">com Nota Fiscal inclusa</div>
           </div>
-          <button onclick="pcEnviarDireto('Meu CEP é ${cepFormatado} em ${cidade}, preciso de caçamba')"
+          <button onclick="pcEnviarDireto('CEP: ${cepFormatado} · ${cidade} (Grande SP) · Preço R$ 470 · Endereço: ${rua || cidade} · Fechar pedido, pedir só o número')"
             style="background:var(--green);color:#000;border:none;border-radius:10px;padding:12px 16px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif">
             Pedir agora
           </button>
@@ -1094,7 +1094,7 @@ async function buscarCep() {
       resultEl.innerHTML = `<div class="cep-card erro">
         <p style="color:#f87171;font-size:15px;font-weight:600;margin-bottom:4px">Região não mapeada ainda</p>
         <p style="font-size:13px;color:#aaa;margin-bottom:12px">Fale com o PC — provavelmente atendemos.</p>
-        <button onclick="pcEnviarDireto('Meu CEP é ${cepFormatado}, vocês atendem?')" style="background:#1E3A8A;color:#fff;border:none;border-radius:8px;padding:10px 16px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;width:100%">Perguntar ao PC</button>
+        <button onclick="pcEnviarDireto('CEP: ${cepFormatado} · ${cidade} · Cliente pergunta se atendemos essa região')" style="background:#1E3A8A;color:#fff;border:none;border-radius:8px;padding:10px 16px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;width:100%">Perguntar ao PC</button>
       </div>`;
       return;
     }
@@ -1116,13 +1116,13 @@ async function buscarCep() {
           ? `<a href="${info.slug}?cep=${cepFormatado}" style="background:var(--green);color:#000;text-decoration:none;border-radius:10px;padding:12px 16px;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;display:inline-flex;align-items:center;gap:6px">
               Ver página →
              </a>`
-          : `<button onclick="pcEnviarDireto('Meu CEP é ${cepFormatado}, preciso de caçamba')"
+          : `<button onclick="pcEnviarDireto('CEP: ${cepFormatado} · ${info.zona} · Preço R$ ${info.preco} · Endereço: ${rua || cidade} · Fechar pedido, pedir só o número')"
               style="background:var(--green);color:#000;border:none;border-radius:10px;padding:12px 16px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif">
               Pedir agora
              </button>`
         }
       </div>
-      ${temPagina ? `<p style="font-size:12px;color:#555;margin-top:10px;text-align:center">Ou <button onclick="pcEnviarDireto('Meu CEP é ${cepFormatado}, preciso de caçamba')" style="background:none;border:none;color:#6a8fc4;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:underline">fale direto com o PC</button></p>` : ''}
+      ${temPagina ? `<p style="font-size:12px;color:#555;margin-top:10px;text-align:center">Ou <button onclick="pcEnviarDireto('CEP: ${cepFormatado} · ${info.zona} · Preço R$ ${info.preco} · Endereço: ${rua || cidade} · Fechar pedido, pedir só o número')" style="background:none;border:none;color:#6a8fc4;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:underline">fale direto com o PC</button></p>` : ''}
     </div>`;
 
   } catch(e) {
