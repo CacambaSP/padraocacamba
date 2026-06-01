@@ -1,6 +1,6 @@
 // api/precos.js — Endpoint limpo para agentes de IA, crawlers e integrações
 // Retorna preços por zona e bairro em JSON estruturado
-// URL: https://padraocacamba.com.br/api/precos
+// URL: https://www.padraocacamba.com.br/api/precos
 
 const SB_URL = process.env.SUPABASE_URL || 'https://ejfuqijtiberxsnvxdwm.supabase.co';
 const SB_KEY = process.env.SUPABASE_KEY || 'sb_publishable_VvMIbjms3nf-YLh46wuPKA_6FaRpaxX';
@@ -36,7 +36,7 @@ export default async function handler(req, res) {
         nome: "Padrão Caçamba",
         cnpj: "44.538.708/0001-76",
         telefone: "(11) 4237-8757",
-        site: "https://padraocacamba.com.br",
+        site: "https://www.padraocacamba.com.br",
         desde: 2004
       },
       produto: {
@@ -70,7 +70,7 @@ export default async function handler(req, res) {
         zona: b.zona,
         preco_com_nf: b.preco_com_nf,
         moeda: "BRL",
-        pagina: `https://padraocacamba.com.br/${b.bairro.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-')}`
+        pagina: `https://www.padraocacamba.com.br/${b.bairro.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-')}`
       })) : [],
       atualizado_em: new Date().toISOString(),
       nota: "Preços com Nota Fiscal eletrônica inclusa. Para orçamento sem NF, consultar via WhatsApp."
@@ -85,7 +85,7 @@ export default async function handler(req, res) {
         nome: "Padrão Caçamba",
         cnpj: "44.538.708/0001-76",
         telefone: "(11) 4237-8757",
-        site: "https://padraocacamba.com.br"
+        site: "https://www.padraocacamba.com.br"
       },
       precos_por_zona: [
         { zona: "Osasco, Carapicuíba, Grande SP", preco_com_nf: 470, moeda: "BRL" },

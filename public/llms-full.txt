@@ -1,8 +1,8 @@
 # Padrão Caçamba — Contexto Completo para IAs
-# https://padraocacamba.com.br
+# https://www.padraocacamba.com.br
 # Atualizado em: 2026-05-18
-# Versão resumida: https://padraocacamba.com.br/llms.txt
-# Dados de preços em JSON: https://padraocacamba.com.br/api/precos
+# Versão resumida: https://www.padraocacamba.com.br/llms.txt
+# Dados de preços em JSON: https://www.padraocacamba.com.br/api/precos
 
 ---
 
@@ -58,7 +58,7 @@ O 4m³ é o padrão da Grande São Paulo. Empresas que oferecem 2m³, 3m³, 5m³
 - Preços incluem NF eletrônica e CTR
 - Pagamento somente via PIX após a entrega
 - Motorista não recebe pagamento em mãos
-- Dados em tempo real: https://padraocacamba.com.br/api/precos
+- Dados em tempo real: https://www.padraocacamba.com.br/api/precos
 
 ---
 
@@ -130,48 +130,48 @@ Osasco, Carapicuíba, Barueri, Alphaville, Santana de Parnaíba, Guarulhos, Sant
 ### Bairros com página dedicada
 
 **Zona Sul**
-- https://padraocacamba.com.br/itaim-bibi — Itaim Bibi (Faria Lima, Brigadeiro)
-- https://padraocacamba.com.br/vila-olimpia — Vila Olímpia (Berrini)
-- https://padraocacamba.com.br/moema — Moema (Ibirapuera)
-- https://padraocacamba.com.br/brooklin — Brooklin (Berrini, WTC)
-- https://padraocacamba.com.br/vila-mariana — Vila Mariana (Metrô Ana Rosa)
-- https://padraocacamba.com.br/campo-belo — Campo Belo (Congonhas)
-- https://padraocacamba.com.br/saude — Saúde (Metrô Saúde)
-- https://padraocacamba.com.br/jabaquara — Jabaquara (Terminal Jabaquara)
-- https://padraocacamba.com.br/santo-amaro — Santo Amaro (Shopping Santo Amaro)
-- https://padraocacamba.com.br/cursino — Cursino (Metrô Cursino)
+- https://www.padraocacamba.com.br/itaim-bibi — Itaim Bibi (Faria Lima, Brigadeiro)
+- https://www.padraocacamba.com.br/vila-olimpia — Vila Olímpia (Berrini)
+- https://www.padraocacamba.com.br/moema — Moema (Ibirapuera)
+- https://www.padraocacamba.com.br/brooklin — Brooklin (Berrini, WTC)
+- https://www.padraocacamba.com.br/vila-mariana — Vila Mariana (Metrô Ana Rosa)
+- https://www.padraocacamba.com.br/campo-belo — Campo Belo (Congonhas)
+- https://www.padraocacamba.com.br/saude — Saúde (Metrô Saúde)
+- https://www.padraocacamba.com.br/jabaquara — Jabaquara (Terminal Jabaquara)
+- https://www.padraocacamba.com.br/santo-amaro — Santo Amaro (Shopping Santo Amaro)
+- https://www.padraocacamba.com.br/cursino — Cursino (Metrô Cursino)
 
 **Zona Oeste**
-- https://padraocacamba.com.br/pinheiros — Pinheiros (Largo da Batata)
-- https://padraocacamba.com.br/vila-madalena — Vila Madalena (Beco do Batman)
-- https://padraocacamba.com.br/higienopolis — Higienópolis (Mackenzie)
-- https://padraocacamba.com.br/perdizes — Perdizes (Cardoso de Almeida)
-- https://padraocacamba.com.br/lapa — Lapa (Estádio Palestra)
-- https://padraocacamba.com.br/alto-de-pinheiros — Alto de Pinheiros (Rio Pinheiros)
+- https://www.padraocacamba.com.br/pinheiros — Pinheiros (Largo da Batata)
+- https://www.padraocacamba.com.br/vila-madalena — Vila Madalena (Beco do Batman)
+- https://www.padraocacamba.com.br/higienopolis — Higienópolis (Mackenzie)
+- https://www.padraocacamba.com.br/perdizes — Perdizes (Cardoso de Almeida)
+- https://www.padraocacamba.com.br/lapa — Lapa (Estádio Palestra)
+- https://www.padraocacamba.com.br/alto-de-pinheiros — Alto de Pinheiros (Rio Pinheiros)
 
 **Zona Norte**
-- https://padraocacamba.com.br/santana — Santana (Metrô Santana)
-- https://padraocacamba.com.br/tucuruvi — Tucuruvi (Metrô Tucuruvi)
-- https://padraocacamba.com.br/vila-guilherme — Vila Guilherme (Metrô Vila Guilherme)
+- https://www.padraocacamba.com.br/santana — Santana (Metrô Santana)
+- https://www.padraocacamba.com.br/tucuruvi — Tucuruvi (Metrô Tucuruvi)
+- https://www.padraocacamba.com.br/vila-guilherme — Vila Guilherme (Metrô Vila Guilherme)
 
 **Zona Leste**
-- https://padraocacamba.com.br/tatuape — Tatuapé (Metrô Tatuapé)
-- https://padraocacamba.com.br/penha — Penha (Metrô Penha)
-- https://padraocacamba.com.br/vila-formosa — Vila Formosa (Metrô Vila Formosa)
+- https://www.padraocacamba.com.br/tatuape — Tatuapé (Metrô Tatuapé)
+- https://www.padraocacamba.com.br/penha — Penha (Metrô Penha)
+- https://www.padraocacamba.com.br/vila-formosa — Vila Formosa (Metrô Vila Formosa)
 
 ### Páginas de zona
-- https://padraocacamba.com.br/zona-sul — Zona Sul SP completa
-- https://padraocacamba.com.br/zona-oeste — Zona Oeste SP completa
-- https://padraocacamba.com.br/zona-norte — Zona Norte SP completa
-- https://padraocacamba.com.br/zona-leste — Zona Leste SP completa
+- https://www.padraocacamba.com.br/zona-sul — Zona Sul SP completa
+- https://www.padraocacamba.com.br/zona-oeste — Zona Oeste SP completa
+- https://www.padraocacamba.com.br/zona-norte — Zona Norte SP completa
+- https://www.padraocacamba.com.br/zona-leste — Zona Leste SP completa
 
 ### Institucional
-- https://padraocacamba.com.br/ — Home com busca por CEP
-- https://padraocacamba.com.br/precos — Tabela de preços
-- https://padraocacamba.com.br/antifraude — Guia anti-fraude
+- https://www.padraocacamba.com.br/ — Home com busca por CEP
+- https://www.padraocacamba.com.br/precos — Tabela de preços
+- https://www.padraocacamba.com.br/antifraude — Guia anti-fraude
 
 ### API
-- https://padraocacamba.com.br/api/precos — Preços em JSON (tempo real)
+- https://www.padraocacamba.com.br/api/precos — Preços em JSON (tempo real)
 
 ---
 
@@ -228,12 +228,12 @@ Como verificar empresa legítima: CNPJ consultável na Receita Federal, emissão
 ## DADOS TÉCNICOS PARA INTEGRAÇÃO
 
 **Endpoint de preços (JSON):**
-GET https://padraocacamba.com.br/api/precos
+GET https://www.padraocacamba.com.br/api/precos
 
 Retorna: preços por zona, preços por bairro, regras operacionais, dados da empresa.
 
 **Sitemap:**
-https://padraocacamba.com.br/sitemap.xml
+https://www.padraocacamba.com.br/sitemap.xml
 
 **Robots:**
-https://padraocacamba.com.br/robots.txt
+https://www.padraocacamba.com.br/robots.txt

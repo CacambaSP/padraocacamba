@@ -53,7 +53,7 @@
         "name": "Padrão Caçamba",
         "taxID": "44.538.708/0001-76",
         "telephone": "+55-11-4237-8757",
-        "url": "https://padraocacamba.com.br",
+        "url": "https://www.padraocacamba.com.br",
         "foundingDate": "2004"
       },
       "areaServed": { "@type": "Place", "name": bairro + ", São Paulo, SP" },
@@ -95,8 +95,8 @@
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://padraocacamba.com.br/" },
-        { "@type": "ListItem", "position": 2, "name": zona || "São Paulo", "item": "https://padraocacamba.com.br" + slugZona },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.padraocacamba.com.br/" },
+        { "@type": "ListItem", "position": 2, "name": zona || "São Paulo", "item": "https://www.padraocacamba.com.br" + slugZona },
         { "@type": "ListItem", "position": 3, "name": "Caçamba em " + bairro, "item": urlAtual }
       ]
     };
