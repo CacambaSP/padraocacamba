@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<meta http-equiv="last-modified" content="Sun, 18 May 2026 14:15:00 GMT">
+<meta http-equiv="last-modified" content="Tue, 09 Jun 2026 12:00:00 GMT">
 <title>Padrão Caçamba — Locação de Caçamba em São Paulo</title>
 <meta name="description" content="Locação de caçamba 4m³ em São Paulo e Grande SP. Nota fiscal, CTR incluído, entrega em até 24h. CNPJ 44.538.708/0001-76. Empresa regularizada desde 2004.">
 <meta property="og:title" content="Padrão Caçamba — Locação de Caçamba em São Paulo">
@@ -294,6 +294,18 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
   .field input, .field select, .field textarea { font-size: 15px; }
   .btn-denunciar { font-size: 16px; padding: 16px; }
 }
+.hero-preco{display:inline-flex;align-items:center;gap:10px;background:#0d1a30;border:1px solid #1e3a6a;border-radius:12px;padding:11px 18px;margin-bottom:20px;cursor:pointer}
+.hero-preco b{font-family:'DM Serif Display',serif;font-size:28px;color:#4ade80;font-weight:400;line-height:1}
+.hero-preco span{font-size:12px;color:#6a8fc4;font-weight:500;text-align:left;line-height:1.4}
+.cep-card{background:linear-gradient(135deg,#0d1a30,#111c2e);border:1.5px solid #1e3a6a;border-radius:14px;padding:16px}
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:16px 0;font-size:15px;font-weight:600;color:#fff;cursor:pointer;line-height:1.4}
+.faq-arr{font-size:22px;color:var(--blue-light);flex-shrink:0;font-weight:400;transition:transform .2s;line-height:1}
+.faq-a{display:none;font-size:14px;color:#bbb;line-height:1.7;padding-bottom:16px}
+.faq-item.open .faq-arr{transform:rotate(45deg)}
+.faq-item.open .faq-a{display:block}
 </style>
 
 <script type="application/ld+json">
@@ -360,6 +372,9 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
     <div class="badge"><span class="badge-dot"></span>CNPJ ativo</div>
     <div class="badge"><span class="badge-dot"></span>Desde 2004</div>
   </div>
+  <div class="hero-preco" onclick="document.getElementById('busca-cep').scrollIntoView({behavior:'smooth'})">
+    <b>R$ 470</b><span>a partir de, com NF<br>veja o preço do seu CEP &darr;</span>
+  </div>
   <button class="btn-cta" onclick="focarPC()">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
     Falar com PC e pedir caçamba
@@ -378,19 +393,45 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
 <div class="divider"></div>
 <section id="busca-cep" style="padding-bottom:20px">
   <div class="sec-label">Consulta rápida</div>
-  <h2>Atendemos seu CEP?</h2>
-  <p class="body-text" style="margin-bottom:16px">Digite o CEP da obra e veja o preço e a zona na hora.</p>
-  <div style="display:flex;gap:8px;margin-bottom:12px">
+  <h2>Veja o preço do seu CEP</h2>
+  <p class="body-text" style="margin-bottom:16px">Digite o CEP da obra e veja na hora o preço e se a gente atende sua região.</p>
+  <div class="cep-card"><div style="display:flex;gap:8px">
     <input id="cep-input" type="tel" inputmode="numeric" maxlength="9" placeholder="Ex: 04545-003"
       style="flex:1;background:#161616;border:1.5px solid #2a2a2a;border-radius:10px;padding:13px 14px;color:#fff;font-size:16px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s"
       onfocus="this.style.borderColor='#1E3A8A'" onblur="this.style.borderColor='#2a2a2a'"
       oninput="cepMask(this)">
     <button onclick="buscarCep()" id="cep-btn"
       style="background:#1E3A8A;color:#fff;border:none;border-radius:10px;padding:13px 18px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;white-space:nowrap;min-width:80px">
-      Consultar
+      Ver preço
     </button>
   </div>
-  <div id="cep-result" style="display:none"></div>
+    <div id="cep-result" style="display:none;margin-top:12px"></div>
+  </div>
+</section>
+
+<!-- FAQ RÁPIDA -->
+<div class="divider"></div>
+<section>
+  <div class="sec-label">Dúvidas rápidas</div>
+  <h2>Antes de pedir</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Quanto custa a caçamba?<span class="faq-arr">+</span></div>
+      <div class="faq-a">A partir de R$ 470 com nota fiscal na Grande SP, R$ 570 na maior parte de SP Capital e R$ 600 na Zona Leste. Todos já incluem NF e CTR. Pagamento só por PIX, depois da entrega.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Em quanto tempo entrega?<span class="faq-arr">+</span></div>
+      <div class="faq-a">Em até 24h após a confirmação. Não há entregas de sábado às 4h até domingo às 20h.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Tem nota fiscal e CNPJ?<span class="faq-arr">+</span></div>
+      <div class="faq-a">Sim. NF eletrônica e CTR em 100% das entregas. CNPJ 44.538.708/0001-76, consultável na Receita. Somos transportadora regularizada, não intermediador.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Como saber se é golpe?<span class="faq-arr">+</span></div>
+      <div class="faq-a">Desconfie de preço abaixo de R$ 400, promessa de entrega em 2h, cobrança adiantada, falta de CNPJ ou de nota fiscal. Empresa séria cobra via PIX só depois da entrega.</div>
+    </div>
+  </div>
 </section>
 
 <!-- CARROSSEL DE BAIRROS -->
@@ -588,11 +629,13 @@ const DOUGLAS_WPP = '551142378757';
 const CADASTRO = 'https://cacambasp-crm.vercel.app/cadastro.html?v=49b0c48a-6f8f-4921-9be2-53d4fce47e80';
 
 const PC_VARIANTES = [
-  { id: 'v1', msg: 'Oi! Me fala o bairro que você precisa da caçamba que já te passo o preço e a disponibilidade.' },
-  { id: 'v2', msg: 'Oi! Temos disponibilidade essa semana em vários bairros de SP. Qual é o seu endereço?' },
-  { id: 'v4', msg: 'Oi! Já pesquisou preço e achou muito mais barato em outro lugar? Posso explicar o motivo antes de você decidir.' }
+  { id: 'v1', msg: 'Oi! Me diz o bairro da obra que eu já te passo o preço com NF e a disponibilidade.' },
+  { id: 'v2', msg: 'Oi! Pode perguntar à vontade — preço, prazo, o que pode jogar na caçamba. Ou me passa seu bairro que eu vejo a disponibilidade.' },
+  { id: 'v4', msg: 'Oi! Posso te ajudar com preço, prazo e como funciona, sem compromisso. Qual bairro você precisa atender?' }
 ];
 const PC_VARIANTE = PC_VARIANTES[Math.floor(Math.random() * PC_VARIANTES.length)];
+
+function toggleFaq(el){const item=el.parentElement;const open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!open)item.classList.add('open');}
 
 let pcHistory = [], pcClienteWpp = null, pcClienteNome = null, pcAguardandoWpp = false, pcSituacao = '', pcPronto = false;
 
