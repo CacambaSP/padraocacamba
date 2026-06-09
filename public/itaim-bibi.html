@@ -322,6 +322,9 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
   .field input, .field select, .field textarea { font-size: 15px; }
   .btn-denunciar { font-size: 16px; padding: 16px; }
 }
+.hero-preco{display:inline-flex;align-items:center;gap:10px;background:#0d1a30;border:1px solid #1e3a6a;border-radius:12px;padding:11px 18px;margin:0 0 20px;cursor:pointer}
+.hero-preco b{font-family:'DM Serif Display',serif;font-size:28px;color:#4ade80;font-weight:400;line-height:1}
+.hero-preco span{font-size:12px;color:#6a8fc4;font-weight:500;text-align:left;line-height:1.4}
 </style>
 </head>
 <body>
@@ -408,6 +411,9 @@ bannerInit();
     <div class="badge"><span class="badge-dot"></span>CTR incluso</div>
     <div class="badge"><span class="badge-dot"></span>CNPJ ativo</div>
     <div class="badge"><span class="badge-dot"></span>Desde 2004</div>
+  </div>
+  <div class="hero-preco" onclick="document.getElementById('precos').scrollIntoView({behavior:'smooth'})">
+    <b id="hero-preco-val">—</b><span>com NF · toque e veja o preço &darr;</span>
   </div>
   <div class="hero-ctas">
     <button class="btn-wa" onclick="focarPC()">
@@ -683,9 +689,9 @@ const DOUGLAS_WPP = '551142378757';
 const CADASTRO = 'https://cacambasp-crm.vercel.app/cadastro.html?v=49b0c48a-6f8f-4921-9be2-53d4fce47e80';
 
 const PC_VARIANTES = [
-  { id: 'v1', msg: 'Oi! Reforma ou obra? Me fala o endereço que te digo se a gente atende e qual o prazo.' },
-  { id: 'v2', msg: 'Oi! Temos disponibilidade para Itaim Bibi essa semana. Qual é o endereço da obra?' },
-  { id: 'v4', msg: 'Oi! Antes de fechar, me diz: já pesquisou preço e achou muito mais barato? Posso explicar o motivo.' }
+  { id: 'v1', msg: 'Oi! Me diz o endereço da obra que eu já te passo o preço com NF e a disponibilidade.' },
+  { id: 'v2', msg: 'Oi! Pode perguntar à vontade — preço, prazo, o que pode jogar na caçamba. Ou me passa o endereço que eu vejo a disponibilidade.' },
+  { id: 'v4', msg: 'Oi! Posso te ajudar com preço, prazo e como funciona, sem compromisso. Qual o endereço da obra?' }
 ];
 const PC_VARIANTE = PC_VARIANTES[Math.floor(Math.random() * PC_VARIANTES.length)];
 
@@ -745,6 +751,8 @@ function fmtData(iso) {
 function aplicarPreco(valor, atualizado) {
   const fmt = 'R$ ' + Number(valor).toLocaleString('pt-BR', {minimumFractionDigits:0});
   precoAtual = fmt + ' com NF';
+  const hp = document.getElementById('hero-preco-val');
+  if (hp) hp.textContent = fmt;
   const el = document.getElementById('preco-valor');
   if (el) { el.textContent = Number(valor).toLocaleString('pt-BR', {minimumFractionDigits:0}); el.className = ''; el.style.fontSize='44px'; el.style.fontFamily="'DM Serif Display',serif"; }
   const tag = document.getElementById('preco-tag-cacamba');
