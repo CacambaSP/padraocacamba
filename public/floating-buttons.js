@@ -12,9 +12,12 @@
     // Contexto da página (vêm do escopo global de cada HTML)
     const wpp = (typeof DOUGLAS_WPP !== 'undefined' && DOUGLAS_WPP) ? DOUGLAS_WPP : '551142378757';
     const bairro = (typeof BAIRRO !== 'undefined' && BAIRRO) ? BAIRRO : '';
+    const carimbo = bairro
+      ? '[padraocacamba.com.br · ' + bairro + ']'
+      : '[padraocacamba.com.br]';
     const msgWhats = bairro
-      ? `Olá! Vim pelo site e quero alugar uma caçamba 4m³ em ${bairro}.`
-      : 'Olá! Vim pelo site e quero alugar uma caçamba 4m³.';
+      ? `${carimbo}\nOlá! Vim pelo site e quero alugar uma caçamba 4m³ em ${bairro}.`
+      : `${carimbo}\nOlá! Vim pelo site e quero alugar uma caçamba 4m³.`;
     const waHref = `https://wa.me/${wpp}?text=${encodeURIComponent(msgWhats)}`;
 
     // Container dos dois botões
