@@ -432,11 +432,11 @@ setInterval(() => {
 // 5. Enviar dados pro Supabase quando usuário sai ou a cada 30s
 async function enviarAbData() {
   try {
-    await fetch(\`\${SB_URL}/rest/v1/ab_testing\`, {
+    await fetch(`${SB_URL}/rest/v1/ab_testing`, {
       method: 'POST',
       headers: {
         apikey: SB_KEY,
-        Authorization: \`Bearer \${SB_KEY}\`,
+        Authorization: `Bearer ${SB_KEY}`,
         'Content-Type': 'application/json',
         Prefer: 'return=minimal'
       },
@@ -464,7 +464,7 @@ setInterval(enviarAbData, 30000);
 // Enviar dados antes de sair
 window.addEventListener('beforeunload', () => {
   abData.tempo_site_segundos = Math.round((Date.now() - abData.tempo_inicio) / 1000);
-  navigator.sendBeacon(\`\${SB_URL}/rest/v1/ab_testing\`, 
+  navigator.sendBeacon(`${SB_URL}/rest/v1/ab_testing`, 
     new Blob([JSON.stringify([abData])], { type: 'application/json' })
   );
 });
@@ -496,20 +496,20 @@ function adicionarFaqExtras() {
   faqsExtras.forEach(item => {
     const div = document.createElement('div');
     div.className = 'faq-item';
-    div.innerHTML = \`
+    div.innerHTML = `
       <div class="faq-q" onclick="toggleFaq(this)">
-        \${item.q}
+        ${item.q}
         <span class="faq-arr">+</span>
       </div>
-      <div class="faq-a">\${item.a}</div>
-    \`;
+      <div class="faq-a">${item.a}</div>
+    `;
     faqList.appendChild(div);
   });
 }
 
 // Log da versão
-console.log(\`📊 A/B Testing — Santana — Versão: \${VERSAO}\`);
-console.log(\`Session: \${SESSION_ID}\`);
+console.log(`📊 A/B Testing — Santana — Versão: ${VERSAO}`);
+console.log(`Session: ${SESSION_ID}`);
 </script>
 
 </body>
