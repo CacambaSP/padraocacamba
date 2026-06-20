@@ -95,9 +95,9 @@ section{padding:28px 18px}
 .sec-label{font-size:10px;font-weight:700;color:var(--blue-light);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px}
 h2{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;color:#fff;margin-bottom:14px;line-height:1.2}
 .body-text{font-size:15px;color:#bbb;line-height:1.7}
-.price-destaque{background:linear-gradient(135deg,#0d1a30,#111c2e);border:1.5px solid #1e3a6a;border-radius:14px;padding:20px;margin-bottom:14px;text-align:center}
+.price-destaque{background:linear-gradient(135deg,#0d1a30,#111c2e);border:1.5px solid #1e3a6a;border-radius:14px;padding:20px; --preco-cor: var(--green);margin-bottom:14px;text-align:center}
 .price-destaque-label{font-size:12px;color:#6a8fc4;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;font-weight:600}
-.price-destaque-value{font-family:'DM Serif Display',serif;font-size:44px;color:#fff;line-height:1;margin-bottom:6px}
+.price-destaque-value{font-family:'DM Serif Display',serif;font-size:44px;color:#fff;line-height:1;margin-bottom:6px} body[data-versao='B'] .price-destaque{border-color:#1e3a8a!important} body[data-versao='B'] .price-destaque-value span{color:#1E3A8A!important}
 .price-destaque-value span{font-size:22px;color:#aaa;font-family:'DM Sans',sans-serif;font-weight:400}
 .price-destaque-sub{font-size:12px;color:#6a8fc4;line-height:1.6}
 .price-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
@@ -151,7 +151,7 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
 @media(min-width:768px){body{max-width:900px;padding-bottom:0}nav{padding:14px 32px}.hero{padding:48px 32px 40px}h1{font-size:48px}.hero-sub{font-size:17px;max-width:600px;margin-left:auto;margin-right:auto}.hero-badges{justify-content:center}.hero-ctas{max-width:420px;margin:0 auto}.strip-num{font-size:26px}.divider{margin:0 32px}section{padding:40px 32px}h2{font-size:32px}.body-text{font-size:16px;max-width:700px}.cacamba-wrap{padding:0 32px 40px}.cacamba-img{max-height:500px}.price-destaque-value{font-size:60px}.footer-cta{padding:48px 32px}.footer-cta h2{font-size:30px}footer{padding:28px 32px}.wa-fixed{bottom:32px;right:32px;width:64px;height:64px}}
 </style>
 </head>
-<body>
+<body data-ab-test="santana">
 <div id="top-banner" onclick="focarPC()" style="position:relative;width:100%;height:80px;overflow:hidden;cursor:pointer;display:block">
   <img src="https://www.padraocacamba.com.br/image/banner-padrao-cacamba.webp" alt="Padrão Caçamba — Locação de caçamba 4m³ em Santana SP" style="width:100%;height:80px;object-fit:cover;object-position:left center;display:block" onerror="this.style.display='none'">
   <div style="position:absolute;top:0;right:0;width:68%;height:100%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:0 16px 0 8px">
@@ -361,5 +361,156 @@ pcIniciar();
 <script src="/schema-inject.js" defer></script>
 <script src="/cep-redirect.js" defer></script>
 <script src="/floating-buttons.js" defer></script>
+
+<script>
+// ========================================
+// A/B TESTING — SANTANA
+// ========================================
+
+const AB_BAIRRO = 'Santana';
+const SB_URL = 'https://ejfuqijtiberxsnvxdwm.supabase.co';
+const SB_KEY = 'sb_publishable_VvMIbjms3nf-YLh46wuPKA_6FaRpaxX';
+
+// Gerar session ID único
+const SESSION_ID = 'ab_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+const VERSAO = Math.random() < 0.5 ? 'A' : 'B';
+
+// Dados para rastreamento
+const abData = {
+  session_id: SESSION_ID,
+  bairro: AB_BAIRRO,
+  versao: VERSAO,
+  scroll_depth: 0,
+  tempo_inicio: Date.now(),
+  tempo_site_segundos: 0,
+  cliques_pc: 0,
+  cliques_preco: 0,
+  cliques_cta: 0,
+  conversao: false,
+  user_agent: navigator.userAgent
+};
+
+// 1. Aplicar versão B dinamicamente
+if (VERSAO === 'B') {
+  document.body.setAttribute('data-versao', 'B');
+  
+  // Mudar CTA primário: "Falar com PC" → "Pedir agora"
+  document.querySelectorAll('.btn-wa').forEach(btn => {
+    if (btn.textContent.includes('Falar com PC')) {
+      btn.textContent = '✓ Pedir agora';
+      btn.onclick = () => {
+        abData.cliques_cta++;
+        // Dispara PC com mensagem automática
+        const msg = 'Quero pedir uma caçamba em Santana — versão B do site';
+        document.getElementById('pc-txt').value = msg;
+        pcEnviar();
+      };
+    }
+  });
+  
+  // Adicionar 4 perguntas extras ao FAQ (ver abaixo)
+  adicionarFaqExtras();
+}
+
+// 2. Rastrear scroll depth
+window.addEventListener('scroll', () => {
+  const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+  abData.scroll_depth = Math.max(abData.scroll_depth, scrollPercent);
+});
+
+// 3. Rastrear cliques em elementos-chave
+document.addEventListener('click', (e) => {
+  if (e.target.closest('.btn-wa')) abData.cliques_pc++;
+  if (e.target.closest('.price-destaque') || e.target.closest('.price-card')) abData.cliques_preco++;
+});
+
+// 4. Rastrear tempo no site
+setInterval(() => {
+  abData.tempo_site_segundos = Math.round((Date.now() - abData.tempo_inicio) / 1000);
+}, 5000);
+
+// 5. Enviar dados pro Supabase quando usuário sai ou a cada 30s
+async function enviarAbData() {
+  try {
+    await fetch(\`\${SB_URL}/rest/v1/ab_testing\`, {
+      method: 'POST',
+      headers: {
+        apikey: SB_KEY,
+        Authorization: \`Bearer \${SB_KEY}\`,
+        'Content-Type': 'application/json',
+        Prefer: 'return=minimal'
+      },
+      body: JSON.stringify({
+        session_id: abData.session_id,
+        bairro: abData.bairro,
+        versao: abData.versao,
+        scroll_depth: parseFloat(abData.scroll_depth.toFixed(2)),
+        tempo_site_segundos: abData.tempo_site_segundos,
+        cliques_pc: abData.cliques_pc,
+        cliques_preco: abData.cliques_preco,
+        cliques_cta: abData.cliques_cta,
+        conversao: abData.conversao,
+        user_agent: abData.user_agent
+      })
+    });
+  } catch (err) {
+    console.error('Erro ao enviar dados A/B:', err);
+  }
+}
+
+// Enviar dados a cada 30 segundos
+setInterval(enviarAbData, 30000);
+
+// Enviar dados antes de sair
+window.addEventListener('beforeunload', () => {
+  abData.tempo_site_segundos = Math.round((Date.now() - abData.tempo_inicio) / 1000);
+  navigator.sendBeacon(\`\${SB_URL}/rest/v1/ab_testing\`, 
+    new Blob([JSON.stringify([abData])], { type: 'application/json' })
+  );
+});
+
+// Adicionar FAQs extras para versão B
+function adicionarFaqExtras() {
+  const faqList = document.querySelector('.faq-list');
+  if (!faqList) return;
+  
+  const faqsExtras = [
+    {
+      q: 'Qual é o melhor bairro da Zona Norte pra obras?',
+      a: 'Todos têm suas características — Santana é mais denso, Vila Guilherme é misto, Tucuruvi é mais comercial. A caçamba funciona igual em qualquer lugar — o que muda é o acesso da via.'
+    },
+    {
+      q: 'Posso deixar a caçamba em frente à obra com a porta da caçamba aberta?',
+      a: 'Não. A caçamba deve estar sempre fechada por segurança (poeira, chuva, riscos) e por regulamentação da Prefeitura. Apenas esvazie dentro dela, de forma controlada.'
+    },
+    {
+      q: 'Qual é o horário de entrega mais rápido em Santana?',
+      a: 'Comercial: 7h–17h em dias úteis. Noturna: 22h–4h (faz fila ser menor, rodízio SP mais tranquilo). Sábado paramos às 4h, domingo a partir das 20h.'
+    },
+    {
+      q: 'Se contratar para reforma de apartamento, vale a pena pagar adiantado?',
+      a: 'Não. Nunca pague adiantado — é sinal de golpe. A gente cobra PIX APÓS a entrega. Se pedir NF, é cobrado depois também.'
+    }
+  ];
+  
+  faqsExtras.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'faq-item';
+    div.innerHTML = \`
+      <div class="faq-q" onclick="toggleFaq(this)">
+        \${item.q}
+        <span class="faq-arr">+</span>
+      </div>
+      <div class="faq-a">\${item.a}</div>
+    \`;
+    faqList.appendChild(div);
+  });
+}
+
+// Log da versão
+console.log(\`📊 A/B Testing — Santana — Versão: \${VERSAO}\`);
+console.log(\`Session: \${SESSION_ID}\`);
+</script>
+
 </body>
 </html>
