@@ -27,7 +27,49 @@
   "datePublished": "2026-06-20T10:00:00Z",
   "dateModified": "2026-06-20T10:00:00Z",
   "author": {"@type":"Organization","name":"Padrão Caçamba"},
-  "publisher": {"@type":"Organization","name":"Padrão Caçamba"}
+  "publisher": {"@type":"Organization","name":"Padrão Caçamba"},
+  "hasPart": {
+    "@type": "Tool",
+    "name": "Calculadora de Tamanho de Caçamba",
+    "description": "Ferramenta interativa para calcular o tamanho ideal de caçamba baseado no tipo de obra e material.",
+    "url": "https://www.padraocacamba.com.br/artigos/como-escolher-tamanho-cacamba#calculadora"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://www.padraocacamba.com.br/artigos/como-escolher-tamanho-cacamba#calculadora",
+  "name": "Calculadora de Tamanho de Caçamba SP",
+  "applicationCategory": "CalculatorApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "BRL",
+    "description": "Ferramenta gratuita de cálculo"
+  },
+  "description": "Determine o tamanho de caçamba ideal para sua obra em São Paulo. Responda 2 perguntas sobre tipo de obra e material.",
+  "url": "https://www.padraocacamba.com.br/artigos/como-escolher-tamanho-cacamba",
+  "provider": {
+    "@type": "Organization",
+    "name": "Padrão Caçamba",
+    "url": "https://www.padraocacamba.com.br",
+    "telephone": "+55-11-4237-8757"
+  },
+  "potentialAction": {
+    "@type": "CalculateAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://www.padraocacamba.com.br/artigos/como-escolher-tamanho-cacamba",
+      "actionPlatform": ["DesktopWebPlatform", "MobileWebPlatform"]
+    },
+    "result": {
+      "@type": "Thing",
+      "name": "Recomendação de tamanho: 4m³ (padrão São Paulo)"
+    }
+  }
 }
 </script>
 
@@ -274,35 +316,35 @@ A 4m³ é o "Goldilocks" das caçambas — nem pequena demais, nem grande demais
 
 <p>Se você ainda tiver dúvida, <strong>use a calculadora abaixo</strong> para estimar com precisão:</p>
 
-<div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;margin:20px 0">
+<div id="calculadora" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;margin:20px 0" data-tool="cacamba-size-calculator" data-version="1.0">
   
   <div style="margin-bottom:16px">
-    <label style="display:block;font-size:14px;font-weight:600;color:#fff;margin-bottom:8px">1. Qual é o tipo de obra?</label>
-    <select id="tipoObra" onchange="calcularCacamba()" style="width:100%;padding:10px;border-radius:8px;border:1px solid #333;background:#111;color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer">
+    <label style="display:block;font-size:14px;font-weight:600;color:#fff;margin-bottom:8px" for="tipoObra">1. Qual é o tipo de obra?</label>
+    <select id="tipoObra" data-input="construction-type" onchange="calcularCacamba()" style="width:100%;padding:10px;border-radius:8px;border:1px solid #333;background:#111;color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer">
       <option value="">— Selecione —</option>
-      <option value="cozinha_banheiro">Reforma cozinha/banheiro (1-2 cômodos)</option>
-      <option value="apartamento_completo">Reforma apartamento completo (até 150m²)</option>
-      <option value="casa">Reforma casa ou demolição parcial</option>
-      <option value="limpeza">Limpeza/desentulho</option>
+      <option value="cozinha_banheiro" data-volume="4">Reforma cozinha/banheiro (1-2 cômodos)</option>
+      <option value="apartamento_completo" data-volume="4">Reforma apartamento completo (até 150m²)</option>
+      <option value="casa" data-volume="4">Reforma casa ou demolição parcial</option>
+      <option value="limpeza" data-volume="4">Limpeza/desentulho</option>
     </select>
   </div>
 
   <div style="margin-bottom:16px">
-    <label style="display:block;font-size:14px;font-weight:600;color:#fff;margin-bottom:8px">2. Tipo de material principal:</label>
-    <select id="material" onchange="calcularCacamba()" style="width:100%;padding:10px;border-radius:8px;border:1px solid #333;background:#111;color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer">
+    <label style="display:block;font-size:14px;font-weight:600;color:#fff;margin-bottom:8px" for="material">2. Tipo de material principal:</label>
+    <select id="material" data-input="material-type" onchange="calcularCacamba()" style="width:100%;padding:10px;border-radius:8px;border:1px solid #333;background:#111;color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer">
       <option value="">— Selecione —</option>
-      <option value="leve">Leve (madeira, gesso, cerâmica)</option>
-      <option value="medio">Médio (concreto, tijolos, misturado)</option>
-      <option value="pesado">Pesado (demolição de concreto)</option>
+      <option value="leve" data-weight="light">Leve (madeira, gesso, cerâmica)</option>
+      <option value="medio" data-weight="medium">Médio (concreto, tijolos, misturado)</option>
+      <option value="pesado" data-weight="heavy">Pesado (demolição de concreto)</option>
     </select>
   </div>
 
-  <button onclick="calcularCacamba()" style="width:100%;padding:12px;background:var(--green);color:#000;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;margin-bottom:16px">Calcular Tamanho →</button>
+  <button onclick="calcularCacamba()" data-action="calculate" style="width:100%;padding:12px;background:var(--green);color:#000;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;margin-bottom:16px">Calcular Tamanho →</button>
 
-  <div id="resultado" style="display:none;background:linear-gradient(135deg,#0d1a30,#111c2e);border:1.5px solid var(--green);border-radius:10px;padding:16px;text-align:center">
+  <div id="resultado" data-output="recommendation" data-unit="cubic-meters" style="display:none;background:linear-gradient(135deg,#0d1a30,#111c2e);border:1.5px solid var(--green);border-radius:10px;padding:16px;text-align:center">
     <div style="font-size:13px;color:#6a8fc4;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Recomendação</div>
-    <div id="resultadoTexto" style="font-size:20px;font-weight:700;color:var(--green);margin-bottom:12px">4m³</div>
-    <div id="resultadoDetalhe" style="font-size:13px;color:#bbb;line-height:1.6;margin-bottom:12px"></div>
+    <div id="resultadoTexto" data-result-value="4" style="font-size:20px;font-weight:700;color:var(--green);margin-bottom:12px">4m³</div>
+    <div id="resultadoDetalhe" data-result-detail style="font-size:13px;color:#bbb;line-height:1.6;margin-bottom:12px"></div>
     <div style="font-size:12px;color:#4a6080;font-style:italic">⚠️ Estimativa. Confirme com a Padrão pelo WhatsApp antes de contratar.</div>
   </div>
 
