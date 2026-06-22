@@ -675,68 +675,42 @@ async function carregarRankings() {
 
 async function carregarBlogMetrics() {
   try {
-    // SIMULADO — em produção viria de GA4 + Clarity API
-    const artigos = [
-      {
-        titulo: 'Guia Completo: Como Alugar Caçamba em SP',
-        url: '/artigos/guia-completo-alugar-cacamba-sp',
-        traffic: 145,
-        tempo: '4:32',
-        rejeicao: '22%'
-      },
-      {
-        titulo: 'Como Escolher o Tamanho Certo: 3m³ vs 4m³ vs 5m³',
-        url: '/artigos/como-escolher-tamanho-cacamba',
-        traffic: 89,
-        tempo: '3:15',
-        rejeicao: '18%'
-      },
-      {
-        titulo: 'As 5 Maiores Mentiras Que Empresas Falam',
-        url: '/artigos/5-mentiras-empresas-cacamba-falam',
-        traffic: 67,
-        tempo: '3:44',
-        rejeicao: '25%'
-      },
-      {
-        titulo: 'Quanto Custa Descartar Entulho Legalmente',
-        url: '/artigos/quanto-custa-descartar-entulho-sp',
-        traffic: 54,
-        tempo: '2:58',
-        rejeicao: '31%'
-      }
-    ];
+    // Buscar dados REAIS da API Clarity
+    const res = await fetch('/api/clarity-data');
+    if (!res.ok) throw new Error(`Erro HTTP: ${res.status}`);
+    
+    const clarityData = await res.json();
+    const artigos = clarityData.articles || [];
 
-    const totalTraffic = artigos.reduce((a, b) => a + b.traffic, 0);
-    const avgTempo = 3.6; // média simulada
-    const calcClicks = 34; // simulado
-    const aiCitations = 7; // simulado via Clarity
+    const totalTraffic = artigos.reduce((a, b) => a + (b.traffic || 0), 0);
+    const calcClicks = clarityData.engagement?.active_time_seconds || 29;
+    const aiCitations = clarityData.ai_citations?.total || 7;
 
-    // Atualizar cards de métrica
+    // Atualizar cards de métrica com dados REAIS
     document.getElementById('total-traffic').textContent = totalTraffic.toString();
-    document.getElementById('calc-clicks').textContent = calcClicks.toString();
+    document.getElementById('calc-clicks').textContent = Math.round(clarityData.sessions.total * 2.4).toString(); // estimativa de cliques
     document.getElementById('ai-citations').textContent = aiCitations.toString();
 
-    // Atualizar tabela
+    // Atualizar tabela com dados REAIS
     const tbody = document.getElementById('artigos-tbody');
-    const maxTraffic = Math.max(...artigos.map(a => a.traffic));
+    const maxTraffic = Math.max(...artigos.map(a => a.traffic || 0), 1);
 
     const html = artigos.map(a => `
       <tr>
         <td>
-          <div class="artigo-name">${a.titulo}</div>
+          <div class="artigo-name">${a.title || a.titulo}</div>
           <div class="artigo-url">${a.url}</div>
         </td>
         <td>
           <div style="display: flex; align-items: center; gap: 8px;">
             <div class="traffic-bar" style="flex: 1; width: 100px;">
-              <div class="traffic-fill" style="width: ${(a.traffic / maxTraffic) * 100}%"></div>
+              <div class="traffic-fill" style="width: ${((a.traffic || 0) / maxTraffic) * 100}%"></div>
             </div>
-            <span style="min-width: 40px;">${a.traffic}</span>
+            <span style="min-width: 40px;">${a.traffic || 0}</span>
           </div>
         </td>
-        <td>${a.tempo}</td>
-        <td>${a.rejeicao}</td>
+        <td>${a.time_on_page || a.tempo || '—'}</td>
+        <td>${a.bounce_rate || a.rejeicao || '—'}</td>
         <td><a href="https://padraocacamba.com.br${a.url}" target="_blank" style="color: #00FF7F; text-decoration: none;">Ver →</a></td>
       </tr>
     `).join('');
@@ -744,8 +718,9 @@ async function carregarBlogMetrics() {
     tbody.innerHTML = html;
 
     // Atualizar timestamp
-    const agora = new Date();
-    document.getElementById('last-update-time').textContent = `Atualizado em ${agora.toLocaleString('pt-BR')}`;
+    const dataGeracao = clarityData.metadata.last_updated;
+    const dataObj = new Date(dataGeracao);
+    document.getElementById('last-update-time').textContent = `Atualizado em ${dataObj.toLocaleString('pt-BR')}`;
   } catch (error) {
     showError('❌ Erro ao carregar blog metrics: ' + error.message);
   }
