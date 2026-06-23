@@ -1,0 +1,56 @@
+---
+title: "Caçamba em Penha SP | Padrão Caçamba"
+description: "Aluguel de caçamba 4m³ em Penha e Metrô Penha. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
+url: "https://padraocacamba.com.br/penha"
+date_modified: 2026-05-13
+---
+
+# Caçamba em Penha, SP
+
+A Penha é um dos bairros mais tradicionais da Zona Leste, com casas antigas em reformas constantes e condomínios de médio padrão próximos ao metrô.
+
+## Preço
+
+**R$ 600** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+## Zona e entrega
+
+- **Zona:** Zona Leste
+- **Entrega:** comercial 7h–17h
+- **Prazo:** em até 24h após confirmação
+- **Sem entregas:** sábado 4h até domingo 20h
+
+## O que está incluso
+
+- Nota Fiscal eletrônica
+- CTR (Controle de Transporte de Resíduos)
+- Entrega + permanência 3 dias + retirada
+- Destinação em aterro credenciado
+
+## O que aceita
+
+Entulho seco de obra: concreto, cerâmica, gesso, argamassa, drywall, madeira seca, poda de jardim.
+
+## O que NÃO aceita
+
+Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos.
+
+## Perguntas frequentes
+
+**Quanto custa a caçamba na Penha?**
+R$ 600 com NF e CTR incluídos. PIX após a entrega.
+
+**Estou reformando casa antiga na Penha com muito entulho pesado — a caçamba 4m³ aguenta?**
+A caçamba 4m³ suporta até 4 toneladas de entulho seco. Para obras grandes, o PC orienta sobre quantas locações serão necessárias.
+
+**Em quanto tempo a caçamba é entregue?**
+Em até 24h após confirmação. Entrega comercial 7h–17h.
+
+**A empresa tem CNPJ?**
+Sim. CNPJ: 44.538.708/0001-76 — consultável na Receita Federal.
+
+## Empresa
+
+Padrão Caçamba · CNPJ: 44.538.708/0001-76 · Desde 2004
+Rua Juan Vicente, 482 — Bandeiras, Osasco/SP
+padraocacamba.com.br
