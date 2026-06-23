@@ -114,35 +114,41 @@ export default function handler(req, res) {
       ]
     },
     
-    // Artigos (dados do blog)
+    // Artigos (dados REAIS - blog recém criado, ainda não indexado)
+    // ⚠️ AVISO: Blog criado em 18/05/2026, ainda não aparece em buscas Google
+    // Dados abaixo são SIMULADOS para prototipagem (tráfego real é ~0)
     articles: [
       {
         title: "Guia Completo: Como Alugar Caçamba em SP Sem Cair em Golpe",
         url: "/artigos/guia-completo-alugar-cacamba-sp",
-        traffic: 145,
-        time_on_page: "4:32",
-        bounce_rate: "22%"
+        traffic: 0,
+        time_on_page: "—",
+        bounce_rate: "—",
+        status: "não indexado"
       },
       {
         title: "Como Escolher o Tamanho Certo: 3m³ vs 4m³ vs 5m³",
         url: "/artigos/como-escolher-tamanho-cacamba",
-        traffic: 89,
-        time_on_page: "3:15",
-        bounce_rate: "18%"
+        traffic: 0,
+        time_on_page: "—",
+        bounce_rate: "—",
+        status: "não indexado"
       },
       {
         title: "As 5 Maiores Mentiras Que Empresas de Caçamba Falam",
         url: "/artigos/5-mentiras-empresas-cacamba-falam",
-        traffic: 67,
-        time_on_page: "3:44",
-        bounce_rate: "25%"
+        traffic: 0,
+        time_on_page: "—",
+        bounce_rate: "—",
+        status: "não indexado"
       },
       {
         title: "Quanto Custa Descartar Entulho Legalmente em SP?",
         url: "/artigos/quanto-custa-descartar-entulho-sp",
-        traffic: 54,
-        time_on_page: "2:58",
-        bounce_rate: "31%"
+        traffic: 0,
+        time_on_page: "—",
+        bounce_rate: "—",
+        status: "não indexado"
       }
     ],
     

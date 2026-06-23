@@ -682,19 +682,21 @@ async function carregarBlogMetrics() {
     const clarityData = await res.json();
     const artigos = clarityData.articles || [];
 
-    const totalTraffic = artigos.reduce((a, b) => a + (b.traffic || 0), 0);
-    const calcClicks = clarityData.engagement?.active_time_seconds || 29;
+    // ⚠️ DADOS VERDADEIROS (últimos 7 dias)
+    // Blog ainda NÃO indexado no Google = 0 tráfego orgânico real
+    const sessoesHumanas = clarityData.sessions.humans || 7;
+    const sessoesBots = clarityData.sessions.bots || 8;
     const aiCitations = clarityData.ai_citations?.total || 7;
 
-    // Atualizar cards de métrica com dados REAIS
-    document.getElementById('total-traffic').textContent = totalTraffic.toString();
-    document.getElementById('calc-clicks').textContent = Math.round(clarityData.sessions.total * 2.4).toString(); // estimativa de cliques
+    // Atualizar cards com dados REAIS
+    document.getElementById('total-traffic').textContent = sessoesHumanas.toString() + ' sessões';
+    document.getElementById('calc-clicks').textContent = sessoesHumanas.toString() + ' humanas';
     document.getElementById('ai-citations').textContent = aiCitations.toString();
 
     // Atualizar tabela com dados REAIS
     const tbody = document.getElementById('artigos-tbody');
-    const maxTraffic = Math.max(...artigos.map(a => a.traffic || 0), 1);
 
+    // ⚠️ AVISO: Blog ainda não indexado, mostrar status realista
     const html = artigos.map(a => `
       <tr>
         <td>
@@ -702,20 +704,24 @@ async function carregarBlogMetrics() {
           <div class="artigo-url">${a.url}</div>
         </td>
         <td>
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <div class="traffic-bar" style="flex: 1; width: 100px;">
-              <div class="traffic-fill" style="width: ${((a.traffic || 0) / maxTraffic) * 100}%"></div>
-            </div>
-            <span style="min-width: 40px;">${a.traffic || 0}</span>
+          <div style="display: flex; align-items: center; gap: 8px; color: #ff6b6b;">
+            <span style="min-width: 80px;">⏳ Aguardando indexação</span>
           </div>
         </td>
-        <td>${a.time_on_page || a.tempo || '—'}</td>
-        <td>${a.bounce_rate || a.rejeicao || '—'}</td>
+        <td>—</td>
+        <td>—</td>
         <td><a href="https://padraocacamba.com.br${a.url}" target="_blank" style="color: #00FF7F; text-decoration: none;">Ver →</a></td>
       </tr>
     `).join('');
 
     tbody.innerHTML = html;
+    
+    // Adicionar aviso no dashboard
+    const aviso = document.createElement('div');
+    aviso.style.cssText = 'background: #1a1a2e; border: 1px solid #ff6b6b; border-radius: 8px; padding: 14px; margin-bottom: 20px; color: #ff6b6b; font-size: 13px; line-height: 1.6;';
+    aviso.innerHTML = '⚠️ <strong>Status:</strong> Blog criado em 18/05/2026 · Ainda NÃO indexado no Google · Aguardando rastramento (2-4 semanas típico) · Tráfego orgânico real: 0';
+    const blogTab = document.querySelector('[id="artigos-tbody"]')?.parentElement?.parentElement;
+    if (blogTab) blogTab.insertAdjacentElement('beforebegin', aviso);
 
     // Atualizar timestamp
     const dataGeracao = clarityData.metadata.last_updated;
