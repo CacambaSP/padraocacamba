@@ -492,9 +492,9 @@
           <div class="metric-sub">SP Capital</div>
         </div>
         <div class="metric-card">
-          <div class="metric-title">Cidades Grande SP</div>
-          <div class="metric-value">5</div>
-          <div class="metric-sub">Osasco · Barueri · Cotia · Guarulhos · Carapicuíba</div>
+          <div class="metric-title">Cidades Grande SP + ABC</div>
+          <div class="metric-value">7</div>
+          <div class="metric-sub">Osasco · Barueri · Cotia · Guarulhos · Carapicuíba · Santo André · São Bernardo</div>
         </div>
         <div class="metric-card">
           <div class="metric-title">Arquivos .md</div>
@@ -525,7 +525,31 @@
         </table>
       </div>
 
-      <!-- llms.txt status -->
+      <!-- Search Console snapshot -->
+      <div style="margin-top:16px;background:#0d1520;border:1px solid #1a2a4a;border-radius:8px;padding:14px">
+        <div style="font-size:11px;color:#6a8fc4;font-family:monospace;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">// Google Search Console · 23/06/2026</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;text-align:center">
+          <div>
+            <div style="font-size:22px;font-weight:700;color:#4ade80">23</div>
+            <div style="font-size:10px;color:#555;text-transform:uppercase;letter-spacing:1px;margin-top:3px">Indexadas</div>
+          </div>
+          <div>
+            <div style="font-size:22px;font-weight:700;color:#60a5fa">503</div>
+            <div style="font-size:10px;color:#555;text-transform:uppercase;letter-spacing:1px;margin-top:3px">Impressões</div>
+          </div>
+          <div>
+            <div style="font-size:22px;font-weight:700;color:#fff">2</div>
+            <div style="font-size:10px;color:#555;text-transform:uppercase;letter-spacing:1px;margin-top:3px">Cliques</div>
+          </div>
+          <div>
+            <div style="font-size:22px;font-weight:700;color:#fb923c">55</div>
+            <div style="font-size:10px;color:#555;text-transform:uppercase;letter-spacing:1px;margin-top:3px">No Sitemap</div>
+          </div>
+        </div>
+        <div style="margin-top:12px;font-size:11px;color:#333;font-family:monospace">
+          Destaques: /saude pos. 3.8 · /santana pos. 6.3 · /vila-guilherme pos. 10.8
+        </div>
+      </div>
       <div style="margin-top:16px;background:#0d1a0d;border:1px solid #1a3a1a;border-radius:8px;padding:14px">
         <div style="font-size:11px;color:#4ade80;font-family:monospace;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">// GEO/AEO Status</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
@@ -533,7 +557,7 @@
           <div style="font-size:13px;color:#bbb">robots.txt <span style="color:#4ade80">✓ ativo</span></div>
           <div style="font-size:13px;color:#bbb">Schema.org <span style="color:#4ade80">✓ todas páginas</span></div>
           <div style="font-size:13px;color:#bbb">Clarity Citações <span style="color:#fb923c">⚡ monitorar</span></div>
-          <div style="font-size:13px;color:#bbb">Search Console <span style="color:#fb923c">⚡ pendente</span></div>
+          <div style="font-size:13px;color:#bbb">Search Console <span style="color:#4ade80">✓ 23 indexadas · 55 no sitemap</span></div>
           <div style="font-size:13px;color:#bbb">Google Business <span style="color:#f87171">✗ pendente</span></div>
         </div>
       </div>
@@ -629,11 +653,11 @@ async function carregarCobertura() {
     });
 
     const bairrosSP = data.filter(b => b.zona !== 'Grande SP').length;
-    const totalMDs = data.length + 7; // bairros + institucionais
+    const totalMDs = data.length + 7; // bairros + institucionais (index, precos, antifraude, 4 zonas)
 
     document.getElementById('cob-bairros').textContent = bairrosSP;
     document.getElementById('cob-mds').textContent = totalMDs;
-    document.getElementById('cob-sitemap').textContent = data.length + 11; // bairros + zonas + inst + cidades
+    document.getElementById('cob-sitemap').textContent = 55; // atualizado 23/06/2026
 
     const cores = {
       'Zona Sul': '#00FF7F', 'Zona Oeste': '#60a5fa',
