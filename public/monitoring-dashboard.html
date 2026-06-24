@@ -473,11 +473,74 @@
     <!-- TABS -->
     <div class="tabs-container">
       <button class="tab-button active" onclick="switchTab('ranking')">
-        📈 Ranking Monitoring
+        📈 Ranking
+      </button>
+      <button class="tab-button" onclick="switchTab('cobertura')">
+        🗺️ Cobertura
       </button>
       <button class="tab-button" onclick="switchTab('blog')">
-        📝 Blog Engagement
+        📝 Blog
       </button>
+    </div>
+
+    <!-- TAB COBERTURA -->
+    <div id="cobertura" class="tab-content">
+      <div class="blog-metrics">
+        <div class="metric-card">
+          <div class="metric-title">Páginas de Bairro</div>
+          <div class="metric-value" id="cob-bairros">—</div>
+          <div class="metric-sub">SP Capital</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-title">Cidades Grande SP</div>
+          <div class="metric-value">5</div>
+          <div class="metric-sub">Osasco · Barueri · Cotia · Guarulhos · Carapicuíba</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-title">Arquivos .md</div>
+          <div class="metric-value" id="cob-mds">—</div>
+          <div class="metric-sub">Para crawlers de IA</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-title">Total no Sitemap</div>
+          <div class="metric-value" id="cob-sitemap">—</div>
+          <div class="metric-sub">URLs indexáveis</div>
+        </div>
+      </div>
+
+      <!-- Tabela de páginas por zona -->
+      <div style="margin-top:16px">
+        <table>
+          <thead>
+            <tr>
+              <th>Zona / Cidade</th>
+              <th>Bairros</th>
+              <th>Preço</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="cob-tbody">
+            <tr><td colspan="4" class="loading">⏳ Carregando...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- llms.txt status -->
+      <div style="margin-top:16px;background:#0d1a0d;border:1px solid #1a3a1a;border-radius:8px;padding:14px">
+        <div style="font-size:11px;color:#4ade80;font-family:monospace;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">// GEO/AEO Status</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div style="font-size:13px;color:#bbb">llms.txt <span style="color:#4ade80">✓ ativo</span></div>
+          <div style="font-size:13px;color:#bbb">robots.txt <span style="color:#4ade80">✓ ativo</span></div>
+          <div style="font-size:13px;color:#bbb">Schema.org <span style="color:#4ade80">✓ todas páginas</span></div>
+          <div style="font-size:13px;color:#bbb">Clarity Citações <span style="color:#fb923c">⚡ monitorar</span></div>
+          <div style="font-size:13px;color:#bbb">Search Console <span style="color:#fb923c">⚡ pendente</span></div>
+          <div style="font-size:13px;color:#bbb">Google Business <span style="color:#f87171">✗ pendente</span></div>
+        </div>
+      </div>
+
+      <div class="last-update" style="margin-top:12px">
+        <div>Dados puxados do Supabase · bairros_paginas</div>
+      </div>
     </div>
 
     <!-- TAB 1: RANKING -->
@@ -550,6 +613,56 @@ const SENHA_HASH = 'monitoring2026';
 // NAVEGAÇÃO DE ABAS
 // ========================================
 
+async function carregarCobertura() {
+  try {
+    const r = await fetch(`${SB_URL}/rest/v1/bairros_paginas?ativo=eq.true&order=zona.asc,bairro.asc`, {
+      headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }
+    });
+    const data = await r.json();
+    if (!Array.isArray(data)) return;
+
+    // Agrupa por zona
+    const zonas = {};
+    data.forEach(b => {
+      if (!zonas[b.zona]) zonas[b.zona] = [];
+      zonas[b.zona].push(b);
+    });
+
+    const bairrosSP = data.filter(b => b.zona !== 'Grande SP').length;
+    const totalMDs = data.length + 7; // bairros + institucionais
+
+    document.getElementById('cob-bairros').textContent = bairrosSP;
+    document.getElementById('cob-mds').textContent = totalMDs;
+    document.getElementById('cob-sitemap').textContent = data.length + 11; // bairros + zonas + inst + cidades
+
+    const cores = {
+      'Zona Sul': '#00FF7F', 'Zona Oeste': '#60a5fa',
+      'Zona Norte': '#a78bfa', 'Zona Leste': '#fb923c',
+      'Zona Central': '#fbbf24', 'Grande SP': '#E8A020'
+    };
+
+    const tbody = document.getElementById('cob-tbody');
+    tbody.innerHTML = Object.entries(zonas).map(([zona, bairros]) => {
+      const cor = cores[zona] || '#888';
+      const precos = [...new Set(bairros.map(b => `R$ ${b.preco_com_nf}`))].join(' / ');
+      return `<tr>
+        <td style="color:${cor};font-weight:600">${zona}</td>
+        <td>${bairros.length} bairros</td>
+        <td style="font-family:monospace;color:#4ade80">${precos}</td>
+        <td><span style="color:#4ade80">✓ online</span></td>
+      </tr>` +
+      bairros.map(b => `<tr style="opacity:.6">
+        <td style="padding-left:20px;font-size:12px">↳ ${b.bairro}</td>
+        <td style="font-size:11px;color:#555">${b.url}</td>
+        <td style="font-size:12px;font-family:monospace">R$ ${b.preco_com_nf}</td>
+        <td><span style="color:#4ade80;font-size:11px">✓</span></td>
+      </tr>`).join('');
+    }).join('');
+  } catch(e) {
+    document.getElementById('cob-tbody').innerHTML = `<tr><td colspan="4" style="color:#f87171">Erro ao carregar: ${e.message}</td></tr>`;
+  }
+}
+
 function switchTab(tabName) {
   // Esconder todos os tabs
   document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
@@ -560,9 +673,8 @@ function switchTab(tabName) {
   event.target.classList.add('active');
 
   // Carregar dados específicos
-  if (tabName === 'blog') {
-    carregarBlogMetrics();
-  }
+  if (tabName === 'blog') carregarBlogMetrics();
+  if (tabName === 'cobertura') carregarCobertura();
 }
 
 // ========================================
