@@ -1009,7 +1009,8 @@ function renderZonas(zonas) {
   };
   document.getElementById('zonas-list').innerHTML = zonasFiltradas.map(z => {
     const cor = ZONA_CORES[z.zona] || '#444';
-    const faixa = z.zona === 'Grande SP' ? 'menor faixa' : z.zona === 'Zona Leste' ? 'maior faixa' : 'faixa padrão';
+    const faixa = z.zona === 'Grande SP' ? 'a partir de · com NF' : z.zona === 'Zona Leste' ? 'maior faixa · com NF' : 'faixa padrão · com NF';
+    const precoDisplay = z.zona === 'Grande SP' ? `a partir de R$\u00a0${Number(z.preco_padrao).toLocaleString('pt-BR')}` : `R$\u00a0${Number(z.preco_padrao).toLocaleString('pt-BR')}`;
     return `<div class="zona-item">
       <div class="zona-item-accent" style="background:${cor}"></div>
       <div class="zona-item-body">
@@ -1018,8 +1019,8 @@ function renderZonas(zonas) {
           <p>${zonaDesc[z.zona] || ''}</p>
         </div>
         <div class="zona-item-preco">
-          <div class="zona-item-faixa" style="color:${cor}">R$&nbsp;${Number(z.preco_padrao).toLocaleString('pt-BR')}</div>
-          <div class="zona-item-label">${faixa} · com NF</div>
+          <div class="zona-item-faixa" style="color:${cor}">${precoDisplay}</div>
+          <div class="zona-item-label">${faixa}</div>
         </div>
       </div>
     </div>`;
