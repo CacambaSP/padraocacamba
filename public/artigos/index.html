@@ -51,8 +51,8 @@ nav{position:sticky;top:0;z-index:200;background:rgba(10,10,10,0.97);backdrop-fi
 .nav-text{font-size:11px;color:#777;letter-spacing:.8px;text-transform:uppercase}
 .nav-pc-btn{background:var(--blue);color:#fff;border:none;padding:9px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif}
 
-#top-banner{position:relative;width:100%;height:80px;overflow:hidden;cursor:pointer;display:block}
-#top-banner img{width:100%;height:80px;object-fit:cover;object-position:left center;display:block}
+#top-banner{position:relative;width:100%;height:100px;overflow:hidden;cursor:pointer;display:block}
+#top-banner img{width:100%;height:100px;object-fit:cover;object-position:left center;display:block}
 
 .hero{padding:32px 18px;background:linear-gradient(160deg,#0a0a16 0%,#0A0A0A 70%);text-align:center}
 .hero h1{font-family:'DM Serif Display',serif;font-size:32px;line-height:1.2;margin-bottom:10px;color:#fff}
@@ -103,10 +103,10 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border);t
 </nav>
 
 <!-- BANNER ROTATIVO COM IMAGEM -->
-<div id="top-banner" onclick="focarPC()" style="position:relative;width:100%;height:80px;overflow:hidden;cursor:pointer;display:block">
+<div id="top-banner" onclick="focarPC()" style="position:relative;width:100%;height:100px;overflow:hidden;cursor:pointer;display:block">
   <img src="https://www.padraocacamba.com.br/image/banner-padrao-cacamba.webp"
        alt="Padrão Caçamba — Blog de educação sobre caçambas em SP"
-       style="width:100%;height:80px;object-fit:cover;object-position:left center;display:block"
+       style="width:100%;height:100px;object-fit:cover;object-position:left center;display:block"
        onerror="this.style.display='none';document.getElementById('top-banner').style.background='#0A0A0A'">
   <div style="position:absolute;top:0;right:0;width:68%;height:100%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:0 16px 0 8px">
     <span id="banner-txt" style="font-size:12px;font-weight:600;color:#fff;letter-spacing:.2px;line-height:1.4;text-shadow:0 1px 4px rgba(0,0,0,.8)"></span>
