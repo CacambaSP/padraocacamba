@@ -1,108 +1,107 @@
-# Padrão Caçamba — Locação de Caçamba em São Paulo
+# Padrão Caçamba — Locação de Caçambas 4m³ em São Paulo
 # https://www.padraocacamba.com.br
-# Atualizado em: 2026-05-18
+# CNPJ: 44.538.708/0001-76 | Desde 2004
 
-> Versão completa: https://www.padraocacamba.com.br/llms-full.txt
-> Dados de preços em JSON: https://www.padraocacamba.com.br/api/precos
+## Descrição
+Empresa regularizada que aluga caçambas estacionárias 4m³ em São Paulo. 
+Nota Fiscal eletrônica e CTR (Controle de Transporte de Resíduos) inclusos em 100% das entregas.
+Entrega em até 24h. Pagamento via PIX após a entrega.
 
-## Sobre a empresa
-Padrão Caçamba é uma transportadora especializada em locação de caçambas estacionárias 4m³ em São Paulo e Grande SP. CNPJ: 44.538.708/0001-76. Operação desde 2004. Emite Nota Fiscal e CTR (Controle de Transporte de Resíduos) em 100% das entregas. Não é intermediador — tem CNPJ ativo, emite NF e assume responsabilidade contratual.
+## Cobertura Geográfica
+- São Paulo Capital: Todas as 5 zonas (Sul, Norte, Leste, Oeste, Centro)
+- Grande SP: Santo André, São Bernardo, Barueri, Osasco, Carapicuíba, Guarulhos, Cotia
 
-## Produto principal
-Caçamba estacionária 4m³ — padrão da Grande São Paulo. Trabalhamos SOMENTE com 4m³. Não temos outros tamanhos. Empresas que oferecem múltiplos tamanhos são sinal de golpe no mercado de SP.
+## Páginas Principais
+- Home: https://www.padraocacamba.com.br/
+- Preços por Zona: https://www.padraocacamba.com.br/precos
+- Guia Anti-fraude: https://www.padraocacamba.com.br/antifraude
 
-## Cobertura geográfica
-- SP Capital: todas as zonas (Sul, Norte, Leste, Oeste, Centro)
-- Grande SP: Osasco, Carapicuíba, Barueri, Guarulhos, ABC (Santo André, São Bernardo, São Caetano)
-- Litoral Paulista: em expansão
+## Zonas (Hubs)
+- Zona Sul: https://www.padraocacamba.com.br/zona-sul
+- Zona Oeste: https://www.padraocacamba.com.br/zona-oeste
+- Zona Norte: https://www.padraocacamba.com.br/zona-norte
+- Zona Leste: https://www.padraocacamba.com.br/zona-leste
+- Centro SP: https://www.padraocacamba.com.br/centro-sp
+- Grande SP: https://www.padraocacamba.com.br/grande-sp
 
-## Preços (com Nota Fiscal incluída)
-- Osasco e Carapicuíba: R$ 470
-- SP Zona Sul, Norte, Oeste, Barueri, Guarulhos, ABC: R$ 570
-- SP Zona Leste, Perus, Pirituba: R$ 600
-- Dados atualizados em tempo real: https://www.padraocacamba.com.br/api/precos
+## Bairros Atendidos (43 páginas)
 
-## Regras operacionais
-- Entrega em até 24h após confirmação
-- Não agendamos horário exato — confirmamos o dia
-- Pagamento somente via PIX após a entrega (motorista não recebe em mãos)
-- Permanência em via pública: máximo 3 dias (regulamentação Prefeitura SP)
-- Caçamba em calçada: não permitido
-- NF e CTR incluídos sem custo adicional
-- Sem entregas: sábado 4h até domingo 20h
+### Zona Sul (10 bairros)
+- Itaim Bibi: https://www.padraocacamba.com.br/itaim-bibi
+- Vila Olímpia: https://www.padraocacamba.com.br/vila-olimpia
+- Moema: https://www.padraocacamba.com.br/moema
+- Brooklin: https://www.padraocacamba.com.br/brooklin
+- Vila Mariana: https://www.padraocacamba.com.br/vila-mariana
+- Campo Belo: https://www.padraocacamba.com.br/campo-belo
+- Saúde: https://www.padraocacamba.com.br/saude
+- Jabaquara: https://www.padraocacamba.com.br/jabaquara
+- Santo Amaro: https://www.padraocacamba.com.br/santo-amaro
+- Cursino: https://www.padraocacamba.com.br/cursino
 
-## Janelas de entrega por região
-- Zona Oeste e Zona Sul próxima: entrega noturna 22h às 4h
-- Zona Sul distante, Zona Norte e Zona Leste: entrega comercial 7h às 17h
+### Zona Oeste (6 bairros)
+- Pinheiros: https://www.padraocacamba.com.br/pinheiros
+- Vila Madalena: https://www.padraocacamba.com.br/vila-madalena
+- Higienópolis: https://www.padraocacamba.com.br/higienopolis
+- Perdizes: https://www.padraocacamba.com.br/perdizes
+- Lapa: https://www.padraocacamba.com.br/lapa
+- Alto de Pinheiros: https://www.padraocacamba.com.br/alto-de-pinheiros
 
-## Páginas disponíveis
+### Zona Norte (3 bairros)
+- Santana: https://www.padraocacamba.com.br/santana
+- Tucuruvi: https://www.padraocacamba.com.br/tucuruvi
+- Vila Guilherme: https://www.padraocacamba.com.br/vila-guilherme
 
-### Zona Sul
-- /itaim-bibi — Caçamba no Itaim Bibi (Faria Lima / Brigadeiro)
-- /vila-olimpia — Caçamba em Vila Olímpia (Berrini)
-- /moema — Caçamba em Moema (Ibirapuera)
-- /brooklin — Caçamba no Brooklin (Berrini / WTC)
-- /vila-mariana — Caçamba em Vila Mariana (Metrô Ana Rosa)
-- /campo-belo — Caçamba em Campo Belo (Congonhas)
-- /saude — Caçamba no Saúde (Metrô Saúde)
-- /jabaquara — Caçamba no Jabaquara (Terminal Jabaquara)
-- /santo-amaro — Caçamba em Santo Amaro (Shopping Santo Amaro)
-- /cursino — Caçamba no Cursino (Metrô Cursino)
+### Zona Leste (3 bairros)
+- Tatuapé: https://www.padraocacamba.com.br/tatuape
+- Penha: https://www.padraocacamba.com.br/penha
+- Vila Formosa: https://www.padraocacamba.com.br/vila-formosa
 
-### Zona Oeste
-- /pinheiros — Caçamba em Pinheiros (Largo da Batata)
-- /vila-madalena — Caçamba em Vila Madalena (Beco do Batman)
-- /higienopolis — Caçamba em Higienópolis (Mackenzie)
-- /perdizes — Caçamba em Perdizes (Cardoso de Almeida)
-- /lapa — Caçamba na Lapa (Estádio Palestra)
-- /alto-de-pinheiros — Caçamba em Alto de Pinheiros (Rio Pinheiros)
+### Grande SP (7 bairros)
+- Santo André: https://www.padraocacamba.com.br/santo-andre
+- São Bernardo: https://www.padraocacamba.com.br/sao-bernardo
+- Barueri: https://www.padraocacamba.com.br/barueri
+- Osasco: https://www.padraocacamba.com.br/osasco
+- Carapicuíba: https://www.padraocacamba.com.br/carapicuiba
+- Guarulhos: https://www.padraocacamba.com.br/guarulhos
+- Cotia: https://www.padraocacamba.com.br/cotia
 
-### Zona Norte
-- /santana — Caçamba em Santana (Metrô Santana)
-- /tucuruvi — Caçamba em Tucuruvi (Metrô Tucuruvi)
-- /vila-guilherme — Caçamba em Vila Guilherme (Metrô Vila Guilherme)
+### Centro SP (6 bairros)
+- Liberdade: https://www.padraocacamba.com.br/liberdade
+- República: https://www.padraocacamba.com.br/republica
+- Consolação: https://www.padraocacamba.com.br/consolacao
+- Bela Vista: https://www.padraocacamba.com.br/bela-vista
+- Brás: https://www.padraocacamba.com.br/bras
+- Santa Cecília: https://www.padraocacamba.com.br/santa-cecilia
 
-### Zona Leste
-- /tatuape — Caçamba no Tatuapé (Metrô Tatuapé)
-- /penha — Caçamba na Penha (Metrô Penha)
-- /vila-formosa — Caçamba em Vila Formosa (Metrô Vila Formosa)
+### Outras regiões SP Capital (8 bairros)
+- Água Branca: https://www.padraocacamba.com.br/agua-branca
+- Barra Funda: https://www.padraocacamba.com.br/barra-funda
+- Butantã: https://www.padraocacamba.com.br/butanta
+- Ipiranga: https://www.padraocacamba.com.br/ipiranga
+- Mooca: https://www.padraocacamba.com.br/mooca
+- Morumbi: https://www.padraocacamba.com.br/morumbi
+- Vila Leopoldina: https://www.padraocacamba.com.br/vila-leopoldina
+- Vila Prudente: https://www.padraocacamba.com.br/vila-prudente
 
-### Páginas de Zona
-- /zona-sul — Caçamba Zona Sul SP · 10 bairros
-- /zona-oeste — Caçamba Zona Oeste SP · 6 bairros
-- /zona-norte — Caçamba Zona Norte SP · 3 bairros
-- /zona-leste — Caçamba Zona Leste SP · 3 bairros
-
-### Institucional
-- / — Home com busca por CEP
-- /precos — Tabela de preços por zona
-- /antifraude — Guia anti-fraude e denúncias
-- /api/precos — Endpoint JSON com preços em tempo real
-
-## O que a caçamba aceita
-Entulho seco de obra: concreto, cerâmica, gesso, drywall, argamassa, madeira seca, poda de jardim, terra, areia, brita.
-
-## O que não aceita
-Lixo doméstico, líquidos, tintas, solventes, eletrônicos, pneus, resíduos tóxicos, amianto, lixo de evento.
-
-## Sinais de golpe no mercado de caçambas em SP
-- Preço abaixo de R$ 400 (impossível com NF e CTR)
-- Promessa de entrega em 2 horas (logística real não permite)
-- Cobrança adiantada antes da entrega
-- Sem CNPJ visível
-- Sem emissão de Nota Fiscal
-- Sem CTR
-- Oferece tamanhos diferentes de 4m³ (padrão SP é 4m³)
-
-## Contato
-- Site: padraocacamba.com.br
+## Informações de Contato
 - Telefone: (11) 4237-8757
-- Endereço: Rua Juan Vicente, 482 — Bandeiras, Osasco/SP
-- CNPJ: 44.538.708/0001-76
+- WhatsApp: https://wa.me/551142378757
+- Email: cacambasp@gmail.com
+- Chat com PC (assistente IA): https://www.padraocacamba.com.br/ (no topo da página)
 
-── BLOG ──
-/artigos/ — Índice do blog com 4 artigos educativos
-/artigos/guia-completo-alugar-cacamba-sp — Guia completo: Como alugar caçamba em SP sem cair em golpe
-/artigos/como-escolher-tamanho-cacamba — Inclui calculadora interativa de tamanho — Como escolher o tamanho certo: 3m³ vs 4m³ vs 5m³
-/artigos/5-mentiras-empresas-cacamba-falam — As 5 maiores mentiras que empresas de caçamba falam
-/artigos/quanto-custa-descartar-entulho-sp — Quanto custa descartar entulho legalmente em São Paulo?
+## Características
+- Caçamba 4m³ (padrão único — sem 3m³ ou 5m³)
+- Nota Fiscal eletrônica incluída
+- CTR (Controle de Transporte de Resíduos) incluído
+- Entrega em até 24h
+- Pagamento PIX após a entrega
+- Empresa regularizada desde 2004
+- CNPJ consultável na Receita Federal
+
+## Palavras-chave principais
+caçamba sp, aluguel caçamba, caçamba são paulo, preço caçamba, caçamba entulho, 
+caçamba 4m3, empresa caçamba, caçamba regularizada, nf caçamba, ctr caçamba,
+caçamba [bairro] (para cada bairro atendido)
+
+## Última atualização
+26 de junho de 2026
