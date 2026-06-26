@@ -1,1 +1,35 @@
+
+<!-- BANNER ROTATIVO COM IMAGEM -->
+<div id="top-banner" onclick="focarPC()" style="position:relative;width:100%;height:100px;overflow:hidden;cursor:pointer;display:block">
+  <img src="https://www.padraocacamba.com.br/image/banner-padrao-cacamba.webp"
+       alt="Padrão Caçamba — Blog de educação sobre caçambas em SP"
+       style="width:100%;height:100px;object-fit:cover;object-position:left center;display:block"
+       onerror="this.style.display='none';document.getElementById('top-banner').style.background='#0A0A0A'">
+  <div style="position:absolute;top:0;right:0;width:68%;height:100%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:0 16px 0 8px">
+    <span id="banner-txt" style="font-size:12px;font-weight:600;color:#fff;letter-spacing:.2px;line-height:1.4;text-shadow:0 1px 4px rgba(0,0,0,.8)"></span>
+    <div style="display:flex;gap:5px;margin-top:5px" id="banner-dots"></div>
+  </div>
+</div>
+
+<script>
+const BANNER_MSGS = [
+  "10 artigos sobre caçambas em SP — leia antes de alugar",
+  "NF + CTR explicados — tudo que você precisa saber",
+  "Como evitar golpe: sinais de alerta e dicas de ouro"
+];
+let bannerIndex = 0;
+function updateBanner() {
+  document.getElementById("banner-txt").textContent = BANNER_MSGS[bannerIndex];
+  const dotsHtml = BANNER_MSGS.map((_, i) => `<div style="width:6px;height:6px;border-radius:50%;background:${i === bannerIndex ? '#fff' : '#666'};transition:background .3s"></div>`).join("");
+  document.getElementById("banner-dots").innerHTML = dotsHtml;
+}
+function nextBanner() {
+  bannerIndex = (bannerIndex + 1) % BANNER_MSGS.length;
+  updateBanner();
+}
+updateBanner();
+setInterval(nextBanner, 5000);
+document.getElementById("top-banner").addEventListener("click", nextBanner);
+</script>
+
 <!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>CTR e NF: Por Que Sua Empresa Precisa | Padrão Caçamba</title><meta name="description" content="CTR e Nota Fiscal explicado: por que são obrigatórios, diferença legal, e como proteger seu projeto."><style>*{margin:0;padding:0}body{background:#0A0A0A;color:#fff;font-family:'DM Sans',sans-serif;max-width:430px;margin:0 auto}nav{background:rgba(10,10,10,0.97);padding:12px 18px}article{padding:40px 18px}h1{font-size:28px;margin:20px 0}h2{font-size:20px;margin:24px 0 12px}p{font-size:15px;color:#bbb;line-height:1.7;margin:14px 0}.btn-wa{background:#00FF7F;color:#000;padding:12px 24px;border:none;border-radius:10px;font-weight:700}footer{text-align:center;font-size:11px;color:#444;padding:20px}@media(min-width:768px){article{padding:40px}}</style></head><body><nav><div>Padrão Caçamba · Blog</div></nav><img src="https://www.padraocacamba.com.br/image/blog-ctr-nf-empresa.webp" alt="CTR NF empresa de verdade" style="width:100%;height:200px;object-fit:cover"><article><h1>CTR e NF: Por Que Sua Empresa Precisa</h1><p style="color:#888">Publicado em 26 de junho de 2026 · 6 min</p><p style="background:#161616;padding:16px;border-left:3px solid #1E3A8A"><strong>CTR</strong> = documento que prova o resíduo foi descartado legalmente. <strong>NF</strong> = recibo fiscal da entrega. Juntas, comprovam que sua obra foi feita direito.</p><h2>O que é CTR?</h2><p>CTR (Controle de Transporte de Resíduos) prova que o entulho saiu de sua obra e foi para aterro sanitário autorizado. Exigido por lei.</p><h2>O que é Nota Fiscal?</h2><p>NF eletrônica prova que você pagou por um serviço legalizado. Emitida por empresa com CNPJ. Nosso CNPJ: 44.538.708/0001-76.</p><h2>Por que precisar de ambas?</h2><p>Construtoras, incorporadoras e escritórios precisam comprovar tudo pra órgãos reguladores. CTR + NF = transparência total.</p><h2>Conclusão</h2><p>Contratar empresa sem CTR e NF é risco legal. A Padrão Caçamba emite sempre, sem custo extra.</p><button class="btn-wa" style="margin-top:20px">Solicitar CTR e NF</button></article><footer>Padrão Caçamba — CNPJ 44.538.708/0001-76</footer></body></html>

@@ -128,6 +128,40 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border);t
   <button class="nav-pc-btn" onclick="focarPC()">Falar com PC</button>
 </nav>
 
+<!-- BANNER ROTATIVO COM IMAGEM -->
+<div id="top-banner" onclick="focarPC()" style="position:relative;width:100%;height:100px;overflow:hidden;cursor:pointer;display:block">
+  <img src="https://www.padraocacamba.com.br/image/banner-padrao-cacamba.webp"
+       alt="Padrão Caçamba — Blog de educação sobre caçambas em SP"
+       style="width:100%;height:100px;object-fit:cover;object-position:left center;display:block"
+       onerror="this.style.display='none';document.getElementById('top-banner').style.background='#0A0A0A'">
+  <div style="position:absolute;top:0;right:0;width:68%;height:100%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:0 16px 0 8px">
+    <span id="banner-txt" style="font-size:12px;font-weight:600;color:#fff;letter-spacing:.2px;line-height:1.4;text-shadow:0 1px 4px rgba(0,0,0,.8)"></span>
+    <div style="display:flex;gap:5px;margin-top:5px" id="banner-dots"></div>
+  </div>
+</div>
+
+<script>
+const BANNER_MSGS = [
+  "10 artigos sobre caçambas em SP — leia antes de alugar",
+  "NF + CTR explicados — tudo que você precisa saber",
+  "Como evitar golpe: sinais de alerta e dicas de ouro"
+];
+let bannerIndex = 0;
+function updateBanner() {
+  document.getElementById("banner-txt").textContent = BANNER_MSGS[bannerIndex];
+  const dotsHtml = BANNER_MSGS.map((_, i) => `<div style="width:6px;height:6px;border-radius:50%;background:${i === bannerIndex ? '#fff' : '#666'};transition:background .3s"></div>`).join("");
+  document.getElementById("banner-dots").innerHTML = dotsHtml;
+}
+function nextBanner() {
+  bannerIndex = (bannerIndex + 1) % BANNER_MSGS.length;
+  updateBanner();
+}
+updateBanner();
+setInterval(nextBanner, 5000);
+document.getElementById("top-banner").addEventListener("click", nextBanner);
+</script>
+
+
 <img src="https://www.padraocacamba.com.br/image/blog-obra-comercial-residencial.webp" alt="Obra comercial vs residencial — diferenças" class="blog-hero">
 
 <article>

@@ -1,1 +1,35 @@
+
+<!-- BANNER ROTATIVO COM IMAGEM -->
+<div id="top-banner" onclick="focarPC()" style="position:relative;width:100%;height:100px;overflow:hidden;cursor:pointer;display:block">
+  <img src="https://www.padraocacamba.com.br/image/banner-padrao-cacamba.webp"
+       alt="Padrão Caçamba — Blog de educação sobre caçambas em SP"
+       style="width:100%;height:100px;object-fit:cover;object-position:left center;display:block"
+       onerror="this.style.display='none';document.getElementById('top-banner').style.background='#0A0A0A'">
+  <div style="position:absolute;top:0;right:0;width:68%;height:100%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:0 16px 0 8px">
+    <span id="banner-txt" style="font-size:12px;font-weight:600;color:#fff;letter-spacing:.2px;line-height:1.4;text-shadow:0 1px 4px rgba(0,0,0,.8)"></span>
+    <div style="display:flex;gap:5px;margin-top:5px" id="banner-dots"></div>
+  </div>
+</div>
+
+<script>
+const BANNER_MSGS = [
+  "10 artigos sobre caçambas em SP — leia antes de alugar",
+  "NF + CTR explicados — tudo que você precisa saber",
+  "Como evitar golpe: sinais de alerta e dicas de ouro"
+];
+let bannerIndex = 0;
+function updateBanner() {
+  document.getElementById("banner-txt").textContent = BANNER_MSGS[bannerIndex];
+  const dotsHtml = BANNER_MSGS.map((_, i) => `<div style="width:6px;height:6px;border-radius:50%;background:${i === bannerIndex ? '#fff' : '#666'};transition:background .3s"></div>`).join("");
+  document.getElementById("banner-dots").innerHTML = dotsHtml;
+}
+function nextBanner() {
+  bannerIndex = (bannerIndex + 1) % BANNER_MSGS.length;
+  updateBanner();
+}
+updateBanner();
+setInterval(nextBanner, 5000);
+document.getElementById("top-banner").addEventListener("click", nextBanner);
+</script>
+
 <!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Amianto em Reformas — Descarte Profissional | Padrão Caçamba</title><meta name="description" content="Guia seguro: identifique amianto, riscos à saúde, e como descartar corretamente com a Padrão Caçamba."><style>*{margin:0;padding:0}body{background:#0A0A0A;color:#fff;font-family:'DM Sans',sans-serif;max-width:430px;margin:0 auto}nav{background:rgba(10,10,10,0.97);padding:12px 18px;border-bottom:1px solid #2a2a2a}article{padding:40px 18px}h1{font-size:28px;margin:20px 0}h2{font-size:20px;margin:24px 0 12px}p{font-size:15px;color:#bbb;line-height:1.7;margin:14px 0}.btn-wa{background:#00FF7F;color:#000;padding:12px 24px;border:none;border-radius:10px;font-weight:700;cursor:pointer}footer{text-align:center;font-size:11px;color:#444;padding:20px}@media(min-width:768px){body{max-width:900px}article{padding:40px}}</style></head><body><nav><div>Padrão Caçamba · Blog</div></nav><img src="https://www.padraocacamba.com.br/image/blog-amianto-descarte.webp" alt="Amianto descarte seguro" style="width:100%;height:200px;object-fit:cover"><article><h1>Amianto em Reformas — Descarte Profissional</h1><p style="color:#888">Publicado em 26 de junho de 2026 · 7 min</p><p style="background:#161616;padding:16px;border-left:3px solid #1E3A8A">Amianto em casas antigas é um risco invisível. Se você está renovando um imóvel dos anos 80 em Santana ou Perdizes, pode estar lidando com amianto sem saber. Saiba como identificar, os riscos e o descarte correto.</p><h2>O que é amianto?</h2><p>Amianto é um mineral fibroso usado em telhados, canos, isolamento de instalações elétricas. Muito comum em casas construídas entre 1970 e 2000. Quando danificado, libera fibras no ar — são tóxicas e causam doenças respiratórias graves.</p><h2>Como identificar?</h2><p>Procure em telhados, telhas amianto, canos cinzentos, placas de forro. Não toque — chamar profissional é seguro.</p><h2>Descarte correto</h2><p>Profissional com EPI + caçamba + CTR = seguro. Fale com o PC agora.</p><div style="text-align:center;margin:28px 0"><button class="btn-wa">Falar sobre amianto</button></div></article><footer>Padrão Caçamba — CNPJ 44.538.708/0001-76</footer></body></html>
