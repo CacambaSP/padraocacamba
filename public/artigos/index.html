@@ -5,17 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
 <title>Blog Padrão Caçamba | Guias e Dicas sobre Caçambas em SP</title>
-<meta name="description" content="Blog oficial Padrão Caçamba — guias, dicas e educação sobre aluguel de caçambas em São Paulo. Aprenda a evitar golpes e entender o mercado.">
-<meta property="og:title" content="Blog Padrão Caçamba">
-<meta property="og:description" content="Guias, dicas e educação sobre aluguel de caçambas em SP — desde como escolher tamanho até como evitar fraudes.">
+<meta name="description" content="Blog oficial Padrão Caçamba — guias, dicas e educação sobre aluguel de caçambas em São Paulo. Aprenda a evitar golpes, entender preços e descartar resíduos corretamente.">
+<meta property="og:title" content="Blog Padrão Caçamba — Guias e Dicas">
+<meta property="og:description" content="10 artigos sobre caçambas em SP: como escolher, evitar fraudes, descartar entulho, reformar apartamento.">
 <meta property="og:image" content="https://www.padraocacamba.com.br/image/logo-padrao-cacamba.png">
 <meta property="og:url" content="https://www.padraocacamba.com.br/artigos/">
 <link rel="canonical" href="https://www.padraocacamba.com.br/artigos/">
 <link rel="icon" type="image/png" href="/image/logo-padrao-cacamba.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Microsoft Clarity -->
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","wlu14vvzwg");
 </script>
@@ -25,7 +23,7 @@
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Blog Padrão Caçamba",
-  "description": "Guias e artigos educativos sobre aluguel de caçambas em São Paulo",
+  "description": "10 guias e artigos educativos sobre aluguel de caçambas em São Paulo",
   "url": "https://www.padraocacamba.com.br/artigos/",
   "publisher": {
     "@type": "Organization",
@@ -41,76 +39,59 @@
   --black:#0A0A0A;
   --blue:#1E3A8A;
   --blue-light:#2563EB;
-  --silver:#C0C0C0;
   --white:#FFFFFF;
-  --cream:#F4F1EC;
   --card:#161616;
   --border:#2a2a2a;
   --green:#00FF7F;
 }
 html{font-size:16px;scroll-behavior:smooth}
-body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;max-width:430px;margin:0 auto;overflow-x:hidden}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;max-width:430px;margin:0 auto;overflow-x:hidden;padding-bottom:40px}
 
-/* NAV */
-nav{position:sticky;top:0;z-index:200;background:rgba(10,10,10,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
-.nav-text{font-size:12px;letter-spacing:.8px;color:#888;text-transform:uppercase;white-space:nowrap}
+nav{position:sticky;top:0;z-index:200;background:rgba(10,10,10,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 18px;display:flex;justify-content:space-between}
+.nav-text{font-size:11px;color:#777;letter-spacing:.8px;text-transform:uppercase}
 .nav-pc-btn{background:var(--blue);color:#fff;border:none;padding:9px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif}
-.nav-pc-btn:active{opacity:.85}
 
-/* HERO */
-.hero{padding:40px 18px;background:linear-gradient(160deg,#0a0a16 0%,#0A0A0A 70%);text-align:center}
-.hero h1{font-family:'DM Serif Display',serif;font-size:36px;line-height:1.2;margin-bottom:12px;color:#fff}
-.hero p{font-size:15px;color:#aaa;line-height:1.65;margin-bottom:0}
+#top-banner{position:relative;width:100%;height:80px;overflow:hidden;cursor:pointer;display:block}
+#top-banner img{width:100%;height:80px;object-fit:cover;object-position:left center;display:block}
 
-/* GRID DE ARTIGOS */
-section{padding:28px 18px}
-.sec-label{font-size:10px;font-weight:700;color:var(--blue-light);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px}
-h2{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;color:#fff;margin-bottom:20px;line-height:1.2}
+.hero{padding:32px 18px;background:linear-gradient(160deg,#0a0a16 0%,#0A0A0A 70%);text-align:center}
+.hero h1{font-family:'DM Serif Display',serif;font-size:32px;line-height:1.2;margin-bottom:10px;color:#fff}
+.hero p{font-size:14px;color:#aaa;line-height:1.6}
 
-.blog-grid{display:grid;grid-template-columns:1fr;gap:16px}
-.blog-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .2s,border-color .2s}
+section{padding:24px 18px}
+.sec-label{font-size:10px;font-weight:700;color:var(--blue-light);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+h2{font-family:'DM Serif Display',serif;font-size:22px;color:#fff;margin-bottom:18px;line-height:1.2}
+
+.blog-grid{display:grid;grid-template-columns:1fr;gap:14px}
+.blog-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .15s}
 .blog-card:active{transform:scale(.98)}
 .blog-card-link{text-decoration:none;color:inherit;display:block}
+.blog-card-img{width:100%;height:160px;object-fit:cover;display:block}
+.blog-card-body{padding:14px}
+.blog-card-category{font-size:10px;color:#6a8fc4;text-transform:uppercase;letter-spacing:.4px;margin-bottom:5px;font-weight:600}
+.blog-card-title{font-size:15px;font-weight:600;color:#fff;margin-bottom:7px;line-height:1.35}
+.blog-card-desc{font-size:13px;color:#999;line-height:1.5;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.blog-card-meta{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:#666}
+.blog-card-arrow{color:var(--blue-light)}
 
-.blog-card-img{width:100%;height:180px;object-fit:cover;display:block;background:#1a1a1a}
-.blog-card-body{padding:16px}
-.blog-card-category{font-size:11px;color:#6a8fc4;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;font-weight:600}
-.blog-card-title{font-size:16px;font-weight:600;color:#fff;margin-bottom:8px;line-height:1.4}
-.blog-card-desc{font-size:13px;color:#aaa;line-height:1.6;margin-bottom:12px}
-.blog-card-meta{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:#666}
-.blog-card-arrow{color:var(--blue-light);font-size:14px;margin-left:4px}
+.cta-section{background:var(--blue);padding:20px 18px;text-align:center;border-radius:12px;margin:28px 18px}
+.cta-section h3{font-size:16px;margin-bottom:5px}
+.cta-section p{font-size:12px;color:#93b8f0;margin-bottom:14px}
+.btn-wa{background:var(--green);color:#000;border:none;padding:12px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;width:100%}
 
-/* CTA */
-.cta-box{background:var(--blue);padding:24px 18px;text-align:center;border-radius:14px;margin:20px 18px}
-.cta-box h3{font-size:18px;margin-bottom:6px;color:#fff}
-.cta-box p{font-size:13px;color:#93b8f0;margin-bottom:16px}
-.btn-wa{background:var(--green);color:#000;border:none;padding:13px 20px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;width:100%}
-.btn-wa:active{opacity:.9}
+footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border);text-align:center}
+.footer-txt{font-size:11px;color:#444;line-height:2}
 
-/* FOOTER */
-footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
-.footer-txt{font-size:11px;color:#444;text-align:center;line-height:2.2}
-
-/* ===== DESKTOP ===== */
-@media (min-width: 768px) {
-  body { max-width: 900px; }
-  nav { padding: 14px 32px; }
-  
-  .hero { padding: 48px 32px 40px; }
-  .hero h1 { font-size: 44px; }
-  .hero p { font-size: 17px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  
-  section { padding: 40px 32px; }
-  h2 { font-size: 32px; }
-  
-  .blog-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-  .blog-card-img { height: 220px; }
-  
-  .cta-box { max-width: 600px; margin: 28px auto; padding: 32px; }
-  .cta-box h3 { font-size: 22px; }
-  .btn-wa { max-width: 320px; margin: 0 auto; }
-  
-  footer { padding: 28px 32px; }
+@media(min-width:768px){
+  body{max-width:900px}
+  nav{padding:14px 32px}
+  .hero{padding:40px 32px}
+  .hero h1{font-size:40px}
+  section{padding:32px}
+  h2{font-size:28px}
+  .blog-grid{grid-template-columns:1fr 1fr;gap:16px}
+  .cta-section{margin:32px}
+  footer{padding:28px 32px}
 }
 </style>
 </head>
@@ -118,100 +99,209 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
 
 <nav>
   <div class="nav-text">Padrão Caçamba · Blog</div>
-  <button class="nav-pc-btn" onclick="window.location='/#pc-chat'">Pedir Caçamba</button>
+  <button class="nav-pc-btn" onclick="focarPC()">Falar com PC</button>
 </nav>
 
-<div class="hero">
-  <h1>Blog Padrão Caçamba</h1>
-  <p>Guias, dicas e educação sobre aluguel de caçambas em São Paulo — desde como escolher até como evitar golpes.</p>
+<!-- BANNER ROTATIVO COM IMAGEM -->
+<div id="top-banner" onclick="focarPC()" style="position:relative;width:100%;height:80px;overflow:hidden;cursor:pointer;display:block">
+  <img src="https://www.padraocacamba.com.br/image/banner-padrao-cacamba.webp"
+       alt="Padrão Caçamba — Blog de educação sobre caçambas em SP"
+       style="width:100%;height:80px;object-fit:cover;object-position:left center;display:block"
+       onerror="this.style.display='none';document.getElementById('top-banner').style.background='#0A0A0A'">
+  <div style="position:absolute;top:0;right:0;width:68%;height:100%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:0 16px 0 8px">
+    <span id="banner-txt" style="font-size:12px;font-weight:600;color:#fff;letter-spacing:.2px;line-height:1.4;text-shadow:0 1px 4px rgba(0,0,0,.8)"></span>
+    <div style="display:flex;gap:5px;margin-top:5px" id="banner-dots"></div>
+  </div>
 </div>
 
+<script>
+const BANNER_MSGS = [
+  '10 artigos sobre caçambas em SP — leia antes de alugar',
+  'NF + CTR explicados — tudo que você precisa saber',
+  'Como evitar golpe: sinais de alerta e dicas de ouro'
+];
+let bannerIndex = 0;
+function updateBanner() {
+  document.getElementById('banner-txt').textContent = BANNER_MSGS[bannerIndex];
+  const dotsHtml = BANNER_MSGS.map((_, i) => `<div style="width:6px;height:6px;border-radius:50%;background:${i === bannerIndex ? '#fff' : '#666'};transition:background .3s"></div>`).join('');
+  document.getElementById('banner-dots').innerHTML = dotsHtml;
+}
+function nextBanner() {
+  bannerIndex = (bannerIndex + 1) % BANNER_MSGS.length;
+  updateBanner();
+}
+updateBanner();
+setInterval(nextBanner, 5000);
+document.getElementById('top-banner').addEventListener('click', nextBanner);
+</script>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Blog Padrão Caçamba</h1>
+  <p>Guias, dicas e educação — como alugar, evitar golpes, descartar resíduos</p>
+</div>
+
+<!-- ARTIGOS RECENTES -->
 <section>
-  <div class="sec-label">Artigos Recentes</div>
-  <h2>Últimas Publicações</h2>
+  <div class="sec-label">Artigos recentes</div>
+  <h2>10 Guias de Qualidade</h2>
   
   <div class="blog-grid">
-    
-    <!-- Artigo 1 -->
+    <!-- NOVO: Artigo 5 -->
+    <a href="/artigos/obra-comercial-residencial" class="blog-card-link">
+      <div class="blog-card">
+        <img src="https://www.padraocacamba.com.br/image/blog-obra-comercial-residencial.webp" alt="Obra comercial vs residencial" class="blog-card-img">
+        <div class="blog-card-body">
+          <div class="blog-card-category">Como fazer</div>
+          <div class="blog-card-title">Obra Comercial vs Residencial</div>
+          <div class="blog-card-desc">Diferenças, volume de entulho, logística e qual caçamba escolher.</div>
+          <div class="blog-card-meta"><span>8 min</span><span class="blog-card-arrow">→</span></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- NOVO: Artigo 6 -->
+    <a href="/artigos/pintura-casa-descarte" class="blog-card-link">
+      <div class="blog-card">
+        <img src="https://www.padraocacamba.com.br/image/blog-pintura-casa-descarte.webp" alt="Pintura descarte correto" class="blog-card-img">
+        <div class="blog-card-body">
+          <div class="blog-card-category">Como fazer</div>
+          <div class="blog-card-title">Pintura — Descarte Correto</div>
+          <div class="blog-card-desc">Como descartar tinta, pincéis e solventes. Quando chamar a caçamba.</div>
+          <div class="blog-card-meta"><span>6 min</span><span class="blog-card-arrow">→</span></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- NOVO: Artigo 7 -->
+    <a href="/artigos/amianto-descarte-seguro" class="blog-card-link">
+      <div class="blog-card">
+        <img src="https://www.padraocacamba.com.br/image/blog-amianto-descarte.webp" alt="Amianto descarte seguro" class="blog-card-img">
+        <div class="blog-card-body">
+          <div class="blog-card-category">Proteção</div>
+          <div class="blog-card-title">Amianto — Descarte Seguro</div>
+          <div class="blog-card-desc">Como identificar, riscos e descarte profissional com EPI.</div>
+          <div class="blog-card-meta"><span>7 min</span><span class="blog-card-arrow">→</span></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- NOVO: Artigo 8 -->
+    <a href="/artigos/por-que-4m3-padrao" class="blog-card-link">
+      <div class="blog-card">
+        <img src="https://www.padraocacamba.com.br/image/blog-por-que-4m3-padrao.webp" alt="Por que 4m³ é padrão" class="blog-card-img">
+        <div class="blog-card-body">
+          <div class="blog-card-category">Educação</div>
+          <div class="blog-card-title">Por Que 4m³ É Padrão</div>
+          <div class="blog-card-desc">Comparação com 3m³ e 5m³. Volume ideal para reforma em SP.</div>
+          <div class="blog-card-meta"><span>6 min</span><span class="blog-card-arrow">→</span></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- NOVO: Artigo 9 -->
+    <a href="/artigos/ctr-nf-empresa-verdade" class="blog-card-link">
+      <div class="blog-card">
+        <img src="https://www.padraocacamba.com.br/image/blog-ctr-nf-empresa.webp" alt="CTR NF empresa de verdade" class="blog-card-img">
+        <div class="blog-card-body">
+          <div class="blog-card-category">Compliance</div>
+          <div class="blog-card-title">CTR + NF = Empresa de Verdade</div>
+          <div class="blog-card-desc">Por que CTR e Nota Fiscal são obrigatórios. Como proteger sua obra.</div>
+          <div class="blog-card-meta"><span>6 min</span><span class="blog-card-arrow">→</span></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- NOVO: Artigo 10 -->
+    <a href="/artigos/como-reformar-apartamento" class="blog-card-link">
+      <div class="blog-card">
+        <img src="https://www.padraocacamba.com.br/image/blog-como-reformar-apartamento.webp" alt="Como reformar sem drama" class="blog-card-img">
+        <div class="blog-card-body">
+          <div class="blog-card-category">Guia</div>
+          <div class="blog-card-title">Como Reformar Sem Drama</div>
+          <div class="blog-card-desc">Passo a passo: planejamento, caçamba, execução, retirada.</div>
+          <div class="blog-card-meta"><span>6 min</span><span class="blog-card-arrow">→</span></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- ANTIGO: Artigo 1 -->
     <a href="/artigos/guia-completo-alugar-cacamba-sp" class="blog-card-link">
       <div class="blog-card">
-        <img src="https://www.padraocacamba.com.br/image/blog-guia-completo.webp" alt="Guia completo para alugar caçamba em SP" class="blog-card-img">
+        <img src="https://www.padraocacamba.com.br/image/guia-completo-alugar-cacamba-sp.webp" alt="Guia completo alugar caçamba" class="blog-card-img" onerror="this.src='https://via.placeholder.com/400x160?text=Guia+Completo'">
         <div class="blog-card-body">
           <div class="blog-card-category">Guia Completo</div>
-          <div class="blog-card-title">Guia Completo: Como Alugar Caçamba em SP Sem Cair em Golpe</div>
-          <div class="blog-card-desc">Tudo que você precisa saber sobre caçambas em São Paulo, processos, preços reais e como se proteger.</div>
-          <div class="blog-card-meta">
-            <span>8 min de leitura</span>
-            <span class="blog-card-arrow">→</span>
-          </div>
+          <div class="blog-card-title">Guia Completo: Como Alugar</div>
+          <div class="blog-card-desc">Passo a passo: como alugar caçamba sem cair em golpe.</div>
+          <div class="blog-card-meta"><span>8 min</span><span class="blog-card-arrow">→</span></div>
         </div>
       </div>
     </a>
 
-    <!-- Artigo 2 -->
-    <a href="/artigos/como-escolher-tamanho-cacamba" class="blog-card-link">
+    <!-- ANTIGO: Artigo 2 -->
+    <a href="/artigos/02-como-escolher-tamanho-cacamba" class="blog-card-link">
       <div class="blog-card">
-        <img src="https://www.padraocacamba.com.br/image/blog-tamanho-cacamba.webp" alt="Comparativo de tamanhos de caçamba" class="blog-card-img">
+        <img src="https://www.padraocacamba.com.br/image/como-escolher-tamanho-cacamba.webp" alt="Como escolher tamanho" class="blog-card-img" onerror="this.src='https://via.placeholder.com/400x160?text=Tamanho'">
         <div class="blog-card-body">
-          <div class="blog-card-category">Como Fazer</div>
-          <div class="blog-card-title">Como Escolher o Tamanho Certo: 3m³ vs 4m³ vs 5m³</div>
-          <div class="blog-card-desc">Entenda as diferenças, por que 4m³ é o padrão em SP e qual escolher para sua obra.</div>
-          <div class="blog-card-meta">
-            <span>5 min de leitura</span>
-            <span class="blog-card-arrow">→</span>
-          </div>
+          <div class="blog-card-category">Como fazer</div>
+          <div class="blog-card-title">Como Escolher o Tamanho</div>
+          <div class="blog-card-desc">3m³ vs 4m³ vs 5m³. Qual é a ideal para sua obra?</div>
+          <div class="blog-card-meta"><span>5 min</span><span class="blog-card-arrow">→</span></div>
         </div>
       </div>
     </a>
 
-    <!-- Artigo 3 -->
+    <!-- ANTIGO: Artigo 3 -->
     <a href="/artigos/5-mentiras-empresas-cacamba-falam" class="blog-card-link">
       <div class="blog-card">
-        <img src="https://www.padraocacamba.com.br/image/blog-mentiras.webp" alt="Comparativo entre golpe e site legítimo" class="blog-card-img">
+        <img src="https://www.padraocacamba.com.br/image/5-mentiras-empresas-cacamba.webp" alt="5 mentiras empresas" class="blog-card-img" onerror="this.src='https://via.placeholder.com/400x160?text=Mentiras'">
         <div class="blog-card-body">
           <div class="blog-card-category">Anti-fraude</div>
-          <div class="blog-card-title">As 5 Maiores Mentiras Que Empresas de Caçamba Falam</div>
-          <div class="blog-card-desc">Descubra as promessas falsas e saiba como identificar empresas legítimas de golpes.</div>
-          <div class="blog-card-meta">
-            <span>6 min de leitura</span>
-            <span class="blog-card-arrow">→</span>
-          </div>
+          <div class="blog-card-title">5 Mentiras que Falam</div>
+          <div class="blog-card-desc">Sinais de alerta: entrega rápida, preço suspeito, sem NF.</div>
+          <div class="blog-card-meta"><span>6 min</span><span class="blog-card-arrow">→</span></div>
         </div>
       </div>
     </a>
 
-    <!-- Artigo 4 -->
+    <!-- ANTIGO: Artigo 4 -->
     <a href="/artigos/quanto-custa-descartar-entulho-sp" class="blog-card-link">
       <div class="blog-card">
-        <img src="https://www.padraocacamba.com.br/image/blog-custo-entulho.webp" alt="Tabela de preços de caçamba por região" class="blog-card-img">
+        <img src="https://www.padraocacamba.com.br/image/quanto-custa-descartar-entulho.webp" alt="Quanto custa descartar" class="blog-card-img" onerror="this.src='https://via.placeholder.com/400x160?text=Custo'">
         <div class="blog-card-body">
-          <div class="blog-card-category">Como Fazer</div>
-          <div class="blog-card-title">Quanto Custa Descartar Entulho Legalmente em São Paulo?</div>
-          <div class="blog-card-desc">Análise de preços por zona, o que está incluso e como calcular o custo real da sua obra.</div>
-          <div class="blog-card-meta">
-            <span>5 min de leitura</span>
-            <span class="blog-card-arrow">→</span>
-          </div>
+          <div class="blog-card-category">Educação</div>
+          <div class="blog-card-title">Quanto Custa Descartar</div>
+          <div class="blog-card-desc">Custos legais de descarte em SP. O que está incluído no preço.</div>
+          <div class="blog-card-meta"><span>5 min</span><span class="blog-card-arrow">→</span></div>
         </div>
       </div>
     </a>
-
   </div>
 </section>
 
-<div class="cta-box">
-  <h3>Pronto para pedir sua caçamba?</h3>
-  <p>Fale com o PC — nosso assistente IA quer ouvir seu projeto</p>
-  <button class="btn-wa" onclick="window.location='/#pc-chat'">Falar com PC no WhatsApp</button>
+<!-- CTA -->
+<div class="cta-section">
+  <h3>Pronto para alugar?</h3>
+  <p>Fale com o PC agora. Entrega em 24h, preço claro, sem surpresas.</p>
+  <button class="btn-wa" onclick="focarPC()">Falar com PC</button>
 </div>
 
 <footer>
   <div class="footer-txt">
-    Blog Padrão Caçamba — Locação de Caçambas em SP<br>
-    CNPJ: 44.538.708/0001-76<br>
-    padraocacamba.com.br · Desde 2004
+    Padrão Caçamba — Blog de Educação sobre Caçambas<br>
+    CNPJ: 44.538.708/0001-76 — Desde 2004<br>
+    padraocacamba.com.br
   </div>
 </footer>
 
+<script>
+function focarPC() {
+  if (window.pcMessenger) {
+    window.pcMessenger.focus();
+  } else {
+    console.log('PC não está pronto ainda');
+  }
+}
+</script>
 </body>
 </html>
