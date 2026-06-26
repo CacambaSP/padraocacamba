@@ -329,3 +329,72 @@
     <priority>0.8</priority>
   </url>
 </urlset>
+
+  <!-- Blog Articles - 10 artigos -->
+  <url>
+    <loc>https://www.padraocacamba.com.br/artigos/</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.padraocacamba.com.br/artigos/guia-completo-alugar-cacamba-sp</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.padraocacamba.com.br/artigos/02-como-escolher-tamanho-cacamba</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.padraocacamba.com.br/artigos/5-mentiras-empresas-cacamba-falam</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.padraocacamba.com.br/artigos/quanto-custa-descartar-entulho-sp</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.padraocacamba.com.br/artigos/obra-comercial-residencial</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.padraocacamba.com.br/artigos/pintura-casa-descarte</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.padraocacamba.com.br/artigos/amianto-descarte-seguro</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.padraocacamba.com.br/artigos/por-que-4m3-padrao</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.padraocacamba.com.br/artigos/ctr-nf-empresa-verdade</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.padraocacamba.com.br/artigos/como-reformar-apartamento</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
