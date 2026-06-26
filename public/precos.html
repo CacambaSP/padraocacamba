@@ -985,14 +985,9 @@ let pcHistory = [], pcClienteWpp = null, pcClienteNome = null, pcAguardandoWpp =
 
 async function carregarDados() {
   try {
-    const [rZonas, rBairros] = await Promise.all([
-      fetch(`${SB_URL}/rest/v1/precos_zonas?order=preco_padrao.asc`, { headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY } }),
-      fetch(`${SB_URL}/rest/v1/bairros_paginas?ativo=eq.true&order=zona.asc,bairro.asc`, { headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY } })
-    ]);
-    const zonas = await rZonas.json();
-    const bairros = await rBairros.json();
+    const res = await fetch('/api/precos-zonas');
+    const zonas = await res.json();
     if (Array.isArray(zonas)) renderZonas(zonas);
-    if (Array.isArray(bairros)) renderBairros(bairros);
   } catch(e) {
     document.getElementById('zonas-list').innerHTML = '<p style="color:#333;padding:12px;font-size:12px;font-family:var(--mono)">// erro ao carregar</p>';
   }
