@@ -174,6 +174,23 @@ h2{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;color:#ff
 .fraud-item:last-child{border-bottom:none}
 .fraud-x{color:#f87171;font-size:16px;flex-shrink:0;font-weight:700}
 
+/* CAROUSEL */
+.blog-carousel{position:relative;overflow:hidden;border-radius:12px;background:var(--card)}
+.carousel-item{display:none;opacity:0;transition:opacity .4s}
+.carousel-item.active{display:block;opacity:1}
+.carousel-card{display:block;text-decoration:none;color:inherit;height:200px;position:relative;overflow:hidden;border-radius:12px;background:var(--card)}
+.carousel-card img{width:100%;height:100%;object-fit:cover;display:block}
+.carousel-card-body{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.9));padding:16px;color:#fff}
+.carousel-category{font-size:10px;color:#6a8fc4;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px;font-weight:600}
+.carousel-title{font-size:16px;font-weight:600;line-height:1.3}
+.carousel-controls{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:16px}
+.carousel-prev,.carousel-next{background:var(--border);border:none;color:#fff;width:40px;height:40px;border-radius:8px;font-size:20px;cursor:pointer;font-weight:600;display:flex;align-items:center;justify-content:center}
+.carousel-prev:active,.carousel-next:active{opacity:.7}
+.carousel-dots{display:flex;gap:6px}
+.carousel-dot{width:8px;height:8px;border-radius:50%;background:#444;cursor:pointer;transition:background .3s}
+.carousel-dot.active{background:var(--blue-light)}
+.carousel-link{color:var(--blue-light);font-size:14px;font-weight:600;text-decoration:none}
+
 /* FOOTER CTA */
 .footer-cta{background:var(--blue);padding:28px 18px;text-align:center}
 .footer-cta h2{font-family:'DM Serif Display',serif;font-size:22px;font-weight:400;margin-bottom:6px;color:#fff}
@@ -587,6 +604,64 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
     <div class="fraud-item"><span class="fraud-x">X</span><span>Cobra 50% adiantado antes da entrega</span></div>
     <div class="fraud-item"><span class="fraud-x">X</span><span>Sem CNPJ visível no site</span></div>
     <div class="fraud-item"><span class="fraud-x">X</span><span>Não emite Nota Fiscal nem CTR</span></div>
+  </div>
+</section>
+
+<!-- CARROSSEL BLOG -->
+<section style="padding:28px 18px">
+  <div class="sec-label">Artigos recentes</div>
+  <h2>Leia nossos guias</h2>
+  
+  <div class="blog-carousel">
+    <div class="carousel-item active">
+      <a href="/artigos/guia-completo-alugar-cacamba-sp" class="carousel-card">
+        <img src="https://www.padraocacamba.com.br/image/blog-guia-completo.webp" alt="Guia Completo">
+        <div class="carousel-card-body">
+          <div class="carousel-category">Guia Completo</div>
+          <div class="carousel-title">Como Alugar Caçamba</div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="carousel-item">
+      <a href="/artigos/5-mentiras-empresas-cacamba-falam" class="carousel-card">
+        <img src="https://www.padraocacamba.com.br/image/blog-mentiras.webp" alt="5 Mentiras">
+        <div class="carousel-card-body">
+          <div class="carousel-category">Anti-fraude</div>
+          <div class="carousel-title">5 Mentiras que Falam</div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="carousel-item">
+      <a href="/artigos/por-que-4m3-padrao" class="carousel-card">
+        <img src="https://www.padraocacamba.com.br/image/blog-por-que-4m3-padrao.webp" alt="Por que 4m³">
+        <div class="carousel-card-body">
+          <div class="carousel-category">Educação</div>
+          <div class="carousel-title">Por Que 4m³ é Padrão</div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="carousel-item">
+      <a href="/artigos/ctr-nf-empresa-verdade" class="carousel-card">
+        <img src="https://www.padraocacamba.com.br/image/blog-ctr-nf-empresa.webp" alt="CTR e NF">
+        <div class="carousel-card-body">
+          <div class="carousel-category">Compliance</div>
+          <div class="carousel-title">CTR + NF = Empresa Real</div>
+        </div>
+      </a>
+    </div>
+  </div>
+  
+  <div class="carousel-controls">
+    <button class="carousel-prev" onclick="carouselPrev()">‹</button>
+    <div class="carousel-dots" id="carousel-dots"></div>
+    <button class="carousel-next" onclick="carouselNext()">›</button>
+  </div>
+  
+  <div style="text-align:center;margin-top:16px">
+    <a href="/artigos/" class="carousel-link">Ver todos os artigos →</a>
   </div>
 </section>
 
@@ -1188,5 +1263,49 @@ bannerInit();
 pcIniciar();
 </script>
 <script src="/floating-buttons.js" defer></script>
+<script>
+// CAROUSEL
+let carouselIndex = 0;
+const carouselItems = document.querySelectorAll('.carousel-item');
+const totalSlides = carouselItems.length;
+
+function initCarouselDots() {
+  const dotsContainer = document.getElementById('carousel-dots');
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('div');
+    dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
+    dot.onclick = () => goToSlide(i);
+    dotsContainer.appendChild(dot);
+  }
+}
+
+function updateCarousel() {
+  carouselItems.forEach((item, i) => {
+    item.classList.toggle('active', i === carouselIndex);
+  });
+  document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+    dot.classList.toggle('active', i === carouselIndex);
+  });
+}
+
+function carouselNext() {
+  carouselIndex = (carouselIndex + 1) % totalSlides;
+  updateCarousel();
+}
+
+function carouselPrev() {
+  carouselIndex = (carouselIndex - 1 + totalSlides) % totalSlides;
+  updateCarousel();
+}
+
+function goToSlide(n) {
+  carouselIndex = n;
+  updateCarousel();
+}
+
+initCarouselDots();
+setInterval(carouselNext, 5000);
+</script>
+
 </body>
 </html>
