@@ -1,19 +1,15 @@
+# Robots.txt — Padrão Caçamba
+# https://www.padraocacamba.com.br
+
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://www.padraocacamba.com.br/sitemap.xml
-
-# Arquivos para IAs e crawlers
-Allow: /llms.txt
-Allow: /llms-full.txt
-Allow: /api/precos
-
-# Bloquear páginas internas sem valor para SEO
+Disallow: /admin/
 Disallow: /cadastro
-Disallow: /api/chat
+Disallow: /locar
+Disallow: /monitoring-dashboard
+Disallow: /google*
 
-# Crawlers de IA conhecidos — liberados explicitamente
+# IA Crawlers — permissão explícita
 User-agent: GPTBot
 Allow: /
 
@@ -23,14 +19,25 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: GoogleOther
+User-agent: anthropic-ai
 Allow: /
 
-User-agent: Googlebot
+User-agent: Googlebot-Extended
 Allow: /
 
+User-agent: CCBot
+Allow: /
+
+# Bingbot
 User-agent: Bingbot
 Allow: /
 
-User-agent: anthropic-ai
+# Googlebot padrão
+User-agent: Googlebot
 Allow: /
+
+# Sitemap
+Sitemap: https://www.padraocacamba.com.br/sitemap.xml
+
+# Crawl delay (polida)
+Crawl-delay: 1
