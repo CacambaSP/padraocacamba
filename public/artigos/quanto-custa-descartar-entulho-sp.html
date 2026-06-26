@@ -53,10 +53,6 @@
 html{font-size:16px;scroll-behavior:smooth}
 body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;max-width:430px;margin:0 auto;overflow-x:hidden;padding-bottom:60px}
 
-/* NAV LOGO */
-.nav-logo-link{text-decoration:none;color:inherit;display:flex;align-items:center;gap:8px;cursor:pointer;transition:opacity .2s}
-.nav-logo-link:hover{opacity:.8}
-.nav-logo{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
 nav{position:sticky;top:0;z-index:200;background:rgba(10,10,10,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{display:flex;align-items:center;gap:9px}
 .nav-mark{font-family:'DM Serif Display',serif;font-size:23px;color:var(--silver)}
@@ -127,17 +123,13 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border);m
 <body>
 
 <nav>
-  <a href="/" class="nav-logo-link" title="Voltar para home">
-    <div class="nav-logo">
-      <div style="font-size:18px;font-weight:700;color:#C0C0C0;letter-spacing:-1px">PÇ</div>
-      <div class="nav-text" style="font-size:11px;letter-spacing:.8px;color:#666;text-transform:uppercase;margin-top:2px">Padrão</div>
-    </div>
-  </a>
+  <div class="nav-text">Padrão Caçamba · Locação SP</div>
   <button class="nav-pc-btn" onclick="focarPC()">Falar com PC</button>
 </nav>
 
 <!-- BANNER ROTATIVO COM IMAGEM -->
 <div id="top-banner" onclick="focarPC()" style="position:relative;width:100%;height:100px;overflow:hidden;cursor:pointer;display:block">
+  <a href="/" style="position:absolute;top:10px;left:10px;width:80px;height:80px;z-index:10;cursor:pointer" title="Voltar para home"></a>
   <img src="https://www.padraocacamba.com.br/image/banner-padrao-cacamba.webp"
        alt="Padrão Caçamba — Blog de educação sobre caçambas em SP"
        style="width:100%;height:100px;object-fit:cover;object-position:left center;display:block"

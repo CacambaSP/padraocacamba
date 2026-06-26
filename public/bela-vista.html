@@ -27,10 +27,6 @@
 :root{--black:#0A0A0A;--blue:#1E3A8A;--blue-light:#2563EB;--silver:#C0C0C0;--white:#FFFFFF;--card:#161616;--border:#2a2a2a;--green:#00FF7F;--muted:#999;--mid:#bbb}
 html{font-size:16px;scroll-behavior:smooth}
 body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;max-width:430px;margin:0 auto;overflow-x:hidden;padding-bottom:90px}
-/* NAV LOGO */
-.nav-logo-link{text-decoration:none;color:inherit;display:flex;align-items:center;gap:8px;cursor:pointer;transition:opacity .2s}
-.nav-logo-link:hover{opacity:.8}
-.nav-logo{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
 nav{position:sticky;top:0;z-index:200;background:rgba(10,10,10,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
 .nav-text{font-size:12px;color:#888;letter-spacing:.8px;text-transform:uppercase;white-space:nowrap}
 .nav-pc-btn{background:var(--blue);color:#fff;border:none;padding:9px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif}
@@ -146,12 +142,7 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border)}
 </head>
 <body>
 <nav>
-  <a href="/" class="nav-logo-link" title="Voltar para home">
-    <div class="nav-logo">
-      <div style="font-size:18px;font-weight:700;color:#C0C0C0;letter-spacing:-1px">PÇ</div>
-      <div class="nav-text" style="font-size:11px;letter-spacing:.8px;color:#666;text-transform:uppercase;margin-top:2px">Padrão</div>
-    </div>
-  </a>
+  <div class="nav-text">Padrão Caçamba · Locação SP</div>
   <button class="nav-pc-btn" onclick="focarPC()">Falar com PC</button>
 </nav>
 <div class="pc-topo" id="pc-chat">
