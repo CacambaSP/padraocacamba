@@ -26,7 +26,7 @@ export default async function handler(req, res) {
       { zona: 'Zona Sul', preco_padrao: 570 },
       { zona: 'Zona Oeste', preco_padrao: 570 },
       { zona: 'Zona Norte', preco_padrao: 570 },
-      { zona: 'Centro SP', preco_padrao: 570 },
+      { zona: 'Centro', preco_padrao: 570 },
       { zona: 'Zona Leste', preco_padrao: 600 }
     ]);
   }
