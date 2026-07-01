@@ -978,8 +978,7 @@ async function pcEnviar() {
     if(escalar){
       pcSituacao=msg;
       registrarAprendizado(msg, reply, 'escala_automatica');
-      if(pcClienteWpp){setTimeout(()=>{pcAddMsg('Vou chamar o responsável agora.','bot');pcShowDouglasBtn(pcClienteWpp,msg);},400);}
-      else{pcAguardandoWpp=true;setTimeout(()=>{const m=pcClienteNome?`${pcClienteNome}, me passa seu WhatsApp com DDD?`:'Me passa seu WhatsApp com DDD para o responsável entrar em contato?';pcAddMsg(m,'bot');pcHistory.push({role:'assistant',content:m});},400);}
+      setTimeout(()=>{pcAddMsg('Vou te conectar agora com o responsável.','bot');pcShowDouglasBtn(null,msg);},400);
     }
     if(temCadastro){setTimeout(pcShowCadastroBtn,600);}
   } catch(e){pcRemoveTyping();pcAddMsg('Erro de conexão.','sys');}

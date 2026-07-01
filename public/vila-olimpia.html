@@ -902,21 +902,10 @@ async function pcChamar(userMsg) {
     if (escalar) {
       pcSituacao = userMsg;
       registrarAprendizado(userMsg, reply, 'escala_automatica');
-      if (pcClienteWpp) {
-        setTimeout(() => {
-          pcAddMsg('Vou chamar o responsável para te ajudar agora.', 'bot');
-          pcShowDouglasBtn(pcClienteWpp, userMsg);
-        }, 400);
-      } else {
-        pcAguardandoWpp = true;
-        setTimeout(() => {
-          const m = pcClienteNome
-            ? `${pcClienteNome}, me passa seu WhatsApp com DDD para o responsável entrar em contato?`
-            : 'Me passa seu WhatsApp com DDD para o responsável entrar em contato?';
-          pcAddMsg(m, 'bot');
-          pcHistory.push({ role: 'assistant', content: m });
-        }, 400);
-      }
+      setTimeout(() => {
+        pcAddMsg('Vou te conectar agora com o responsável.', 'bot');
+        pcShowDouglasBtn(null, userMsg);
+      }, 400);
     }
     if (temCadastro) {
       setTimeout(pcShowCadastroBtn, 600);
