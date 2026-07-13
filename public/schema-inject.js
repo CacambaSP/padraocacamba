@@ -70,20 +70,7 @@
         },
         "availability": "https://schema.org/InStock",
         "validFrom": hoje,
-        "seller": { "@type": "Organization", "name": "Padrão Caçamba", "taxID": "44.538.708/0001-76" },
-        "itemOffered": {
-          "@type": "Product",
-          "name": "Caçamba Estacionária 4m³",
-          "description": "Caçamba metálica estacionária 4m³ — padrão Grande São Paulo. Aceita entulho seco de obra.",
-          "category": "Locação de Caçamba",
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "BRL",
-            "price": precoNum,
-            "availability": "https://schema.org/InStock",
-            "seller": { "@type": "Organization", "name": "Padrão Caçamba" }
-          }
-        }
+        "seller": { "@type": "Organization", "name": "Padrão Caçamba", "taxID": "44.538.708/0001-76" }
       },
       "url": urlAtual,
       "dateModified": hoje
