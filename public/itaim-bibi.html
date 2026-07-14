@@ -901,7 +901,7 @@ async function pcChamar(userMsg) {
     pcAddMsg(reply, 'bot');
     if (escalar) {
       pcSituacao = userMsg;
-      registrarAprendizado(userMsg, reply, 'escala_automatica');
+      typeof pcRegistrarEscala==='function'&&pcRegistrarEscala(userMsg, reply, 'escala_automatica', typeof BAIRRO!=='undefined'?BAIRRO:'home', typeof PC_VARIANTE!=='undefined'&&PC_VARIANTE?PC_VARIANTE.id:'n/a', pcHistory.filter(m=>m.role==='user').length);
       setTimeout(() => {
         pcAddMsg('Vou te conectar agora com o responsável.', 'bot');
         pcShowDouglasBtn(null, userMsg);
@@ -974,5 +974,6 @@ pcIniciar();
 <script src="/schema-inject.js" defer></script>
 <script src="/cep-redirect.js" defer></script>
 <script src="/floating-buttons.js" defer></script>
+<script src="/pc-tracking.js" defer></script>
 </body>
 </html>

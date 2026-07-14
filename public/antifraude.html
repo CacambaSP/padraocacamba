@@ -732,6 +732,7 @@ async function pcEnviar() {
     pcHistory.push({role:'assistant', content:reply});
     pcAddMsg(reply, 'bot');
     if (escalar) {
+      typeof pcRegistrarEscala==='function'&&pcRegistrarEscala(msg, reply, 'contestacao_denuncia', 'antifraude', 'n/a', pcHistory.filter(m=>m.role==='user').length);
       pcAguardandoWpp = true;
       setTimeout(() => { pcAddMsg('Me passa seu WhatsApp com DDD para o responsável entrar em contato?', 'bot'); }, 400);
     }
@@ -747,5 +748,6 @@ function pcIniciar() {
 }
 </script>
 <script src="/floating-buttons.js" defer></script>
+<script src="/pc-tracking.js" defer></script>
 </body>
 </html>
