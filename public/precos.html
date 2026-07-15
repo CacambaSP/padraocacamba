@@ -1067,7 +1067,7 @@ function pcShowCadastroBtn() {
   const btn = document.createElement('button');
   btn.className = 'pc-btn-full';
   btn.textContent = '📋 Preencher cadastro e fechar pedido';
-  btn.onclick = () => window.open(CADASTRO, '_blank');
+  btn.onclick = () => window.open(CADASTRO+'&bairro='+encodeURIComponent(typeof BAIRRO!=='undefined'?BAIRRO:'')+'&preco='+encodeURIComponent(typeof precoAtual!=='undefined'?precoAtual:'')+'&origem='+encodeURIComponent(location.pathname),'_blank');
   msgs.appendChild(btn); msgs.scrollTop = msgs.scrollHeight;
 }
 function pcShowDouglasBtn(wpp, situacao) {
