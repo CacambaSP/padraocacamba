@@ -30,7 +30,7 @@ function regra(slug) {
   if (slug === '/precos') return { changefreq: 'weekly', priority: '0.9' };
   if (slug === '/antifraude' || slug === '/sobre') return { changefreq: 'monthly', priority: '0.8' };
   if (/^\/zona-|^\/grande-sp$|^\/centro-sp$/.test(slug)) return { changefreq: 'weekly', priority: '0.9' };
-  if (slug === '/artigos') return { changefreq: 'weekly', priority: '0.8' };
+  if (slug === '/artigos/') return { changefreq: 'weekly', priority: '0.8' };
   if (slug.startsWith('/artigos/')) return { changefreq: 'monthly', priority: '0.8' };
   return { changefreq: 'weekly', priority: '0.9' }; // páginas de bairro
 }
@@ -45,7 +45,7 @@ function coletar(dir, prefixo) {
     let slug = f.replace(/\.html$/, '');
     if (EXCLUIR.has(slug) || slug.startsWith('google')) continue;
     if (slug === 'index') slug = '';
-    urls.push({ slug: prefixo + (slug ? '/' + slug : (prefixo ? '' : '/')), file: full });
+    urls.push({ slug: prefixo + (slug ? '/' + slug : (prefixo ? '/' : '/')), file: full });
   }
 }
 
@@ -57,7 +57,7 @@ const peso = s =>
   s === '/' ? 0 :
   ['/precos', '/antifraude', '/sobre'].includes(s) ? 1 :
   /^\/zona-|^\/grande-sp$|^\/centro-sp$/.test(s) ? 2 :
-  s === '/artigos' ? 4 :
+  s === '/artigos/' ? 4 :
   s.startsWith('/artigos/') ? 5 : 3;
 urls.sort((a, b) => peso(a.slug) - peso(b.slug) || a.slug.localeCompare(b.slug));
 
