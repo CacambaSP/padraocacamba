@@ -1003,11 +1003,20 @@ function renderZonas(zonas) {
     'Centro': 'Liberdade · República · Consolação · Bela Vista...',
     'Zona Leste': 'Tatuapé · Penha · Vila Formosa',
   };
+  const zonaUrl = {
+    'Grande SP': '/grande-sp',
+    'Zona Sul': '/zona-sul',
+    'Zona Oeste': '/zona-oeste',
+    'Zona Norte': '/zona-norte',
+    'Centro': '/centro-sp',
+    'Zona Leste': '/zona-leste',
+  };
   document.getElementById('zonas-list').innerHTML = zonasFiltradas.map(z => {
     const cor = ZONA_CORES[z.zona] || '#444';
     const faixa = z.zona === 'Grande SP' ? 'a partir de · com NF' : z.zona === 'Zona Leste' ? 'maior faixa · com NF' : 'faixa padrão · com NF';
     const precoDisplay = z.zona === 'Grande SP' ? `a partir de R$\u00a0${Number(z.preco_padrao).toLocaleString('pt-BR')}` : `R$\u00a0${Number(z.preco_padrao).toLocaleString('pt-BR')}`;
-    return `<div class="zona-item">
+    const url = zonaUrl[z.zona] || '/';
+    return `<a href="${url}" class="zona-item" style="display:block;text-decoration:none;color:inherit;cursor:pointer" aria-label="Ver bairros e preços de ${z.zona}">
       <div class="zona-item-accent" style="background:${cor}"></div>
       <div class="zona-item-body">
         <div class="zona-item-info">
@@ -1016,10 +1025,10 @@ function renderZonas(zonas) {
         </div>
         <div class="zona-item-preco">
           <div class="zona-item-faixa" style="color:${cor}">${precoDisplay}</div>
-          <div class="zona-item-label">${faixa}</div>
+          <div class="zona-item-label">${faixa} <span style="color:${cor}">→</span></div>
         </div>
       </div>
-    </div>`;
+    </a>`;
   }).join('');
 }
 
