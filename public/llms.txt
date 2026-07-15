@@ -117,3 +117,4 @@ caçamba [bairro] (para cada bairro atendido)
 - Por Que 4m³ é o Padrão SP: https://www.padraocacamba.com.br/artigos/por-que-4m3-padrao
 - CTR e NF (Verdade Sobre Empresa): https://www.padraocacamba.com.br/artigos/ctr-nf-empresa-verdade
 - Como Reformar Apartamento: https://www.padraocacamba.com.br/artigos/como-reformar-apartamento
+- /artigos/descarte-entulho-sao-paulo — Descarte de Entulho em São Paulo: Regras, Ecopontos e Caçambas
