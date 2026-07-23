@@ -30,9 +30,11 @@ Nenhuma urgente — juntar numa rodada de produção de imagem via Firefly/Gemin
 
 ---
 
-## Página hub sugerida (revisão externa, antes do item 3 do blog)
+## Página hub sugerida (revisão externa, antes do item 3 do blog) — CONCLUÍDO 23/07/2026
 
-- [ ] `/o-que-nao-pode-ir-na-cacamba` — página explicando por que amianto, tinta, solvente, bateria, resíduo hospitalar exigem destinação específica. Conecta com o item 1 do plano de páginas hub de termo genérico.
+- [x] ~~`/o-que-nao-pode-ir-na-cacamba` — página explicando por que amianto, tinta, solvente, bateria, resíduo hospitalar exigem destinação específica~~ — criada 23/07/2026, com 8 materiais (amianto, tintas/químicos, pilhas, resíduo hospitalar, pneus, eletrônicos, lixo doméstico, líquidos), FAQ, PC funcional, linkada do artigo de amianto e de /cacamba-de-entulho, no sitemap/llms
+
+- [ ] Gerar banner dedicado (hoje usa o banner genérico)
 
 ---
 
