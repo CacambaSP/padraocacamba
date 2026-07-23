@@ -42,3 +42,11 @@ Criadas com base em dados reais do GSC (cacambasp.com.br): `/cacamba-de-entulho`
 
 - [x] ~~Gerar banner dedicado para cada uma das 3 páginas hub~~ — feito 23/07/2026
 - [x] ~~Linkar as 3 páginas hub a partir da home e/ou do `/precos`~~ — feito 23/07/2026 (nova seção na home + bloco de links no /precos)
+
+---
+
+## Fonte pequena — família de template Bebas Neue + Space Mono
+
+Em 23/07/2026, Doug sinalizou que `/precos` parecia com letra menor que as demais páginas. Confirmado: essa família de template (usada por `/precos` e pelas 3 páginas hub) tinha texto de corpo em 12-14px, abaixo do padrão de 16px mínimo do site. Corrigido em `/precos`, `/cacamba-de-entulho`, `/aluguel-de-cacamba`, `/locacao-de-cacamba`.
+
+- [ ] Verificar e aplicar o mesmo ajuste nas páginas de zona (`/zona-sul`, `/zona-oeste`, `/zona-norte`, `/zona-leste`, `/centro-sp`, `/grande-sp`), que usam a mesma família de template e provavelmente têm o mesmo problema — não verificado ainda
