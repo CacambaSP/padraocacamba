@@ -41,4 +41,4 @@ Nenhuma urgente — juntar numa rodada de produção de imagem via Firefly/Gemin
 Criadas com base em dados reais do GSC (cacambasp.com.br): `/cacamba-de-entulho`, `/aluguel-de-cacamba`, `/locacao-de-cacamba`.
 
 - [x] ~~Gerar banner dedicado para cada uma das 3 páginas hub~~ — feito 23/07/2026
-- [ ] Considerar linkar as 3 páginas hub a partir da home e/ou do `/precos`, hoje só são acessadas via zonas/artigos/sitemap
+- [x] ~~Linkar as 3 páginas hub a partir da home e/ou do `/precos`~~ — feito 23/07/2026 (nova seção na home + bloco de links no /precos)
