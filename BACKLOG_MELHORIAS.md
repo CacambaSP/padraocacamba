@@ -45,8 +45,11 @@ Criadas com base em dados reais do GSC (cacambasp.com.br): `/cacamba-de-entulho`
 
 ---
 
-## Fonte pequena — família de template Bebas Neue + Space Mono
+## Fonte pequena — família de template Bebas Neue + Space Mono (RESOLVIDO 23/07/2026)
 
-Em 23/07/2026, Doug sinalizou que `/precos` parecia com letra menor que as demais páginas. Confirmado: essa família de template (usada por `/precos` e pelas 3 páginas hub) tinha texto de corpo em 12-14px, abaixo do padrão de 16px mínimo do site. Corrigido em `/precos`, `/cacamba-de-entulho`, `/aluguel-de-cacamba`, `/locacao-de-cacamba`.
+Em 23/07/2026, Doug sinalizou que `/precos` parecia com letra menor que as demais páginas. Confirmado: toda a família de template Bebas Neue + Space Mono tinha texto de corpo em 12-14px, abaixo do padrão de 16px mínimo do site. Revisão completa do site (67 páginas) feita — corrigido em 15 páginas ao todo:
+- `/precos`, `/cacamba-de-entulho`, `/aluguel-de-cacamba`, `/locacao-de-cacamba`
+- `/barueri`, `/carapicuiba`, `/cotia`, `/guarulhos`, `/osasco`
+- `/zona-sul`, `/zona-oeste`, `/zona-norte`, `/zona-leste`, `/centro-sp`, `/grande-sp`
 
-- [ ] Verificar e aplicar o mesmo ajuste nas páginas de zona (`/zona-sul`, `/zona-oeste`, `/zona-norte`, `/zona-leste`, `/centro-sp`, `/grande-sp`), que usam a mesma família de template e provavelmente têm o mesmo problema — não verificado ainda
+Demais páginas com texto pequeno (antifraude, index, locar, artigos) foram checadas e confirmadas como rótulos/badges/notas secundárias intencionais, não bug — não mexidas.
