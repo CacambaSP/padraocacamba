@@ -55,3 +55,5 @@ Em 23/07/2026, Doug sinalizou que `/precos` parecia com letra menor que as demai
 - `/zona-sul`, `/zona-oeste`, `/zona-norte`, `/zona-leste`, `/centro-sp`, `/grande-sp`
 
 Demais páginas com texto pequeno (antifraude, index, locar, artigos) foram checadas e confirmadas como rótulos/badges/notas secundárias intencionais, não bug — não mexidas.
+
+**Lembrete de processo:** ao criar página nova (mesmo copiando de template já corrigido), checar tamanho de fonte do conteúdo específico novo — aconteceu de novo em `/o-que-nao-pode-ir-na-cacamba` (classes `.mat-why`/`.mat-instead`, texto novo que não existia no template original) e foi corrigido no mesmo dia.
