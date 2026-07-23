@@ -38,7 +38,7 @@ Nenhuma urgente — juntar numa rodada de produção de imagem via Firefly/Gemin
 
 ## Páginas hub de termo genérico (criadas 23/07/2026)
 
-Criadas com base em dados reais do GSC (cacambasp.com.br): `/cacamba-de-entulho`, `/aluguel-de-cacamba`, `/locacao-de-cacamba`. Cada uma usa o banner genérico (`banner-padrao-cacamba.webp`) por enquanto.
+Criadas com base em dados reais do GSC (cacambasp.com.br): `/cacamba-de-entulho`, `/aluguel-de-cacamba`, `/locacao-de-cacamba`.
 
-- [ ] Gerar banner dedicado para cada uma das 3 páginas hub (mesmo processo Firefly/Gemini das páginas de bairro)
+- [x] ~~Gerar banner dedicado para cada uma das 3 páginas hub~~ — feito 23/07/2026
 - [ ] Considerar linkar as 3 páginas hub a partir da home e/ou do `/precos`, hoje só são acessadas via zonas/artigos/sitemap
