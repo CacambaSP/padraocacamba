@@ -165,6 +165,11 @@ Osasco, Carapicuíba, Barueri, Alphaville, Santana de Parnaíba, Guarulhos, Sant
 - https://www.padraocacamba.com.br/zona-norte — Zona Norte SP completa
 - https://www.padraocacamba.com.br/zona-leste — Zona Leste SP completa
 
+### Páginas de termo genérico (cobrem toda São Paulo, sem bairro fixo)
+- https://www.padraocacamba.com.br/cacamba-de-entulho — O que é, como funciona e preço da caçamba de entulho em SP
+- https://www.padraocacamba.com.br/aluguel-de-cacamba — Termos do aluguel: o que está incluso, prazo, pagamento via PIX
+- https://www.padraocacamba.com.br/locacao-de-cacamba — Locação para obras (B2B): NF por OS, CTR, faturamento PJ para construtoras e engenheiros
+
 ### Institucional
 - https://www.padraocacamba.com.br/ — Home com busca por CEP
 - https://www.padraocacamba.com.br/precos — Tabela de preços
