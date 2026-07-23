@@ -9,12 +9,12 @@
 <meta name="description" content="Amianto, tinta, pilha, resíduo hospitalar: veja o que não pode ir na caçamba de entulho em São Paulo e o que fazer com cada material.">
 <meta property="og:title" content="O Que Não Pode Ir na Caçamba de Entulho | Padrão Caçamba">
 <meta property="og:description" content="Guia completo dos materiais que não podem ir na caçamba de entulho — e o que fazer com cada um deles.">
-<meta property="og:image" content="https://www.padraocacamba.com.br/image/banner-padrao-cacamba.webp">
+<meta property="og:image" content="https://www.padraocacamba.com.br/image/banner-nao-pode-ir-cacamba-padrao-cacamba.webp">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="O Que Não Pode Ir na Caçamba de Entulho | Padrão Caçamba">
-<meta name="twitter:image" content="https://www.padraocacamba.com.br/image/banner-padrao-cacamba.webp">
+<meta name="twitter:image" content="https://www.padraocacamba.com.br/image/banner-nao-pode-ir-cacamba-padrao-cacamba.webp">
 <link rel="canonical" href="https://www.padraocacamba.com.br/o-que-nao-pode-ir-na-cacamba">
 <link rel="icon" type="image/png" href="/image/logo-padrao-cacamba.png">
 <link rel="apple-touch-icon" href="/image/logo-padrao-cacamba.png">
@@ -95,6 +95,8 @@ nav{position:sticky;top:0;z-index:200;background:rgba(8,8,8,0.95);backdrop-filte
 
 .banner-wrap{width:100%;position:relative;overflow:hidden;background:#0a0a0a}
 .banner-img{width:100%;height:200px;object-fit:cover;object-position:center;display:block;opacity:.9}
+.banner-alert-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 32% 32%,rgba(255,40,40,.6) 0%,rgba(255,40,40,.18) 26%,transparent 55%);mix-blend-mode:screen;animation:alertPulse 2.4s ease-in-out infinite}
+@keyframes alertPulse{0%,100%{opacity:.2}50%{opacity:1}}
 .banner-overlay{position:absolute;bottom:0;left:0;right:0;padding:16px 20px;background:linear-gradient(transparent,rgba(8,8,8,.95))}
 .banner-tag{font-family:var(--mono);font-size:9px;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:4px}
 .banner-title{font-family:var(--display);font-size:26px;letter-spacing:2px;color:#fff;line-height:1;text-transform:uppercase}
@@ -252,10 +254,11 @@ footer{background:#030303;padding:24px 20px;border-top:1px solid var(--border)}
 </nav>
 
 <div class="banner-wrap">
-  <img src="https://www.padraocacamba.com.br/image/banner-padrao-cacamba.webp"
+  <img src="https://www.padraocacamba.com.br/image/banner-nao-pode-ir-cacamba-padrao-cacamba.webp"
        alt="O que não pode ir na caçamba de entulho — Padrão Caçamba"
        class="banner-img"
        onerror="this.parentElement.style.background='#0a0a0a';this.style.display='none'">
+  <div class="banner-alert-glow"></div>
   <div class="banner-overlay">
     <div class="banner-tag">// Guia de descarte</div>
     <div class="banner-title">O Que Não Pode<br>Ir na Caçamba</div>
