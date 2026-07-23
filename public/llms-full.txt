@@ -231,14 +231,14 @@ Artigos educativos sobre locação de caçamba, descarte de entulho e prevençã
 
 - /artigos/02-como-escolher-tamanho-cacamba — Como Escolher o Tamanho Certo: 3m³ vs 4m³ vs 5m³
 - /artigos/5-mentiras-empresas-cacamba-falam — As 5 Maiores Mentiras Que Empresas de Caçamba Falam
-- /artigos/amianto-descarte-seguro — Amianto em Reformas — Descarte Profissional
-- /artigos/como-reformar-apartamento — Como Reformar Apartamento Sem Drama
-- /artigos/ctr-nf-empresa-verdade — CTR e NF: Por Que Sua Empresa Precisa
+- /artigos/amianto-descarte-seguro — Amianto em Reformas: Como Identificar e Descartar com Segurança
+- /artigos/como-reformar-apartamento — Como Reformar Apartamento Sem Drama: Guia Passo a Passo
+- /artigos/ctr-nf-empresa-verdade — CTR e Nota Fiscal: Por Que Sua Empresa de Caçamba Precisa Emitir
 - /artigos/descarte-entulho-sao-paulo — Descarte de Entulho em São Paulo: Regras, Ecopontos e Quando Alugar Caçamba
 - /artigos/guia-completo-alugar-cacamba-sp — Guia Completo: Como Alugar Caçamba em SP Sem Cair em Golpe
 - /artigos/obra-comercial-residencial — Obra Comercial vs Residencial — Qual Caçamba Escolher
 - /artigos/pintura-casa-descarte — Pintura da Casa — Descarte Correto de Resíduos
-- /artigos/por-que-4m3-padrao — Por Que 4m³ É o Padrão em São Paulo
+- /artigos/por-que-4m3-padrao — Por Que 4m³ É o Padrão de Caçamba em São Paulo
 - /artigos/quanto-custa-descartar-entulho-sp — Quanto Custa Descartar Entulho em SP? Preços Reais 2026
 
 ---
