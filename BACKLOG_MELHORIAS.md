@@ -33,3 +33,12 @@ Nenhuma urgente — juntar numa rodada de produção de imagem via Firefly/Gemin
 ## Página hub sugerida (revisão externa, antes do item 3 do blog)
 
 - [ ] `/o-que-nao-pode-ir-na-cacamba` — página explicando por que amianto, tinta, solvente, bateria, resíduo hospitalar exigem destinação específica. Conecta com o item 1 do plano de páginas hub de termo genérico.
+
+---
+
+## Páginas hub de termo genérico (criadas 23/07/2026)
+
+Criadas com base em dados reais do GSC (cacambasp.com.br): `/cacamba-de-entulho`, `/aluguel-de-cacamba`, `/locacao-de-cacamba`. Cada uma usa o banner genérico (`banner-padrao-cacamba.webp`) por enquanto.
+
+- [ ] Gerar banner dedicado para cada uma das 3 páginas hub (mesmo processo Firefly/Gemini das páginas de bairro)
+- [ ] Considerar linkar as 3 páginas hub a partir da home e/ou do `/precos`, hoje só são acessadas via zonas/artigos/sitemap
