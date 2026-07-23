@@ -991,6 +991,17 @@ async function carregarDados() {
   } catch(e) {
     document.getElementById('zonas-list').innerHTML = '<p style="color:#333;padding:12px;font-size:12px;font-family:var(--mono)">// erro ao carregar</p>';
   }
+  try {
+    const resBairros = await fetch('/api/precos');
+    const dataBairros = await resBairros.json();
+    if (Array.isArray(dataBairros.precos_por_bairro) && dataBairros.precos_por_bairro.length) {
+      const bairrosComUrl = dataBairros.precos_por_bairro.map(b => ({
+        ...b,
+        url: b.pagina ? b.pagina.replace('https://www.padraocacamba.com.br','') : '/'
+      }));
+      renderBairros(bairrosComUrl);
+    }
+  } catch(e) {}
 }
 
 function renderZonas(zonas) {
