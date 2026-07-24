@@ -139,6 +139,13 @@ nav{position:sticky;top:0;z-index:200;background:rgba(10,10,10,0.97);backdrop-fi
 .cta-btn{background:var(--green);color:#000;border:none;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;display:inline-block}
 .cta-btn:active{opacity:.9}
 
+.mid-cta{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:10px;padding:14px 16px;margin:24px 0}
+.mid-cta p{font-size:13px;color:#ccc;line-height:1.5;margin:0;flex:1}
+.mid-cta a{background:var(--green);color:#000;border:none;padding:9px 14px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0}
+
+.flow-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 14px;margin:20px 0}
+.flow-caption{font-size:12px;color:#777;text-align:center;margin-top:10px;line-height:1.5}
+
 footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border);margin-top:40px}
 .footer-txt{font-size:11px;color:#444;text-align:center;line-height:2.2}
 
@@ -262,11 +269,67 @@ function focarPC() { window.location.href = '/'; }
 
 <p>Sem CDF, mesmo com CTR-e ou MTR em mãos, não há como comprovar que o resíduo chegou a um destino regularizado — só que ele saiu do endereço da obra. É o documento que empresas sérias mantêm por manterem relação direta com destinadores licenciados, e não com "algum lugar" indefinido.</p>
 
+<div class="flow-card">
+  <svg viewBox="0 0 380 640" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+    <!-- Nó 1: Gerador -->
+    <rect x="40" y="10" width="300" height="64" rx="10" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1.5"/>
+    <text x="190" y="35" text-anchor="middle" fill="#fff" font-family="DM Sans, sans-serif" font-size="14" font-weight="700">GERADOR</text>
+    <text x="190" y="55" text-anchor="middle" fill="#999" font-family="DM Sans, sans-serif" font-size="11">Obra ou reforma</text>
+
+    <line x1="190" y1="74" x2="190" y2="104" stroke="#2563EB" stroke-width="2"/>
+    <polygon points="190,110 184,98 196,98" fill="#2563EB"/>
+
+    <!-- Nó 2: MTR/CTR-e -->
+    <rect x="20" y="112" width="340" height="72" rx="10" fill="#0d1a30" stroke="#1e3a6a" stroke-width="1.5"/>
+    <text x="190" y="139" text-anchor="middle" fill="#fff" font-family="DM Sans, sans-serif" font-size="14" font-weight="700">MTR OU CTR-e</text>
+    <text x="190" y="158" text-anchor="middle" fill="#6a8fc4" font-family="DM Sans, sans-serif" font-size="11">CTR-e (capital, AMLURB) ·</text>
+    <text x="190" y="173" text-anchor="middle" fill="#6a8fc4" font-family="DM Sans, sans-serif" font-size="11">MTR (Grande SP, SIGOR/CETESB)</text>
+
+    <line x1="190" y1="184" x2="190" y2="214" stroke="#2563EB" stroke-width="2"/>
+    <polygon points="190,220 184,208 196,208" fill="#2563EB"/>
+
+    <!-- Nó 3: Transporte -->
+    <rect x="40" y="222" width="300" height="64" rx="10" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1.5"/>
+    <text x="190" y="247" text-anchor="middle" fill="#fff" font-family="DM Sans, sans-serif" font-size="14" font-weight="700">TRANSPORTE</text>
+    <text x="190" y="267" text-anchor="middle" fill="#999" font-family="DM Sans, sans-serif" font-size="11">Caçamba · empresa transportadora</text>
+
+    <line x1="190" y1="286" x2="190" y2="316" stroke="#2563EB" stroke-width="2"/>
+    <polygon points="190,322 184,310 196,310" fill="#2563EB"/>
+
+    <!-- Nó 4: Aterro/ATT -->
+    <rect x="40" y="324" width="300" height="64" rx="10" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1.5"/>
+    <text x="190" y="349" text-anchor="middle" fill="#fff" font-family="DM Sans, sans-serif" font-size="14" font-weight="700">ATERRO / ATT</text>
+    <text x="190" y="369" text-anchor="middle" fill="#999" font-family="DM Sans, sans-serif" font-size="11">Área de Transbordo e Triagem</text>
+
+    <line x1="190" y1="388" x2="190" y2="418" stroke="#00FF7F" stroke-width="2"/>
+    <polygon points="190,424 184,412 196,412" fill="#00FF7F"/>
+
+    <!-- Nó 5: CDF -->
+    <rect x="20" y="426" width="340" height="72" rx="10" fill="#06231a" stroke="#00FF7F" stroke-width="1.5"/>
+    <text x="190" y="454" text-anchor="middle" fill="#fff" font-family="DM Sans, sans-serif" font-size="14" font-weight="700">CDF</text>
+    <text x="190" y="474" text-anchor="middle" fill="#4ade80" font-family="DM Sans, sans-serif" font-size="11">Certificado de Destinação Final —</text>
+    <text x="190" y="489" text-anchor="middle" fill="#4ade80" font-family="DM Sans, sans-serif" font-size="11">prova de que o resíduo chegou ao destino certo</text>
+
+    <!-- Legenda -->
+    <rect x="20" y="522" width="340" height="100" rx="10" fill="#111" stroke="#2a2a2a" stroke-width="1"/>
+    <text x="36" y="546" fill="#93b8f0" font-family="DM Sans, sans-serif" font-size="11" font-weight="700">O QUE CADA DOCUMENTO PROVA</text>
+    <text x="36" y="568" fill="#bbb" font-family="DM Sans, sans-serif" font-size="11">MTR / CTR-e → comprovam a origem e o transporte</text>
+    <text x="36" y="586" fill="#bbb" font-family="DM Sans, sans-serif" font-size="11">CDF → comprova que o resíduo chegou a um</text>
+    <text x="36" y="602" fill="#bbb" font-family="DM Sans, sans-serif" font-size="11">destino licenciado — fecha a cadeia</text>
+  </svg>
+  <p class="flow-caption">Fluxo completo do resíduo: da obra até a comprovação de destinação final. Nenhuma etapa substitui a outra.</p>
+</div>
+
 <h2>O que acontece se você contratar sem esses documentos</h2>
 
 <p>Sem Nota Fiscal, você não tem comprovação da contratação — nenhum respaldo em caso de problema com a entrega, o prazo ou o valor cobrado. Sem CTR-e ou MTR, você não tem como comprovar que o entulho da sua obra foi transportado corretamente, o que deixa o responsável pela obra exposto em caso de fiscalização ambiental, mesmo sem ter feito nada de errado diretamente.</p>
 
 <p>Esse risco costuma pesar mais em obras maiores, condomínios e projetos com engenheiro responsável — mas vale igualmente pra reforma residencial pequena. A diferença entre uma empresa regularizada e um intermediador informal, na prática, é justamente esses dois papéis.</p>
+
+<div class="mid-cta">
+  <p>Precisa de caçamba com documentação 100% regularizada, no seu município?</p>
+  <a href="https://wa.me/551142378757?text=Vi o artigo sobre CTR/MTR e gostaria de alugar uma ca%C3%A7amba">Fale no WhatsApp</a>
+</div>
 
 <h2>Quem exige isso na prática</h2>
 
@@ -370,8 +433,8 @@ function focarPC() { window.location.href = '/'; }
 <p>CTR e Nota Fiscal não são burocracia opcional — são a diferença entre contratar um serviço com respaldo legal ou ficar exposto sem nenhum documento pra recorrer. Empresa regularizada emite os dois, sempre, sem custo adicional. Se uma empresa hesita em confirmar isso antes de fechar, é sinal pra procurar outra.</p>
 
 <div class="blog-cta">
-  <h3>Precisa de caçamba com CTR e NF garantidos?</h3>
-  <p>Emitimos os dois em 100% das entregas, sem custo extra. Atendemos SP Capital e Grande SP desde 2004.</p>
+  <h3>Precisa de caçamba com documentação 100% regularizada?</h3>
+  <p>Emitimos NF e o documento correto do seu município (CTR-e ou MTR) em 100% das entregas, sem custo extra. Atendemos SP Capital e Grande SP desde 2004.</p>
   <button class="cta-btn" onclick="window.location.href='https://wa.me/551142378757?text=Vi o artigo sobre CTR e NF e gostaria de alugar uma ca%C3%A7amba'">Fale com a gente →</button>
 </div>
 
