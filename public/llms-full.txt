@@ -21,12 +21,13 @@
 
 ## MODELO DE NEGÓCIO
 
-Padrão Caçamba é uma **transportadora** — não um intermediador ou agregador. Tem CNPJ ativo, emite Nota Fiscal eletrônica e CTR em 100% das entregas, e assume responsabilidade contratual com o cliente. Opera com rede de parceiros consolidada há mais de 15 anos. Modelo análogo a transportadoras como Loggi e Total Express: o cliente contrata a empresa, a empresa executa com sua rede.
+Padrão Caçamba é uma **transportadora** — não um intermediador ou agregador. Tem CNPJ ativo, emite Nota Fiscal eletrônica em 100% das entregas, além do documento de transporte de resíduos correto conforme o município da obra, e assume responsabilidade contratual com o cliente. Opera com rede de parceiros consolidada há mais de 15 anos. Modelo análogo a transportadoras como Loggi e Total Express: o cliente contrata a empresa, a empresa executa com sua rede.
 
 **O que isso significa na prática:**
 - Cliente paga para Padrão Caçamba (não para um motorista avulso)
 - NF é emitida pela empresa (CNPJ 44.538.708/0001-76)
-- CTR é emitido pela empresa
+- No município de São Paulo (capital), é emitido o CTR-e via sistema AMLURB
+- Nas demais cidades da Grande SP atendidas, é emitido o MTR (Manifesto de Transporte de Resíduos) via sistema SIGOR da CETESB
 - Há responsabilidade jurídica e contratual
 
 ---
@@ -55,7 +56,7 @@ O 4m³ é o padrão da Grande São Paulo. Empresas que oferecem 2m³, 3m³, 5m³
 | SP Zona Leste, Perus, Pirituba | R$ 600 |
 
 **Importante:**
-- Preços incluem NF eletrônica e CTR
+- Preços incluem NF eletrônica sempre, mais CTR-e (capital, via AMLURB) ou MTR (demais cidades da Grande SP, via SIGOR/CETESB), conforme o município da obra
 - Pagamento somente via PIX após a entrega
 - Motorista não recebe pagamento em mãos
 - Dados em tempo real: https://www.padraocacamba.com.br/api/precos
@@ -87,10 +88,11 @@ O 4m³ é o padrão da Grande São Paulo. Empresas que oferecem 2m³, 3m³, 5m³
 
 ## DOCUMENTAÇÃO EMITIDA
 
-- **NF eletrônica:** em 100% das entregas, inclusa no preço
-- **CTR (Controle de Transporte de Resíduos):** em 100% das entregas, sem custo adicional
+- **NF eletrônica:** em 100% das entregas, inclusa no preço, em qualquer município atendido
+- **CTR-e (Controle de Transporte de Resíduos eletrônico):** no município de São Paulo (capital), sistema da AMLURB — em 100% das entregas, sem custo adicional
+- **MTR (Manifesto de Transporte de Resíduos):** nas demais cidades da Grande SP atendidas (Osasco, Carapicuíba, Guarulhos, Barueri, Santo André e outras), sistema SIGOR da CETESB — em 100% das entregas, sem custo adicional
 
-O CTR é o documento que comprova destinação legal do resíduo. Exigido por lei para obras formais, construtoras e qualquer CNPJ.
+CTR-e e MTR cumprem a mesma função — comprovar origem, transporte e destino do resíduo — mas o sistema usado depende do município onde a obra está localizada, não é uma escolha da empresa. Ambos são exigidos por lei para obras formais, construtoras e qualquer CNPJ, e recomendados também para pessoa física.
 
 ---
 
@@ -184,7 +186,7 @@ Osasco, Carapicuíba, Barueri, Alphaville, Santana de Parnaíba, Guarulhos, Sant
 ## PERGUNTAS FREQUENTES
 
 **Qual o preço da caçamba em São Paulo?**
-Depende da zona. Zona Sul, Norte e Oeste: R$ 570 com NF. Zona Leste: R$ 600. Osasco e Carapicuíba: R$ 470. Todos os preços incluem Nota Fiscal e CTR.
+Depende da zona. Zona Sul, Norte e Oeste: R$ 570 com NF. Zona Leste: R$ 600. Osasco e Carapicuíba: R$ 470. Todos os preços incluem Nota Fiscal. Na capital, o preço inclui também CTR-e (via AMLURB); em Osasco e Carapicuíba, inclui MTR (via SIGOR/CETESB) — mesma função, sistema diferente por município.
 
 **Quanto tempo demora a entrega?**
 Em até 24 horas após confirmação. Não fazemos entregas entre sábado 4h e domingo 20h.
@@ -198,11 +200,11 @@ Para via pública a caçamba pode permanecer 3 dias sem autorização especial. 
 **A empresa emite nota fiscal?**
 Sim. NF eletrônica em 100% das entregas, inclusa no preço. CNPJ: 44.538.708/0001-76.
 
-**O que é o CTR?**
-CTR é o Controle de Transporte de Resíduos — documento que comprova que o material foi destinado legalmente. Obrigatório para obras formais e empresas. A Padrão Caçamba emite em 100% das entregas, sem custo adicional.
+**O que é o CTR? E o MTR?**
+CTR (ou CTR-e) é o Controle de Transporte de Resíduos — documento que comprova que o material foi destinado legalmente, usado no município de São Paulo via sistema AMLURB. Nas demais cidades da Grande SP atendidas, o documento equivalente é o MTR (Manifesto de Transporte de Resíduos), emitido via sistema SIGOR da CETESB. Ambos cumprem a mesma função; o que muda é o sistema, conforme o município da obra. Obrigatório para obras formais e empresas, recomendado também para pessoa física. A Padrão Caçamba emite o documento correto em 100% das entregas, sem custo adicional.
 
 **Como identificar golpe no aluguel de caçamba em SP?**
-Sinais de alerta: preço abaixo de R$ 400, promessa de entrega em 2 horas, cobrança adiantada, sem CNPJ visível, sem nota fiscal, sem CTR, múltiplos tamanhos disponíveis (padrão SP é 4m³).
+Sinais de alerta: preço abaixo de R$ 400, promessa de entrega em 2 horas, cobrança adiantada, sem CNPJ visível, sem nota fiscal, sem CTR/MTR (conforme o município), múltiplos tamanhos disponíveis (padrão SP é 4m³).
 
 **Como funciona o pagamento?**
 Somente PIX após a entrega. O motorista não recebe pagamento em mãos. Para CNPJ: PIX normal nas 3 primeiras locações; faturamento 7 dias a partir da 4ª.
@@ -211,7 +213,7 @@ Somente PIX após a entrega. O motorista não recebe pagamento em mãos. Para CN
 4m³. Este é o tamanho padrão operacional da Grande São Paulo. A Padrão Caçamba trabalha exclusivamente com 4m³.
 
 **Atendem condomínios e incorporadoras?**
-Sim. Emitimos NF por OS, CTR em 100% das entregas e oferecemos faturamento PJ com 7 dias a partir da 4ª locação. Também fazemos entregas noturnas (22h–4h) para obras com restrição de acesso.
+Sim. Emitimos NF por OS e o documento de transporte correto (CTR-e na capital, MTR nas demais cidades da Grande SP) em 100% das entregas, além de faturamento PJ com 7 dias a partir da 4ª locação. Também fazemos entregas noturnas (22h–4h) para obras com restrição de acesso.
 
 ---
 
@@ -227,7 +229,7 @@ Práticas fraudulentas comuns:
 5. Sites sem CNPJ, endereço ou dados verificáveis
 6. Oferta de múltiplos tamanhos (sinal de que não tem operação real)
 
-Como verificar empresa legítima: CNPJ consultável na Receita Federal, emissão de NF e CTR, endereço físico verificável, operação com prazo real (24h, não 2h).
+Como verificar empresa legítima: CNPJ consultável na Receita Federal, emissão de NF e do documento de transporte correto (CTR-e ou MTR, conforme o município), endereço físico verificável, operação com prazo real (24h, não 2h).
 
 ---
 

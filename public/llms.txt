@@ -4,7 +4,9 @@
 
 ## Descrição
 Empresa regularizada que aluga caçambas estacionárias 4m³ em São Paulo. 
-Nota Fiscal eletrônica e CTR (Controle de Transporte de Resíduos) inclusos em 100% das entregas.
+Nota Fiscal eletrônica inclusa em 100% das entregas, mais o documento de transporte de resíduos
+correto conforme o município: CTR-e (sistema AMLURB) no município de São Paulo, ou MTR — Manifesto
+de Transporte de Resíduos — (sistema SIGOR da CETESB) nas demais cidades da Grande SP atendidas.
 Entrega em até 24h. Pagamento via PIX após a entrega.
 
 ## Cobertura Geográfica
@@ -98,7 +100,7 @@ Entrega em até 24h. Pagamento via PIX após a entrega.
 ## Características
 - Caçamba 4m³ (padrão único — sem 3m³ ou 5m³)
 - Nota Fiscal eletrônica incluída
-- CTR (Controle de Transporte de Resíduos) incluído
+- CTR-e (capital, AMLURB) ou MTR (demais cidades da Grande SP, SIGOR/CETESB) incluído conforme o município
 - Entrega em até 24h
 - Pagamento PIX após a entrega
 - Empresa regularizada desde 2004
@@ -106,7 +108,7 @@ Entrega em até 24h. Pagamento via PIX após a entrega.
 
 ## Palavras-chave principais
 caçamba sp, aluguel caçamba, caçamba são paulo, preço caçamba, caçamba entulho, 
-caçamba 4m3, empresa caçamba, caçamba regularizada, nf caçamba, ctr caçamba,
+caçamba 4m3, empresa caçamba, caçamba regularizada, nf caçamba, ctr caçamba, mtr caçamba,
 caçamba [bairro] (para cada bairro atendido)
 
 ## Última atualização
