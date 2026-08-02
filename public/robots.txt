@@ -43,6 +43,9 @@ Allow: /
 User-agent: Grok
 Allow: /
 
+User-agent: Kimi-User
+Allow: /
+
 User-agent: CCBot
 Allow: /
 
