@@ -1,0 +1,56 @@
+---
+title: "Caçamba em Perus SP | Padrão Caçamba"
+description: "Aluguel de caçamba 4m³ em Perus. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
+url: "https://padraocacamba.com.br/perus"
+date_modified: 2026-08-05
+---
+
+# Caçamba em Perus, SP
+
+Perus é administrada pela Subprefeitura Perus/Anhanguera, na zona noroeste de São Paulo, cortada pelas rodovias Anhanguera e Bandeirantes. A região abriga o Parque Anhanguera, o maior parque municipal da cidade, e faz divisa com os municípios de Caieiras, Cajamar e Osasco. A Estação Perus, da Linha 7-Rubi da CPTM, é uma referência histórica da região, que já foi sede da primeira fábrica de cimento do Brasil. Por ser uma região distante do centro expandido, a logística de entrega é mais longa.
+
+## Preço
+
+**R$ 600** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+## Zona e entrega
+
+- **Zona:** Zona Oeste
+- **Entrega:** diurna e noturna
+- **Prazo:** em até 24h após confirmação
+- **Sem entregas:** sábado 4h até domingo 20h
+
+## O que está incluso
+
+- Nota Fiscal eletrônica
+- CTR (Controle de Transporte de Resíduos)
+- Entrega + permanência 3 dias + retirada
+- Destinação em aterro credenciado
+
+## O que aceita
+
+Entulho seco de obra: concreto, cerâmica, gesso, argamassa, drywall, madeira seca, poda de jardim.
+
+## O que NÃO aceita
+
+Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos.
+
+## Perguntas frequentes
+
+**Por que o preço da caçamba em Perus é diferente de bairros como Moema ou Itaim Bibi?**
+Perus fica no extremo noroeste da cidade, com logística de entrega mais longa que regiões centrais. Isso é refletido no preço, mas o serviço inclui NF e CTR sem custo extra, igual em qualquer outra região atendida.
+
+**Quanto custa a caçamba em Perus?**
+R$ 600 com NF e CTR incluídos. PIX após a entrega.
+
+**Em quanto tempo a caçamba é entregue?**
+Em até 24h após confirmação.
+
+**A empresa tem CNPJ?**
+Sim. CNPJ: 44.538.708/0001-76 — consultável na Receita Federal.
+
+## Empresa
+
+Padrão Caçamba · CNPJ: 44.538.708/0001-76 · Desde 2004
+Rua Juan Vicente, 482 — Bandeiras, Osasco/SP
+padraocacamba.com.br
