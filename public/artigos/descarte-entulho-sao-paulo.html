@@ -340,30 +340,30 @@ footer {
   </div>
 </div>
 <script>
-const BANNER_MSGS_ARTIGOS = [
+const BANNER_MSGS = [
   'Descarte legal de entulho: ecoponto ou caçamba? Saiba a diferença',
   'Resíduo verde vai em caçamba diferente — fale com a gente',
   'NF + CTR inclusos em 100% das entregas · Desde 2004'
 ];
-let bannerIdxArtigos = 0;
+let bannerIdx = 0;
 
-function updateBannerArtigos() {
-  document.getElementById('banner-txt').textContent = BANNER_MSGS_ARTIGOS[bannerIdxArtigos];
+function updateBanner() {
+  document.getElementById('banner-txt').textContent = BANNER_MSGS[bannerIdx];
   const dotsDiv = document.getElementById('banner-dots');
   dotsDiv.innerHTML = '';
-  for (let i = 0; i < BANNER_MSGS_ARTIGOS.length; i++) {
+  for (let i = 0; i < BANNER_MSGS.length; i++) {
     const dot = document.createElement('div');
-    dot.style.cssText = 'width:6px;height:6px;border-radius:50%;background:' + (i === bannerIdxArtigos ? '#00FF7F' : '#444') + ';transition:all .3s';
+    dot.style.cssText = 'width:6px;height:6px;border-radius:50%;background:' + (i === bannerIdx ? '#00FF7F' : '#444') + ';transition:all .3s';
     dotsDiv.appendChild(dot);
   }
-  bannerIdxArtigos = (bannerIdxArtigos + 1) % BANNER_MSGS_ARTIGOS.length;
+  bannerIdx = (bannerIdx + 1) % BANNER_MSGS.length;
 }
-updateBannerArtigos();
-setInterval(updateBannerArtigos, 5000);
+updateBanner();
+setInterval(updateBanner, 5000);
 
 document.getElementById('top-banner').addEventListener('click', () => {
-  bannerIdxArtigos = (bannerIdxArtigos + 1) % BANNER_MSGS_ARTIGOS.length;
-  updateBannerArtigos();
+  bannerIdx = (bannerIdx + 1) % BANNER_MSGS.length;
+  updateBanner();
 });
 </script>
 
