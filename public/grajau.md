@@ -1,0 +1,56 @@
+---
+title: "Caçamba em Grajaú SP | Padrão Caçamba"
+description: "Aluguel de caçamba 4m³ em Grajaú. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
+url: "https://padraocacamba.com.br/grajau"
+date_modified: 2026-08-05
+---
+
+# Caçamba em Grajaú, SP
+
+O Grajaú é o distrito mais populoso de São Paulo, com cerca de 445 mil habitantes, na Zona Sul extrema da cidade — administrado pela subprefeitura Capela do Socorro. Fica a aproximadamente 26 km da região central, próximo à Represa Billings.
+
+## Preço
+
+**R$ 600** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+## Zona e entrega
+
+- **Zona:** Zona Sul
+- **Entrega:** diurna e noturna
+- **Prazo:** em até 24h após confirmação
+- **Sem entregas:** sábado 4h até domingo 20h
+
+## O que está incluso
+
+- Nota Fiscal eletrônica
+- CTR (Controle de Transporte de Resíduos)
+- Entrega + permanência 3 dias + retirada
+- Destinação em aterro credenciado
+
+## O que aceita
+
+Entulho seco de obra: concreto, cerâmica, gesso, argamassa, drywall, madeira seca, poda de jardim.
+
+## O que NÃO aceita
+
+Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos.
+
+## Perguntas frequentes
+
+**Por que o preço da caçamba no Grajaú é diferente de bairros como Moema ou Itaim Bibi?**
+O Grajaú fica a cerca de 26 km da região central, na subprefeitura Capela do Socorro. A logística até essa região é mais longa, e isso é refletido no preço.
+
+**Quanto custa a caçamba em Grajaú?**
+R$ 600 com NF e CTR incluídos. PIX após a entrega.
+
+**Em quanto tempo a caçamba é entregue?**
+Em até 24h após confirmação.
+
+**A empresa tem CNPJ?**
+Sim. CNPJ: 44.538.708/0001-76 — consultável na Receita Federal.
+
+## Empresa
+
+Padrão Caçamba · CNPJ: 44.538.708/0001-76 · Desde 2004
+Rua Juan Vicente, 482 — Bandeiras, Osasco/SP
+padraocacamba.com.br
