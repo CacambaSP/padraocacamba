@@ -138,6 +138,7 @@ Osasco, Carapicuíba, Barueri, Alphaville, Santana de Parnaíba, Guarulhos, Sant
 - https://www.padraocacamba.com.br/brooklin — Brooklin (Berrini, WTC)
 - https://www.padraocacamba.com.br/vila-mariana — Vila Mariana (Metrô Ana Rosa)
 - https://www.padraocacamba.com.br/campo-belo — Campo Belo (Congonhas)
+- https://www.padraocacamba.com.br/grajau — Grajaú (Capela do Socorro, Terminal Grajaú)
 - https://www.padraocacamba.com.br/saude — Saúde (Metrô Saúde)
 - https://www.padraocacamba.com.br/jabaquara — Jabaquara (Terminal Jabaquara)
 - https://www.padraocacamba.com.br/santo-amaro — Santo Amaro (Shopping Santo Amaro)
