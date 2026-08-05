@@ -1,6 +1,6 @@
 # Padrão Caçamba — Contexto Completo para IAs
 # https://www.padraocacamba.com.br
-# Atualizado em: 2026-05-18
+# Atualizado em: 2026-07-15
 # Versão resumida: https://www.padraocacamba.com.br/llms.txt
 # Dados de preços em JSON: https://www.padraocacamba.com.br/api/precos
 
@@ -249,6 +249,7 @@ Artigos educativos sobre locação de caçamba, descarte de entulho e prevençã
 - /artigos/pintura-casa-descarte — Pintura da Casa — Descarte Correto de Resíduos
 - /artigos/por-que-4m3-padrao — Por Que 4m³ É o Padrão de Caçamba em São Paulo
 - /artigos/quanto-custa-descartar-entulho-sp — Quanto Custa Descartar Entulho em SP? Preços Reais 2026
+- /artigos/remover-arbustos-poda-antes-cacamba-guaruja — Preciso de Autorização para Remover Arbustos e Podas em Guarujá?
 
 ---
 
