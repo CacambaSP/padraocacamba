@@ -330,8 +330,8 @@ footer {
 <!-- BANNER ROTATIVO -->
 <div id="top-banner" style="position:relative;width:100%;height:100px;overflow:hidden;cursor:pointer;display:block">
   <a href="/" style="position:absolute;top:10px;left:10px;width:60px;height:60px;z-index:10;cursor:pointer" title="Voltar para home"></a>
-  <img src="https://www.padraocacamba.com.br/image/blog-descarte-entulho-sp.webp"
-       alt="Descarte de entulho em São Paulo"
+  <img src="https://www.padraocacamba.com.br/image/banner-padrao-cacamba.webp"
+       alt="Padrão Caçamba — Locação de caçamba 4m³"
        style="width:100%;height:100px;object-fit:cover;object-position:left center;display:block"
        onerror="this.style.display='none';document.getElementById('top-banner').style.background='#0A0A0A'">
   <div style="position:absolute;top:0;right:0;width:68%;height:100%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:0 16px 0 8px">
@@ -340,30 +340,30 @@ footer {
   </div>
 </div>
 <script>
-const BANNER_MSGS_DESCARTE = [
+const BANNER_MSGS_ARTIGOS = [
   'Descarte legal de entulho: ecoponto ou caçamba? Saiba a diferença',
-  'NF + CTR inclusos em 100% das entregas · Desde 2004',
-  'Resíduo de construção? A gente leva embora corretamente'
+  'Resíduo verde vai em caçamba diferente — fale com a gente',
+  'NF + CTR inclusos em 100% das entregas · Desde 2004'
 ];
-let bannerIdxDescarte = 0;
+let bannerIdxArtigos = 0;
 
-function updateBannerDescarte() {
-  document.getElementById('banner-txt').textContent = BANNER_MSGS_DESCARTE[bannerIdxDescarte];
+function updateBannerArtigos() {
+  document.getElementById('banner-txt').textContent = BANNER_MSGS_ARTIGOS[bannerIdxArtigos];
   const dotsDiv = document.getElementById('banner-dots');
   dotsDiv.innerHTML = '';
-  for (let i = 0; i < BANNER_MSGS_DESCARTE.length; i++) {
+  for (let i = 0; i < BANNER_MSGS_ARTIGOS.length; i++) {
     const dot = document.createElement('div');
-    dot.style.cssText = 'width:6px;height:6px;border-radius:50%;background:' + (i === bannerIdxDescarte ? '#00FF7F' : '#444') + ';transition:all .3s';
+    dot.style.cssText = 'width:6px;height:6px;border-radius:50%;background:' + (i === bannerIdxArtigos ? '#00FF7F' : '#444') + ';transition:all .3s';
     dotsDiv.appendChild(dot);
   }
-  bannerIdxDescarte = (bannerIdxDescarte + 1) % BANNER_MSGS_DESCARTE.length;
+  bannerIdxArtigos = (bannerIdxArtigos + 1) % BANNER_MSGS_ARTIGOS.length;
 }
-updateBannerDescarte();
-setInterval(updateBannerDescarte, 5000);
+updateBannerArtigos();
+setInterval(updateBannerArtigos, 5000);
 
 document.getElementById('top-banner').addEventListener('click', () => {
-  bannerIdxDescarte = (bannerIdxDescarte + 1) % BANNER_MSGS_DESCARTE.length;
-  updateBannerDescarte();
+  bannerIdxArtigos = (bannerIdxArtigos + 1) % BANNER_MSGS_ARTIGOS.length;
+  updateBannerArtigos();
 });
 </script>
 
