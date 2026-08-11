@@ -275,6 +275,7 @@ Artigos educativos sobre locação de caçamba, descarte de entulho e prevençã
 - /artigos/5-mentiras-empresas-cacamba-falam — As 5 Maiores Mentiras Que Empresas de Caçamba Falam
 - /artigos/amianto-descarte-seguro — Amianto em Reformas: Como Identificar e Descartar com Segurança
 - /artigos/como-reformar-apartamento — Como Reformar Apartamento Sem Drama: Guia Passo a Passo
+- /artigos/mtr-manifesto-transporte-residuos — MTR: O Que É e Por Que Sua Caçamba na Grande SP Precisa Dele (MTR emitido via SIGOR/CETESB para Osasco, Carapicuíba, Barueri, Guarulhos e demais cidades fora da capital — diferente do CTR-e, exclusivo da capital via AMLURB)
 - /artigos/ctr-nf-empresa-verdade — CTR e Nota Fiscal: Por Que Sua Empresa de Caçamba Precisa Emitir
 - /artigos/rodizio-caminhoes-sp-cacamba — Rodízio de Caminhões em SP: O Que Muda na Entrega da Caçamba (rodízio municipal vs ZMRC)
 - /artigos/descarte-entulho-sao-paulo — Descarte de Entulho em São Paulo: Regras, Ecopontos e Quando Alugar Caçamba
