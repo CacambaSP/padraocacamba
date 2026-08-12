@@ -112,7 +112,10 @@ nav{position:sticky;top:0;z-index:200;background:rgba(8,8,8,0.97);backdrop-filte
 .video-card.live{border-color:#0a3d24}
 .video-card:hover{border-color:var(--green)}
 .video-card-thumb{width:88px;flex-shrink:0;background:linear-gradient(135deg,#0d1a12,#081008);display:flex;align-items:center;justify-content:center;position:relative}
-.video-card.live .video-card-thumb{background-image:url('https://www.padraocacamba.com.br/image/banner-cacamba-4m3-padrao-cacamba.webp');background-size:cover;background-position:top center}
+.video-card-thumb.has-cover{background-size:cover;background-position:center}
+.video-card-thumb.cover-1{background-image:url('https://www.padraocacamba.com.br/image/banner-cacamba-4m3-padrao-cacamba.webp')}
+.video-card-thumb.cover-2{background-image:url('https://www.padraocacamba.com.br/image/capa-preco-cacamba.webp')}
+.video-card-thumb.cover-3{background-image:url('https://www.padraocacamba.com.br/image/capa-como-escolher.webp')}
 .video-card-icon{font-family:var(--display);font-size:26px;color:#1c2c22}
 .video-card-body{flex:1;padding:12px 14px;display:flex;flex-direction:column;justify-content:center;gap:4px}
 .video-card-status{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase}
@@ -129,7 +132,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(8,8,8,0.97);backdrop-filte
 .antifraude-card span{font-size:12px;color:#FF9999;font-weight:600;text-decoration:underline}
 
 .faq-wrap{padding:0 20px 32px}
-.faq-title{font-family:var(--display);font-size:30px;letter-spacing:2px;color:#fff;text-transform:uppercase;margin-bottom:20px}
+.faq-title{font-family:var(--display);font-size:32px;letter-spacing:2px;color:#fff;text-transform:uppercase;margin-bottom:20px}
 .faq-item{border-bottom:1px solid var(--border)}
 .faq-item:last-child{border-bottom:none}
 .faq-q{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:15px 0;font-size:14px;font-weight:600;color:#bbb;cursor:pointer;line-height:1.4}
@@ -208,21 +211,21 @@ footer{background:#030303;padding:24px 20px;border-top:1px solid var(--border)}
   <p class="sec-sub">Ordem = prioridade de conversão dos vídeos. O mais recente sempre aparece primeiro.</p>
   <div class="video-grid">
     <a href="/cacamba-4m3" class="video-card live">
-      <div class="video-card-thumb"></div>
+      <div class="video-card-thumb has-cover cover-1"></div>
       <div class="video-card-body">
         <div class="video-card-status">No ar</div>
         <div class="video-card-title">Quanto cabe numa caçamba de 4m³?</div>
       </div>
     </a>
     <a href="/preco-cacamba" class="video-card live">
-      <div class="video-card-thumb"><span class="video-card-icon">02</span></div>
+      <div class="video-card-thumb has-cover cover-2"></div>
       <div class="video-card-body">
         <div class="video-card-status">No ar</div>
         <div class="video-card-title">Contratou a caçamba MAIS BARATA?</div>
       </div>
     </a>
     <a href="/como-escolher" class="video-card live">
-      <div class="video-card-thumb"><span class="video-card-icon">03</span></div>
+      <div class="video-card-thumb has-cover cover-3"></div>
       <div class="video-card-body">
         <div class="video-card-status">No ar</div>
         <div class="video-card-title">Como escolher a caçamba certa?</div>
