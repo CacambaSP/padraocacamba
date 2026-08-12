@@ -26,8 +26,12 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {"@type": "Question", "name": "Quanto cabe numa caçamba de 4m³?", "acceptedAnswer": {"@type": "Answer", "text": "Cerca de 40 carrinhos de mão de entulho — o tamanho padrão que a Padrão Caçamba trabalha em toda a Grande SP. Serve para reforma de banheiro, cozinha, pequena demolição ou limpeza de terreno."}},
+    {"@type": "Question", "name": "Contratou a caçamba mais barata? Cuidado.", "acceptedAnswer": {"@type": "Answer", "text": "Preço muito abaixo do mercado costuma ser sinal de falta de CTR/MTR, seguro e prazo garantido — a economia pode virar uma multa da prefeitura. Compare o que está incluso, não só o número."}},
+    {"@type": "Question", "name": "Como escolher a caçamba certa?", "acceptedAnswer": {"@type": "Answer", "text": "Responda 3 perguntas: quanto entulho a obra vai gerar, onde a caçamba vai ficar (rua, calçada ou garagem) e se a empresa dá CTR/MTR. Isso mostra se é uma empresa séria."}},
     {"@type": "Question", "name": "Por que cada vídeo tem uma página própria?", "acceptedAnswer": {"@type": "Answer", "text": "Porque a resposta completa do vídeo fica registrada em texto no site, sem depender de a pessoa lembrar o que foi dito."}},
-    {"@type": "Question", "name": "Os preços mudam por vídeo?", "acceptedAnswer": {"@type": "Answer", "text": "Não. O preço é sempre o mesmo praticado no site, e varia por região — a Padrão Caçamba trabalha apenas com caçamba de 4m³."}}
+    {"@type": "Question", "name": "Os preços mudam por vídeo?", "acceptedAnswer": {"@type": "Answer", "text": "Não. O preço é sempre o mesmo praticado no site, e varia por região — a Padrão Caçamba trabalha apenas com caçamba de 4m³."}},
+    {"@type": "Question", "name": "Não achei o assunto do meu vídeo aqui?", "acceptedAnswer": {"@type": "Answer", "text": "É possível falar direto com o PC (chatbot) pelo site — a lista de vídeos e páginas cresce toda semana."}}
   ]
 }
 </script>
@@ -141,6 +145,12 @@ nav{position:sticky;top:0;z-index:200;background:rgba(8,8,8,0.97);backdrop-filte
 .faq-item.open .faq-arr{transform:rotate(45deg)}
 .faq-item.open .faq-q{color:#fff}
 .faq-item.open .faq-a{display:block}
+.faq-sub{font-size:14px;color:#888;margin-bottom:16px;line-height:1.5}
+.faq-a a{color:var(--green);text-decoration:none;font-weight:600;display:inline-block;margin-top:6px}
+.faq-extra{display:none}
+.faq-toggle-btn{display:block;width:100%;margin-top:18px;padding:14px;background:none;border:1px solid var(--border);border-radius:10px;color:var(--green);font-family:var(--mono);font-size:13px;letter-spacing:.5px;cursor:pointer;text-align:center}
+.faq-toggle-btn:hover{border-color:var(--green)}
+.faq-toggle-btn.open{color:#999}
 
 .cta-final{margin:0 20px 32px;background:linear-gradient(135deg,#040d1c,#071428);border:1px solid #1a2d4a;border-radius:14px;padding:28px 22px;text-align:center}
 .cta-final-tag{font-family:var(--mono);font-size:9px;color:var(--green);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
@@ -293,18 +303,36 @@ footer{background:#030303;padding:24px 20px;border-top:1px solid var(--border)}
 
 <div class="faq-wrap">
   <div class="faq-title">Dúvidas<br>rápidas</div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="toggleFaq(this)">Por que cada vídeo tem uma página própria?<span class="faq-arr">+</span></div>
-    <div class="faq-a">Porque a resposta completa fica registrada em texto — sem depender de você lembrar o que foi dito no vídeo.</div>
+  <p class="faq-sub">O resumo em texto de cada vídeo — pra quem prefere ler a assistir de novo.</p>
+  <div class="faq-visible">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Quanto cabe numa caçamba de 4m³?<span class="faq-arr">+</span></div>
+      <div class="faq-a">Cerca de 40 carrinhos de mão de entulho — o tamanho padrão que a Padrão Caçamba trabalha em toda a Grande SP. Serve bem pra reforma de banheiro, cozinha, pequena demolição ou limpeza de terreno; pra obras maiores, o PC calcula se precisa de mais de uma. <a href="/cacamba-4m3">Ver resposta completa →</a></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Contratou a caçamba mais barata? Cuidado.<span class="faq-arr">+</span></div>
+      <div class="faq-a">Preço muito abaixo do mercado costuma ser sinal de sem CTR/MTR, sem seguro e sem prazo garantido — os R$30 que você economiza podem virar uma multa de R$500 da prefeitura. Compare o que está incluso, não só o número. <a href="/preco-cacamba">Ver resposta completa →</a></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Como escolher a caçamba certa?<span class="faq-arr">+</span></div>
+      <div class="faq-a">Responda 3 perguntas antes de fechar: quanto entulho a obra vai gerar, onde a caçamba vai ficar (rua, calçada ou garagem) e se a empresa te dá CTR/MTR. Isso já mostra se é uma empresa séria. <a href="/como-escolher">Ver resposta completa →</a></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Por que cada vídeo tem uma página própria?<span class="faq-arr">+</span></div>
+      <div class="faq-a">Porque a resposta completa fica registrada em texto — sem depender de você lembrar o que foi dito no vídeo.</div>
+    </div>
   </div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="toggleFaq(this)">Os preços mudam por vídeo?<span class="faq-arr">+</span></div>
-    <div class="faq-a">Não. Preço é sempre o mesmo praticado no site, e varia por região — só a caçamba de 4m³, que é o único tamanho que a Padrão Caçamba trabalha.</div>
+  <div class="faq-extra" id="faqExtra">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Os preços mudam por vídeo?<span class="faq-arr">+</span></div>
+      <div class="faq-a">Não. Preço é sempre o mesmo praticado no site, e varia por região — só a caçamba de 4m³, que é o único tamanho que a Padrão Caçamba trabalha.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Não achei o assunto do meu vídeo aqui?<span class="faq-arr">+</span></div>
+      <div class="faq-a">Fale direto com o PC — a lista cresce toda semana.</div>
+    </div>
   </div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="toggleFaq(this)">Não achei o assunto do meu vídeo aqui?<span class="faq-arr">+</span></div>
-    <div class="faq-a">Fale direto com o PC — a lista cresce toda semana.</div>
-  </div>
+  <button class="faq-toggle-btn" id="faqToggleBtn" onclick="toggleFaqExtra()">+ Ver mais perguntas (2)</button>
 </div>
 
 <div class="cta-final">
@@ -428,6 +456,14 @@ function toggleFaq(el) {
   const isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
   if (!isOpen) item.classList.add('open');
+}
+function toggleFaqExtra() {
+  const extra = document.getElementById('faqExtra');
+  const btn = document.getElementById('faqToggleBtn');
+  const isOpen = extra.style.display === 'block';
+  extra.style.display = isOpen ? 'none' : 'block';
+  btn.textContent = isOpen ? '+ Ver mais perguntas (2)' : '− Ver menos';
+  btn.classList.toggle('open', !isOpen);
 }
 async function registrarVariante() {
   try {
