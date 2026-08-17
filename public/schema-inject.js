@@ -37,6 +37,8 @@
     'Tatuapé':           { ref: 'Metrô Tatuapé', janela: 'comercial 7h–17h', tipo_obra: 'reformas residenciais, obras em condomínios', acesso: 'Acesso normal', regra: 'Subprefeitura Mooca — máximo 3 dias em via pública' },
     'Penha':             { ref: 'Metrô Penha', janela: 'comercial 7h–17h', tipo_obra: 'reformas residenciais, obras em casas e sobrados', acesso: 'Acesso normal', regra: 'Subprefeitura Penha — máximo 3 dias em via pública' },
     'Vila Formosa':      { ref: 'Metrô Vila Formosa', janela: 'comercial 7h–17h', tipo_obra: 'reformas residenciais, obras em casas', acesso: 'Acesso normal', regra: 'Subprefeitura Mooca — máximo 3 dias em via pública' },
+    'Jaguaré':           { ref: 'CEAGESP, Marginal Pinheiros', janela: 'comercial 7h–17h', tipo_obra: 'reformas residenciais em prédios novos e obras no polo industrial/comercial', acesso: 'Evitar bloqueio na Marginal Pinheiros e proximidades da CEAGESP — priorizar ruas internas', regra: 'Subprefeitura Lapa — máximo 3 dias em via pública' },
+    'Vila Sônia':        { ref: 'Metrô Vila Sônia (Linha 4-Amarela)', janela: 'comercial 7h–17h', tipo_obra: 'obras de acabamento em condomínios novos e reformas residenciais', acesso: 'Trânsito mais intenso perto da estação e da Av. Francisco Morato — priorizar ruas internas', regra: 'Subprefeitura Butantã — máximo 3 dias em via pública' },
   };
 
   function injectSchema() {

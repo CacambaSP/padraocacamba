@@ -114,7 +114,7 @@ Lixo doméstico, lixo de evento, líquidos, tintas, solventes, produtos químico
 Itaim Bibi, Vila Olímpia, Moema, Brooklin, Vila Mariana, Campo Belo, Saúde, Jabaquara, Santo Amaro, Cursino, Vila Nova Conceição, Indianópolis, Planalto Paulista, Chácara Flora, Cidade Ademar.
 
 ### SP Capital — Zona Oeste
-Pinheiros, Vila Madalena, Alto de Pinheiros, Higienópolis, Perdizes, Lapa, Butantã, Pompéia, Água Branca, Pacaembu, Santa Cecília, Barra Funda.
+Pinheiros, Vila Madalena, Alto de Pinheiros, Higienópolis, Perdizes, Lapa, Butantã, Pompéia, Água Branca, Pacaembu, Santa Cecília, Barra Funda, Jaguaré, Vila Sônia.
 
 ### SP Capital — Zona Norte
 Santana, Vila Guilherme, Tucuruvi, Jaçanã, Mandaqui, Carandiru, Casa Verde.
@@ -166,6 +166,8 @@ Osasco, Carapicuíba, Barueri, Alphaville, Santana de Parnaíba, Guarulhos, Sant
 - https://www.padraocacamba.com.br/pirituba — Pirituba (Parque do Jaraguá)
 - https://www.padraocacamba.com.br/perus — Perus (Parque Anhanguera)
 - https://www.padraocacamba.com.br/jaragua — Jaraguá (Pico do Jaraguá)
+- https://www.padraocacamba.com.br/jaguare — Jaguaré (CEAGESP, Marginal Pinheiros)
+- https://www.padraocacamba.com.br/vila-sonia — Vila Sônia (Metrô Vila Sônia, Linha 4-Amarela)
 
 **Zona Norte**
 - https://www.padraocacamba.com.br/santana — Santana (Metrô Santana)
