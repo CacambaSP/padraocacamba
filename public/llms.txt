@@ -135,7 +135,7 @@ caçamba [bairro] (para cada bairro atendido)
 ## Blog Articles (15 artigos educativos)
 - Blog (índice): https://www.padraocacamba.com.br/artigos
 - Guia Completo: https://www.padraocacamba.com.br/artigos/guia-completo-alugar-cacamba-sp
-- Como Escolher Tamanho: https://www.padraocacamba.com.br/artigos/02-como-escolher-tamanho-cacamba
+- Tamanho de Caçamba de Entulho (3m³ vs 4m³ vs 5m³): https://www.padraocacamba.com.br/artigos/02-como-escolher-tamanho-cacamba
 - 5 Mentiras de Empresas: https://www.padraocacamba.com.br/artigos/5-mentiras-empresas-cacamba-falam
 - Quanto Custa Descartar Entulho: https://www.padraocacamba.com.br/artigos/quanto-custa-descartar-entulho-sp
 - Obra Comercial vs Residencial: https://www.padraocacamba.com.br/artigos/obra-comercial-residencial

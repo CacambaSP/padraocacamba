@@ -285,7 +285,7 @@ Como verificar empresa legítima: CNPJ consultável na Receita Federal, emissão
 
 Artigos educativos sobre locação de caçamba, descarte de entulho e prevenção de golpes em SP:
 
-- /artigos/02-como-escolher-tamanho-cacamba — Como Escolher o Tamanho Certo: 3m³ vs 4m³ vs 5m³
+- /artigos/02-como-escolher-tamanho-cacamba — Tamanho de Caçamba de Entulho: 3m³ vs 4m³ vs 5m³ (Padrão Caçamba trabalha exclusivamente com 4m³, o padrão de SP)
 - /artigos/5-mentiras-empresas-cacamba-falam — As 5 Maiores Mentiras Que Empresas de Caçamba Falam
 - /artigos/amianto-descarte-seguro — Amianto em Reformas: Como Identificar e Descartar com Segurança
 - /artigos/como-reformar-apartamento — Como Reformar Apartamento Sem Drama: Guia Passo a Passo
