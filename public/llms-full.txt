@@ -187,6 +187,8 @@ Osasco, Carapicuíba, Barueri, Alphaville, Santana de Parnaíba, Guarulhos, Sant
 - https://www.padraocacamba.com.br/consolacao — Consolação (Rua Augusta)
 - https://www.padraocacamba.com.br/liberdade — Liberdade (bairro oriental)
 - https://www.padraocacamba.com.br/republica — República (Centro histórico)
+- https://www.padraocacamba.com.br/bras — Brás (Metrô Brás)
+- https://www.padraocacamba.com.br/santa-cecilia — Santa Cecília
 
 **Grande SP**
 - https://www.padraocacamba.com.br/osasco — Osasco (cidade sede)
@@ -202,6 +204,8 @@ Osasco, Carapicuíba, Barueri, Alphaville, Santana de Parnaíba, Guarulhos, Sant
 - https://www.padraocacamba.com.br/zona-oeste — Zona Oeste SP completa
 - https://www.padraocacamba.com.br/zona-norte — Zona Norte SP completa
 - https://www.padraocacamba.com.br/zona-leste — Zona Leste SP completa
+- https://www.padraocacamba.com.br/centro-sp — Centro SP completo (Zona Central)
+- https://www.padraocacamba.com.br/grande-sp — Grande SP completa (Osasco, Carapicuíba, Barueri, Guarulhos, ABC e demais cidades)
 
 ### Páginas de termo genérico (cobrem toda São Paulo, sem bairro fixo)
 - https://www.padraocacamba.com.br/cacamba-de-entulho — O que é, como funciona e preço da caçamba de entulho em SP
@@ -276,6 +280,8 @@ Como verificar empresa legítima: CNPJ consultável na Receita Federal, emissão
 ---
 
 ## BLOG — GUIAS E EDUCAÇÃO
+
+Índice: https://www.padraocacamba.com.br/artigos
 
 Artigos educativos sobre locação de caçamba, descarte de entulho e prevenção de golpes em SP:
 
