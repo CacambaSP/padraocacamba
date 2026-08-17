@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<meta http-equiv="last-modified" content="Mon, 17 Aug 2026 23:45:00 GMT">
-<title>Caçamba em Pirituba — R$ 570 | 24h | NF inclusa</title>
+<meta http-equiv="last-modified" content="Mon, 17 Aug 2026 23:59:00 GMT">
+<title>Caçamba em Pirituba — R$ 600 | 24h | NF inclusa</title>
 <meta name="description" content="Caçamba 4m³ em Pirituba. Entrega em até 24h. Nota fiscal + CTR inclusos. CNPJ 44.538.708/0001-76. Desde 2004.">
-<meta property="og:title" content="Caçamba em Pirituba — R$ 570 | 24h | NF inclusa">
+<meta property="og:title" content="Caçamba em Pirituba — R$ 600 | 24h | NF inclusa">
 <meta property="og:description" content="Caçamba 4m³ em Pirituba. Entrega em até 24h. NF + CTR inclusos. CNPJ ativo. Empresa regularizada desde 2004.">
 <meta property="og:image" content="https://www.padraocacamba.com.br/image/cacamba-pirituba-sp-padrao-cacamba.webp">
 <meta property="og:image:width" content="1200">
@@ -341,8 +341,8 @@ const DOUGLAS_WPP='551142378757';
 const CADASTRO='https://cacambasp-crm.vercel.app/cadastro.html?v=49b0c48a-6f8f-4921-9be2-53d4fce47e80';
 const PC_VARIANTES=[{id:'v1',msg:'Oi! Reforma ou obra? Me fala o endereço que te digo se a gente atende e qual o prazo.'},{id:'v2',msg:'Oi! Temos disponibilidade para Pirituba essa semana. Qual é o endereço da obra?'},{id:'v4',msg:'Oi! Antes de fechar, me diz: já pesquisou preço e achou muito mais barato? Posso explicar o motivo.'}];
 const PC_VARIANTE=PC_VARIANTES[Math.floor(Math.random()*PC_VARIANTES.length)];
-let precoAtual='R$ 570 com NF',pcHistory=[],pcClienteWpp=null,pcClienteNome=null,pcAguardandoWpp=false,pcSituacao='',pcPronto=false;
-async function carregarPreco(){try{const r=await fetch(`${SB_URL}/rest/v1/precos_bairros?bairro=eq.${encodeURIComponent(BAIRRO)}&ativo=eq.true&limit=1`,{headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}});const data=await r.json();if(Array.isArray(data)&&data.length>0&&data[0].preco_com_nf>0){aplicarPreco(data[0].preco_com_nf,data[0].atualizado_em);return}const r2=await fetch(`${SB_URL}/rest/v1/precos_zonas?zona=eq.${encodeURIComponent(ZONA)}&limit=1`,{headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}});const data2=await r2.json();if(Array.isArray(data2)&&data2.length>0&&data2[0].preco_padrao>0){aplicarPreco(data2[0].preco_padrao)}else{aplicarPreco(570)}}catch(e){aplicarPreco(570)}}
+let precoAtual='R$ 600 com NF',pcHistory=[],pcClienteWpp=null,pcClienteNome=null,pcAguardandoWpp=false,pcSituacao='',pcPronto=false;
+async function carregarPreco(){try{const r=await fetch(`${SB_URL}/rest/v1/precos_bairros?bairro=eq.${encodeURIComponent(BAIRRO)}&ativo=eq.true&limit=1`,{headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}});const data=await r.json();if(Array.isArray(data)&&data.length>0&&data[0].preco_com_nf>0){aplicarPreco(data[0].preco_com_nf,data[0].atualizado_em);return}const r2=await fetch(`${SB_URL}/rest/v1/precos_zonas?zona=eq.${encodeURIComponent(ZONA)}&limit=1`,{headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}});const data2=await r2.json();if(Array.isArray(data2)&&data2.length>0&&data2[0].preco_padrao>0){aplicarPreco(data2[0].preco_padrao)}else{aplicarPreco(600)}}catch(e){aplicarPreco(600)}}
 function fmtData(iso){if(!iso)return null;return new Date(iso).toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'})}
 function aplicarPreco(valor,atualizado){const fmt='R$ '+Number(valor).toLocaleString('pt-BR',{minimumFractionDigits:0});precoAtual=fmt+' com NF';const el=document.getElementById('preco-valor');if(el){el.textContent=Number(valor).toLocaleString('pt-BR',{minimumFractionDigits:0});el.className='';el.style.fontSize='44px';el.style.fontFamily="'DM Serif Display',serif"}const tag=document.getElementById('preco-tag-cacamba');if(tag)tag.innerHTML=`Zona Oeste · <strong style="color:#4ade80">${fmt}</strong>`;const dataEl=document.getElementById('preco-data');if(dataEl)dataEl.textContent='Preço atualizado em '+(fmtData(atualizado)||fmtData(new Date().toISOString()))}
 async function buildPCSystem(){try{const r=await fetch(`${SB_URL}/rest/v1/config_pc?ativo=eq.true&limit=1`,{headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}});const data=await r.json();if(Array.isArray(data)&&data.length>0)return data[0].prompt_base.replace('{BAIRRO}',BAIRRO).replace('{PRECO}',precoAtual)}catch(e){}return`Você é PC, assistente da Padrão Caçamba. Bairro: ${BAIRRO}. Preço: ${precoAtual}. Seja direto e ajude o cliente a fechar o pedido.`}
