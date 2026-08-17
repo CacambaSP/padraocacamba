@@ -209,6 +209,12 @@ Osasco, Carapicuíba, Barueri, Alphaville, Santana de Parnaíba, Guarulhos, Sant
 - https://www.padraocacamba.com.br/locacao-de-cacamba — Locação para obras (B2B): NF por OS, CTR, faturamento PJ para construtoras e engenheiros
 - https://www.padraocacamba.com.br/o-que-nao-pode-ir-na-cacamba — Guia dos 8 materiais que não podem ir na caçamba (amianto, tintas, pilhas, resíduo hospitalar, pneus, eletrônicos, lixo doméstico, líquidos) e o que fazer com cada um
 
+### Vídeos TikTok (@cacambasp) — Hub e respostas
+- https://www.padraocacamba.com.br/comeca-aqui — Hub de vídeos do TikTok, link fixo na bio, lista respostas por tema
+- https://www.padraocacamba.com.br/cacamba-4m3 — Vídeo 1: quanto cabe numa caçamba de 4m³ (40 carrinhos de mão), com vídeo embutido e schema VideoObject
+- https://www.padraocacamba.com.br/preco-cacamba — Vídeo 2: por que a caçamba mais barata pode sair mais cara (R$30 de economia x R$500 de multa sem CTR)
+- https://www.padraocacamba.com.br/como-escolher — Vídeo 3: as 3 perguntas antes de contratar qualquer caçamba (volume, local, CTR/MTR)
+
 ### Institucional
 - https://www.padraocacamba.com.br/ — Home com busca por CEP
 - https://www.padraocacamba.com.br/precos — Tabela de preços
@@ -277,6 +283,7 @@ Artigos educativos sobre locação de caçamba, descarte de entulho e prevençã
 - /artigos/5-mentiras-empresas-cacamba-falam — As 5 Maiores Mentiras Que Empresas de Caçamba Falam
 - /artigos/amianto-descarte-seguro — Amianto em Reformas: Como Identificar e Descartar com Segurança
 - /artigos/como-reformar-apartamento — Como Reformar Apartamento Sem Drama: Guia Passo a Passo
+- /artigos/mtr-manifesto-transporte-residuos — MTR: O Que É e Por Que Sua Caçamba na Grande SP Precisa Dele (MTR emitido via SIGOR/CETESB para Osasco, Carapicuíba, Barueri, Guarulhos e demais cidades fora da capital — diferente do CTR-e, exclusivo da capital via AMLURB)
 - /artigos/ctr-nf-empresa-verdade — CTR e Nota Fiscal: Por Que Sua Empresa de Caçamba Precisa Emitir
 - /artigos/rodizio-caminhoes-sp-cacamba — Rodízio de Caminhões em SP: O Que Muda na Entrega da Caçamba (rodízio municipal vs ZMRC)
 - /artigos/descarte-entulho-sao-paulo — Descarte de Entulho em São Paulo: Regras, Ecopontos e Quando Alugar Caçamba
