@@ -255,6 +255,15 @@ h1 {
   text-align: center;
 }
 
+.faq-list { margin: 32px 0; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 16px 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; font-size: 16px; font-weight: 600; color: #fff; cursor: pointer; line-height: 1.4; }
+.faq-arr { color: var(--blue-light); font-size: 22px; flex-shrink: 0; transition: transform .2s; line-height: 1; }
+.faq-a { display: none; font-size: 15px; color: #bbb; line-height: 1.7; margin-top: 12px; }
+.faq-item.open .faq-arr { transform: rotate(45deg); }
+.faq-item.open .faq-a { display: block; }
+
 .article-cta-title {
   font-family: 'DM Serif Display', serif;
   font-size: 24px;
@@ -370,7 +379,7 @@ document.getElementById('top-banner').addEventListener('click', () => {
 <!-- NAV -->
 <nav>
   <div class="nav-logo">Padrão Caçamba</div>
-  <button class="nav-pc-btn" onclick="alert('PC integrado aqui')">Falar com PC</button>
+  <button class="nav-pc-btn" onclick="window.open('https://wa.me/551142378757?text=' + encodeURIComponent('Vi o artigo e quero falar sobre uma caçamba'), '_blank')">Falar com PC</button>
 </nav>
 
 <!-- ARTICLE -->
@@ -429,20 +438,46 @@ document.getElementById('top-banner').addEventListener('click', () => {
     <ul>
       <li><strong>Misturar tipos de resíduo:</strong> entulho de construção (concreto, cerâmica, argamassa) não deve ser misturado com lixo orgânico, eletrônicos, ou materiais líquidos.</li>
       <li><strong>Deixar o material além do prazo permitido:</strong> tanto em vias públicas quanto em calçadas, existe um limite de tempo para a permanência de caçambas.</li>
-      <li><strong>Posicionar na calçada em vez da via:</strong> em muitos casos a calçada não é o local permitido — vale confirmar isso antes de começar a obra.</li>
+      <li><strong>Posicionar na calçada sem deixar a faixa livre exigida:</strong> a calçada pode ser usada, mas só deixando um mínimo de 1,20m livre para pedestres — vale confirmar isso antes de começar a obra.</li>
       <li><strong>Não verificar se a empresa é regularizada:</strong> contratar transporte sem nota fiscal ou CNPJ ativo deixa o responsável exposto à responsabilidade legal.</li>
     </ul>
 
     <h2>Precisa descartar um volume maior de entulho?</h2>
 
     <p>Se a sua obra já passou do ponto em que um ecoponto resolve, vale considerar uma caçamba estacionária como parte do planejamento — não como um custo extra de última hora. Temos caçambas de 4m³ com nota fiscal e CTR inclusos em todas as entregas, pagamento feito somente após a entrega do equipamento.</p>
+
+    <h2>FAQ: Dúvidas Frequentes</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">O que a lei diz sobre descarte de entulho em São Paulo?<span class="faq-arr">+</span></div>
+        <div class="faq-a">A responsabilidade pelo descarte correto é de quem gera o resíduo — morador, responsável pela obra ou construtora. Deixar entulho fora dos locais e prazos permitidos pode gerar notificação e multa da fiscalização municipal.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">O que são ecopontos e como funcionam?<span class="faq-arr">+</span></div>
+        <div class="faq-a">Ecopontos são pontos de entrega voluntária gratuitos, mantidos pela prefeitura, que aceitam pequenos volumes de entulho e resíduos volumosos. Funcionam bem para reformas pontuais e pequenas, mas têm limite de volume por entrega.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Quando o ecoponto não é suficiente?<span class="faq-arr">+</span></div>
+        <div class="faq-a">Quando o volume de entulho ultrapassa o limite aceito por entrega no ecoponto, ou quando fazer várias viagens não é viável. Nesse caso, a caçamba estacionária resolve de uma vez, com retirada programada.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Como escolher o tamanho certo de caçamba?<span class="faq-arr">+</span></div>
+        <div class="faq-a">A caçamba 4m³ é o padrão da Grande SP e cobre a maioria das reformas residenciais e pequenas obras comerciais. Para volumes muito maiores, pode ser necessário mais de uma locação.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Quais são os erros comuns ao descartar entulho?<span class="faq-arr">+</span></div>
+        <div class="faq-a">Misturar entulho com lixo orgânico ou eletrônicos, deixar o material além do prazo permitido, posicionar na calçada sem deixar a faixa livre exigida, e contratar empresa sem verificar CNPJ e Nota Fiscal.</div>
+      </div>
+    </div>
+
   </div>
 
   <!-- CTA -->
   <div class="article-cta">
     <div class="article-cta-title">Precisa de caçamba para sua obra?</div>
     <p class="article-cta-text">Atendemos São Paulo, Osasco, Guarulhos e região. Entrega em até 24h com NF e CTR inclusos.</p>
-    <button class="btn-wa" onclick="alert('PC integrado aqui')">Falar com PC agora</button>
+    <button class="btn-wa" onclick="window.open('https://wa.me/551142378757?text=' + encodeURIComponent('Vi o artigo e quero falar sobre uma caçamba'), '_blank')">Falar com PC agora</button>
   </div>
 
 </article>
@@ -455,6 +490,15 @@ document.getElementById('top-banner').addEventListener('click', () => {
 </footer>
 
 <!-- WA FIXO — substituído pelo script global floating-buttons.js -->
+
+<script>
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
 
 <script src="/pc-tracking.js" defer></script>
 

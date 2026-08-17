@@ -253,6 +253,15 @@ h1 {
   text-align: center;
 }
 
+.faq-list { margin: 32px 0; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 16px 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; font-size: 16px; font-weight: 600; color: #fff; cursor: pointer; line-height: 1.4; }
+.faq-arr { color: var(--blue-light); font-size: 22px; flex-shrink: 0; transition: transform .2s; line-height: 1; }
+.faq-a { display: none; font-size: 15px; color: #bbb; line-height: 1.7; margin-top: 12px; }
+.faq-item.open .faq-arr { transform: rotate(45deg); }
+.faq-item.open .faq-a { display: block; }
+
 .article-cta-title {
   font-family: 'DM Serif Display', serif;
   font-size: 24px;
@@ -368,7 +377,7 @@ document.getElementById('top-banner').addEventListener('click', () => {
 <!-- NAV -->
 <nav>
   <div class="nav-logo">Padrão Caçamba</div>
-  <button class="nav-pc-btn" onclick="alert('PC integrado aqui')">Falar com PC</button>
+  <button class="nav-pc-btn" onclick="window.open('https://wa.me/551142378757?text=' + encodeURIComponent('Vi o artigo e quero falar sobre uma caçamba'), '_blank')">Falar com PC</button>
 </nav>
 
 <!-- ARTICLE -->
@@ -429,13 +438,38 @@ document.getElementById('top-banner').addEventListener('click', () => {
     <h2>Precisa de Caçamba em Guarujá?</h2>
 
     <p>Limpou o terreno e agora precisa descartar os resíduos? A gente entrega caçambas 4m³ com nota fiscal e CTR inclusos em até 24h. Fale com a gente e agende seu serviço — deixa a gente ajudar a tirar todo aquele entulho e resíduo verde do seu jeito.</p>
+
+    <h2>FAQ: Dúvidas Frequentes</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Qual é a diferença entre entulho de obra e resíduo verde?<span class="faq-arr">+</span></div>
+        <div class="faq-a">Entulho de obra é material de construção civil (concreto, tijolo, argamassa). Resíduo verde é vegetação — galhos, folhas, troncos, restos de poda e capina. As regras de descarte e, em alguns casos, de autorização prévia são diferentes para cada tipo.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Quando preciso solicitar autorização na SEMAM de Guarujá?<span class="faq-arr">+</span></div>
+        <div class="faq-a">Sempre que a remoção envolver árvores ou vegetação de porte significativo, mesmo em terreno particular. Poda leve de manutenção geralmente não exige autorização, mas remoção completa costuma exigir.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Arbustos de jardim precisam de autorização?<span class="faq-arr">+</span></div>
+        <div class="faq-a">Depende do porte e da espécie. Arbustos pequenos de jardim geralmente não exigem autorização, mas o mais seguro é confirmar diretamente com a SEMAM antes de remover, especialmente se houver dúvida sobre a espécie.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Quem é responsável por conseguir a autorização?<span class="faq-arr">+</span></div>
+        <div class="faq-a">A responsabilidade é de quem está removendo a vegetação (você ou o responsável pela obra), não da empresa que aluga a caçamba. A locadora fornece o equipamento — a autorização ambiental é uma etapa separada e anterior.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Como confirmar se preciso de autorização?<span class="faq-arr">+</span></div>
+        <div class="faq-a">O caminho mais seguro é contatar diretamente a Secretaria de Meio Ambiente de Guarujá (SEMAM), por telefone, e-mail ou presencialmente, com uma foto do que você pretende remover. A resposta costuma sair em poucos dias.</div>
+      </div>
+    </div>
   </div>
 
   <!-- CTA -->
   <div class="article-cta">
     <div class="article-cta-title">Pronto para alugar uma caçamba?</div>
     <p class="article-cta-text">NF e CTR inclusos · Entrega em até 24h · PIX após entrega</p>
-    <button class="btn-wa" onclick="alert('PC integrado aqui')">Falar com PC agora</button>
+    <button class="btn-wa" onclick="window.open('https://wa.me/551142378757?text=' + encodeURIComponent('Vi o artigo e quero falar sobre uma caçamba'), '_blank')">Falar com PC agora</button>
   </div>
 
 </article>
@@ -448,7 +482,16 @@ document.getElementById('top-banner').addEventListener('click', () => {
 </footer>
 
 <!-- WA FIXO -->
-<button class="wa-fixed" aria-label="Falar com PC" onclick="alert('PC integrado aqui')"></button>
+<button class="wa-fixed" aria-label="Falar com PC" onclick="window.open('https://wa.me/551142378757?text=' + encodeURIComponent('Vi o artigo e quero falar sobre uma caçamba'), '_blank')"></button>
+
+<script>
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
 
 <!-- PC Tracking -->
 <script src="/pc-tracking.js" defer></script>

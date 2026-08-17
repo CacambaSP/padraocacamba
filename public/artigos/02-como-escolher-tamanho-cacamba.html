@@ -160,6 +160,7 @@ footer{background:#050505;padding:20px 18px;border-top:1px solid var(--border);m
   .comparativo{grid-template-columns:repeat(3,1fr);gap:16px}
 }
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Vale a pena contratar frete informal em vez de caçamba?", "acceptedAnswer": {"@type": "Answer", "text": "Raramente. O preço pode parecer menor, mas frete informal costuma não emitir CTR/MTR nem Nota Fiscal — e quem contrata continua responsável pelo destino do entulho. Se for descartado irregularmente, a multa pode recair sobre quem gerou o resíduo, não só sobre o motorista."}}, {"@type": "Question", "name": "Posso misturar materiais na caçamba?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, desde que todos sejam \"resíduos de construção\". Concreto com tijolos, com madeira, com gesso — tudo junto é válido. Não misture lixo doméstico."}}, {"@type": "Question", "name": "O que fazer se eu escolher errado de tamanho?", "acceptedAnswer": {"@type": "Answer", "text": "Se escolheu pequena demais, avisa a empresa e pede caçamba maior (geralmente cobra a diferença). Se escolheu grande demais, você só paga uma locação — não é por peso, é por aluguel."}}, {"@type": "Question", "name": "Preciso de 2 caçambas ao mesmo tempo?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, é possível, mas geralmente é mais caro que alugar uma maior. Confirme com a empresa a melhor estratégia pro seu caso."}}, {"@type": "Question", "name": "Qual o peso máximo que a caçamba aguenta?", "acceptedAnswer": {"@type": "Answer", "text": "3m³ aguenta ~1,5 toneladas, 4m³ aguenta ~4 toneladas, 5m³ aguenta ~5 toneladas. Material não pode ultrapassar a borda (segurança no transporte)."}}, {"@type": "Question", "name": "E se eu não souber estimar quanto de entulho vou gerar?", "acceptedAnswer": {"@type": "Answer", "text": "Explique o tipo de obra (apartamento, casa, reforma, demolição) e o tamanho (m²). A empresa vai recomendar o tamanho. Melhor errar pra cima do que pra baixo."}}]}</script>
 </head>
 <body>
 
@@ -345,6 +346,16 @@ A 4m³ é o "Goldilocks" das caçambas — nem pequena demais, nem grande demais
 
 <p><strong>Observação:</strong> a <em>Padrão Caçamba trabalha exclusivamente com 4m³</em>. Este é nosso tamanho de especialidade — é o padrão de SP, tem a melhor logística e cobre 95% das obras residenciais.</p>
 
+<h2>E a "caçambinha" ou o frete informal, valem a pena?</h2>
+
+<p>Duas alternativas aparecem bastante na hora de pesquisar preço, e vale entender a diferença antes de escolher pelo valor mais baixo:</p>
+
+<p><strong>"Caçambinha"</strong> costuma ser um recipiente bem menor que 3m³ — às vezes uma sacaria (big bag) ou uma caçamba móvel pequena, sem o mesmo processo de transporte e destinação de uma caçamba estacionária padrão. Pode fazer sentido pra um volume muito pequeno (poda de um vaso, entulho de meio dia de trabalho), mas raramente compensa numa reforma de verdade — o custo por m³ acaba sendo maior, e nem toda empresa que oferece emite CTR ou MTR.</p>
+
+<p><strong>Frete informal</strong> é diferente: é contratar um caminhão ou van avulsa, geralmente sem CNPJ, sem Nota Fiscal e sem documentação de transporte de resíduo. Pode parecer mais barato na hora, mas quem contrata (você) continua sendo corresponsável pelo destino do entulho — se for descartado irregularmente, a multa pode recair sobre o gerador do resíduo, não só sobre o motorista. É o mesmo risco explicado no <a href="/antifraude" style="color:#93b8f0">guia anti-golpe</a>.</p>
+
+<p>Na prática: pra qualquer coisa além de um volume pequeno e pontual, uma caçamba 4m³ com NF e CTR/MTR inclusos sai mais previsível — o preço já cobre a destinação correta, sem risco de custo escondido depois.</p>
+
 <h2>Comparativo Rápido</h2>
 
 <p>Se você ainda tiver dúvida, <strong>use a calculadora abaixo</strong> para estimar com precisão:</p>
@@ -424,6 +435,16 @@ function calcularCacamba() {
 <h2>FAQ: Dúvidas Sobre Tamanho</h2>
 
 <div class="faq-list">
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      Vale a pena contratar frete informal em vez de caçamba?
+      <span class="faq-arr">+</span>
+    </div>
+    <div class="faq-a">
+      Raramente. O preço pode parecer menor, mas frete informal costuma não emitir CTR/MTR nem Nota Fiscal — e quem contrata continua responsável pelo destino do entulho. Se for descartado irregularmente, a multa pode recair sobre quem gerou o resíduo, não só sobre o motorista.
+    </div>
+  </div>
+
   <div class="faq-item">
     <div class="faq-q" onclick="toggleFaq(this)">
       Posso misturar materiais na caçamba?
