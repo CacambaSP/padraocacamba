@@ -120,7 +120,7 @@ Pinheiros, Vila Madalena, Alto de Pinheiros, Higienópolis, Perdizes, Lapa, Buta
 Santana, Vila Guilherme, Tucuruvi, Jaçanã, Mandaqui, Carandiru, Casa Verde.
 
 ### SP Capital — Zona Leste
-Tatuapé, Penha, Vila Formosa, Carrão, Água Rasa, Vila Prudente, Mooca.
+Tatuapé, Penha, Vila Formosa, Mooca, Vila Prudente, Ermelino Matarazzo, Guaianases, Sapopemba, Itaim Paulista.
 
 ### Grande SP
 Osasco, Carapicuíba, Barueri, Alphaville, Santana de Parnaíba, Guarulhos, Santo André, São Bernardo do Campo, São Caetano do Sul, Mauá, Diadema.
@@ -178,9 +178,12 @@ Osasco, Carapicuíba, Barueri, Alphaville, Santana de Parnaíba, Guarulhos, Sant
 - https://www.padraocacamba.com.br/tatuape — Tatuapé (Metrô Tatuapé)
 - https://www.padraocacamba.com.br/penha — Penha (Metrô Penha)
 - https://www.padraocacamba.com.br/vila-formosa — Vila Formosa (Metrô Vila Formosa)
-- https://www.padraocacamba.com.br/itaim-paulista — Itaim Paulista (extremo leste, não confundir com Itaim Bibi)
 - https://www.padraocacamba.com.br/mooca — Mooca (tradição italiana)
 - https://www.padraocacamba.com.br/vila-prudente — Vila Prudente (Metrô Vila Prudente)
+- https://www.padraocacamba.com.br/ermelino-matarazzo — Ermelino Matarazzo (divisa com Guarulhos)
+- https://www.padraocacamba.com.br/guaianases — Guaianases (Estação Guaianases)
+- https://www.padraocacamba.com.br/sapopemba — Sapopemba (Parque do Carmo)
+- https://www.padraocacamba.com.br/itaim-paulista — Itaim Paulista (extremo leste, não confundir com Itaim Bibi, que é Zona Sul)
 
 **Zona Central**
 - https://www.padraocacamba.com.br/bela-vista — Bela Vista (Bixiga)

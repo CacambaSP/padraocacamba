@@ -4,18 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<meta http-equiv="last-modified" content="Fri, 26 Jun 2026 8:00:00 GMT">
-<title>Caçamba Zona Leste SP | 8 Bairros Atendidos | Padrão Caçamba</title>
-<meta name="description" content="Aluguel de caçamba 4m³ em toda a Zona Leste de SP. 3 bairros com página dedicada. NF e CTR incluídos. Entrega em até 24h. CNPJ 44.538.708/0001-76.">
-<meta property="og:title" content="Caçamba Zona Leste SP | Padrão Caçamba">
+<meta http-equiv="last-modified" content="Mon, 17 Aug 2026 22:30:00 GMT">
+<title>Caçamba de Entulho Zona Leste SP | 9 Bairros Atendidos | Padrão Caçamba</title>
+<meta name="description" content="Caçamba de entulho na Zona Leste de São Paulo. 9 bairros com página dedicada — Tatuapé, Penha, Mooca, Vila Prudente, Itaim Paulista e mais. NF e CTR incluídos. CNPJ 44.538.708/0001-76.">
+<meta property="og:title" content="Caçamba de Entulho Zona Leste SP | Padrão Caçamba">
 <meta property="og:description" content="Cobertura total na Zona Leste. Caçamba 4m³ com NF e CTR em toda a região.">
-<meta property="og:image" content="https://www.padraocacamba.com.br/image/banner-zona-sul-padrao-cacamba.webp.png">
+<meta property="og:image" content="https://www.padraocacamba.com.br/image/banner-zona-leste-padrao-cacamba.webp.png">
 <link rel="canonical" href="https://www.padraocacamba.com.br/zona-leste">
 <link rel="icon" type="image/png" href="/image/logo-padrao-cacamba.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","wlu14vvzwg");</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Padrão Caçamba","description":"Locação de caçamba 4m³ em toda a Zona Leste de São Paulo. Empresa regularizada com NF e CTR.","url":"https://www.padraocacamba.com.br/zona-leste","telephone":"+55-11-4237-8757","address":{"@type":"PostalAddress","streetAddress":"Rua Juan Vicente, 482","addressLocality":"Osasco","addressRegion":"SP","addressCountry":"BR"},"taxID":"44.538.708/0001-76","foundingDate":"2004","areaServed":"Zona Leste, São Paulo"}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Quanto custa uma caçamba de entulho na Zona Leste?","acceptedAnswer":{"@type":"Answer","text":"O preço padrão na Zona Leste é R$ 600 com Nota Fiscal inclusa, um pouco acima de outras zonas porque a distância até o aterro credenciado aumenta o custo de transporte e destinação. Cada página de bairro mostra o valor exato."}},
+    {"@type":"Question","name":"Quais bairros da Zona Leste vocês atendem?","acceptedAnswer":{"@type":"Answer","text":"Atendemos 9 bairros com página dedicada na Zona Leste: Tatuapé, Penha, Vila Formosa, Mooca, Vila Prudente, Ermelino Matarazzo, Guaianases, Sapopemba e Itaim Paulista. Também cobrimos bairros vizinhos sem página própria — pergunte ao PC."}},
+    {"@type":"Question","name":"Quanto tempo a caçamba pode ficar na rua na Zona Leste?","acceptedAnswer":{"@type":"Answer","text":"O prazo padrão é de até 3 dias em via pública, conforme regulamentação da Prefeitura de São Paulo. O prazo pode variar conforme a subprefeitura responsável pelo bairro."}},
+    {"@type":"Question","name":"Emitem nota fiscal e CTR na Zona Leste?","acceptedAnswer":{"@type":"Answer","text":"Sim. Nota Fiscal eletrônica e CTR-e (Controle de Transporte de Resíduos, exigido na capital paulista) são emitidos em 100% das entregas na Zona Leste, sem custo adicional."}},
+    {"@type":"Question","name":"Em quanto tempo a caçamba é entregue na Zona Leste?","acceptedAnswer":{"@type":"Answer","text":"Em até 24h após a confirmação do pedido. Não realizamos entregas de sábado às 4h até domingo às 20h."}}
+  ]
+}
+</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -82,6 +95,15 @@ nav{position:sticky;top:0;z-index:200;background:rgba(8,8,8,0.97);backdrop-filte
 .bairro-preco{font-family:var(--mono);font-size:15px;font-weight:700}
 .bairro-preco span{font-size:9px;color:#444;display:block;font-weight:400;margin-top:2px}
 
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid var(--border2)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:16px 0;font-size:15px;font-weight:600;color:#fff;cursor:pointer;line-height:1.4}
+.faq-arr{font-size:22px;color:var(--zona);flex-shrink:0;transition:transform .2s;line-height:1}
+.faq-a{display:none;font-size:14px;color:#999;line-height:1.7;padding-bottom:16px}
+.faq-item.open .faq-arr{transform:rotate(45deg)}
+.faq-item.open .faq-a{display:block}
+
 .section{padding:28px 20px}
 .sec-h2{font-family:var(--display);font-size:34px;letter-spacing:2px;color:#fff;margin-bottom:6px;line-height:1}
 
@@ -135,7 +157,7 @@ footer{background:#030303;padding:22px 20px;border-top:1px solid var(--border);f
 
 <div class="hero">
   <h1>Zona<br>Leste<br>SP</h1>
-  <p class="hero-lead">Tatuapé, Penha e Vila Formosa são áreas em expansão com demanda por reformas e ampliações. Logística para entrega em bairros da Leste requer planejamento específico — a Padrão Caçamba domina a região.</p>
+  <p class="hero-lead">Caçamba de entulho na Zona Leste de São Paulo, de Tatuapé a Itaim Paulista. A região tem forte demanda por reforma residencial e obras de ampliação, com bairros em constante crescimento como Vila Prudente e Ermelino Matarazzo. Logística para entrega na Leste requer planejamento específico — a Padrão Caçamba domina a região.</p>
 </div>
 
 <div class="section">
@@ -222,6 +244,42 @@ footer{background:#030303;padding:22px 20px;border-top:1px solid var(--border);f
             <div class="bairro-arrow" style="color:#fb923c">→</div>
           </div>
         </a>
+        <a href="/itaim-paulista" class="bairro-card">
+          <div class="bairro-card-top" style="background:linear-gradient(135deg,#fb923c11,#fb923c06)">
+            <div class="bairro-nome">Itaim Paulista</div>
+            <div class="bairro-ref">Shopping Itaim Paulista</div>
+          </div>
+          <div class="bairro-card-bottom">
+            <div class="bairro-preco" style="color:#fb923c">R$ 600<span>com NF</span></div>
+            <div class="bairro-arrow" style="color:#fb923c">→</div>
+          </div>
+        </a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-h2" style="margin-bottom:20px">Dúvidas<br>frequentes.</div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Quanto custa uma caçamba de entulho na Zona Leste?<span class="faq-arr">+</span></div>
+      <div class="faq-a">O preço padrão na Zona Leste é R$ 600 com Nota Fiscal inclusa, um pouco acima de outras zonas porque a distância até o aterro credenciado aumenta o custo de transporte e destinação. Cada página de bairro mostra o valor exato.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Quais bairros da Zona Leste vocês atendem?<span class="faq-arr">+</span></div>
+      <div class="faq-a">Atendemos 9 bairros com página dedicada: Tatuapé, Penha, Vila Formosa, Mooca, Vila Prudente, Ermelino Matarazzo, Guaianases, Sapopemba e Itaim Paulista. Também cobrimos bairros vizinhos sem página própria — pergunte ao PC.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Quanto tempo a caçamba pode ficar na rua na Zona Leste?<span class="faq-arr">+</span></div>
+      <div class="faq-a">O prazo padrão é de até 3 dias em via pública, conforme regulamentação da Prefeitura de São Paulo. O prazo pode variar conforme a subprefeitura responsável pelo bairro.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Emitem nota fiscal e CTR na Zona Leste?<span class="faq-arr">+</span></div>
+      <div class="faq-a">Sim. Nota Fiscal eletrônica e CTR-e (Controle de Transporte de Resíduos, exigido na capital paulista) são emitidos em 100% das entregas na Zona Leste, sem custo adicional.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Em quanto tempo a caçamba é entregue na Zona Leste?<span class="faq-arr">+</span></div>
+      <div class="faq-a">Em até 24h após a confirmação do pedido. Não realizamos entregas de sábado às 4h até domingo às 20h.</div>
+    </div>
   </div>
 </div>
 
