@@ -60,6 +60,12 @@ nav{position:sticky;top:0;z-index:200;background:rgba(8,8,8,0.97);backdrop-filte
 .pc-input{flex:1;background:#fff;border:1px solid #ddd;border-radius:8px;padding:9px 12px;color:#111;font-size:14px;font-family:var(--body);outline:none}
 .pc-send{background:#1E3A8A;border:none;border-radius:8px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
 .pc-btn-full{display:block;width:100%;padding:11px;background:#39d353;color:#000;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;margin-top:7px;text-align:center}
+.pc-btn-douglas{display:block;width:100%;padding:10px;background:transparent;color:#6a8fc4;border:1px solid #1a2d4a;border-radius:8px;font-size:12px;font-weight:500;cursor:pointer;margin-top:6px;text-align:center}
+.pc-typing{display:flex;gap:4px;padding:10px 13px;background:#1a2a4a;border-radius:4px 10px 10px 10px;width:fit-content;margin-bottom:8px}
+.pc-typing span{width:6px;height:6px;background:#6a8fc4;border-radius:50%;animation:typingdot .9s infinite}
+.pc-typing span:nth-child(2){animation-delay:.2s}
+.pc-typing span:nth-child(3){animation-delay:.4s}
+@keyframes typingdot{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
 
 .hero{padding:36px 20px 28px;position:relative;overflow:hidden}
 .hero h1{font-family:var(--display);font-size:52px;letter-spacing:3px;line-height:.95;color:#fff;text-transform:uppercase;margin-bottom:18px}
@@ -243,12 +249,54 @@ padraocacamba.com.br
 </button>
 
 <script>
-const BAIRRO = 'Grande SP';
-const ZONA = 'Grande SP';
-let pcPronto = false;
-let pcHistory = [];
 const SB_URL = 'https://ejfuqijtiberxsnvxdwm.supabase.co';
 const SB_KEY = 'sb_publishable_VvMIbjms3nf-YLh46wuPKA_6FaRpaxX';
+const BAIRRO = 'Grande SP';
+const ZONA = 'Grande SP';
+const DOUGLAS_WPP = '551142378757';
+const CADASTRO = 'https://cacambasp-crm.vercel.app/cadastro.html?v=49b0c48a-6f8f-4921-9be2-53d4fce47e80';
+
+const PC_VARIANTES = [
+  { id: 'v1', msg: 'Oi! Me diz o seu bairro na Grande SP e o endereço da obra que eu já te passo o preço com NF e a disponibilidade.' },
+  { id: 'v2', msg: 'Oi! Atendemos toda a Grande SP. Qual é o seu bairro ou cidade?' },
+  { id: 'v4', msg: 'Oi! Posso te ajudar com preço, prazo e como funciona, sem compromisso. Qual bairro na Grande SP é a obra?' }
+];
+const PC_VARIANTE = PC_VARIANTES[Math.floor(Math.random() * PC_VARIANTES.length)];
+
+let precoAtual = 'varia por bairro/cidade';
+let pcHistory = [];
+let pcClienteWpp = null;
+let pcClienteNome = null;
+let pcAguardandoWpp = false;
+let pcSituacao = '';
+let pcPronto = false;
+
+async function carregarPreco() {
+  try {
+    const r2 = await fetch(`${SB_URL}/rest/v1/precos_zonas?zona=eq.${encodeURIComponent(ZONA)}&limit=1`, {
+      headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }
+    });
+    const data2 = await r2.json();
+    if (Array.isArray(data2) && data2.length > 0 && data2[0].preco_padrao > 0) {
+      precoAtual = 'R$ ' + Number(data2[0].preco_padrao).toLocaleString('pt-BR', {minimumFractionDigits:0}) + ' com NF';
+    }
+  } catch(e) {}
+}
+
+async function buildPCSystem() {
+  try {
+    const r = await fetch(`${SB_URL}/rest/v1/config_pc?ativo=eq.true&limit=1`, {
+      headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }
+    });
+    const data = await r.json();
+    if (Array.isArray(data) && data.length > 0) {
+      return await data[0].prompt_base
+        .replace('{BAIRRO}', BAIRRO)
+        .replace('{PRECO}', precoAtual);
+    }
+  } catch(e) {}
+  return `Você é PC, assistente da Padrão Caçamba. O cliente está navegando na página geral da Grande SP (ainda não escolheu um bairro/cidade específico). Pergunte o bairro ou cidade e o endereço da obra, e confirme o valor exato conforme o local informado. Seja direto e ajude o cliente a fechar o pedido.`;
+}
 
 function focarPC() {
   document.getElementById('pc-chat').scrollIntoView({ behavior: 'smooth' });
@@ -264,18 +312,130 @@ function pcAddMsg(text, type) {
   msgs.scrollTop = msgs.scrollHeight;
 }
 
+function pcShowTyping() {
+  const msgs = document.getElementById('pc-msgs');
+  const div = document.createElement('div');
+  div.className = 'pc-typing';
+  div.id = 'pc-typing';
+  div.innerHTML = '<span></span><span></span><span></span>';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function pcRemoveTyping() {
+  const t = document.getElementById('pc-typing');
+  if (t) t.remove();
+}
+
+function pcShowCadastroBtn() {
+  const msgs = document.getElementById('pc-msgs');
+  const btn = document.createElement('button');
+  btn.className = 'pc-btn-full';
+  btn.textContent = '📋 Preencher cadastro e fechar pedido';
+  btn.onclick = () => window.open(CADASTRO+'&bairro='+encodeURIComponent(BAIRRO)+'&preco='+encodeURIComponent(precoAtual)+'&origem='+encodeURIComponent(location.pathname),'_blank');
+  msgs.appendChild(btn);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function pcShowDouglasBtn(wpp, situacao) {
+  const msgs = document.getElementById('pc-msgs');
+  const waLink = `https://wa.me/${DOUGLAS_WPP}?text=${encodeURIComponent(`*PC escalou* 🔔\n👤 Cliente: ${pcClienteNome||'não informado'}\n📱 WhatsApp: ${wpp||'não informado'}\n❓ Dúvida: ${situacao}\n📍 Região: ${BAIRRO}`)}`;
+  const btn = document.createElement('button');
+  btn.className = 'pc-btn-douglas';
+  btn.textContent = '📲 Falar com o responsável';
+  btn.onclick = () => window.open(waLink, '_blank');
+  msgs.appendChild(btn);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
 function pcEnviar() {
   const input = document.getElementById('pc-txt');
   const msg = input.value.trim();
   if (!msg) return;
   input.value = '';
   pcAddMsg(msg, 'user');
-  pcAddMsg('Conectando... Me aguarde um momento', 'sys');
+  pcChamar(msg);
+}
+
+async function pcChamar(userMsg) {
+  if (pcAguardandoWpp && /\d{8,}/.test(userMsg.replace(/\D/g,''))) {
+    pcAguardandoWpp = false;
+    pcClienteWpp = userMsg.replace(/\D/g,'');
+    pcAddMsg('Obrigado! Notificando o responsável agora...', 'sys');
+    pcShowDouglasBtn(pcClienteWpp, pcSituacao);
+    return;
+  }
+  if (!pcClienteWpp) {
+    const nums = userMsg.replace(/\D/g,'');
+    if (nums.length >= 10) pcClienteWpp = nums;
+  }
+  if (!pcClienteNome && pcHistory.filter(m=>m.role==='user').length === 0) {
+    pcClienteNome = userMsg.trim().split(' ')[0];
+  }
+  pcHistory.push({ role: 'user', content: userMsg });
+  pcShowTyping();
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: pcHistory, system: await buildPCSystem() })
+    });
+    pcRemoveTyping();
+    if (!res.ok) { pcAddMsg('Erro de conexão. Tente pelo WhatsApp.', 'sys'); return; }
+    const data = await res.json();
+    let reply = data.content?.[0]?.text || 'Pode repetir?';
+    const escalar = reply.includes('[ESCALAR]');
+    const temCadastro = reply.includes('[CADASTRO]');
+    reply = reply.replace('[ESCALAR]', '').replace('[CADASTRO]', '').trim();
+    pcHistory.push({ role: 'assistant', content: reply });
+    pcAddMsg(reply, 'bot');
+    if (escalar) {
+      pcSituacao = userMsg;
+      typeof pcRegistrarEscala==='function'&&pcRegistrarEscala(userMsg, reply, 'escala_automatica', BAIRRO, PC_VARIANTE?PC_VARIANTE.id:'n/a', pcHistory.filter(m=>m.role==='user').length);
+      setTimeout(() => {
+        pcAddMsg('Vou te conectar agora com o responsável.', 'bot');
+        pcShowDouglasBtn(null, userMsg);
+      }, 400);
+    }
+    if (temCadastro) {
+      setTimeout(pcShowCadastroBtn, 600);
+    }
+  } catch(e) {
+    pcRemoveTyping();
+    pcAddMsg('Erro de conexão. Tente pelo WhatsApp.', 'sys');
+  }
+}
+
+document.getElementById('pc-txt').addEventListener('keydown', e => {
+  if (e.key === 'Enter') pcEnviar();
+});
+
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+async function registrarVariante() {
+  try {
+    await fetch(`${SB_URL}/rest/v1/juca_conversas`, {
+      method: 'POST',
+      headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, 'Content-Type': 'application/json', Prefer: 'return=representation' },
+      body: JSON.stringify({ pagina: BAIRRO, variante: PC_VARIANTE.id, mensagem_inicial: PC_VARIANTE.msg, criado_em: new Date().toISOString() })
+    });
+  } catch(e) {}
 }
 
 async function pcIniciar() {
+  await carregarPreco();
+  registrarVariante();
   await new Promise(r => setTimeout(r, 800));
-  pcAddMsg(`Oi! Temos disponibilidade para ${BAIRRO} essa semana. Qual é o endereço da obra?`, 'bot');
+  pcShowTyping();
+  await new Promise(r => setTimeout(r, 1000));
+  pcRemoveTyping();
+  pcAddMsg(PC_VARIANTE.msg, 'bot');
+  pcHistory.push({ role: 'assistant', content: PC_VARIANTE.msg });
   pcPronto = true;
 }
 
