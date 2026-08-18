@@ -4,18 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<meta http-equiv="last-modified" content="Fri, 26 Jun 2026 8:00:00 GMT">
-<title>Caçamba Zona Norte SP | 4 Bairros Atendidos | Padrão Caçamba</title>
-<meta name="description" content="Aluguel de caçamba 4m³ em toda a Zona Norte de SP. 3 bairros com página dedicada. NF e CTR incluídos. Entrega em até 24h. CNPJ 44.538.708/0001-76.">
-<meta property="og:title" content="Caçamba Zona Norte SP | Padrão Caçamba">
+<meta http-equiv="last-modified" content="Tue, 18 Aug 2026 00:15:00 GMT">
+<title>Caçamba de Entulho Zona Norte SP | 4 Bairros Atendidos | Padrão Caçamba</title>
+<meta name="description" content="Caçamba de entulho na Zona Norte de São Paulo. 4 bairros com página dedicada — Santana, Tucuruvi, Vila Guilherme e Casa Verde. NF e CTR incluídos. CNPJ 44.538.708/0001-76.">
+<meta property="og:title" content="Caçamba de Entulho Zona Norte SP | Padrão Caçamba">
 <meta property="og:description" content="Cobertura total na Zona Norte. Caçamba 4m³ com NF e CTR em toda a região.">
-<meta property="og:image" content="https://www.padraocacamba.com.br/image/banner-zona-sul-padrao-cacamba.webp.png">
+<meta property="og:image" content="https://www.padraocacamba.com.br/image/banner-zona-norte-padrao-cacamba.webp.png">
 <link rel="canonical" href="https://www.padraocacamba.com.br/zona-norte">
 <link rel="icon" type="image/png" href="/image/logo-padrao-cacamba.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","wlu14vvzwg");</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Padrão Caçamba","description":"Locação de caçamba 4m³ em toda a Zona Norte de São Paulo. Empresa regularizada com NF e CTR.","url":"https://www.padraocacamba.com.br/zona-norte","telephone":"+55-11-4237-8757","address":{"@type":"PostalAddress","streetAddress":"Rua Juan Vicente, 482","addressLocality":"Osasco","addressRegion":"SP","addressCountry":"BR"},"taxID":"44.538.708/0001-76","foundingDate":"2004","areaServed":"Zona Norte, São Paulo"}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Quanto custa uma caçamba de entulho na Zona Norte?","acceptedAnswer":{"@type":"Answer","text":"O preço padrão na Zona Norte é R$ 570 com Nota Fiscal inclusa. Cada página de bairro mostra o valor exato."}},
+    {"@type":"Question","name":"Quais bairros da Zona Norte vocês atendem?","acceptedAnswer":{"@type":"Answer","text":"Atendemos 4 bairros com página dedicada: Santana, Tucuruvi, Vila Guilherme e Casa Verde. Também cobrimos bairros vizinhos sem página própria — pergunte ao PC."}},
+    {"@type":"Question","name":"Vocês atendem caçamba perto de mim na Zona Norte?","acceptedAnswer":{"@type":"Answer","text":"Sim. Cobrimos toda a Zona Norte de São Paulo. Para confirmar a disponibilidade exata no seu endereço, fale com o PC pelo chat ou informe seu CEP na home do site — ele identifica automaticamente o bairro e a página certa."}},
+    {"@type":"Question","name":"Quanto tempo a caçamba pode ficar na rua na Zona Norte?","acceptedAnswer":{"@type":"Answer","text":"O prazo padrão é de até 3 dias em via pública, conforme regulamentação da Prefeitura de São Paulo. O prazo pode variar conforme a subprefeitura responsável pelo bairro."}},
+    {"@type":"Question","name":"Emitem nota fiscal e CTR na Zona Norte?","acceptedAnswer":{"@type":"Answer","text":"Sim. Nota Fiscal eletrônica e CTR-e (Controle de Transporte de Resíduos, exigido na capital paulista) são emitidos em 100% das entregas na Zona Norte, sem custo adicional."}},
+    {"@type":"Question","name":"Em quanto tempo a caçamba é entregue na Zona Norte?","acceptedAnswer":{"@type":"Answer","text":"Em até 24h após a confirmação do pedido. Não realizamos entregas de sábado às 4h até domingo às 20h."}}
+  ]
+}
+</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -82,6 +96,15 @@ nav{position:sticky;top:0;z-index:200;background:rgba(8,8,8,0.97);backdrop-filte
 .bairro-preco{font-family:var(--mono);font-size:15px;font-weight:700}
 .bairro-preco span{font-size:9px;color:#444;display:block;font-weight:400;margin-top:2px}
 
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid var(--border2)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:16px 0;font-size:15px;font-weight:600;color:#fff;cursor:pointer;line-height:1.4}
+.faq-arr{font-size:22px;color:var(--zona);flex-shrink:0;transition:transform .2s;line-height:1}
+.faq-a{display:none;font-size:14px;color:#999;line-height:1.7;padding-bottom:16px}
+.faq-item.open .faq-arr{transform:rotate(45deg)}
+.faq-item.open .faq-a{display:block}
+
 .section{padding:28px 20px}
 .sec-h2{font-family:var(--display);font-size:34px;letter-spacing:2px;color:#fff;margin-bottom:6px;line-height:1}
 
@@ -135,7 +158,7 @@ footer{background:#030303;padding:22px 20px;border-top:1px solid var(--border);f
 
 <div class="hero">
   <h1>Zona<br>Norte<br>SP</h1>
-  <p class="hero-lead">Santana, Tucuruvi e Vila Guilherme atraem imigrantes, pequenas empresas e reformas residenciais. Crescimento constante demanda empresas ágeis e regularizadas para locação de caçambas.</p>
+  <p class="hero-lead">Caçamba de entulho na Zona Norte de São Paulo, de Santana a Casa Verde. A região atrai imigrantes, pequenas empresas e reformas residenciais. Crescimento constante demanda empresas ágeis e regularizadas para locação de caçambas.</p>
 </div>
 
 <div class="section">
@@ -182,6 +205,36 @@ footer{background:#030303;padding:22px 20px;border-top:1px solid var(--border);f
             <div class="bairro-arrow" style="color:#a78bfa">→</div>
           </div>
         </a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-h2" style="margin-bottom:20px">Dúvidas<br>frequentes.</div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Quanto custa uma caçamba de entulho na Zona Norte?<span class="faq-arr">+</span></div>
+      <div class="faq-a">O preço padrão na Zona Norte é R$ 570 com Nota Fiscal inclusa. Cada página de bairro mostra o valor exato.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Quais bairros da Zona Norte vocês atendem?<span class="faq-arr">+</span></div>
+      <div class="faq-a">Atendemos 4 bairros com página dedicada: Santana, Tucuruvi, Vila Guilherme e Casa Verde. Também cobrimos bairros vizinhos sem página própria — pergunte ao PC.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Vocês atendem caçamba perto de mim na Zona Norte?<span class="faq-arr">+</span></div>
+      <div class="faq-a">Sim. Cobrimos toda a Zona Norte de São Paulo. Para confirmar a disponibilidade exata no seu endereço, fale com o PC pelo chat ou informe seu CEP na home do site — ele identifica automaticamente o bairro e a página certa.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Quanto tempo a caçamba pode ficar na rua na Zona Norte?<span class="faq-arr">+</span></div>
+      <div class="faq-a">O prazo padrão é de até 3 dias em via pública, conforme regulamentação da Prefeitura de São Paulo. O prazo pode variar conforme a subprefeitura responsável pelo bairro.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Emitem nota fiscal e CTR na Zona Norte?<span class="faq-arr">+</span></div>
+      <div class="faq-a">Sim. Nota Fiscal eletrônica e CTR-e (Controle de Transporte de Resíduos, exigido na capital paulista) são emitidos em 100% das entregas na Zona Norte, sem custo adicional.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Em quanto tempo a caçamba é entregue na Zona Norte?<span class="faq-arr">+</span></div>
+      <div class="faq-a">Em até 24h após a confirmação do pedido. Não realizamos entregas de sábado às 4h até domingo às 20h.</div>
+    </div>
   </div>
 </div>
 
