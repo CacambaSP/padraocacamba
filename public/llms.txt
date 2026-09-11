@@ -38,50 +38,68 @@ Entrega em até 24h. Pagamento via PIX após a entrega.
 - Contratou a caçamba mais barata?: https://www.padraocacamba.com.br/preco-cacamba
 - Como escolher a caçamba certa?: https://www.padraocacamba.com.br/como-escolher
 
-## Bairros Atendidos (43 páginas)
+## Bairros Atendidos (49 bairros de SP Capital + 7 cidades da Grande SP = 56 páginas)
 
-### Zona Sul (10 bairros)
+### Zona Sul (14 bairros)
 - Itaim Bibi: https://www.padraocacamba.com.br/itaim-bibi
 - Vila Olímpia: https://www.padraocacamba.com.br/vila-olimpia
 - Moema: https://www.padraocacamba.com.br/moema
 - Brooklin: https://www.padraocacamba.com.br/brooklin
 - Vila Mariana: https://www.padraocacamba.com.br/vila-mariana
 - Campo Belo: https://www.padraocacamba.com.br/campo-belo
-- Grajaú: https://www.padraocacamba.com.br/grajau
-- Pirituba: https://www.padraocacamba.com.br/pirituba
-- Perus: https://www.padraocacamba.com.br/perus
-- Jaraguá: https://www.padraocacamba.com.br/jaragua
 - Cidade Dutra: https://www.padraocacamba.com.br/cidade-dutra
-- Casa Verde: https://www.padraocacamba.com.br/casa-verde
-- Ermelino Matarazzo: https://www.padraocacamba.com.br/ermelino-matarazzo
-- Guaianases: https://www.padraocacamba.com.br/guaianases
-- Sapopemba: https://www.padraocacamba.com.br/sapopemba
-- Saúde: https://www.padraocacamba.com.br/saude
-- Jabaquara: https://www.padraocacamba.com.br/jabaquara
-- Santo Amaro: https://www.padraocacamba.com.br/santo-amaro
 - Cursino: https://www.padraocacamba.com.br/cursino
+- Grajaú: https://www.padraocacamba.com.br/grajau
+- Ipiranga: https://www.padraocacamba.com.br/ipiranga
+- Jabaquara: https://www.padraocacamba.com.br/jabaquara
+- Morumbi: https://www.padraocacamba.com.br/morumbi
+- Santo Amaro: https://www.padraocacamba.com.br/santo-amaro
+- Saúde: https://www.padraocacamba.com.br/saude
 
-### Zona Oeste (6 bairros)
+### Zona Oeste (16 bairros)
 - Pinheiros: https://www.padraocacamba.com.br/pinheiros
 - Vila Madalena: https://www.padraocacamba.com.br/vila-madalena
 - Higienópolis: https://www.padraocacamba.com.br/higienopolis
 - Perdizes: https://www.padraocacamba.com.br/perdizes
 - Lapa: https://www.padraocacamba.com.br/lapa
 - Alto de Pinheiros: https://www.padraocacamba.com.br/alto-de-pinheiros
+- Água Branca: https://www.padraocacamba.com.br/agua-branca
+- Barra Funda: https://www.padraocacamba.com.br/barra-funda
+- Butantã: https://www.padraocacamba.com.br/butanta
+- Jaguaré: https://www.padraocacamba.com.br/jaguare
+- Jaraguá: https://www.padraocacamba.com.br/jaragua
+- Perus: https://www.padraocacamba.com.br/perus
+- Pirituba: https://www.padraocacamba.com.br/pirituba
+- Santa Cecília: https://www.padraocacamba.com.br/santa-cecilia
+- Vila Leopoldina: https://www.padraocacamba.com.br/vila-leopoldina
+- Vila Sônia: https://www.padraocacamba.com.br/vila-sonia
 
-### Zona Norte (3 bairros)
+### Zona Norte (4 bairros)
 - Santana: https://www.padraocacamba.com.br/santana
 - Tucuruvi: https://www.padraocacamba.com.br/tucuruvi
 - Vila Guilherme: https://www.padraocacamba.com.br/vila-guilherme
+- Casa Verde: https://www.padraocacamba.com.br/casa-verde
 
-### Zona Leste (3 bairros)
+### Zona Leste (11 bairros)
 - Tatuapé: https://www.padraocacamba.com.br/tatuape
 - Penha: https://www.padraocacamba.com.br/penha
 - Vila Formosa: https://www.padraocacamba.com.br/vila-formosa
 - Vila Matilde: https://www.padraocacamba.com.br/vila-matilde
 - Itaim Paulista: https://www.padraocacamba.com.br/itaim-paulista
+- Brás: https://www.padraocacamba.com.br/bras
+- Ermelino Matarazzo: https://www.padraocacamba.com.br/ermelino-matarazzo
+- Guaianases: https://www.padraocacamba.com.br/guaianases
+- Mooca: https://www.padraocacamba.com.br/mooca
+- Sapopemba: https://www.padraocacamba.com.br/sapopemba
+- Vila Prudente: https://www.padraocacamba.com.br/vila-prudente
 
-### Grande SP (7 bairros)
+### Centro (4 bairros)
+- Liberdade: https://www.padraocacamba.com.br/liberdade
+- República: https://www.padraocacamba.com.br/republica
+- Consolação: https://www.padraocacamba.com.br/consolacao
+- Bela Vista: https://www.padraocacamba.com.br/bela-vista
+
+### Grande SP (7 cidades)
 - Santo André: https://www.padraocacamba.com.br/santo-andre
 - São Bernardo: https://www.padraocacamba.com.br/sao-bernardo
 - Barueri: https://www.padraocacamba.com.br/barueri
@@ -89,26 +107,6 @@ Entrega em até 24h. Pagamento via PIX após a entrega.
 - Carapicuíba: https://www.padraocacamba.com.br/carapicuiba
 - Guarulhos: https://www.padraocacamba.com.br/guarulhos
 - Cotia: https://www.padraocacamba.com.br/cotia
-
-### Centro SP (6 bairros)
-- Liberdade: https://www.padraocacamba.com.br/liberdade
-- República: https://www.padraocacamba.com.br/republica
-- Consolação: https://www.padraocacamba.com.br/consolacao
-- Bela Vista: https://www.padraocacamba.com.br/bela-vista
-- Brás: https://www.padraocacamba.com.br/bras
-- Santa Cecília: https://www.padraocacamba.com.br/santa-cecilia
-
-### Outras regiões SP Capital (8 bairros)
-- Água Branca: https://www.padraocacamba.com.br/agua-branca
-- Barra Funda: https://www.padraocacamba.com.br/barra-funda
-- Butantã: https://www.padraocacamba.com.br/butanta
-- Ipiranga: https://www.padraocacamba.com.br/ipiranga
-- Mooca: https://www.padraocacamba.com.br/mooca
-- Morumbi: https://www.padraocacamba.com.br/morumbi
-- Vila Leopoldina: https://www.padraocacamba.com.br/vila-leopoldina
-- Vila Prudente: https://www.padraocacamba.com.br/vila-prudente
-- Jaguaré: https://www.padraocacamba.com.br/jaguare
-- Vila Sônia: https://www.padraocacamba.com.br/vila-sonia
 
 ## Informações de Contato
 - Telefone: (11) 4237-8757
@@ -131,7 +129,7 @@ caçamba 4m3, empresa caçamba, caçamba regularizada, nf caçamba, ctr caçamba
 caçamba [bairro] (para cada bairro atendido)
 
 ## Última atualização
-17 de agosto de 2026
+11 de setembro de 2026
 
 ## Blog Articles (15 artigos educativos)
 - Blog (índice): https://www.padraocacamba.com.br/artigos
