@@ -4,13 +4,15 @@
 
 ---
 
-## Imagens inline nos artigos do blog
+## Imagens inline nos artigos do blog (CONCLUÍDO 11/09/2026)
 
-**Status:** pendente, afeta os 11 artigos (não só os 4 reescritos em 23/07)
+~~**Status:** pendente, afeta os 11 artigos (não só os 4 reescritos em 23/07)~~
 
-Nenhum artigo do blog tem imagem inline no meio do texto — todos têm apenas banner (topo, compartilhado) + 1 imagem de capa (hero). Isso contraria a meta original do `PROMPT_BLOG_PADRAO_CACAMBA.md` ("1 imagem hero + 1-2 imagens inline", "1 imagem por 500 palavras").
+~~Nenhum artigo do blog tem imagem inline no meio do texto — todos têm apenas banner (topo, compartilhado) + 1 imagem de capa (hero). Isso contraria a meta original do `PROMPT_BLOG_PADRAO_CACAMBA.md` ("1 imagem hero + 1-2 imagens inline", "1 imagem por 500 palavras").~~
 
-Decisão pendente: tratar como iniciativa própria (11 artigos) ou deixar como está até revisão geral do blog.
+Resolvido pra todos os 15 artigos publicados hoje (não só os 11 originais — o site cresceu desde 23/07 e os novos também estavam sem imagem inline). 1 imagem inline por artigo, 2 no Guia Completo (conforme plano original). HTML e CSS já implementados (`.blog-img-inline` / `.article-image-inline`, conforme o template de cada artigo) com `onerror` pra não quebrar layout enquanto a imagem real não for gerada.
+
+**Pendência real agora:** gerar as 16 imagens via Firefly/Gemini e subir em `public/image/`. Lista completa de arquivo + prompt sugerido está registrada no Documento Mestre.
 
 ---
 
