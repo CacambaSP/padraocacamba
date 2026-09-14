@@ -1,5 +1,5 @@
 # DOCUMENTO MESTRE — PADRÃO CAÇAMBA
-**Versão:** 4.0 — Consolidado a partir de pente-fino técnico real no repositório
+**Versão:** 4.1 — Consolidado a partir de pente-fino técnico real no repositório + reforço de URL/stack/antifraude após checagem contra plano genérico colado pelo Doug
 **Data:** 11/09/2026
 **Domínio:** padraocacamba.com.br
 **Substitui:** `MASTER_CONTEXT_PADRAO_CACAMBA.md`, `CONTEXTO_MESTRE_PADRAO_CACAMBA_v2.docx`, `CONTEXTO_NOVO_CHAT_PADRAO_CACAMBA.md`, `CONTEXTO_NOVO_CHAT_PADRAO_CACAMBA_v3.md` — depois de conferir que está tudo aqui, apague os 4 do projeto (veja seção 10).
@@ -16,6 +16,7 @@
 - **"Pra mim só vale se for verdadeiro"** — nunca invente dado, preço, regra ou conteúdo. Extraia do HTML/schema real quando possível.
 - Antes de criar página de bairro nova: copie `public/TEMPLATE_BAIRRO.html`, preencha os placeholders `{{...}}`, siga o checklist de 5 passos que está no comentário do topo do próprio arquivo (imagem, Supabase, sitemap, .md, llms.txt).
 - Cada chat novo começa com ambiente zerado — sem token, sem credencial salva. Ver seção 3 pra saber como aplicar mudanças direto no repo.
+- Se o Doug colar plano/arquitetura/sugestão vindo de outro chat ou IA, trate como possivelmente desatualizado ou genérico — confira contra o repositório real (seção 3 e 4) antes de agir. Já aconteceu de um plano genérico sugerir recomeçar do zero uma coisa que já existia (as páginas de bairro), com URL e tecnologia que não batem com o site real.
 
 ---
 
@@ -93,6 +94,9 @@ SP Capital (todas as zonas) + Grande SP (ABC, Guarulhos, Osasco, Barueri, Alphav
 - Repositório: `github.com/CacambaSP/padraocacamba` (público)
 - HTMLs: `public/` · Imagens: `public/image/` · Artigos: `public/artigos/`
 - `gerar-sitemap.js` gera o sitemap.xml a partir dos arquivos reais — **nunca editar sitemap.xml na mão**. Exclui: `TEMPLATE_BAIRRO`, `monitoring-dashboard`, `monitoring-dashboard-v1-backup`, `cadastro`, `locar`.
+- **URLs são sempre PLANAS**: `padraocacamba.com.br/moema`, `padraocacamba.com.br/osasco` — nunca aninhadas por zona (`/zona-sul/moema` **não existe e não deve ser criado**). Cada bairro é um arquivo `.html` direto na raiz de `public/`.
+- **Stack é HTML estático + funções serverless na Vercel (`api/`)** — não é WordPress, não é Elementor, não é um CMS tradicional. Sugestões de migrar pra WordPress/Elementor não se aplicam a este projeto.
+- Página de denúncia/anti-golpe **já existe**: `public/antifraude.html` — não criar uma nova com outro slug (`/golpe-cacamba-sp` etc.).
 
 ### Vercel
 - Deploy automático a cada push na main (~2-3min)
