@@ -2,12 +2,16 @@
 title: "Caçamba em Cidade Dutra SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Cidade Dutra. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/cidade-dutra"
-date_modified: 2026-08-05
+date_modified: 2026-09-16
 ---
 
 # Caçamba em Cidade Dutra, SP
 
 A Cidade Dutra fica na Zona Sul extrema de São Paulo, administrada pela subprefeitura Capela do Socorro — a mesma que atende o Grajaú, seu bairro vizinho. A região é conhecida por abrigar o Autódromo José Carlos Pace (Interlagos), sede do GP Brasil de Fórmula 1, e por ficar às margens da Represa Guarapiranga. Faz divisa com Pedreira, Grajaú, Parelheiros e Socorro. Por conta da distância até a região central, o preço da caçamba aqui segue a mesma faixa aplicada a outras regiões distantes da Zona Sul.
+
+## Bairros próximos atendidos
+
+Atendemos toda a extensão da Cidade Dutra, incluindo a região de Interlagos, Cidade Satélite, Rio Bonito, Vila São José, Jardim Primavera e Jardim Consórcio.
 
 ## Preço
 

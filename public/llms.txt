@@ -38,9 +38,9 @@ Entrega em até 24h. Pagamento via PIX após a entrega.
 - Contratou a caçamba mais barata?: https://www.padraocacamba.com.br/preco-cacamba
 - Como escolher a caçamba certa?: https://www.padraocacamba.com.br/como-escolher
 
-## Bairros Atendidos (49 bairros de SP Capital + 7 cidades da Grande SP = 56 páginas)
+## Bairros Atendidos (50 bairros de SP Capital + 7 cidades da Grande SP = 57 páginas)
 
-### Zona Sul (14 bairros)
+### Zona Sul (15 bairros)
 - Itaim Bibi: https://www.padraocacamba.com.br/itaim-bibi
 - Vila Olímpia: https://www.padraocacamba.com.br/vila-olimpia
 - Moema: https://www.padraocacamba.com.br/moema
@@ -53,6 +53,7 @@ Entrega em até 24h. Pagamento via PIX após a entrega.
 - Ipiranga: https://www.padraocacamba.com.br/ipiranga
 - Jabaquara: https://www.padraocacamba.com.br/jabaquara
 - Morumbi: https://www.padraocacamba.com.br/morumbi
+- Parelheiros: https://www.padraocacamba.com.br/parelheiros
 - Santo Amaro: https://www.padraocacamba.com.br/santo-amaro
 - Saúde: https://www.padraocacamba.com.br/saude
 

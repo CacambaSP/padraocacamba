@@ -2,12 +2,16 @@
 title: "Caçamba em Grajaú SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Grajaú. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/grajau"
-date_modified: 2026-08-05
+date_modified: 2026-09-16
 ---
 
 # Caçamba em Grajaú, SP
 
 O Grajaú é o distrito mais populoso de São Paulo, com cerca de 445 mil habitantes, na Zona Sul extrema da cidade — administrado pela subprefeitura Capela do Socorro. Fica a aproximadamente 26 km da região central, próximo à Represa Billings.
+
+## Bairros próximos atendidos
+
+Além da área central do distrito, atendemos toda a extensão do Grajaú, incluindo Parque Cocaia, Jardim Novo Horizonte, Jardim Eliana, Parque Grajaú, Jardim Gaivotas, Jardim Lucélia, Jardim Varginha, Jardim São Bernardo, Jardim Reimberg, Jardim São Norberto, Jardim Silveira, Jardim Somara e Jardim Sipramar.
 
 ## Preço
 
