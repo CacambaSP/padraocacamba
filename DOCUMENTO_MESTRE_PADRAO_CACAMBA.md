@@ -1,6 +1,6 @@
 # DOCUMENTO MESTRE — PADRÃO CAÇAMBA
 **Versão:** 5.0 — documento único para migração de conta do Claude
-**Data:** 09/11/2026 (fechado em 16/11/2026 — Clarity ficou pendente porque a sessão do Clarity estava expirada) · **Última atualização:** 16/11/2026 — pendências 3, 7, 10 e 11 feitas e parte do 12 (gtag no Guarujá) (seção 11 e 13)
+**Data:** 09/11/2026 (fechado em 16/11/2026 — Clarity ficou pendente porque a sessão do Clarity estava expirada) · **Última atualização:** 16/11/2026 — pendências 1, 2, 3, 7, 10, 11, 13 e 15 feitas e parte do 12; rotina automática de preços no ar (seções 3, 11 e 13)
 **Domínio:** padraocacamba.com.br
 **Substitui tudo:** DOC MESTRE V4.1 (instruções do projeto "DOC MESTRE V4.1 Padrão Caçambas"), os 12 arquivos e a memória do projeto "SITE PADRÃO CAÇAMBA", `MASTER_CONTEXT_PADRAO_CACAMBA.md`, `CONTEXTO_MESTRE_PADRAO_CACAMBA_v2.docx`, os dois `CONTEXTO_NOVO_CHAT_*`, `PROMPT_BLOG_PADRAO_CACAMBA.md` e a pasta `claude/` (análise GSC + propostas/diffs de título-meta). Tudo que importava desses arquivos está aqui dentro.
 
@@ -76,8 +76,8 @@ SP Capital (todas as zonas) + Grande SP (ABC, Guarulhos, Osasco, Barueri, Alphav
 | Entrega noturna | 22h–4h (evita rodízio SP) |
 | Zona azul | Entrega normal, remove se notificado pela CET, sem reembolso — preço é por caçamba, não por dia |
 
-### Preços REAIS (Supabase, lido via `/api/precos` em 09/11/2026 — bate 100% com o `precoAtual` de cada página)
-A tabela `precos_bairros` tem os 57 bairros/cidades com página. Cada página também tem o mesmo preço fixo no código (`precoAtual`) e busca o Supabase no navegador.
+### Preços REAIS (Supabase — desde 16/11/2026 escritos no site automaticamente, ver "Rotina de preços" na seção 3)
+A tabela `precos_bairros` tem os 57 bairros/cidades com página. Preço do site = preço de **cliente com NF** (`precos_bairros.preco_com_nf` / `precos_zonas.preco_padrao`) — nunca o custo de fornecedor do CRM. Cada página tem o preço escrito no HTML (marcado) e ainda busca o Supabase no navegador.
 
 | Região | Preço com NF | Páginas |
 |---|---|---|
@@ -96,7 +96,7 @@ A tabela `precos_bairros` tem os 57 bairros/cidades com página. Cada página ta
 
 **`precos_zonas` (preço quando o bairro não tem preço próprio):** Centro 570 · **Grande SP 570** · Litoral SP 350 · Zona Leste 600 · Zona Norte 570 · Zona Oeste 570 · Zona Sul 570.
 
-⚠️ **O que está em desacordo com o Supabase:** a tabela de zona da v4.1 ("Barueri, Guarulhos, ABC = R$ 570"); a home ("R$ 470 na Grande SP"); o `/precos` ("R$ 600 na Zona Leste, Perus e Guarulhos" — omite Barueri 530, Santo André 600 e Cidade Dutra/Grajaú/Parelheiros 600); o `llms-full.txt` (Guarulhos/ABC a R$ 570); e o fallback fixo do `api/precos-zonas.js` (Grande SP 470, sem Litoral). **O Supabase é a fonte certa — alinhar tudo a ele.**
+✅ **Alinhado ao Supabase em 16/11/2026:** home (inclusive a busca por CEP, que mostrava R$ 470 para qualquer cidade da Grande SP), `/precos` (tabela completa por bairro), hubs, `/cacamba-de-entulho`, `/antifraude`, 3 artigos, `.md` de IA (Barueri, Guarulhos, Pirituba e Santo André diziam R$ 570), `llms-full.txt` e o fallback do `/api/precos-zonas` (Grande SP 470 → 570, Litoral incluído). **O Supabase é a fonte certa — nunca escrever preço à mão no site** (ver "Rotina de preços").
 
 ### Posicionamento anti-golpe
 - NÃO condenar concorrentes diretamente (risco de retaliação) — educar o cliente a reconhecer sinais.
@@ -151,6 +151,16 @@ Clonar para **ler** não precisa de nada (repo público). O ambiente do Claude n
 ### Supabase
 - Projeto `ejfuqijtiberxsnvxdwm` · `https://ejfuqijtiberxsnvxdwm.supabase.co` (chave pública `sb_publishable_…` embutida no código — não é segredo)
 - Tabelas: `precos_bairros` (bairro, zona, preco_com_nf, ativo), `precos_zonas` (zona, preco_padrao), `config_pc` (prompt do PC, versão 2.2), `bairros_paginas`, `pc_aprendizado`, `juca_conversas` (variante A/B)
+- **Como as tabelas de preço guardam o dado (conferido em 16/11, só leitura):** sobrescrevem — 1 linha por bairro (57) e 1 por zona (7), sem histórico. `precos_bairros.atualizado_em` **não muda sozinho** (não há trigger; só muda se quem edita preencher — só Barueri e Pirituba têm, de 18/08); `precos_zonas` nem tem essa coluna. Por isso a data do site vem da rotina, não do Supabase. O código do CRM **não** escreve nessas tabelas (o CRM só usa `fornecedores.preco_padrao`, que é custo de fornecedor) — elas são editadas direto no Supabase. Nomes de zona: em `precos_bairros` o Centro é "Zona Central"; em `precos_zonas` é "Centro".
+
+### Rotina de preços (desde 16/11/2026)
+- **Onde roda:** GitHub Actions do repo — `.github/workflows/precos.yml` ("Preços do Supabase → site"). Todo dia às 6h de Brasília (cron `0 9 * * *` UTC), a cada push na `main` e manualmente (Actions → Run workflow; tem a caixa "Teste: simular Supabase fora do ar").
+- **O que faz:** `scripts/atualizar-precos.mjs` lê `precos_bairros` e `precos_zonas` por GET com a chave pública (a mesma do navegador — nenhuma chave nova, nada na Vercel), valida (resposta OK, tabelas não vazias, preço > 0, todo bairro/zona citado no site existe e está ativo) e reescreve **só os trechos marcados**. Só faz commit se algum preço mudou; o commit (autor `rotina-de-precos[bot]`) dispara o deploy normal da Vercel. Se a leitura falhar ou algo vier estranho: termina com erro **sem alterar nada**, a execução fica vermelha e o GitHub manda e-mail. Se houver mais de uma linha do mesmo bairro, vale a mais recente.
+- **Data:** "Página atualizada em DD/MM/AAAA" (e o `dateModified` do schema / `date_modified` do .md) só muda nas páginas cujo preço mudou, com a data do dia da mudança (Brasília).
+- **Marcadores** (nunca apagar; para preço novo, usar o mesmo formato): `<!--p:CHAVE-->R$ 570<!--/p-->` (texto), `<!--n:CHAVE-->570<!--/n-->` (número), `<!--d-->16/11/2026<!--/d-->` (data), `<!--bloco:tabela-md-->`/`<!--bloco:tabela-html-->` (tabela completa gerada), em JS `/*n:CHAVE*/570/*/n*/` e `/*s:CHAVE*/'R$ 570'/*/s*/`, em `<title>`/`<meta>` o atributo `data-tpl="… {CHAVE} …"`. FAQ visível com marcador → a mesma pergunta no schema FAQPage é reescrita junto. **Chaves:** `b:Bairro` (nome exato do Supabase), `z:Zona` (precos_zonas), `min:`/`max:`/`faixa:` + grupo (`*`, uma zona, ou lista "Zona Sul+Zona Norte" / "Osasco+Carapicuíba"; `faixa` vira "R$ X" se todos iguais).
+- **Página/bairro novo:** o bairro precisa existir em `precos_bairros` com o mesmo nome **antes** de publicar a página — senão a rotina para (fail-safe) até corrigir. O `TEMPLATE_BAIRRO.html` já vem com os marcadores.
+- **Não parar em 60 dias:** a rotina reativa a própria agenda pela API todo dia e, se o repo ficar 50 dias sem commit, grava `dados/rotina-ativa.txt` (commit pequeno). `dados/precos.json` guarda o último snapshot de preços (só muda quando um preço muda).
+- **Testes em 16/11:** 1ª execução real publicou sozinha a única diferença (fallback Grande SP 470→570) e a Vercel publicou o commit do bot; execução manual sem mudança não publicou nada; execução simulando Supabase fora do ar falhou sem publicar; preço visível sem JavaScript conferido no ar (Moema, /precos, llms-full) e busca por CEP da home (Barueri R$ 530, Osasco R$ 470, Guarulhos R$ 600).
 
 ### CRM e rastreamento entre domínios
 - Formulário de pedido fica em `cacambasp-crm.vercel.app/cadastro.html?v=49b0c48a-6f8f-4921-9be2-53d4fce47e80` (75 ocorrências no site).
@@ -192,7 +202,7 @@ Em 16/09 Grajaú e Cidade Dutra foram enriquecidas com os bairros do CEP 048, e 
 - **sitemap.xml** — 90 URLs, bate 100% com os arquivos
 - **robots.txt** — libera os crawlers de IA (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, Bingbot, Grok, CCBot etc.)
 - **llms.txt** — atualizado 11/09/2026, cobre todas as 90 páginas, inclusive Parelheiros
-- **llms-full.txt** — **desatualizado** (data 15/07/2026): falta Parelheiros e a tabela de preço diz Barueri/Guarulhos/ABC a R$ 570
+- **llms-full.txt** — atualizado 16/11/2026: tabela completa de preços por bairro gerada pela rotina, Parelheiros incluído, linha "Página atualizada em". (O `llms.txt` não tem preços, por isso não tem data de preço.)
 - **TEMPLATE_BAIRRO.html** — recriado em 11/09 a partir de `vila-matilde.html`, com placeholders `{{}}` e checklist de 5 passos no topo
 - **Pares `.md`** — as 74 páginas de conteúdo da raiz têm par `.md`. Os 15 artigos **não** têm (a v4.1 dizia "93 páginas com par .md", o que não fecha a conta)
 - **Imagens** — `public/image/` tem 131 arquivos (338 MB). **29 PNGs originais de ~15 MB cada (`*.webp.png`) não são usados por nenhuma página** — só incham o repo. As versões em uso já foram reduzidas (ex.: Água Branca 78 KB).
@@ -202,7 +212,7 @@ Em 16/09 Grajaú e Cidade Dutra foram enriquecidas com os bairros do CEP 048, e 
 - `">>` duplicado em meta: **nenhum**
 - `alert()` esquecido: **1** — `artigos/obra-comercial-residencial` (função `focarPC()`, nos botões "Falar com PC" e "Falar com PC sobre seu projeto" — e também no botão flutuante "Converse com o PC", que chama a mesma função). **✅ Corrigido em 16/11/2026** — `focarPC()` leva para a home, mesmo padrão de 5 outros artigos
 - Links internos quebrados: **3** — `/centro` e `/faria-lima` em `artigos/obra-comercial-residencial`; `/guia/antifraude` em `artigos/5-mentiras-empresas-cacamba-falam` (o certo é `/antifraude`). **✅ Corrigidos em 16/11/2026** — varredura do site inteiro depois: zero links internos quebrados (fora os placeholders `{{...}}` do `TEMPLATE_BAIRRO`)
-- Preço "R$ carregando..." no HTML: **53 páginas**. O preço só aparece depois que o JavaScript busca o Supabase. Robô de IA que não roda JS lê "carregando" (ex.: Moema, e o FAQ "Quanto custa em Moema?" manda olhar a seção de valores)
+- Preço "R$ carregando..." no HTML: **53 páginas**. O preço só aparece depois que o JavaScript busca o Supabase. Robô de IA que não roda JS lê "carregando" (ex.: Moema, e o FAQ "Quanto custa em Moema?" manda olhar a seção de valores) **✅ Resolvido em 16/11/2026** — preço escrito no HTML (card, valor, FAQ e schema), mantido pela rotina de preços.
 - Home fala "CTR" sozinho em vários lugares (og:description, hero, badge "CTR incluso", "Como funciona", diferenciais) apesar de atender Grande SP — só um FAQ fala CTR/MTR
 - Home: 3 blocos de golpe repetidos; erro "prometerem" (o certo é "prometeram"); imagem de compartilhamento (og:image) é a de golpe
 - Faltam botões flutuantes nos 6 hubs de zona (`zona-*`, `centro-sp`, `grande-sp`), no índice do blog e no artigo do Guarujá
@@ -296,6 +306,7 @@ Fotografia de produto: metal escovado, fundo preto puro, luz de estúdio dramát
 - Erro factual se propaga por template (calçada "proibida" foi para 23 páginas)
 - "CTR" no lugar de "MTR" em cidade da Grande SP (corrigido em 5 páginas, continuar vigiando)
 - Imagem "aprovada" que nunca subiu para o repo (16 inline do blog) — conferir com `ls public/image` antes de marcar pronta
+- Preço escrito à mão (sem marcador) — fica velho quando o Supabase muda (foi o caso de Barueri/Guarulhos/Pirituba/Santo André nos .md e de Barueri nos artigos). Todo preço novo no site vai com marcador; frase que afirma algo sobre a zona usa `faixa:`/`z:`, nunca o preço de um bairro
 
 ---
 
@@ -398,8 +409,8 @@ Leitura: buscas com **"preço"** já ranqueiam bem (posição 6-8); buscas no fo
 ## 11. PENDÊNCIAS E CORREÇÕES ABERTAS (09/11/2026)
 
 ### Prioridade alta — afetam citação por IA e conversão
-1. **Preço visível sem JavaScript** em 53 páginas (hoje aparece "R$ carregando..."): escrever o valor no HTML/FAQ de cada página, mantendo o Supabase como atualização.
-2. **Alinhar preços** home, `/precos`, `llms-full.txt` e `/api/precos-zonas` (fallback) com o Supabase. Hoje se contradizem (seção 2).
+1. ~~**Preço visível sem JavaScript** em 53 páginas~~ — **✅ feito em 16/11/2026** (commit `1de7016`), com atualização automática (rotina de preços, seção 3).
+2. ~~**Alinhar preços** home, `/precos`, `llms-full.txt` e `/api/precos-zonas`~~ — **✅ feito em 16/11/2026** (commits `1de7016` e `c229217`, este feito pela própria rotina). Também alinhados hubs, `/cacamba-de-entulho`, `/antifraude`, 3 artigos e os `.md`.
 3. ~~**Linker do Google Ads em todas as páginas**~~ — **✅ feito em 16/11/2026** (commits `58da5ac` e `14e4a65`): botão flutuante "Pedir Caçamba" e botão de cadastro do chat do PC levam o `_gl` para o CRM, conferido no ar; o CRM já lia o `_gl` (sem alteração); `gtag-ads.js` incluído no artigo do Guarujá.
 4. **Home:** trocar "CTR" sozinho por "CTR/MTR", tirar blocos de golpe repetidos, corrigir "prometerem", trocar og:image de golpe.
 5. **`/cacamba-de-entulho`** na posição 29 (média de 16 meses) para a keyword nº1 — revisar título e conteúdo.
@@ -412,9 +423,12 @@ Leitura: buscas com **"preço"** já ranqueiam bem (posição 6-8); buscas no fo
 10. ~~`artigos/obra-comercial-residencial`: tirar `alert()` e corrigir links~~ — **✅ feito em 16/11/2026** (commit `0ad8dad`): `focarPC()` leva para a home; `/centro` → `/centro-sp`; `/faria-lima` → `/itaim-bibi` com o texto "Itaim Bibi (Faria Lima)" (decisão do Doug).
 11. ~~`artigos/5-mentiras-empresas-cacamba-falam`: link `/guia/antifraude` → `/antifraude`~~ — **✅ feito em 16/11/2026** (2 links, commit `0ad8dad`).
 12. Script do Clarity em `artigos/pintura-casa-descarte`; ~~`gtag-ads.js` em `artigos/remover-arbustos-…`~~ (**✅ 16/11**); botões flutuantes nos 6 hubs, índice do blog e artigo do Guarujá.
-13. Atualizar `llms-full.txt` (Parelheiros, preços, data).
+13. ~~Atualizar `llms-full.txt` (Parelheiros, preços, data)~~ — **✅ 16/11/2026**.
 14. Escrever o artigo de **condomínio / horário de obra** (validado).
-15. Frase "vários tamanhos = irregular" no `/precos` → trocar por "trabalhamos só com 4m³".
+15. ~~Frase "vários tamanhos = irregular" no `/precos`~~ — **✅ 16/11/2026** (página e schema). **Ainda aparece** em `/cacamba-de-entulho` (.html e .md) e no `llms-full.txt` (linha sobre 2m³/3m³/5m³) — aguarda aprovação para trocar também.
+22. **Preço fixo no código do PC** (não alterado — depende de autorização): o texto de reserva do PC nas 5 páginas de Osasco, Carapicuíba, Barueri, Cotia e Guarulhos (frase "Você é PC da Padrão Caçamba. Cliente em … Preço R$ X com NF e MTR") e o `.replace('{PRECO}', 'a partir de R$ 470')` da home. Hoje batem com o Supabase, mas não acompanham a rotina se o preço mudar.
+23. `.md` das cidades da Grande SP dizem "CTR" no lugar de "MTR" (ex.: osasco.md, barueri.md) — corrigir.
+24. Schema fantasma em 2 artigos (perguntas só no JSON-LD, sem FAQ visível): `guia-completo-alugar-cacamba-sp` ("Qual é o preço médio…") e `5-mentiras-empresas-cacamba-falam` ("Preço de R$ 200-300 é real?"). Em 16/11 as respostas ficaram sem número de preço; falta decidir se viram FAQ visível ou saem do schema.
 
 ### Prioridade baixa / backlog
 16. Apagar os 29 PNGs originais sem uso (~15 MB cada) de `public/image/`.
@@ -458,6 +472,7 @@ Leitura: buscas com **"preço"** já ranqueiam bem (posição 6-8); buscas no fo
 - **28/09** — tag do Google Ads em todas as páginas + linker só na home
 - **14/10** — revisão do site como robô de IA (preço "carregando", CTR sozinho, contradição de preço) e checagem da tag do Ads
 - **09/11** — esta auditoria e migração
+- **16/11 (entrega de preços)** — commits `1de7016`, `c229217` (bot) e `2524101`: preço no HTML das 57 páginas de bairro + hubs + home + /precos + artigos + .md + llms-full, rotina automática no GitHub Actions lendo o Supabase só em leitura, 3 testes feitos (seção 3). Código do PC e CRM não alterados.
 - **16/11** — Documento Mestre v5.0 fechado e copiado para a raiz do repo (lá ainda estava a v4.1). Acesso de push do Claude configurado (conector GitHub na conta CacambaSP). Entrega 1 (commit `0ad8dad`): redirect São Bernardo, `alert()` e 5 links quebrados no blog — conferido no ar, botão do PC testado pelo Doug. Entrega 2 (commit `58da5ac`): linker do Google Ads no `gtag-ads.js`. Entrega 3 (commit `14e4a65`): linker também no botão de cadastro do chat do PC (via `window.linkCRM`, autorizado), `gtag-ads.js` no artigo do Guarujá, CRM conferido só em leitura (já aceitava o `_gl`). Clarity continua pendente (sessão expirada).
 
 ---
