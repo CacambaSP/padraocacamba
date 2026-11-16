@@ -9,7 +9,7 @@ date_modified: 2026-11-16
 
 A caçamba de entulho é uma caixa metálica estacionária, colocada na rua ou no terreno da obra, que recebe o material de demolição e reforma — concreto, cerâmica, gesso, madeira. Ao ficar cheia, é recolhida por caminhão e o conteúdo é levado a um aterro licenciado pela CETESB.
 
-O padrão em São Paulo é 4m³ — tamanho pensado para caber em vias, calçadas (quando permitido) e garagens residenciais, sem exigir manobra especial do caminhão. Sites que oferecem "vários tamanhos" com entrega rápida costumam ser intermediadores sem estrutura real.
+O padrão em São Paulo é 4m³ — tamanho pensado para caber em vias, calçadas (quando permitido) e garagens residenciais, sem exigir manobra especial do caminhão. Trabalhamos só com 4m³.
 
 Por lei, a permanência máxima em via pública é de 3 dias. O pagamento é sempre via PIX após a entrega — nunca adiantado.
 

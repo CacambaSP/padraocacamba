@@ -190,7 +190,7 @@ function blocoTabelaMd(P) {
     const url = pags.get(b) ? `https://www.padraocacamba.com.br${pags.get(b)}` : '—';
     out.push(`| ${NOME_ZONA[z] || z} | ${b} | ${fmtR(v)} | ${documento(z)} | ${url} |`);
   }
-  if (P.zonas.has('Litoral SP')) out.push(`| Litoral SP | (varia por cidade) | a partir de ${fmtR(P.zonas.get('Litoral SP'))} | NF + MTR | — |`);
+  if (P.zonas.has('Litoral SP')) out.push(`| Litoral SP | todas as cidades do Litoral atendidas | ${fmtR(P.zonas.get('Litoral SP'))} | NF + MTR | — |`);
   return '\n' + out.join('\n') + '\n';
 }
 function blocoTabelaHtml(P) {

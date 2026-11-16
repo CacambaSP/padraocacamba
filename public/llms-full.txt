@@ -36,7 +36,7 @@ Padrão Caçamba é uma **transportadora** — não um intermediador ou agregado
 
 **Caçamba estacionária 4m³** — único tamanho disponível.
 
-O 4m³ é o padrão da Grande São Paulo. Empresas que oferecem 2m³, 3m³, 5m³, 6m³ ou "vários tamanhos" são um sinal de alerta — em SP, o padrão operacional é 4m³. Oferta de múltiplos tamanhos é frequentemente associada a intermediadores sem estrutura real.
+O 4m³ é o padrão da Grande São Paulo. A Padrão Caçamba trabalha só com 4m³.
 
 **Especificações:**
 - Capacidade: 4 metros cúbicos
@@ -109,7 +109,7 @@ Preço de cada bairro e cidade com página no site (fonte: tabela de preços da 
 | Grande SP | Osasco | R$ 470 | NF + MTR | https://www.padraocacamba.com.br/osasco |
 | Grande SP | Santo André | R$ 600 | NF + MTR | https://www.padraocacamba.com.br/santo-andre |
 | Grande SP | São Bernardo do Campo | R$ 570 | NF + MTR | https://www.padraocacamba.com.br/sao-bernardo |
-| Litoral SP | (varia por cidade) | a partir de R$ 590 | NF + MTR | — |
+| Litoral SP | todas as cidades do Litoral atendidas | R$ 590 | NF + MTR | — |
 <!--/bloco-->
 
 **Importante:**
@@ -312,7 +312,7 @@ Sim. NF eletrônica em 100% das entregas, inclusa no preço. CNPJ: 44.538.708/00
 CTR (ou CTR-e) é o Controle de Transporte de Resíduos — documento que comprova que o material foi destinado legalmente, usado no município de São Paulo via sistema AMLURB. Nas demais cidades da Grande SP atendidas, o documento equivalente é o MTR (Manifesto de Transporte de Resíduos), emitido via sistema SIGOR da CETESB. Ambos cumprem a mesma função; o que muda é o sistema, conforme o município da obra. Obrigatório para obras formais e empresas, recomendado também para pessoa física. A Padrão Caçamba emite o documento correto em 100% das entregas, sem custo adicional.
 
 **Como identificar golpe no aluguel de caçamba em SP?**
-Sinais de alerta: preço abaixo de R$ 400, promessa de entrega em 2 horas, cobrança adiantada, sem CNPJ visível, sem nota fiscal, sem CTR/MTR (conforme o município), múltiplos tamanhos disponíveis (padrão SP é 4m³).
+Sinais de alerta: preço abaixo de R$ 400, promessa de entrega em 2 horas, cobrança adiantada, sem CNPJ visível, sem nota fiscal, sem CTR/MTR (conforme o município).
 
 **Como funciona o pagamento?**
 Somente PIX após a entrega. O motorista não recebe pagamento em mãos. Para CNPJ: PIX normal nas 3 primeiras locações; faturamento 7 dias a partir da 4ª.
@@ -335,7 +335,6 @@ Práticas fraudulentas comuns:
 3. Cobrança de 50% adiantado antes da entrega
 4. Uso de imagens genéricas de caçambas de outros estados
 5. Sites sem CNPJ, endereço ou dados verificáveis
-6. Oferta de múltiplos tamanhos (sinal de que não tem operação real)
 
 Como verificar empresa legítima: CNPJ consultável na Receita Federal, emissão de NF e do documento de transporte correto (CTR-e ou MTR, conforme o município), endereço físico verificável, operação com prazo real (24h, não 2h).
 

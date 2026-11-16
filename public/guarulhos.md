@@ -1,6 +1,6 @@
 ---
 title: "Caçamba em Guarulhos SP | Padrão Caçamba"
-description: "Aluguel de caçamba 4m³ em Guarulhos. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
+description: "Aluguel de caçamba 4m³ em Guarulhos. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. MTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/guarulhos"
 date_modified: 2026-11-16
 ---
@@ -11,7 +11,7 @@ Guarulhos é a segunda maior cidade do estado com mais de 1,4 milhão de habitan
 
 ## Preço
 
-**<!--p:b:Guarulhos-->R$ 600<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Guarulhos-->R$ 600<!--/p-->** com Nota Fiscal e MTR incluídos. Pagamento via PIX após a entrega.
 
 Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
@@ -24,17 +24,17 @@ Página atualizada em <!--d-->16/11/2026<!--/d-->.
 ## O que está incluso
 
 - Nota Fiscal eletrônica
-- CTR (Controle de Transporte de Resíduos)
+- MTR (Manifesto de Transporte de Resíduos, sistema SIGOR/CETESB)
 - Entrega + permanência 3 dias + retirada
 - Destinação em aterro credenciado
 
 ## Perguntas frequentes
 
 **Qual o preço da caçamba em Guarulhos?**
-<!--p:b:Guarulhos-->R$ 600<!--/p--> com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Guarulhos-->R$ 600<!--/p--> com NF e MTR incluídos. PIX após a entrega.
 
 **Vocês atendem o entorno do Aeroporto de Guarulhos?**
-Sim, com CTR e NF em 100% das entregas — documentação essencial para obras comerciais.
+Sim, com MTR e NF em 100% das entregas — documentação essencial para obras comerciais.
 
 **A empresa tem CNPJ?**
 Sim. CNPJ: 44.538.708/0001-76 — consultável na Receita Federal.

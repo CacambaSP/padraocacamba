@@ -77,7 +77,7 @@ Transportadora especializada em locação de caçambas estacionárias 4m³ em S�
 | Grande SP | Osasco | R$ 470 | NF + MTR | https://www.padraocacamba.com.br/osasco |
 | Grande SP | Santo André | R$ 600 | NF + MTR | https://www.padraocacamba.com.br/santo-andre |
 | Grande SP | São Bernardo do Campo | R$ 570 | NF + MTR | https://www.padraocacamba.com.br/sao-bernardo |
-| Litoral SP | (varia por cidade) | a partir de R$ 590 | NF + MTR | — |
+| Litoral SP | todas as cidades do Litoral atendidas | R$ 590 | NF + MTR | — |
 <!--/bloco-->
 
 Página atualizada em <!--d-->16/11/2026<!--/d-->.

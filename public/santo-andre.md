@@ -1,6 +1,6 @@
 ---
 title: "Caçamba em Santo André SP | Padrão Caçamba"
-description: "Aluguel de caçamba 4m³ em Santo André e Av. Industrial. Entrega em até 24h. CNPJ 44.538.708/0001-76. NF e CTR incluídos."
+description: "Aluguel de caçamba 4m³ em Santo André e Av. Industrial. Entrega em até 24h. CNPJ 44.538.708/0001-76. NF e MTR incluídos."
 url: "https://padraocacamba.com.br/santo-andre"
 date_modified: 2026-11-16
 ---
@@ -11,7 +11,7 @@ Maior cidade do ABC Paulista. Forte demanda por reforma residencial e comercial 
 
 ## Preço
 
-**<!--p:b:Santo André-->R$ 600<!--/p-->** com Nota Fiscal e CTR incluídos. PIX após a entrega.
+**<!--p:b:Santo André-->R$ 600<!--/p-->** com Nota Fiscal e MTR incluídos. PIX após a entrega.
 
 Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
@@ -24,7 +24,7 @@ Página atualizada em <!--d-->16/11/2026<!--/d-->.
 ## Perguntas frequentes
 
 **Qual o preço da caçamba em Santo André?**
-<!--p:b:Santo André-->R$ 600<!--/p--> com NF e CTR incluídos.
+<!--p:b:Santo André-->R$ 600<!--/p--> com NF e MTR incluídos.
 
 **Vocês atendem toda Santo André?**
 Sim, incluindo Jardim, Campestre e todos os bairros.

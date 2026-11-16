@@ -1,6 +1,6 @@
 ---
 title: "Caçamba em Osasco SP | Padrão Caçamba"
-description: "Aluguel de caçamba 4m³ em Osasco. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
+description: "Aluguel de caçamba 4m³ em Osasco. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. MTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/osasco"
 date_modified: 2026-11-16
 ---
@@ -11,7 +11,7 @@ Osasco é a cidade sede da Padrão Caçamba — operamos aqui desde 2004. Com ma
 
 ## Preço
 
-**<!--p:b:Osasco-->R$ 470<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Osasco-->R$ 470<!--/p-->** com Nota Fiscal e MTR incluídos. Pagamento via PIX após a entrega.
 
 Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
@@ -24,14 +24,14 @@ Página atualizada em <!--d-->16/11/2026<!--/d-->.
 ## O que está incluso
 
 - Nota Fiscal eletrônica
-- CTR (Controle de Transporte de Resíduos)
+- MTR (Manifesto de Transporte de Resíduos, sistema SIGOR/CETESB)
 - Entrega + permanência 3 dias + retirada
 - Destinação em aterro credenciado
 
 ## Perguntas frequentes
 
 **Qual o preço da caçamba em Osasco?**
-<!--p:b:Osasco-->R$ 470<!--/p--> com NF e CTR incluídos — preço especial de Grande SP. PIX após a entrega.
+<!--p:b:Osasco-->R$ 470<!--/p--> com NF e MTR incluídos — preço especial de Grande SP. PIX após a entrega.
 
 **Vocês atendem todos os bairros de Osasco?**
 Sim. Centro, Presidente Altino, Bonfim, Jardim Conceição, Km 18 e todos os outros bairros.

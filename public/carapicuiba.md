@@ -1,17 +1,17 @@
 ---
 title: "Caçamba em Carapicuíba SP | Padrão Caçamba"
-description: "Aluguel de caçamba 4m³ em Carapicuíba e Centro de Carapicuíba. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
+description: "Aluguel de caçamba 4m³ em Carapicuíba e Centro de Carapicuíba. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. MTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/carapicuiba"
 date_modified: 2026-11-16
 ---
 
 # Caçamba em Carapicuíba, SP
 
-Carapicuíba é uma cidade residencial densa na Grande SP, vizinha de Osasco e Barueri. Casas e condomínios de médio padrão em reformas constantes são o perfil predominante. Preço especial de Grande SP — <!--p:b:Carapicuíba-->R$ 470<!--/p--> com NF e CTR.
+Carapicuíba é uma cidade residencial densa na Grande SP, vizinha de Osasco e Barueri. Casas e condomínios de médio padrão em reformas constantes são o perfil predominante. Preço especial de Grande SP — <!--p:b:Carapicuíba-->R$ 470<!--/p--> com NF e MTR.
 
 ## Preço
 
-**<!--p:b:Carapicuíba-->R$ 470<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Carapicuíba-->R$ 470<!--/p-->** com Nota Fiscal e MTR incluídos. Pagamento via PIX após a entrega.
 
 Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
@@ -24,14 +24,14 @@ Página atualizada em <!--d-->16/11/2026<!--/d-->.
 ## O que está incluso
 
 - Nota Fiscal eletrônica
-- CTR (Controle de Transporte de Resíduos)
+- MTR (Manifesto de Transporte de Resíduos, sistema SIGOR/CETESB)
 - Entrega + permanência 3 dias + retirada
 - Destinação em aterro credenciado
 
 ## Perguntas frequentes
 
 **Qual o preço da caçamba em Carapicuíba?**
-<!--p:b:Carapicuíba-->R$ 470<!--/p--> com NF e CTR incluídos — preço especial de Grande SP. PIX após a entrega.
+<!--p:b:Carapicuíba-->R$ 470<!--/p--> com NF e MTR incluídos — preço especial de Grande SP. PIX após a entrega.
 
 **Vocês atendem a Cidade de Deus e Cohab em Carapicuíba?**
 Sim, toda Carapicuíba incluindo Cidade de Deus, Cohab e Centro.
