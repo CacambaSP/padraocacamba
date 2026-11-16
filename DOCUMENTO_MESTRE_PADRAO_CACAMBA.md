@@ -1,6 +1,6 @@
 # DOCUMENTO MESTRE — PADRÃO CAÇAMBA
 **Versão:** 5.0 — documento único para migração de conta do Claude
-**Data:** 09/11/2026 (fechado em 16/11/2026 — Clarity ficou pendente porque a sessão do Clarity estava expirada) · **Última atualização:** 16/11/2026 — pendências 3 (parcial), 7, 10 e 11 feitas (seção 11 e 13)
+**Data:** 09/11/2026 (fechado em 16/11/2026 — Clarity ficou pendente porque a sessão do Clarity estava expirada) · **Última atualização:** 16/11/2026 — pendências 3, 7, 10 e 11 feitas e parte do 12 (gtag no Guarujá) (seção 11 e 13)
 **Domínio:** padraocacamba.com.br
 **Substitui tudo:** DOC MESTRE V4.1 (instruções do projeto "DOC MESTRE V4.1 Padrão Caçambas"), os 12 arquivos e a memória do projeto "SITE PADRÃO CAÇAMBA", `MASTER_CONTEXT_PADRAO_CACAMBA.md`, `CONTEXTO_MESTRE_PADRAO_CACAMBA_v2.docx`, os dois `CONTEXTO_NOVO_CHAT_*`, `PROMPT_BLOG_PADRAO_CACAMBA.md` e a pasta `claude/` (análise GSC + propostas/diffs de título-meta). Tudo que importava desses arquivos está aqui dentro.
 
@@ -154,13 +154,13 @@ Clonar para **ler** não precisa de nada (repo público). O ambiente do Claude n
 
 ### CRM e rastreamento entre domínios
 - Formulário de pedido fica em `cacambasp-crm.vercel.app/cadastro.html?v=49b0c48a-6f8f-4921-9be2-53d4fce47e80` (75 ocorrências no site).
-- **Linker do Google Ads (16/11/2026):** agora está no `gtag-ads.js` (`gtag('set','linker',{domains:['cacambasp-crm.vercel.app']})` antes do `config`), então vale para as 92 páginas que carregam o arquivo — antes só a home tinha. Ele decora sozinho os links `<a>` para o CRM, ou seja, o botão flutuante "Pedir Caçamba". **Não cobre** o botão "📋 Preencher cadastro e fechar pedido" do chat do PC (74 páginas), porque ele abre o formulário com `window.open()`, que o linker não decora — mexer nele é mexer no PC, depende de autorização. **Não conferido:** se o `cadastro.html` do CRM tem a tag do Google com o mesmo ID para ler o parâmetro `_gl` (o CRM não foi aberto).
+- **Linker do Google Ads (16/11/2026) — completo:** o `gtag-ads.js` faz `gtag('set','linker',{domains:['cacambasp-crm.vercel.app']})` antes do `config` e vale para todas as páginas públicas (incluindo o artigo do Guarujá desde 16/11). Ele decora sozinho os links `<a>` para o CRM (botão flutuante "Pedir Caçamba"). Para o botão "📋 Preencher cadastro e fechar pedido" do chat do PC, que abre com `window.open()`, o `gtag-ads.js` expõe `window.linkCRM(url)` (cria um `<a>` temporário, dispara `mousedown` para o linker acrescentar o `_gl` e devolve a URL; se falhar, devolve a original) e as 74 páginas com o chat chamam `(window.linkCRM||String)(CADASTRO+…)` — única mudança feita no código do PC, autorizada pelo Doug. Lado do CRM conferido em 16/11 (só leitura): `cadastro.html` já carrega `AW-1035342324` com `linker: {accept_incoming: true}` e dispara a conversão de cadastro — nada foi alterado no CRM. **Atenção:** se criar página nova com o chat do PC, manter o `(window.linkCRM||String)(…)` no `pcShowCadastroBtn` (o `TEMPLATE_BAIRRO` já está atualizado).
 - A home configura a tag do Ads duas vezes (snippet inline com linker + `gtag-ads.js`). Conferir se não duplica eventos.
 
 ### Analytics
 - **Microsoft Clarity:** projeto `wlu14vvzwg`. Tem o painel **Visibilidade da IA → Citações** (quais consultas de IA citam o site e quais páginas). Falta o script em `artigos/pintura-casa-descarte`.
 - **Google Search Console:** propriedade `https://www.padraocacamba.com.br/` fica na conta Google **cacambasp@gmail.com** (no Chrome do Doug é a segunda conta, `search.google.com/u/1/…`). A conta portalcacambas@gmail.com tem as propriedades `sc-domain:portalcacambas.com` e `https://www.portalcacambas.com/`.
-- **Google Ads:** `AW-1035342324`. Falta o `gtag-ads.js` em `artigos/remover-arbustos-poda-antes-cacamba-guaruja`.
+- **Google Ads:** `AW-1035342324`. O `gtag-ads.js` está em todas as páginas públicas desde 16/11 (o artigo do Guarujá era o único sem).
 
 ---
 
@@ -400,7 +400,7 @@ Leitura: buscas com **"preço"** já ranqueiam bem (posição 6-8); buscas no fo
 ### Prioridade alta — afetam citação por IA e conversão
 1. **Preço visível sem JavaScript** em 53 páginas (hoje aparece "R$ carregando..."): escrever o valor no HTML/FAQ de cada página, mantendo o Supabase como atualização.
 2. **Alinhar preços** home, `/precos`, `llms-full.txt` e `/api/precos-zonas` (fallback) com o Supabase. Hoje se contradizem (seção 2).
-3. ~~**Linker do Google Ads em todas as páginas**~~ — **✅ feito em parte (16/11/2026):** linker no `gtag-ads.js`, vale para o botão flutuante "Pedir Caçamba" em todas as páginas com a tag. **Falta:** (a) botão de cadastro do chat do PC (usa `window.open`, depende de autorização para mexer no PC); (b) conferir se o `cadastro.html` do CRM lê o `_gl`; (c) `gtag-ads.js` no artigo do Guarujá (item 12).
+3. ~~**Linker do Google Ads em todas as páginas**~~ — **✅ feito em 16/11/2026** (commits `58da5ac` e `14e4a65`): botão flutuante "Pedir Caçamba" e botão de cadastro do chat do PC levam o `_gl` para o CRM, conferido no ar; o CRM já lia o `_gl` (sem alteração); `gtag-ads.js` incluído no artigo do Guarujá.
 4. **Home:** trocar "CTR" sozinho por "CTR/MTR", tirar blocos de golpe repetidos, corrigir "prometerem", trocar og:image de golpe.
 5. **`/cacamba-de-entulho`** na posição 29 (média de 16 meses) para a keyword nº1 — revisar título e conteúdo.
 6. **Próximas páginas de cidade/bairro** com demanda comprovada no GSC do portalcacambas: Praia Grande, Taboão da Serra, Capão Redondo, Campo Limpo, Jardim Ângela, Caieiras, Vargem Grande Paulista, Embu das Artes (seção 9).
@@ -411,7 +411,7 @@ Leitura: buscas com **"preço"** já ranqueiam bem (posição 6-8); buscas no fo
 9. Subir as 16 imagens inline do blog + criar as 2 capas que faltam (requisitos, rodízio) + capa própria do artigo de MTR.
 10. ~~`artigos/obra-comercial-residencial`: tirar `alert()` e corrigir links~~ — **✅ feito em 16/11/2026** (commit `0ad8dad`): `focarPC()` leva para a home; `/centro` → `/centro-sp`; `/faria-lima` → `/itaim-bibi` com o texto "Itaim Bibi (Faria Lima)" (decisão do Doug).
 11. ~~`artigos/5-mentiras-empresas-cacamba-falam`: link `/guia/antifraude` → `/antifraude`~~ — **✅ feito em 16/11/2026** (2 links, commit `0ad8dad`).
-12. Script do Clarity em `artigos/pintura-casa-descarte`; `gtag-ads.js` em `artigos/remover-arbustos-…`; botões flutuantes nos 6 hubs, índice do blog e artigo do Guarujá.
+12. Script do Clarity em `artigos/pintura-casa-descarte`; ~~`gtag-ads.js` em `artigos/remover-arbustos-…`~~ (**✅ 16/11**); botões flutuantes nos 6 hubs, índice do blog e artigo do Guarujá.
 13. Atualizar `llms-full.txt` (Parelheiros, preços, data).
 14. Escrever o artigo de **condomínio / horário de obra** (validado).
 15. Frase "vários tamanhos = irregular" no `/precos` → trocar por "trabalhamos só com 4m³".
@@ -458,7 +458,7 @@ Leitura: buscas com **"preço"** já ranqueiam bem (posição 6-8); buscas no fo
 - **28/09** — tag do Google Ads em todas as páginas + linker só na home
 - **14/10** — revisão do site como robô de IA (preço "carregando", CTR sozinho, contradição de preço) e checagem da tag do Ads
 - **09/11** — esta auditoria e migração
-- **16/11** — Documento Mestre v5.0 fechado e copiado para a raiz do repo (lá ainda estava a v4.1). Acesso de push do Claude configurado (conector GitHub na conta CacambaSP). Entrega 1 (commit `0ad8dad`): redirect São Bernardo, `alert()` e 5 links quebrados no blog — conferido no ar, botão do PC testado pelo Doug. Entrega 2 (commit `58da5ac`): linker do Google Ads no `gtag-ads.js`. Clarity continua pendente (sessão expirada).
+- **16/11** — Documento Mestre v5.0 fechado e copiado para a raiz do repo (lá ainda estava a v4.1). Acesso de push do Claude configurado (conector GitHub na conta CacambaSP). Entrega 1 (commit `0ad8dad`): redirect São Bernardo, `alert()` e 5 links quebrados no blog — conferido no ar, botão do PC testado pelo Doug. Entrega 2 (commit `58da5ac`): linker do Google Ads no `gtag-ads.js`. Entrega 3 (commit `14e4a65`): linker também no botão de cadastro do chat do PC (via `window.linkCRM`, autorizado), `gtag-ads.js` no artigo do Guarujá, CRM conferido só em leitura (já aceitava o `_gl`). Clarity continua pendente (sessão expirada).
 
 ---
 
