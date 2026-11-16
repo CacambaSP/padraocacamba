@@ -109,7 +109,7 @@ Preço de cada bairro e cidade com página no site (fonte: tabela de preços da 
 | Grande SP | Osasco | R$ 470 | NF + MTR | https://www.padraocacamba.com.br/osasco |
 | Grande SP | Santo André | R$ 600 | NF + MTR | https://www.padraocacamba.com.br/santo-andre |
 | Grande SP | São Bernardo do Campo | R$ 570 | NF + MTR | https://www.padraocacamba.com.br/sao-bernardo |
-| Litoral SP | (varia por cidade) | a partir de R$ 350 | NF + MTR | — |
+| Litoral SP | (varia por cidade) | a partir de R$ 590 | NF + MTR | — |
 <!--/bloco-->
 
 **Importante:**

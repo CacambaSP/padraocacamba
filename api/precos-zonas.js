@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     // Fallback com dados estáticos — os números com marcador "n:" são reescritos
     // pela rotina de preços (scripts/atualizar-precos.mjs) a partir do Supabase.
     return res.status(200).json([
-      { zona: 'Litoral SP', preco_padrao: /*n:z:Litoral SP*/350/*/n*/ },
+      { zona: 'Litoral SP', preco_padrao: /*n:z:Litoral SP*/590/*/n*/ },
       { zona: 'Grande SP', preco_padrao: /*n:z:Grande SP*/570/*/n*/ },
       { zona: 'Zona Sul', preco_padrao: /*n:z:Zona Sul*/570/*/n*/ },
       { zona: 'Zona Oeste', preco_padrao: /*n:z:Zona Oeste*/570/*/n*/ },
