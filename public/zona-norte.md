@@ -1,8 +1,8 @@
 ---
 title: "Caçamba Zona Norte SP | Padrão Caçamba"
-description: "Caçamba 4m³ na Zona Norte de SP: Santana, Tucuruvi, Vila Guilherme. Preço R$ 570 com NF. Entrega comercial 7h–17h."
+description: "Caçamba 4m³ na Zona Norte de SP: Santana, Tucuruvi, Vila Guilherme. Preço <!--p:faixa:Zona Norte-->R$ 570<!--/p--> com NF. Entrega comercial 7h–17h."
 url: "https://padraocacamba.com.br/zona-norte"
-date_modified: 2026-05-13
+date_modified: 2026-11-16
 ---
 
 # Caçamba na Zona Norte de São Paulo
@@ -11,7 +11,9 @@ Locação de caçamba estacionária 4m³ em toda a Zona Norte de SP. 3 bairros c
 
 ## Preço
 
-**R$ 570** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:faixa:Zona Norte-->R$ 570<!--/p-->** com Nota Fiscal e CTR incluídos, conforme o bairro. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Bairros atendidos na Zona Norte
 
@@ -28,7 +30,7 @@ Todos os bairros da Zona Norte: entrega **comercial 7h–17h** em dias úteis.
 ## Perguntas frequentes
 
 **Qual o preço da caçamba na Zona Norte?**
-R$ 570 com NF e CTR incluídos.
+<!--p:faixa:Zona Norte-->R$ 570<!--/p--> com NF e CTR incluídos, conforme o bairro.
 
 **A entrega chega até Tucuruvi?**
 Sim. Atendemos toda a Zona Norte com o mesmo preço e prazo dos bairros mais centrais.

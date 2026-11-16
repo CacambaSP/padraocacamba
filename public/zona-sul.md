@@ -1,8 +1,8 @@
 ---
 title: "Caçamba Zona Sul SP | Padrão Caçamba"
-description: "Caçamba 4m³ na Zona Sul de SP: Itaim Bibi, Moema, Brooklin, Vila Mariana, Campo Belo, Saúde, Jabaquara, Santo Amaro, Cursino. Preço R$ 570 com NF. Entrega noturna 22h–4h."
+description: "Caçamba 4m³ na Zona Sul de SP: Itaim Bibi, Moema, Brooklin, Vila Mariana, Campo Belo, Saúde, Jabaquara, Santo Amaro, Cursino. Preço <!--p:faixa:Zona Sul-->R$ 570 a R$ 600<!--/p--> com NF. Entrega noturna 22h–4h."
 url: "https://padraocacamba.com.br/zona-sul"
-date_modified: 2026-05-13
+date_modified: 2026-11-16
 ---
 
 # Caçamba na Zona Sul de São Paulo
@@ -11,7 +11,9 @@ Locação de caçamba estacionária 4m³ em toda a Zona Sul de SP. 10 bairros co
 
 ## Preço
 
-**R$ 570** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:faixa:Zona Sul-->R$ 570 a R$ 600<!--/p-->** com Nota Fiscal e CTR incluídos, conforme o bairro. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Bairros atendidos na Zona Sul
 
@@ -37,7 +39,7 @@ Locação de caçamba estacionária 4m³ em toda a Zona Sul de SP. 10 bairros co
 ## Perguntas frequentes
 
 **Qual o preço da caçamba na Zona Sul?**
-R$ 570 com NF e CTR incluídos.
+<!--p:faixa:Zona Sul-->R$ 570 a R$ 600<!--/p--> com NF e CTR incluídos, conforme o bairro.
 
 **A entrega é noturna?**
 A maioria dos bairros da Zona Sul tem entrega noturna 22h–4h para evitar o rodízio.

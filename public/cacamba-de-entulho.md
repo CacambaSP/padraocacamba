@@ -1,8 +1,8 @@
 ---
 title: "Caçamba de Entulho em São Paulo | Padrão Caçamba"
-description: "Caçamba de entulho em São Paulo — quanto custa, tamanhos e como funciona. A partir de R$ 470, com NF e CTR/MTR inclusos. Entrega em até 24h. Desde 2004."
+description: "Caçamba de entulho em São Paulo — quanto custa, tamanhos e como funciona. A partir de <!--p:min:*-->R$ 470<!--/p-->, com NF e CTR/MTR inclusos. Entrega em até 24h. Desde 2004."
 url: "https://padraocacamba.com.br/cacamba-de-entulho"
-date_modified: 2026-07-23
+date_modified: 2026-11-16
 ---
 
 # Caçamba de Entulho em São Paulo
@@ -15,13 +15,16 @@ Por lei, a permanência máxima em via pública é de 3 dias. O pagamento é sem
 
 ## Preço
 
-O valor de uma caçamba de entulho 4m³ com Nota Fiscal varia por região, entre **R$ 470 e R$ 600**:
+O valor de uma caçamba de entulho 4m³ com Nota Fiscal varia por bairro e cidade: **<!--p:faixa:*-->R$ 470 a R$ 600<!--/p-->**.
 
-- Osasco e Carapicuíba: R$ 470
-- Maior parte de São Paulo capital: R$ 570
-- Zona Leste e regiões mais distantes: R$ 600
+- Osasco e Carapicuíba: <!--p:faixa:Osasco+Carapicuíba-->R$ 470<!--/p-->
+- Grande SP (todas as cidades atendidas): <!--p:faixa:Grande SP-->R$ 470 a R$ 600<!--/p-->
+- São Paulo capital: <!--p:faixa:Zona Sul+Zona Oeste+Zona Norte+Zona Leste+Zona Central-->R$ 570 a R$ 600<!--/p-->
+- Zona Leste: <!--p:faixa:Zona Leste-->R$ 600<!--/p-->
 
-Preço exato por bairro disponível nas páginas de cada região do site.
+Preço exato de cada bairro e cidade: https://www.padraocacamba.com.br/precos
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## O que está incluso
 
@@ -41,7 +44,7 @@ Lixo doméstico, líquidos, pneus, eletrônicos, resíduos tóxicos.
 ## Perguntas frequentes
 
 **Quanto custa uma caçamba de entulho?**
-Entre R$ 470 e R$ 600 com Nota Fiscal, dependendo da distância até o aterro credenciado. Osasco e Carapicuíba ficam em R$ 470, a maior parte da capital em R$ 570, e Zona Leste em R$ 600.
+<!--p:faixa:*-->R$ 470 a R$ 600<!--/p--> com Nota Fiscal, dependendo da distância até o aterro credenciado. Na Grande SP fica em <!--p:faixa:Grande SP-->R$ 470 a R$ 600<!--/p-->; na capital, em <!--p:faixa:Zona Sul+Zona Oeste+Zona Norte+Zona Leste+Zona Central-->R$ 570 a R$ 600<!--/p-->.
 
 **O que é uma caçamba de entulho?**
 É uma caixa metálica estacionária usada para coletar resíduo de obra ou reforma — concreto, cerâmica, gesso, madeira. Fica no local até encher ou até o prazo combinado, depois é recolhida e o material vai para um aterro licenciado.

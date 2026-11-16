@@ -2,7 +2,7 @@
 title: "Caçamba em Perus SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Perus. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/perus"
-date_modified: 2026-08-05
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Perus, SP
@@ -11,7 +11,9 @@ Perus é administrada pela Subprefeitura Perus/Anhanguera, na zona noroeste de S
 
 ## Preço
 
-**R$ 600** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Perus-->R$ 600<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -41,7 +43,7 @@ Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos.
 Perus fica no extremo noroeste da cidade, com logística de entrega mais longa que regiões centrais. Isso é refletido no preço, mas o serviço inclui NF e CTR sem custo extra, igual em qualquer outra região atendida.
 
 **Quanto custa a caçamba em Perus?**
-R$ 600 com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Perus-->R$ 600<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **Em quanto tempo a caçamba é entregue?**
 Em até 24h após confirmação.

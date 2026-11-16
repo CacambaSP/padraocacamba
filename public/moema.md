@@ -2,7 +2,7 @@
 title: "Caçamba em Moema SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Moema e Ibirapuera. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/moema"
-date_modified: 2026-05-13
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Moema, SP
@@ -11,7 +11,9 @@ Moema é um bairro residencial nobre próximo ao Parque Ibirapuera, com condomí
 
 ## Preço
 
-**R$ 570** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Moema-->R$ 570<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -38,7 +40,7 @@ Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos.
 ## Perguntas frequentes
 
 **Quanto custa a caçamba em Moema?**
-R$ 570 com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Moema-->R$ 570<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **O caminhão tem acesso nas ruas arborizadas de Moema?**
 Sim. Operamos em Moema com entrega noturna para evitar o tráfego das ruas internas.

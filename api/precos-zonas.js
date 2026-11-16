@@ -20,14 +20,16 @@ export default async function handler(req, res) {
     }
     throw new Error('Supabase error');
   } catch (error) {
-    // Fallback com dados estáticos
+    // Fallback com dados estáticos — os números com marcador "n:" são reescritos
+    // pela rotina de preços (scripts/atualizar-precos.mjs) a partir do Supabase.
     return res.status(200).json([
-      { zona: 'Grande SP', preco_padrao: 470 },
-      { zona: 'Zona Sul', preco_padrao: 570 },
-      { zona: 'Zona Oeste', preco_padrao: 570 },
-      { zona: 'Zona Norte', preco_padrao: 570 },
-      { zona: 'Centro', preco_padrao: 570 },
-      { zona: 'Zona Leste', preco_padrao: 600 }
+      { zona: 'Litoral SP', preco_padrao: /*n:z:Litoral SP*/350/*/n*/ },
+      { zona: 'Grande SP', preco_padrao: /*n:z:Grande SP*/470/*/n*/ },
+      { zona: 'Zona Sul', preco_padrao: /*n:z:Zona Sul*/570/*/n*/ },
+      { zona: 'Zona Oeste', preco_padrao: /*n:z:Zona Oeste*/570/*/n*/ },
+      { zona: 'Zona Norte', preco_padrao: /*n:z:Zona Norte*/570/*/n*/ },
+      { zona: 'Centro', preco_padrao: /*n:z:Centro*/570/*/n*/ },
+      { zona: 'Zona Leste', preco_padrao: /*n:z:Zona Leste*/600/*/n*/ }
     ]);
   }
 }

@@ -2,7 +2,7 @@
 title: "Caçamba em Cursino SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Cursino e Metrô Cursino. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/cursino"
-date_modified: 2026-05-13
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Cursino, SP
@@ -11,7 +11,9 @@ O Cursino é um bairro predominantemente residencial com casas e sobrados em ter
 
 ## Preço
 
-**R$ 570** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Cursino-->R$ 570<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -38,7 +40,7 @@ Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos.
 ## Perguntas frequentes
 
 **Quanto custa a caçamba no Cursino?**
-R$ 570 com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Cursino-->R$ 570<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **A caçamba cabe na frente da minha casa no Cursino?**
 A caçamba 4m³ ocupa aproximadamente 1 vaga de estacionamento na rua. Me fala o endereço que confirmamos.

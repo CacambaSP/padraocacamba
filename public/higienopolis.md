@@ -2,7 +2,7 @@
 title: "Caçamba em Higienópolis SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Higienópolis e Mackenzie. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/higienopolis"
-date_modified: 2026-05-13
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Higienópolis, SP
@@ -11,7 +11,9 @@ Higienópolis é um dos bairros mais nobres de SP, com edifícios clássicos dos
 
 ## Preço
 
-**R$ 570** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Higienópolis-->R$ 570<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -38,7 +40,7 @@ Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos.
 ## Perguntas frequentes
 
 **Quanto custa a caçamba em Higienópolis?**
-R$ 570 com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Higienópolis-->R$ 570<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **O caminhão tem acesso nos edifícios clássicos de Higienópolis?**
 Sim, mas verifique com a administração o horário e placa antes. O PC orienta.

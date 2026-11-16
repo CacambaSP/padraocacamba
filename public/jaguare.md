@@ -2,7 +2,7 @@
 title: "Caçamba em Jaguaré SP | Padrão Caçamba"
 description: "Caçamba 4m³ em Jaguaré. Entrega em até 24h. Nota fiscal + CTR inclusos. CNPJ 44.538.708/0001-76. Desde 2004."
 url: "https://padraocacamba.com.br/jaguare"
-date_modified: 2026-08-17
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Jaguaré, SP
@@ -11,7 +11,9 @@ O Jaguaré é um distrito da Zona Oeste administrado pela subprefeitura Lapa, co
 
 ## Preço
 
-**R$ 570** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Jaguaré-->R$ 570<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -37,7 +39,7 @@ Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos — 
 ## Perguntas frequentes
 
 **Quanto custa a caçamba em Jaguaré?**
-O preço com Nota Fiscal é R$ 570. PIX após a entrega — motorista não recebe em mãos.
+O preço com Nota Fiscal é <!--p:b:Jaguaré-->R$ 570<!--/p-->. PIX após a entrega — motorista não recebe em mãos.
 
 **Atendem o polo industrial e galpões do Jaguaré?**
 Sim, para descarte de entulho de reforma ou obra civil, com NF e CTR inclusos. Não recebemos resíduo industrial perigoso ou químico.

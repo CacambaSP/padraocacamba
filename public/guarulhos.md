@@ -2,7 +2,7 @@
 title: "Caçamba em Guarulhos SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Guarulhos. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/guarulhos"
-date_modified: 2026-05-14
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Guarulhos, SP
@@ -11,7 +11,9 @@ Guarulhos é a segunda maior cidade do estado com mais de 1,4 milhão de habitan
 
 ## Preço
 
-**R$ 570** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Guarulhos-->R$ 600<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Entrega
 
@@ -29,7 +31,7 @@ Guarulhos é a segunda maior cidade do estado com mais de 1,4 milhão de habitan
 ## Perguntas frequentes
 
 **Qual o preço da caçamba em Guarulhos?**
-R$ 570 com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Guarulhos-->R$ 600<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **Vocês atendem o entorno do Aeroporto de Guarulhos?**
 Sim, com CTR e NF em 100% das entregas — documentação essencial para obras comerciais.

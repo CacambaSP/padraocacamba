@@ -2,7 +2,7 @@
 title: "Caçamba em Morumbi SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Morumbi e Estádio Morumbi. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/morumbi"
-date_modified: 2026-05-14
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Morumbi, SP
@@ -11,7 +11,9 @@ Um dos bairros mais valorizados de SP com casas de alto padrão e condomínios f
 
 ## Preço
 
-**R$ 570** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Morumbi-->R$ 570<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 

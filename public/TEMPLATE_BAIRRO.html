@@ -31,6 +31,7 @@ PLACEHOLDERS:
 {{PRECO_NUM}}             Mesmo valor, número puro, no fallback do JS
 {{DATA_CRIACAO_RFC}}      Data tipo "Sat, 29 Aug 2026 22:40:00 GMT"
 {{DATA_CRIACAO_ISO}}      Mesma data em "2026-08-29"
+{{DATA_CRIACAO_BR}}       Mesma data em "29/08/2026" (linha "Página atualizada em")
 {{REFERENCIA_LOCAL_OPCIONAL}}    Subprefeitura/metrô/marco, se houver
 {{FRASE_COMPLEMENTAR_OPCIONAL}}  Complemento opcional no hero
 {{PARAGRAFO_CONTEXTO_LOCAL}}     3-5 frases reais sobre o bairro
@@ -41,18 +42,24 @@ PLACEHOLDERS:
 
 NÃO ESQUECER (fora deste arquivo):
 1. Gerar e subir public/image/cacamba-{{BAIRRO_SLUG}}-sp-padrao-cacamba.webp
-2. Cadastrar o preço em precos_bairros no Supabase (sem isso cai no fallback da zona)
+2. Cadastrar o preço em precos_bairros no Supabase ANTES de publicar, com o nome
+   do bairro IGUAL ao {{BAIRRO}} desta página. Os preços marcados (marcadores
+   p:b:, n:b: e d em comentário HTML, n:b: em comentário JS e data-tpl) são reescritos pela rotina
+   scripts/atualizar-precos.mjs; se o bairro não existir no Supabase, a rotina
+   para sem publicar nada até isso ser corrigido.
 3. Rodar node gerar-sitemap.js pra incluir a página no sitemap.xml
-4. Criar public/{{BAIRRO_SLUG}}.md (par de IA/GEO) — usar outro .md como referência
+4. Criar public/{{BAIRRO_SLUG}}.md (par de IA/GEO) — usar outro .md como referência,
+   mantendo o preço marcado (marcador p:b:{{BAIRRO}}, igual aos outros .md) e a
+   linha "Página atualizada em ..." com o marcador d logo abaixo do preço
 5. Adicionar a entrada em llms.txt, na seção da zona correta
 ============================================================
 -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
 <meta http-equiv="last-modified" content="{{DATA_CRIACAO_RFC}}">
-<title>Caçamba de Entulho em {{BAIRRO}} — R$ {{PRECO}} | 24h | NF inclusa</title>
+<title data-tpl="Caçamba de Entulho em {{BAIRRO}} — {b:{{BAIRRO}}} | 24h | NF inclusa">Caçamba de Entulho em {{BAIRRO}} — R$ {{PRECO}} | 24h | NF inclusa</title>
 <meta name="description" content="Caçamba de entulho em {{BAIRRO}}. Entrega em até 24h. Nota fiscal + CTR-e inclusos. CNPJ 44.538.708/0001-76. Desde 2004.">
-<meta property="og:title" content="Caçamba de Entulho em {{BAIRRO}} — R$ {{PRECO}} | 24h | NF inclusa">
+<meta property="og:title" content="Caçamba de Entulho em {{BAIRRO}} — R$ {{PRECO}} | 24h | NF inclusa" data-tpl="Caçamba de Entulho em {{BAIRRO}} — {b:{{BAIRRO}}} | 24h | NF inclusa">
 <meta property="og:description" content="Caçamba de entulho em {{BAIRRO}}. Entrega em até 24h. NF + CTR-e inclusos. CNPJ ativo. Empresa regularizada desde 2004.">
 <meta property="og:image" content="https://www.padraocacamba.com.br/image/cacamba-{{BAIRRO_SLUG}}-sp-padrao-cacamba.webp">
 <meta property="og:image:width" content="1200">
@@ -71,7 +78,7 @@ NÃO ESQUECER (fora deste arquivo):
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Padrão Caçamba","description":"Locação de caçamba 4m³ em {{BAIRRO}} e região.","url":"https://www.padraocacamba.com.br/{{BAIRRO_SLUG}}","telephone":"+55-11-4237-8757","address":{"@type":"PostalAddress","streetAddress":"Rua Juan Vicente, 482","addressLocality":"Osasco","addressRegion":"SP","postalCode":"06160-180","addressCountry":"BR"},"taxID":"44.538.708/0001-76","foundingDate":"2004","datePublished":"{{DATA_CRIACAO_ISO}}","dateModified":"{{DATA_CRIACAO_ISO}}","areaServed":"{{BAIRRO}}, São Paulo"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "dateModified": "{{DATA_CRIACAO_ISO}}", "mainEntity": [{"@type": "Question", "name": "Quanto custa uma caçamba de entulho em {{BAIRRO}}?", "acceptedAnswer": {"@type": "Answer", "text": "O preço com Nota Fiscal está exibido na seção de valores desta página — R$ {{PRECO}}, padrão da {{ZONA}}. Pagamento somente via PIX após a entrega — motorista não recebe em mãos."}}, {"@type": "Question", "name": "Vocês atendem o entorno de {{PONTO_REFERENCIA_1}}?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Atendemos {{BAIRRO}} e toda a região ao redor — {{BAIRROS_PROXIMOS_SEM_PAGINA}} — mesmo sem página própria pra esses bairros. Fale com o PC informando o endereço que confirmamos na hora."}}, {"@type": "Question", "name": "A caçamba pode ficar perto de {{PONTO_REFERENCIA_2}}?", "acceptedAnswer": {"@type": "Answer", "text": "Entregamos normalmente nas ruas do bairro. Próximo a {{PONTO_REFERENCIA_2}} o trânsito costuma ser mais intenso, então preferimos posicionar a caçamba em ruas internas — o PC confirma o melhor local com você."}}, {"@type": "Question", "name": "{{TITULO_DUVIDA_LOCAL}}", "acceptedAnswer": {"@type": "Answer", "text": "{{PARAGRAFO_DUVIDA_LOCAL}}"}}, {"@type": "Question", "name": "Em quanto tempo a caçamba é entregue em {{BAIRRO}}?", "acceptedAnswer": {"@type": "Answer", "text": "Em até 24h após confirmação. Paramos às 4h de sábado e retomamos às 20h de domingo."}}, {"@type": "Question", "name": "Como funciona o pagamento para CNPJ?", "acceptedAnswer": {"@type": "Answer", "text": "Nas 3 primeiras locações o pagamento é normal via PIX após a entrega. A partir da 4ª, faturamento de 7 dias com emissão de NF."}}, {"@type": "Question", "name": "A empresa tem CNPJ e emite nota fiscal?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. CNPJ: 44.538.708/0001-76 — ativo, consultável na Receita Federal. NF eletrônica e CTR-e incluídos em 100% das entregas."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "dateModified": "{{DATA_CRIACAO_ISO}}", "mainEntity": [{"@type": "Question", "name": "Quanto custa uma caçamba de entulho em {{BAIRRO}}?", "acceptedAnswer": {"@type": "Answer", "text": "R$ {{PRECO}} — preço único com nota fiscal inclusa. Pagamento somente via PIX após a entrega — motorista não recebe em mãos."}}, {"@type": "Question", "name": "Vocês atendem o entorno de {{PONTO_REFERENCIA_1}}?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Atendemos {{BAIRRO}} e toda a região ao redor — {{BAIRROS_PROXIMOS_SEM_PAGINA}} — mesmo sem página própria pra esses bairros. Fale com o PC informando o endereço que confirmamos na hora."}}, {"@type": "Question", "name": "A caçamba pode ficar perto de {{PONTO_REFERENCIA_2}}?", "acceptedAnswer": {"@type": "Answer", "text": "Entregamos normalmente nas ruas do bairro. Próximo a {{PONTO_REFERENCIA_2}} o trânsito costuma ser mais intenso, então preferimos posicionar a caçamba em ruas internas — o PC confirma o melhor local com você."}}, {"@type": "Question", "name": "{{TITULO_DUVIDA_LOCAL}}", "acceptedAnswer": {"@type": "Answer", "text": "{{PARAGRAFO_DUVIDA_LOCAL}}"}}, {"@type": "Question", "name": "Em quanto tempo a caçamba é entregue em {{BAIRRO}}?", "acceptedAnswer": {"@type": "Answer", "text": "Em até 24h após confirmação. Paramos às 4h de sábado e retomamos às 20h de domingo."}}, {"@type": "Question", "name": "Como funciona o pagamento para CNPJ?", "acceptedAnswer": {"@type": "Answer", "text": "Nas 3 primeiras locações o pagamento é normal via PIX após a entrega. A partir da 4ª, faturamento de 7 dias com emissão de NF."}}, {"@type": "Question", "name": "A empresa tem CNPJ e emite nota fiscal?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. CNPJ: 44.538.708/0001-76 — ativo, consultável na Receita Federal. NF eletrônica e CTR-e incluídos em 100% das entregas."}}]}</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -255,7 +262,7 @@ bannerInit();
     <img src="https://www.padraocacamba.com.br/image/cacamba-{{BAIRRO_SLUG}}-sp-padrao-cacamba.webp" alt="Caçamba 4m³ em {{BAIRRO}} SP — Padrão Caçamba" class="cacamba-img" width="572" height="1024" fetchpriority="high" style="object-fit:contain;background:#000;max-height:340px">
     <div class="cacamba-meta">
       <span class="c-tag">Padrão 4m³</span>
-      <span class="c-tag" id="preco-tag-cacamba">{{ZONA}} · <span class="preco-loading">carregando...</span></span>
+      <span class="c-tag" id="preco-tag-cacamba">{{ZONA}} · <strong style="color:#4ade80"><!--p:b:{{BAIRRO}}-->R$ {{PRECO}}<!--/p--></strong></span>
     </div>
   </div>
 </div>
@@ -317,8 +324,8 @@ bannerInit();
   <h2>Preço transparente</h2>
   <div class="price-destaque">
     <div class="price-destaque-label">Caçamba 4m³ · {{BAIRRO}} · {{ZONA}}</div>
-    <div id="preco-data" style="font-size:11px;color:#4a6080;margin-bottom:4px"></div>
-    <div class="price-destaque-value"><span>R$</span> <span id="preco-valor" class="preco-loading" style="font-size:22px;font-family:'DM Sans',sans-serif;font-weight:400">carregando...</span></div>
+    <div id="pagina-atualizada" style="font-size:11px;color:#4a6080;margin-bottom:4px">Página atualizada em <!--d-->{{DATA_CRIACAO_BR}}<!--/d--></div>
+    <div class="price-destaque-value"><span>R$</span> <span id="preco-valor" style="font-size:44px;font-family:'DM Serif Display',serif"><!--n:b:{{BAIRRO}}-->{{PRECO}}<!--/n--></span></div>
     <div class="price-destaque-sub">com Nota Fiscal inclusa · PIX após a entrega · Motorista não recebe</div>
   </div>
   <div class="price-card">
@@ -355,7 +362,7 @@ bannerInit();
   <div class="sec-label">Dúvidas</div>
   <h2>Perguntas frequentes</h2>
   <div class="faq-list">
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Quanto custa uma caçamba de entulho em {{BAIRRO}}?<span class="faq-arr">+</span></div><div class="faq-a">O preço com Nota Fiscal está exibido na seção de valores desta página — R$ {{PRECO}}, padrão da {{ZONA}}. Pagamento somente via PIX após a entrega — motorista não recebe em mãos.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Quanto custa uma caçamba de entulho em {{BAIRRO}}?<span class="faq-arr">+</span></div><div class="faq-a"><!--p:b:{{BAIRRO}}-->R$ {{PRECO}}<!--/p--> — preço único com nota fiscal inclusa. Pagamento somente via PIX após a entrega — motorista não recebe em mãos.</div></div>
     <!-- As 3 perguntas abaixo (e as equivalentes no JSON-LD FAQPage lá em cima) são específicas do bairro. Escrever com dado real, sem inventar. Contagem de perguntas aqui DEVE bater com a do schema — bug mais comum do projeto (ver BACKLOG/learnings). -->
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Vocês atendem o entorno de {{PONTO_REFERENCIA_1}}?<span class="faq-arr">+</span></div><div class="faq-a">Sim. Atendemos {{BAIRRO}} e toda a região ao redor — {{BAIRROS_PROXIMOS_SEM_PAGINA}} — mesmo sem página própria pra esses bairros. Fale com o PC informando o endereço que confirmamos na hora.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">A caçamba pode ficar perto de {{PONTO_REFERENCIA_2}}?<span class="faq-arr">+</span></div><div class="faq-a">Entregamos normalmente nas ruas do bairro. Próximo a {{PONTO_REFERENCIA_2}} o trânsito costuma ser mais intenso, então preferimos posicionar a caçamba em ruas internas — o PC confirma o melhor local com você.</div></div>
@@ -409,8 +416,8 @@ const DOUGLAS_WPP='551142378757';
 const CADASTRO='https://cacambasp-crm.vercel.app/cadastro.html?v=49b0c48a-6f8f-4921-9be2-53d4fce47e80';
 const PC_VARIANTES=[{id:'v1',msg:'Oi! Reforma ou obra? Me fala o endereço que te digo se a gente atende e qual o prazo.'},{id:'v2',msg:'Oi! Temos disponibilidade para {{BAIRRO}} essa semana. Qual é o endereço da obra?'},{id:'v4',msg:'Oi! Antes de fechar, me diz: já pesquisou preço e achou muito mais barato? Posso explicar o motivo.'}];
 const PC_VARIANTE=PC_VARIANTES[Math.floor(Math.random()*PC_VARIANTES.length)];
-let precoAtual='R$ {{PRECO}} com NF',pcHistory=[],pcClienteWpp=null,pcClienteNome=null,pcAguardandoWpp=false,pcSituacao='',pcPronto=false;
-async function carregarPreco(){try{const r=await fetch(`${SB_URL}/rest/v1/precos_bairros?bairro=eq.${encodeURIComponent(BAIRRO)}&ativo=eq.true&limit=1`,{headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}});const data=await r.json();if(Array.isArray(data)&&data.length>0&&data[0].preco_com_nf>0){aplicarPreco(data[0].preco_com_nf,data[0].atualizado_em);return}const r2=await fetch(`${SB_URL}/rest/v1/precos_zonas?zona=eq.${encodeURIComponent(ZONA)}&limit=1`,{headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}});const data2=await r2.json();if(Array.isArray(data2)&&data2.length>0&&data2[0].preco_padrao>0){aplicarPreco(data2[0].preco_padrao)}else{aplicarPreco({{PRECO_NUM}})}}catch(e){aplicarPreco({{PRECO_NUM}})}}
+let precoAtual='R$ '+/*n:b:{{BAIRRO}}*/{{PRECO_NUM}}/*/n*/+' com NF',pcHistory=[],pcClienteWpp=null,pcClienteNome=null,pcAguardandoWpp=false,pcSituacao='',pcPronto=false;
+async function carregarPreco(){try{const r=await fetch(`${SB_URL}/rest/v1/precos_bairros?bairro=eq.${encodeURIComponent(BAIRRO)}&ativo=eq.true&limit=1`,{headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}});const data=await r.json();if(Array.isArray(data)&&data.length>0&&data[0].preco_com_nf>0){aplicarPreco(data[0].preco_com_nf,data[0].atualizado_em);return}const r2=await fetch(`${SB_URL}/rest/v1/precos_zonas?zona=eq.${encodeURIComponent(ZONA)}&limit=1`,{headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}});const data2=await r2.json();if(Array.isArray(data2)&&data2.length>0&&data2[0].preco_padrao>0){aplicarPreco(data2[0].preco_padrao)}else{aplicarPreco(/*n:b:{{BAIRRO}}*/{{PRECO_NUM}}/*/n*/)}}catch(e){aplicarPreco(/*n:b:{{BAIRRO}}*/{{PRECO_NUM}}/*/n*/)}}
 function fmtData(iso){if(!iso)return null;return new Date(iso).toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'})}
 function aplicarPreco(valor,atualizado){const fmt='R$ '+Number(valor).toLocaleString('pt-BR',{minimumFractionDigits:0});precoAtual=fmt+' com NF';const el=document.getElementById('preco-valor');if(el){el.textContent=Number(valor).toLocaleString('pt-BR',{minimumFractionDigits:0});el.className='';el.style.fontSize='44px';el.style.fontFamily="'DM Serif Display',serif"}const tag=document.getElementById('preco-tag-cacamba');if(tag)tag.innerHTML=`{{ZONA}} · <strong style="color:#4ade80">${fmt}</strong>`;const dataEl=document.getElementById('preco-data');if(dataEl)dataEl.textContent='Preço atualizado em '+(fmtData(atualizado)||fmtData(new Date().toISOString()))}
 async function buildPCSystem(){try{const r=await fetch(`${SB_URL}/rest/v1/config_pc?ativo=eq.true&limit=1`,{headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}});const data=await r.json();if(Array.isArray(data)&&data.length>0)return data[0].prompt_base.replace('{BAIRRO}',BAIRRO).replace('{PRECO}',precoAtual)}catch(e){}return`Você é PC, assistente da Padrão Caçamba. Bairro: ${BAIRRO}. Preço: ${precoAtual}. Seja direto e ajude o cliente a fechar o pedido.`}

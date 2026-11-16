@@ -2,7 +2,7 @@
 title: "Caçamba em Santo Amaro SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Santo Amaro e Shopping Sto Amaro. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/santo-amaro"
-date_modified: 2026-05-13
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Santo Amaro, SP
@@ -11,7 +11,9 @@ Santo Amaro é o centro comercial da Zona Sul, com o Largo 13 como ponto de refe
 
 ## Preço
 
-**R$ 570** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Santo Amaro-->R$ 570<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -38,7 +40,7 @@ Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos.
 ## Perguntas frequentes
 
 **Quanto custa a caçamba em Santo Amaro?**
-R$ 570 com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Santo Amaro-->R$ 570<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **Vocês atendem o entorno do Shopping Santo Amaro?**
 Sim, toda a região de Santo Amaro incluindo o entorno do shopping e Largo 13.

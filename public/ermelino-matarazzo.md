@@ -2,7 +2,7 @@
 title: "Caçamba em Ermelino Matarazzo SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Ermelino Matarazzo. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/ermelino-matarazzo"
-date_modified: 2026-08-05
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Ermelino Matarazzo, SP
@@ -11,7 +11,9 @@ Ermelino Matarazzo tem subprefeitura própria, formada pelos distritos de Ermeli
 
 ## Preço
 
-**R$ 600** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Ermelino Matarazzo-->R$ 600<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -41,7 +43,7 @@ Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos.
 Ermelino Matarazzo fica na Zona Leste, distante da região central, com logística de entrega mais longa. Isso é refletido no preço, mas o serviço inclui NF e CTR sem custo extra, igual em qualquer outra região atendida.
 
 **Quanto custa a caçamba em Ermelino Matarazzo?**
-R$ 600 com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Ermelino Matarazzo-->R$ 600<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **Em quanto tempo a caçamba é entregue?**
 Em até 24h após confirmação.

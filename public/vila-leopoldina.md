@@ -2,7 +2,7 @@
 title: "Caçamba em Vila Leopoldina SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Vila Leopoldina e Rio Pinheiros. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/vila-leopoldina"
-date_modified: 2026-05-14
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Vila Leopoldina, SP
@@ -11,7 +11,9 @@ Bairro em forte transformação — ex-industrial virou referência em design e 
 
 ## Preço
 
-**R$ 570** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Vila Leopoldina-->R$ 570<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -33,7 +35,7 @@ Bairro em forte transformação — ex-industrial virou referência em design e 
 Sim, com CTR incluso — fundamental para obras com projeto assinado.
 
 **Quanto custa a caçamba em Vila Leopoldina?**
-R$ 570 com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Vila Leopoldina-->R$ 570<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **Em quanto tempo a caçamba é entregue?**
 Em até 24h após confirmação. Entrega noturna 22h–4h.

@@ -2,7 +2,7 @@
 title: "Caçamba em Campo Belo SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Campo Belo e Congonhas. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/campo-belo"
-date_modified: 2026-05-13
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Campo Belo, SP
@@ -11,7 +11,9 @@ Campo Belo é um bairro residencial consolidado próximo ao Aeroporto de Congonh
 
 ## Preço
 
-**R$ 570** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Campo Belo-->R$ 570<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -38,7 +40,7 @@ Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos.
 ## Perguntas frequentes
 
 **Quanto custa a caçamba em Campo Belo?**
-R$ 570 com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Campo Belo-->R$ 570<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **Tem restrição por conta do Aeroporto de Congonhas?**
 Não há restrição de acesso para caçambas no Campo Belo por conta do aeroporto.

@@ -2,7 +2,7 @@
 title: "Caçamba em Vila Mariana SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Vila Mariana e Metrô Ana Rosa. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/vila-mariana"
-date_modified: 2026-05-13
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Vila Mariana, SP
@@ -11,7 +11,9 @@ Vila Mariana é um dos bairros mais densos da Zona Sul, com grande concentraçã
 
 ## Preço
 
-**R$ 570** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Vila Mariana-->R$ 570<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -38,7 +40,7 @@ Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos.
 ## Perguntas frequentes
 
 **Quanto custa a caçamba em Vila Mariana?**
-R$ 570 com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Vila Mariana-->R$ 570<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **Posso usar o ecoponto da Vila Mariana em vez de caçamba?**
 O ecoponto aceita até 1m³ por dia e não emite CTR. Para reformas maiores, a caçamba 4m³ é necessária.

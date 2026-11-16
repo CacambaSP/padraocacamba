@@ -2,7 +2,7 @@
 title: "Caçamba em Cidade Dutra SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Cidade Dutra. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/cidade-dutra"
-date_modified: 2026-09-16
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Cidade Dutra, SP
@@ -15,7 +15,9 @@ Atendemos toda a extensão da Cidade Dutra, incluindo a região de Interlagos, C
 
 ## Preço
 
-**R$ 600** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Cidade Dutra-->R$ 600<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -45,7 +47,7 @@ Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos.
 A Cidade Dutra fica no extremo sul da cidade, na subprefeitura Capela do Socorro. A logística até essa região é mais longa, e isso é refletido no preço. Ainda assim, o serviço inclui NF e CTR sem custo extra, igual em qualquer outra região atendida.
 
 **Quanto custa a caçamba em Cidade Dutra?**
-R$ 600 com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Cidade Dutra-->R$ 600<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **Em quanto tempo a caçamba é entregue?**
 Em até 24h após confirmação.

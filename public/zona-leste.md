@@ -1,8 +1,8 @@
 ---
 title: "Caçamba Zona Leste SP | Padrão Caçamba"
-description: "Caçamba 4m³ na Zona Leste de SP: Tatuapé, Penha, Vila Formosa. Preço R$ 600 com NF. Entrega comercial 7h–17h."
+description: "Caçamba 4m³ na Zona Leste de SP: Tatuapé, Penha, Vila Formosa. Preço <!--p:faixa:Zona Leste-->R$ 600<!--/p--> com NF. Entrega comercial 7h–17h."
 url: "https://padraocacamba.com.br/zona-leste"
-date_modified: 2026-05-13
+date_modified: 2026-11-16
 ---
 
 # Caçamba na Zona Leste de São Paulo
@@ -11,9 +11,11 @@ Locação de caçamba estacionária 4m³ em toda a Zona Leste de SP. 3 bairros c
 
 ## Preço
 
-**R$ 600** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:faixa:Zona Leste-->R$ 600<!--/p-->** com Nota Fiscal e CTR incluídos, conforme o bairro. Pagamento via PIX após a entrega.
 
-O preço da Zona Leste é R$ 600 — levemente superior às demais zonas pelo custo de deslocamento até o aterro credenciado na região.
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
+
+O preço padrão da Zona Leste é <!--p:z:Zona Leste-->R$ 600<!--/p--> — o custo de deslocamento até o aterro credenciado pesa na região.
 
 ## Bairros atendidos na Zona Leste
 
@@ -29,7 +31,7 @@ Todos os bairros da Zona Leste: entrega **comercial 7h–17h** em dias úteis.
 
 ## Perguntas frequentes
 
-**Por que o preço na Zona Leste é R$ 600?**
+**Por que o preço na Zona Leste é <!--p:z:Zona Leste-->R$ 600<!--/p-->?**
 O preço reflete o custo real de operação — distância até o aterro credenciado e custo de rota na Zona Leste são maiores. NF e CTR incluídos no mesmo preço.
 
 **Vocês atendem outros bairros da Zona Leste?**

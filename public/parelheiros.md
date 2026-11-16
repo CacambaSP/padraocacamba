@@ -2,7 +2,7 @@
 title: "Caçamba em Parelheiros SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Parelheiros. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/parelheiros"
-date_modified: 2026-09-16
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Parelheiros, SP
@@ -11,7 +11,9 @@ Parelheiros é um distrito da Zona Sul de São Paulo, administrado pela subprefe
 
 ## Preço
 
-**R$ 600** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Parelheiros-->R$ 600<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -48,7 +50,7 @@ Parelheiros fica no extremo sul da cidade, na subprefeitura própria de Parelhei
 Sim. Boa parte de Parelheiros tem perfil rural, com chácaras, sítios e vias sem asfalto. Confirme com o PC o acesso da rua até o local exato para o parceiro planejar a rota.
 
 **Quanto custa a caçamba em Parelheiros?**
-R$ 600 com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Parelheiros-->R$ 600<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **Em quanto tempo a caçamba é entregue?**
 Em até 24h após confirmação.

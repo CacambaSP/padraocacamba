@@ -2,7 +2,7 @@
 title: "Caçamba em Tatuapé SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Tatuapé e Metrô Tatuapé. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/tatuape"
-date_modified: 2026-05-13
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Tatuapé, SP
@@ -11,7 +11,9 @@ O Tatuapé é o bairro mais valorizado da Zona Leste, com condomínios de alto p
 
 ## Preço
 
-**R$ 600** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Tatuapé-->R$ 600<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -38,7 +40,7 @@ Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos.
 ## Perguntas frequentes
 
 **Quanto custa a caçamba no Tatuapé?**
-R$ 600 com NF e CTR incluídos — Zona Leste tem preço diferenciado pelo custo de deslocamento. PIX após a entrega.
+<!--p:b:Tatuapé-->R$ 600<!--/p--> com NF e CTR incluídos — Zona Leste tem preço diferenciado pelo custo de deslocamento. PIX após a entrega.
 
 **Por que o preço no Tatuapé é diferente?**
 A Zona Leste tem custo de deslocamento e destinação maior. NF e CTR estão incluídos no mesmo preço.

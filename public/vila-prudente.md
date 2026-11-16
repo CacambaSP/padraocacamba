@@ -2,7 +2,7 @@
 title: "Caçamba em Vila Prudente SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Vila Prudente e Metrô Vila Prudente. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/vila-prudente"
-date_modified: 2026-05-14
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Vila Prudente, SP
@@ -11,7 +11,9 @@ Bairro residencial da Zona Leste valorizado pela extensão da linha 2 do metrô.
 
 ## Preço
 
-**R$ 600** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Vila Prudente-->R$ 600<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -30,7 +32,7 @@ Bairro residencial da Zona Leste valorizado pela extensão da linha 2 do metrô.
 ## Perguntas frequentes
 
 **Quanto custa a caçamba em Vila Prudente?**
-R$ 600 com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Vila Prudente-->R$ 600<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **O metrô de Vila Prudente facilita o acesso do caminhão?**
 O metrô não interfere. As ruas têm boa logística. Informe o endereço ao PC.

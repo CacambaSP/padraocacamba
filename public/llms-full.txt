@@ -1,6 +1,6 @@
 # Padrão Caçamba — Contexto Completo para IAs
 # https://www.padraocacamba.com.br
-# Atualizado em: 2026-07-15
+# Página atualizada em: <!--d-->16/11/2026<!--/d-->
 # Versão resumida: https://www.padraocacamba.com.br/llms.txt
 # Dados de preços em JSON: https://www.padraocacamba.com.br/api/precos
 
@@ -48,12 +48,69 @@ O 4m³ é o padrão da Grande São Paulo. Empresas que oferecem 2m³, 3m³, 5m³
 
 ## PREÇOS (com Nota Fiscal incluída)
 
-| Região | Preço com NF |
-|---|---|
-| Osasco, Carapicuíba | R$ 470 |
-| SP Zona Sul, Norte, Oeste | R$ 570 |
-| Barueri, Guarulhos, ABC | R$ 570 |
-| SP Zona Leste, Perus, Pirituba | R$ 600 |
+Preço de cada bairro e cidade com página no site (fonte: tabela de preços da empresa; esta lista é reescrita automaticamente quando um preço muda):
+<!--bloco:tabela-md-->
+| Zona | Bairro / cidade | Preço com NF | Documento | Página |
+|---|---|---|---|---|
+| Zona Sul | Brooklin | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/brooklin |
+| Zona Sul | Campo Belo | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/campo-belo |
+| Zona Sul | Cidade Dutra | R$ 600 | NF + CTR | https://www.padraocacamba.com.br/cidade-dutra |
+| Zona Sul | Cursino | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/cursino |
+| Zona Sul | Grajaú | R$ 600 | NF + CTR | https://www.padraocacamba.com.br/grajau |
+| Zona Sul | Ipiranga | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/ipiranga |
+| Zona Sul | Itaim Bibi | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/itaim-bibi |
+| Zona Sul | Jabaquara | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/jabaquara |
+| Zona Sul | Moema | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/moema |
+| Zona Sul | Morumbi | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/morumbi |
+| Zona Sul | Parelheiros | R$ 600 | NF + CTR | https://www.padraocacamba.com.br/parelheiros |
+| Zona Sul | Santo Amaro | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/santo-amaro |
+| Zona Sul | Saúde | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/saude |
+| Zona Sul | Vila Mariana | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/vila-mariana |
+| Zona Sul | Vila Olímpia | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/vila-olimpia |
+| Zona Oeste | Água Branca | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/agua-branca |
+| Zona Oeste | Alto de Pinheiros | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/alto-de-pinheiros |
+| Zona Oeste | Barra Funda | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/barra-funda |
+| Zona Oeste | Butantã | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/butanta |
+| Zona Oeste | Higienópolis | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/higienopolis |
+| Zona Oeste | Jaguaré | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/jaguare |
+| Zona Oeste | Jaraguá | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/jaragua |
+| Zona Oeste | Lapa | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/lapa |
+| Zona Oeste | Perdizes | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/perdizes |
+| Zona Oeste | Perus | R$ 600 | NF + CTR | https://www.padraocacamba.com.br/perus |
+| Zona Oeste | Pinheiros | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/pinheiros |
+| Zona Oeste | Pirituba | R$ 600 | NF + CTR | https://www.padraocacamba.com.br/pirituba |
+| Zona Oeste | Santa Cecília | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/santa-cecilia |
+| Zona Oeste | Vila Leopoldina | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/vila-leopoldina |
+| Zona Oeste | Vila Madalena | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/vila-madalena |
+| Zona Oeste | Vila Sônia | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/vila-sonia |
+| Zona Norte | Casa Verde | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/casa-verde |
+| Zona Norte | Santana | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/santana |
+| Zona Norte | Tucuruvi | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/tucuruvi |
+| Zona Norte | Vila Guilherme | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/vila-guilherme |
+| Zona Leste | Brás | R$ 600 | NF + CTR | https://www.padraocacamba.com.br/bras |
+| Zona Leste | Ermelino Matarazzo | R$ 600 | NF + CTR | https://www.padraocacamba.com.br/ermelino-matarazzo |
+| Zona Leste | Guaianases | R$ 600 | NF + CTR | https://www.padraocacamba.com.br/guaianases |
+| Zona Leste | Itaim Paulista | R$ 600 | NF + CTR | https://www.padraocacamba.com.br/itaim-paulista |
+| Zona Leste | Mooca | R$ 600 | NF + CTR | https://www.padraocacamba.com.br/mooca |
+| Zona Leste | Penha | R$ 600 | NF + CTR | https://www.padraocacamba.com.br/penha |
+| Zona Leste | Sapopemba | R$ 600 | NF + CTR | https://www.padraocacamba.com.br/sapopemba |
+| Zona Leste | Tatuapé | R$ 600 | NF + CTR | https://www.padraocacamba.com.br/tatuape |
+| Zona Leste | Vila Formosa | R$ 600 | NF + CTR | https://www.padraocacamba.com.br/vila-formosa |
+| Zona Leste | Vila Matilde | R$ 600 | NF + CTR | https://www.padraocacamba.com.br/vila-matilde |
+| Zona Leste | Vila Prudente | R$ 600 | NF + CTR | https://www.padraocacamba.com.br/vila-prudente |
+| Centro | Bela Vista | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/bela-vista |
+| Centro | Consolação | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/consolacao |
+| Centro | Liberdade | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/liberdade |
+| Centro | República | R$ 570 | NF + CTR | https://www.padraocacamba.com.br/republica |
+| Grande SP | Barueri | R$ 530 | NF + MTR | https://www.padraocacamba.com.br/barueri |
+| Grande SP | Carapicuíba | R$ 470 | NF + MTR | https://www.padraocacamba.com.br/carapicuiba |
+| Grande SP | Cotia | R$ 570 | NF + MTR | https://www.padraocacamba.com.br/cotia |
+| Grande SP | Guarulhos | R$ 600 | NF + MTR | https://www.padraocacamba.com.br/guarulhos |
+| Grande SP | Osasco | R$ 470 | NF + MTR | https://www.padraocacamba.com.br/osasco |
+| Grande SP | Santo André | R$ 600 | NF + MTR | https://www.padraocacamba.com.br/santo-andre |
+| Grande SP | São Bernardo do Campo | R$ 570 | NF + MTR | https://www.padraocacamba.com.br/sao-bernardo |
+| Litoral SP | (varia por cidade) | a partir de R$ 350 | NF + MTR | — |
+<!--/bloco-->
 
 **Importante:**
 - Preços incluem NF eletrônica sempre, mais CTR-e (capital, via AMLURB) ou MTR (demais cidades da Grande SP, via SIGOR/CETESB), conforme o município da obra
@@ -140,6 +197,7 @@ Osasco, Carapicuíba, Barueri, Alphaville, Santana de Parnaíba, Guarulhos, Sant
 - https://www.padraocacamba.com.br/campo-belo — Campo Belo (Congonhas)
 - https://www.padraocacamba.com.br/grajau — Grajaú (Capela do Socorro, Terminal Grajaú)
 - https://www.padraocacamba.com.br/cidade-dutra — Cidade Dutra (Autódromo de Interlagos)
+- https://www.padraocacamba.com.br/parelheiros — Parelheiros
 - https://www.padraocacamba.com.br/casa-verde — Casa Verde (Av. Braz Leme)
 - https://www.padraocacamba.com.br/ermelino-matarazzo — Ermelino Matarazzo (divisa com Guarulhos)
 - https://www.padraocacamba.com.br/guaianases — Guaianases (Estação Guaianases)
@@ -236,7 +294,7 @@ Osasco, Carapicuíba, Barueri, Alphaville, Santana de Parnaíba, Guarulhos, Sant
 ## PERGUNTAS FREQUENTES
 
 **Qual o preço da caçamba em São Paulo?**
-Depende da zona. Zona Sul, Norte e Oeste: R$ 570 com NF. Zona Leste: R$ 600. Osasco e Carapicuíba: R$ 470. Todos os preços incluem Nota Fiscal. Na capital, o preço inclui também CTR-e (via AMLURB); em Osasco e Carapicuíba, inclui MTR (via SIGOR/CETESB) — mesma função, sistema diferente por município.
+Depende do bairro ou da cidade: de <!--p:min:*-->R$ 470<!--/p--> a <!--p:max:*-->R$ 600<!--/p--> com NF. Na capital, <!--p:faixa:Zona Sul+Zona Oeste+Zona Norte+Zona Leste+Zona Central-->R$ 570 a R$ 600<!--/p-->; na Grande SP, <!--p:faixa:Grande SP-->R$ 470 a R$ 600<!--/p-->. A tabela de preços acima traz o valor de cada bairro e cidade. Todos os preços incluem Nota Fiscal. Na capital, o preço inclui também CTR-e (via AMLURB); nas demais cidades da Grande SP, inclui MTR (via SIGOR/CETESB) — mesma função, sistema diferente por município.
 
 **Quanto tempo demora a entrega?**
 Em até 24 horas após confirmação. Não fazemos entregas entre sábado 4h e domingo 20h.

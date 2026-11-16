@@ -2,7 +2,7 @@
 title: "Caçamba em Ipiranga SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Ipiranga e Museu do Ipiranga. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/ipiranga"
-date_modified: 2026-05-14
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Ipiranga, SP
@@ -11,7 +11,9 @@ Bairro histórico da Zona Sul com casas antigas em reforma constante. Próximo a
 
 ## Preço
 
-**R$ 570** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Ipiranga-->R$ 570<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 

@@ -2,7 +2,7 @@
 title: "Caçamba em Guaianases SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Guaianases. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/guaianases"
-date_modified: 2026-08-05
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Guaianases, SP
@@ -11,7 +11,9 @@ Guaianases tem subprefeitura própria e fica no extremo leste do município de S
 
 ## Preço
 
-**R$ 600** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Guaianases-->R$ 600<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -41,7 +43,7 @@ Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos.
 Guaianases fica no extremo leste da cidade, com logística de entrega mais longa que regiões centrais. Isso é refletido no preço, mas o serviço inclui NF e CTR sem custo extra, igual em qualquer outra região atendida.
 
 **Quanto custa a caçamba em Guaianases?**
-R$ 600 com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Guaianases-->R$ 600<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **Em quanto tempo a caçamba é entregue?**
 Em até 24h após confirmação.

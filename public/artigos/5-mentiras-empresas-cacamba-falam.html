@@ -33,7 +33,7 @@
   "description": "Identifique as 5 mentiras mais comuns no mercado de caçambas.",
   "image": "https://www.padraocacamba.com.br/image/blog-mentiras.webp",
   "datePublished": "2026-06-25T14:00:00Z",
-  "dateModified": "2026-06-25T14:00:00Z",
+  "dateModified": "2026-11-16",
   "author": {"@type":"Organization","name":"Padrão Caçamba"},
   "publisher": {"@type":"Organization","name":"Padrão Caçamba"},
   "mainEntity": {
@@ -41,7 +41,7 @@
     "mainEntity": [
       {"@type":"Question","name":"'Entregamos em 2 horas' é possível?","acceptedAnswer":{"@type":"Answer","text":"Não. Logística real de caçamba não funciona assim. Rotas tem entre 4 e 8 locais. Máximo: até 24h após confirmação."}},
       {"@type":"Question","name":"Se a empresa não emite nota fiscal, é golpe?","acceptedAnswer":{"@type":"Answer","text":"Sim. NF é obrigatória por lei. Se recusa, é intermediador sem CNPJ ou golpista mesmo."}},
-      {"@type":"Question","name":"Preço de R$ 200-300 é real?","acceptedAnswer":{"@type":"Answer","text":"Não. Com NF + CTR incluso, o custo mínimo em SP é R$ 470. Menos que isso significa fraude."}},
+      {"@type":"Question","name":"Preço de R$ 200-300 é real?","acceptedAnswer":{"@type":"Answer","text":"Não. Com NF e CTR/MTR inclusos, o preço real fica acima disso — a tabela com o preço de cada bairro está em https://www.padraocacamba.com.br/precos. Bem abaixo disso costuma significar fraude."}},
       {"@type":"Question","name":"Como verificar CNPJ de uma empresa?","acceptedAnswer":{"@type":"Answer","text":"Vá em receita.federal.gov.br/cnpj ou cnpj.info e digita o CNPJ. Se não aparece ou os dados não batem, não é legítima."}}
     ]
   }
@@ -254,7 +254,7 @@ document.getElementById("top-banner").addEventListener("click", nextBanner);
   </div>
   <div class="mentira-realidade">
     <span class="realidade-label">A Realidade:</span>
-    Preço de caçamba em SP é padronizado. Com NF + CTR inclusos, o mínimo é: Osasco R$ 470, SP Capital R$ 570, Zona Leste R$ 600. Preço muito abaixo (<strong>menos de R$ 400</strong>) significa que não tem NF de verdade.
+    Preço de caçamba em SP é padronizado. Com NF + CTR inclusos, o mínimo é: Osasco <!--p:b:Osasco-->R$ 470<!--/p-->, SP Capital <!--p:min:Zona Sul+Zona Oeste+Zona Norte+Zona Leste+Zona Central-->R$ 570<!--/p-->, Zona Leste <!--p:min:Zona Leste-->R$ 600<!--/p-->. Preço muito abaixo (<strong>menos de R$ 400</strong>) significa que não tem NF de verdade.
   </div>
 </div>
 

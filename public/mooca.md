@@ -2,7 +2,7 @@
 title: "Caçamba em Mooca SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Mooca e Metrô Mooca. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/mooca"
-date_modified: 2026-05-14
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Mooca, SP
@@ -11,7 +11,9 @@ Bairro de origem italiana com casas históricas e sobrados em renovação consta
 
 ## Preço
 
-**R$ 600** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Mooca-->R$ 600<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -30,7 +32,7 @@ Bairro de origem italiana com casas históricas e sobrados em renovação consta
 ## Perguntas frequentes
 
 **Quanto custa a caçamba na Mooca?**
-R$ 600 com NF e CTR incluídos — Zona Leste. PIX após a entrega.
+<!--p:b:Mooca-->R$ 600<!--/p--> com NF e CTR incluídos — Zona Leste. PIX após a entrega.
 
 **Vocês atendem reformas de casas italianas na Mooca?**
 Sim. Casas italianas antigas geram entulho pesado e volumoso. A caçamba 4m³ resolve a maioria das obras.

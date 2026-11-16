@@ -2,7 +2,7 @@
 title: "Caçamba em Grajaú SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Grajaú. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/grajau"
-date_modified: 2026-09-16
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Grajaú, SP
@@ -15,7 +15,9 @@ Além da área central do distrito, atendemos toda a extensão do Grajaú, inclu
 
 ## Preço
 
-**R$ 600** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Grajaú-->R$ 600<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -45,7 +47,7 @@ Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos.
 O Grajaú fica a cerca de 26 km da região central, na subprefeitura Capela do Socorro. A logística até essa região é mais longa, e isso é refletido no preço.
 
 **Quanto custa a caçamba em Grajaú?**
-R$ 600 com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Grajaú-->R$ 600<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **Em quanto tempo a caçamba é entregue?**
 Em até 24h após confirmação.

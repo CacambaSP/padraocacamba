@@ -1,8 +1,8 @@
 ---
 title: "Caçamba Zona Oeste SP | Padrão Caçamba"
-description: "Caçamba 4m³ na Zona Oeste de SP: Pinheiros, Vila Madalena, Higienópolis, Perdizes, Lapa, Alto de Pinheiros. Preço R$ 570 com NF. Entrega noturna."
+description: "Caçamba 4m³ na Zona Oeste de SP: Pinheiros, Vila Madalena, Higienópolis, Perdizes, Lapa, Alto de Pinheiros. Preço <!--p:faixa:Zona Oeste-->R$ 570 a R$ 600<!--/p--> com NF. Entrega noturna."
 url: "https://padraocacamba.com.br/zona-oeste"
-date_modified: 2026-05-13
+date_modified: 2026-11-16
 ---
 
 # Caçamba na Zona Oeste de São Paulo
@@ -11,7 +11,9 @@ Locação de caçamba estacionária 4m³ em toda a Zona Oeste de SP. 6 bairros c
 
 ## Preço
 
-**R$ 570** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:faixa:Zona Oeste-->R$ 570 a R$ 600<!--/p-->** com Nota Fiscal e CTR incluídos, conforme o bairro. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Bairros atendidos na Zona Oeste
 
@@ -31,7 +33,7 @@ Todos os bairros da Zona Oeste: entrega **noturna 22h–4h** para evitar rodízi
 ## Perguntas frequentes
 
 **Qual o preço da caçamba na Zona Oeste?**
-R$ 570 com NF e CTR incluídos.
+<!--p:faixa:Zona Oeste-->R$ 570 a R$ 600<!--/p--> com NF e CTR incluídos, conforme o bairro.
 
 **Por que a entrega é noturna?**
 A Zona Oeste tem rodízio de veículos durante o dia. A entrega noturna evita restrições e garante o posicionamento correto da caçamba.

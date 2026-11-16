@@ -2,7 +2,7 @@
 title: "Caçamba em Vila Matilde SP | Padrão Caçamba"
 description: "Caçamba de entulho em Vila Matilde. Entrega em até 24h. Nota fiscal + CTR-e inclusos. CNPJ 44.538.708/0001-76. Desde 2004."
 url: "https://padraocacamba.com.br/vila-matilde"
-date_modified: 2026-08-29
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Vila Matilde, SP
@@ -11,7 +11,9 @@ Vila Matilde integra a subprefeitura da Penha, na Zona Leste, com limites junto 
 
 ## Preço
 
-**R$ 600** com Nota Fiscal e CTR-e incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Vila Matilde-->R$ 600<!--/p-->** com Nota Fiscal e CTR-e incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -37,7 +39,7 @@ Lixo doméstico, líquidos, eletrônicos, pneus, resíduos tóxicos, lixo de eve
 ## Perguntas frequentes
 
 **Quanto custa a caçamba em Vila Matilde?**
-R$ 600 com NF e CTR-e inclusos. PIX após a entrega — motorista não recebe em mãos.
+<!--p:b:Vila Matilde-->R$ 600<!--/p--> com NF e CTR-e inclusos. PIX após a entrega — motorista não recebe em mãos.
 
 **Atendem o entorno do Shopping Aricanduva e Vila Carrão?**
 Sim. Atendemos Vila Matilde e a região ao redor — Vila Carrão, Cidade Patriarca, Vila Aricanduva — mesmo sem página própria pra esses bairros.

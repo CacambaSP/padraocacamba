@@ -2,7 +2,7 @@
 title: "Caçamba em Vila Formosa SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Vila Formosa e Metrô Vila Formosa. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/vila-formosa"
-date_modified: 2026-05-13
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Vila Formosa, SP
@@ -11,7 +11,9 @@ Vila Formosa e Carrão formam uma região residencial consolidada na Zona Leste,
 
 ## Preço
 
-**R$ 600** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Vila Formosa-->R$ 600<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -38,7 +40,7 @@ Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos.
 ## Perguntas frequentes
 
 **Quanto custa a caçamba em Vila Formosa?**
-R$ 600 com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Vila Formosa-->R$ 600<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **Vocês atendem Vila Formosa e Carrão juntos?**
 Sim, são bairros contíguos com logística integrada. Me fala o endereço que confirmo.

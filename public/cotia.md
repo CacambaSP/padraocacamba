@@ -2,7 +2,7 @@
 title: "Caçamba em Cotia SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Cotia e Granja Viana. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/cotia"
-date_modified: 2026-05-14
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Cotia, SP
@@ -11,7 +11,9 @@ Cotia é conhecida pela Granja Viana — região com condomínios fechados de al
 
 ## Preço
 
-**R$ 570** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Cotia-->R$ 570<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Entrega
 
@@ -29,7 +31,7 @@ Cotia é conhecida pela Granja Viana — região com condomínios fechados de al
 ## Perguntas frequentes
 
 **Qual o preço da caçamba em Cotia?**
-R$ 570 com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Cotia-->R$ 570<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **Vocês atendem condomínios fechados na Granja Viana?**
 Sim. CTR incluso em todas as entregas — verifique com a administração do condomínio antes.

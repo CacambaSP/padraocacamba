@@ -1,0 +1,243 @@
+{
+  "observacao": "Gerado por scripts/atualizar-precos.mjs a partir do Supabase (somente leitura). Não editar à mão.",
+  "data_da_ultima_mudanca": "2026-11-16",
+  "bairros": {
+    "Água Branca": {
+      "zona": "Zona Oeste",
+      "preco_com_nf": 570
+    },
+    "Alto de Pinheiros": {
+      "zona": "Zona Oeste",
+      "preco_com_nf": 570
+    },
+    "Barra Funda": {
+      "zona": "Zona Oeste",
+      "preco_com_nf": 570
+    },
+    "Barueri": {
+      "zona": "Grande SP",
+      "preco_com_nf": 530
+    },
+    "Bela Vista": {
+      "zona": "Zona Central",
+      "preco_com_nf": 570
+    },
+    "Brás": {
+      "zona": "Zona Leste",
+      "preco_com_nf": 600
+    },
+    "Brooklin": {
+      "zona": "Zona Sul",
+      "preco_com_nf": 570
+    },
+    "Butantã": {
+      "zona": "Zona Oeste",
+      "preco_com_nf": 570
+    },
+    "Campo Belo": {
+      "zona": "Zona Sul",
+      "preco_com_nf": 570
+    },
+    "Carapicuíba": {
+      "zona": "Grande SP",
+      "preco_com_nf": 470
+    },
+    "Casa Verde": {
+      "zona": "Zona Norte",
+      "preco_com_nf": 570
+    },
+    "Cidade Dutra": {
+      "zona": "Zona Sul",
+      "preco_com_nf": 600
+    },
+    "Consolação": {
+      "zona": "Zona Central",
+      "preco_com_nf": 570
+    },
+    "Cotia": {
+      "zona": "Grande SP",
+      "preco_com_nf": 570
+    },
+    "Cursino": {
+      "zona": "Zona Sul",
+      "preco_com_nf": 570
+    },
+    "Ermelino Matarazzo": {
+      "zona": "Zona Leste",
+      "preco_com_nf": 600
+    },
+    "Grajaú": {
+      "zona": "Zona Sul",
+      "preco_com_nf": 600
+    },
+    "Guaianases": {
+      "zona": "Zona Leste",
+      "preco_com_nf": 600
+    },
+    "Guarulhos": {
+      "zona": "Grande SP",
+      "preco_com_nf": 600
+    },
+    "Higienópolis": {
+      "zona": "Zona Oeste",
+      "preco_com_nf": 570
+    },
+    "Ipiranga": {
+      "zona": "Zona Sul",
+      "preco_com_nf": 570
+    },
+    "Itaim Bibi": {
+      "zona": "Zona Sul",
+      "preco_com_nf": 570
+    },
+    "Itaim Paulista": {
+      "zona": "Zona Leste",
+      "preco_com_nf": 600
+    },
+    "Jabaquara": {
+      "zona": "Zona Sul",
+      "preco_com_nf": 570
+    },
+    "Jaguaré": {
+      "zona": "Zona Oeste",
+      "preco_com_nf": 570
+    },
+    "Jaraguá": {
+      "zona": "Zona Oeste",
+      "preco_com_nf": 570
+    },
+    "Lapa": {
+      "zona": "Zona Oeste",
+      "preco_com_nf": 570
+    },
+    "Liberdade": {
+      "zona": "Zona Central",
+      "preco_com_nf": 570
+    },
+    "Moema": {
+      "zona": "Zona Sul",
+      "preco_com_nf": 570
+    },
+    "Mooca": {
+      "zona": "Zona Leste",
+      "preco_com_nf": 600
+    },
+    "Morumbi": {
+      "zona": "Zona Sul",
+      "preco_com_nf": 570
+    },
+    "Osasco": {
+      "zona": "Grande SP",
+      "preco_com_nf": 470
+    },
+    "Parelheiros": {
+      "zona": "Zona Sul",
+      "preco_com_nf": 600
+    },
+    "Penha": {
+      "zona": "Zona Leste",
+      "preco_com_nf": 600
+    },
+    "Perdizes": {
+      "zona": "Zona Oeste",
+      "preco_com_nf": 570
+    },
+    "Perus": {
+      "zona": "Zona Oeste",
+      "preco_com_nf": 600
+    },
+    "Pinheiros": {
+      "zona": "Zona Oeste",
+      "preco_com_nf": 570
+    },
+    "Pirituba": {
+      "zona": "Zona Oeste",
+      "preco_com_nf": 600
+    },
+    "República": {
+      "zona": "Zona Central",
+      "preco_com_nf": 570
+    },
+    "Santa Cecília": {
+      "zona": "Zona Oeste",
+      "preco_com_nf": 570
+    },
+    "Santana": {
+      "zona": "Zona Norte",
+      "preco_com_nf": 570
+    },
+    "Santo Amaro": {
+      "zona": "Zona Sul",
+      "preco_com_nf": 570
+    },
+    "Santo André": {
+      "zona": "Grande SP",
+      "preco_com_nf": 600
+    },
+    "São Bernardo do Campo": {
+      "zona": "Grande SP",
+      "preco_com_nf": 570
+    },
+    "Sapopemba": {
+      "zona": "Zona Leste",
+      "preco_com_nf": 600
+    },
+    "Saúde": {
+      "zona": "Zona Sul",
+      "preco_com_nf": 570
+    },
+    "Tatuapé": {
+      "zona": "Zona Leste",
+      "preco_com_nf": 600
+    },
+    "Tucuruvi": {
+      "zona": "Zona Norte",
+      "preco_com_nf": 570
+    },
+    "Vila Formosa": {
+      "zona": "Zona Leste",
+      "preco_com_nf": 600
+    },
+    "Vila Guilherme": {
+      "zona": "Zona Norte",
+      "preco_com_nf": 570
+    },
+    "Vila Leopoldina": {
+      "zona": "Zona Oeste",
+      "preco_com_nf": 570
+    },
+    "Vila Madalena": {
+      "zona": "Zona Oeste",
+      "preco_com_nf": 570
+    },
+    "Vila Mariana": {
+      "zona": "Zona Sul",
+      "preco_com_nf": 570
+    },
+    "Vila Matilde": {
+      "zona": "Zona Leste",
+      "preco_com_nf": 600
+    },
+    "Vila Olímpia": {
+      "zona": "Zona Sul",
+      "preco_com_nf": 570
+    },
+    "Vila Prudente": {
+      "zona": "Zona Leste",
+      "preco_com_nf": 600
+    },
+    "Vila Sônia": {
+      "zona": "Zona Oeste",
+      "preco_com_nf": 570
+    }
+  },
+  "zonas": {
+    "Centro": 570,
+    "Grande SP": 570,
+    "Litoral SP": 350,
+    "Zona Leste": 600,
+    "Zona Norte": 570,
+    "Zona Oeste": 570,
+    "Zona Sul": 570
+  }
+}

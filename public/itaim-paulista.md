@@ -2,7 +2,7 @@
 title: "Caçamba em Itaim Paulista SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Itaim Paulista. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/itaim-paulista"
-date_modified: 2026-08-08
+date_modified: 2026-11-16
 ---
 
 # Caçamba em Itaim Paulista, SP
@@ -13,7 +13,9 @@ Não confundir com Itaim Bibi (Zona Oeste, subprefeitura de Pinheiros) — são 
 
 ## Preço
 
-**R$ 600** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+**<!--p:b:Itaim Paulista-->R$ 600<!--/p-->** com Nota Fiscal e CTR incluídos. Pagamento via PIX após a entrega.
+
+Página atualizada em <!--d-->16/11/2026<!--/d-->.
 
 ## Zona e entrega
 
@@ -43,7 +45,7 @@ Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos.
 Não — são bairros completamente diferentes, apesar do nome parecido. Itaim Bibi fica na Zona Oeste, subprefeitura de Pinheiros. Itaim Paulista fica na Zona Leste, extremo da cidade, subprefeitura própria. O termo Paulista foi adicionado ao nome justamente para diferenciar os dois.
 
 **Quanto custa a caçamba em Itaim Paulista?**
-R$ 600 com NF e CTR incluídos. PIX após a entrega.
+<!--p:b:Itaim Paulista-->R$ 600<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **Em quanto tempo a caçamba é entregue?**
 Em até 24h após confirmação.
