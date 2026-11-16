@@ -23,6 +23,11 @@
   function gtag() { dataLayer.push(arguments); }
   window.gtag = window.gtag || gtag;
   gtag('js', new Date());
+  // Linker entre domínios: leva o clique do anúncio (gclid) para o formulário
+  // de pedido no CRM, para a conversão ser atribuída ao anúncio certo.
+  // Decora automaticamente os links <a> para o domínio do CRM (ex.: botão
+  // flutuante "Pedir Caçamba"). Não decora aberturas via window.open().
+  gtag('set', 'linker', { domains: ['cacambasp-crm.vercel.app'] });
   gtag('config', ADS_ID);
 
   function conversao(tipo) {
