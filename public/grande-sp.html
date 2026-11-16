@@ -398,7 +398,7 @@ function pcShowCadastroBtn() {
   const btn = document.createElement('button');
   btn.className = 'pc-btn-full';
   btn.textContent = '📋 Preencher cadastro e fechar pedido';
-  btn.onclick = () => window.open(CADASTRO+'&bairro='+encodeURIComponent(BAIRRO)+'&preco='+encodeURIComponent(precoAtual)+'&origem='+encodeURIComponent(location.pathname),'_blank');
+  btn.onclick = () => window.open((window.linkCRM||String)(CADASTRO+'&bairro='+encodeURIComponent(BAIRRO)+'&preco='+encodeURIComponent(precoAtual)+'&origem='+encodeURIComponent(location.pathname)),'_blank');
   msgs.appendChild(btn);
   msgs.scrollTop = msgs.scrollHeight;
 }

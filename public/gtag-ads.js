@@ -30,6 +30,23 @@
   gtag('set', 'linker', { domains: ['cacambasp-crm.vercel.app'] });
   gtag('config', ADS_ID);
 
+  // Para aberturas via window.open (botão "Preencher cadastro" do chat do PC):
+  // o linker só decora links <a> no mousedown, então criamos um link
+  // temporário, deixamos o linker acrescentar o _gl e devolvemos a URL.
+  // Se algo falhar, devolve a URL original (o botão nunca quebra).
+  window.linkCRM = function (url) {
+    try {
+      var a = document.createElement('a');
+      a.href = url;
+      a.style.display = 'none';
+      document.body.appendChild(a);
+      a.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
+      var decorada = a.href;
+      a.parentNode.removeChild(a);
+      return decorada || url;
+    } catch (e) { return url; }
+  };
+
   function conversao(tipo) {
     try {
       // evento nomeado (aparece no Google Ads / GA como evento)
