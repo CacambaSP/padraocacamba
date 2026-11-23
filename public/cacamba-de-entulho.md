@@ -1,8 +1,8 @@
 ---
-title: "Caçamba de Entulho em São Paulo | Padrão Caçamba"
-description: "Caçamba de entulho em São Paulo — quanto custa, tamanhos e como funciona. A partir de <!--p:min:*-->R$ 470<!--/p-->, com NF e CTR/MTR inclusos. Entrega em até 24h. Desde 2004."
+title: "Caçamba de Entulho em São Paulo — <!--p:faixa:*-->R$ 470 a R$ 600<!--/p--> com NF"
+description: "Caçamba de entulho 4m³ em São Paulo e Grande SP: <!--p:faixa:*-->R$ 470 a R$ 600<!--/p--> com nota fiscal e CTR/MTR. PIX só após a entrega. Veja o preço do seu bairro."
 url: "https://padraocacamba.com.br/cacamba-de-entulho"
-date_modified: 2026-11-16
+date_modified: 2026-11-23
 ---
 
 # Caçamba de Entulho em São Paulo
@@ -22,9 +22,13 @@ O valor de uma caçamba de entulho 4m³ com Nota Fiscal varia por bairro e cidad
 - São Paulo capital: <!--p:faixa:Zona Sul+Zona Oeste+Zona Norte+Zona Leste+Zona Central-->R$ 570 a R$ 600<!--/p-->
 - Zona Leste: <!--p:faixa:Zona Leste-->R$ 600<!--/p-->
 
+O preço é por caçamba, não por dia, e já inclui entrega, retirada, Nota Fiscal e CTR (capital) ou MTR (demais cidades).
+
+Preço por região: Zona Sul https://www.padraocacamba.com.br/zona-sul · Zona Oeste https://www.padraocacamba.com.br/zona-oeste · Zona Norte https://www.padraocacamba.com.br/zona-norte · Zona Leste https://www.padraocacamba.com.br/zona-leste · Centro https://www.padraocacamba.com.br/centro-sp · Grande SP https://www.padraocacamba.com.br/grande-sp
+
 Preço exato de cada bairro e cidade: https://www.padraocacamba.com.br/precos
 
-Página atualizada em <!--d-->16/11/2026<!--/d-->.
+Página atualizada em <!--d-->23/11/2026<!--/d-->.
 
 ## O que está incluso
 
@@ -32,6 +36,13 @@ Página atualizada em <!--d-->16/11/2026<!--/d-->.
 - CTR-e (capital) ou MTR (demais cidades da Grande SP)
 - Entrega + permanência de até 3 dias em via pública + retirada
 - Destinação em aterro credenciado pela CETESB
+
+## Regras da caçamba na rua
+
+- Até 3 dias em via pública; a retirada é automática no vencimento ou antes, quando o cliente pedir.
+- Calçada: é preciso deixar 1,20m de passagem livre para pedestres.
+- Zona azul: a entrega é feita normalmente; se a CET notificar, a caçamba é retirada, sem reembolso — o preço é por caçamba, não por dia.
+- A entrega é agendada pelo dia, sem horário exato, em até 24h após a confirmação. Não há entregas de sábado às 4h até domingo às 20h.
 
 ## O que aceita
 
@@ -58,8 +69,8 @@ Até 3 dias em via pública, conforme regulamentação municipal. Depois disso, 
 **Que tipo de entulho pode ir na caçamba?**
 Material seco de obra: concreto, cerâmica, argamassa, gesso, madeira seca. Não aceita lixo doméstico, líquidos, pneus, eletrônicos ou resíduos tóxicos.
 
-**Preciso de autorização pra colocar a caçamba na rua?**
-Em alguns casos sim, dependendo da subprefeitura. A empresa contratada normalmente já conhece esse processo local e orienta o cliente.
+**Como é cobrado o aluguel da caçamba?**
+Por caçamba, não por dia. O preço já inclui entrega, retirada, Nota Fiscal e CTR (capital) ou MTR (demais cidades). Pagamento só por PIX, depois da entrega.
 
 ## Empresa
 

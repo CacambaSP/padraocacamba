@@ -24,6 +24,7 @@
 //     <!--d-->16/11/2026<!--/d-->       data da última atualização da página
 //     <!--bloco:tabela-md-->…<!--/bloco-->    tabela completa em markdown
 //     <!--bloco:tabela-html-->…<!--/bloco-->  linhas <tr> da tabela do /precos
+//     <!--bloco:bairros-links-->…<!--/bloco-->  links de todos os bairros com página (chips)
 //   JavaScript:
 //     /*n:CHAVE*/570/*/n*/              número
 //     /*s:CHAVE*/'R$ 570'/*/s*/         texto entre aspas simples
@@ -204,6 +205,18 @@ function blocoTabelaHtml(P) {
   return '\n' + out.join('\n') + '\n';
 }
 
+// Lista de links de bairro (chips) — usada na /cacamba-de-entulho
+const COR_ZONA = { 'Grande SP': '#34d399', 'Zona Sul': '#00FF7F', 'Zona Oeste': '#60a5fa', 'Zona Norte': '#a78bfa', 'Zona Central': '#fbbf24', 'Zona Leste': '#fb923c' };
+function blocoBairrosLinks(P) {
+  const pags = paginasPorBairro();
+  const out = [];
+  for (const { b, v, z } of linhasTabela(P)) {
+    if (!pags.get(b)) continue;
+    out.push(`<a href="${pags.get(b)}" class="bairro-chip"><div><div class="bairro-chip-nome">${b}</div><div class="bairro-chip-ref" style="color:${COR_ZONA[z] || '#888'}">${NOME_ZONA[z] || z} · ${fmtR(v)}</div></div><span class="bairro-chip-arrow">›</span></a>`);
+  }
+  return '\n' + out.join('\n') + '\n';
+}
+
 // ---------- renderização de um arquivo ----------
 const desescapar = s => s.replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&darr;/g, '↓').replace(/&rarr;/g, '→');
 const escAttr = s => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -220,6 +233,7 @@ function renderizar(conteudo, R, P, data, nomeArq) {
   s = s.replace(/\/\*s:([^\n]+?)\*\/[\s\S]*?\/\*\/s\*\//g, (_, k) => `/*s:${k}*/'${R.texto(k)}'/*/s*/`);
   s = s.replace(/<!--bloco:tabela-md-->[\s\S]*?<!--\/bloco-->/g, () => `<!--bloco:tabela-md-->${blocoTabelaMd(P)}<!--/bloco-->`);
   s = s.replace(/<!--bloco:tabela-html-->[\s\S]*?<!--\/bloco-->/g, () => `<!--bloco:tabela-html-->${blocoTabelaHtml(P)}<!--/bloco-->`);
+  s = s.replace(/<!--bloco:bairros-links-->[\s\S]*?<!--\/bloco-->/g, () => `<!--bloco:bairros-links-->${blocoBairrosLinks(P)}<!--/bloco-->`);
   s = s.replace(/<!--d-->[\s\S]*?<!--\/d-->/g, `<!--d-->${data.br}<!--/d-->`);
 
   // <title data-tpl="…">…</title>
@@ -332,7 +346,12 @@ for (const m of mudancas) console.log('  - ' + m.rel);
 if (SO_CHECAR) { console.log('(--checar: nada foi gravado)'); process.exit(0); }
 
 for (const m of mudancas) fs.writeFileSync(m.arq, m.novo);
+// o snapshot só muda quando um PREÇO muda (mudança de texto/estrutura de página não conta)
 fs.mkdirSync(path.join(RAIZ, 'dados'), { recursive: true });
-fs.writeFileSync(path.join(RAIZ, 'dados/precos.json'), JSON.stringify(snapshot, null, 2) + '\n');
+const arqSnap = path.join(RAIZ, 'dados/precos.json');
+let anterior = null;
+try { anterior = JSON.parse(fs.readFileSync(arqSnap, 'utf8')); } catch {}
+const mesmosPrecos = anterior && JSON.stringify(anterior.bairros) === JSON.stringify(snapshot.bairros) && JSON.stringify(anterior.zonas) === JSON.stringify(snapshot.zonas);
+if (!mesmosPrecos) fs.writeFileSync(arqSnap, JSON.stringify(snapshot, null, 2) + '\n');
 if (SAIDA_GH) fs.appendFileSync(SAIDA_GH, `mudou=sim\narquivos=${mudancas.length}\n`);
 console.log('Arquivos atualizados.');
