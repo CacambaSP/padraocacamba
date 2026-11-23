@@ -1,6 +1,6 @@
 # DOCUMENTO MESTRE — PADRÃO CAÇAMBA
 **Versão:** 5.0 — documento único para migração de conta do Claude
-**Data:** 09/11/2026 (fechado em 16/11/2026 — Clarity ficou pendente porque a sessão do Clarity estava expirada) · **Última atualização:** 23/11/2026 — Clarity levantado (seção 9: artigos, Ads, citações de IA); item 5 aplicado e ponto de partida de medição registrado; antes, em 16/11 — pendências 1, 2, 3, 4, 7, 10, 11, 12, 13, 15, 23, 24 e 25 feitas; rotina automática de preços no ar; Litoral R$ 590; RLS nas tabelas de coordenadas (seções 2, 3, 11 e 13)
+**Data:** 09/11/2026 (fechado em 16/11/2026 — Clarity ficou pendente porque a sessão do Clarity estava expirada) · **Última atualização:** 23/11/2026 — Doug decidiu "trabalhamos só com 4m³" (seções 1 e 10); plano do Clarity aplicado nos artigos de tamanho, CTR e guia (commit `7a2c230`, seção 9); Clarity levantado (seção 9: artigos, Ads, citações de IA); item 5 aplicado e ponto de partida de medição registrado; antes, em 16/11 — pendências 1, 2, 3, 4, 7, 10, 11, 12, 13, 15, 23, 24 e 25 feitas; rotina automática de preços no ar; Litoral R$ 590; RLS nas tabelas de coordenadas (seções 2, 3, 11 e 13)
 **Domínio:** padraocacamba.com.br
 **Substitui tudo:** DOC MESTRE V4.1 (instruções do projeto "DOC MESTRE V4.1 Padrão Caçambas"), os 12 arquivos e a memória do projeto "SITE PADRÃO CAÇAMBA", `MASTER_CONTEXT_PADRAO_CACAMBA.md`, `CONTEXTO_MESTRE_PADRAO_CACAMBA_v2.docx`, os dois `CONTEXTO_NOVO_CHAT_*`, `PROMPT_BLOG_PADRAO_CACAMBA.md` e a pasta `claude/` (análise GSC + propostas/diffs de título-meta). Tudo que importava desses arquivos está aqui dentro.
 
@@ -36,7 +36,7 @@
 | Site | padraocacamba.com.br (sempre servido em `www.` — o domínio sem www redireciona) |
 | Em operação desde | 2004 |
 | Atendimentos | 20mil+ / 2.000+ NFs emitidas |
-| Produto | Caçamba estacionária 4m³ (padrão único da Grande SP, às vezes 5m³) |
+| Produto | Caçamba estacionária 4m³ — **trabalhamos só com 4m³** (decisão do Doug em 23/11/2026; não oferecemos 3m³ nem 5m³) |
 | Operador digital | Doug (Douglas) — conduz o projeto digital, NÃO aparece no site (proteção jurídica) |
 | Rosto do site | Luciana (titular), Cláudia (cunhada/MEI), Sandra (sogra) |
 | Sucessão | Junior (filho) |
@@ -427,7 +427,7 @@ Leitura: no celular, quem não sai logo para no meio do artigo — só 3 de 8 (t
 
 **Limites:** o clique em "Pedir caçamba" sai para o CRM (outro domínio) — o Clarity não mostra se virou cadastro (conferir no CRM 17/11 ~14:55 e 22/11 ~14:10). Referenciador google.com não separa orgânico de anúncio; o card de `gclid` listou 2 entradas no guia, mas o filtro combinado deu 0 — não confirmado. Visitas internas não estão excluídas. Mapa de calor não aceita filtro de URL de entrada (conta todas as visitas à página). Volume de 1–2 cliques por página não é padrão.
 
-**Plano proposto (NÃO aplicado — aguardando o Doug):** (1) chamada de pedido no meio do texto, onde a atenção está, com preço por marcador `faixa:` — no celular poucos chegam à chamada do fim; (2) links internos no corpo para /precos, hub da zona e bairros (hoje tamanho e CTR não linkam /precos); (3) tamanho: chamada "4m³ com NF — {faixa} → Pedir caçamba · Ver preço do seu bairro" no fim da seção 4m³ (~39%, pico de atenção no celular, antes de metade sair); responder 5m³ no topo com as medidas que já estão no artigo + "a Padrão trabalha com 4m³"; título/descrição para "caçamba 5m³ dimensões"; resultado da calculadora com 4m³ + preço marcado + botão — ⚠️ o artigo diz "não oferecemos 5m³" e a seção 1 diz "às vezes 5m³": Doug decide a frase verdadeira; (4) CTR: chamada logo depois de "CTR ou MTR? Depende da cidade" (~35%, dentro da faixa onde fica 81% da atenção no celular): "vai em 100% das entregas, sem custo — ver preço com NF → /precos"; FAQ "Quanto custa caçamba com NF e CTR/MTR?" com faixa marcada (schema junto); conferir se o diagrama `flow-card` parece botão; (5) guia: botão "Pedir caçamba" + link /precos logo abaixo da tabela de preços (35%); transformar "Preço transparente" da Conclusão em link para /precos.
+**Plano — APLICADO em 23/11/2026 (commit `7a2c230`, conferido no ar), com a frase "trabalhamos só com 4m³" decidida pelo Doug.** O que foi feito: tamanho — título "Tamanho de Caçamba de Entulho: Medidas de 3m³, 4m³ e 5m³", descrição com `{faixa:*}`, "Resposta rápida" com as medidas no topo + link /precos, rótulos "Não trabalhamos com esse tamanho", chamada "Caçamba 4m³ com NF — faixa" com Pedir caçamba + Ver o preço do seu bairro no fim da seção 4m³, calculadora mostra preço + botão Pedir + link /precos; CTR — chamada após "CTR ou MTR?" (100% das entregas, sem custo, faixa, link /precos) e pergunta nova "Quanto custa caçamba com NF e CTR/MTR?" (schema igual à página); guia — chamada com Pedir caçamba + /precos logo abaixo da tabela e "Preço transparente" virou link para /precos. `flow-card` do CTR: não parece botão (1 toque em 90 dias não é padrão) — não mexido. Botões de pedido no corpo vão para o cadastro do CRM com `origem=` o caminho do artigo, igual ao botão flutuante. Medir: entradas nos 3 artigos e cliques em Pedir/preços no Clarity em ~30 dias. Texto original do plano: (1) chamada de pedido no meio do texto, onde a atenção está, com preço por marcador `faixa:` — no celular poucos chegam à chamada do fim; (2) links internos no corpo para /precos, hub da zona e bairros (hoje tamanho e CTR não linkam /precos); (3) tamanho: chamada "4m³ com NF — {faixa} → Pedir caçamba · Ver preço do seu bairro" no fim da seção 4m³ (~39%, pico de atenção no celular, antes de metade sair); responder 5m³ no topo com as medidas que já estão no artigo + "a Padrão trabalha com 4m³"; título/descrição para "caçamba 5m³ dimensões"; resultado da calculadora com 4m³ + preço marcado + botão — ⚠️ o artigo diz "não oferecemos 5m³" e a seção 1 diz "às vezes 5m³": Doug decide a frase verdadeira; (4) CTR: chamada logo depois de "CTR ou MTR? Depende da cidade" (~35%, dentro da faixa onde fica 81% da atenção no celular): "vai em 100% das entregas, sem custo — ver preço com NF → /precos"; FAQ "Quanto custa caçamba com NF e CTR/MTR?" com faixa marcada (schema junto); conferir se o diagrama `flow-card` parece botão; (5) guia: botão "Pedir caçamba" + link /precos logo abaixo da tabela de preços (35%); transformar "Preço transparente" da Conclusão em link para /precos.
 
 ---
 
@@ -442,7 +442,7 @@ Leitura: no celular, quem não sai logo para no meio do artigo — só 3 de 8 (t
 | 5 | Modelo: transportadora especializada, não intermediador |
 | 6 | Diferencial-chave: estratégia anti-golpe + educação |
 | 7 | cacambasp.com.br: NUNCA TOCAR — paraquedas reserva |
-| 8 | Especialização: 4m³ padrão (às vezes 5m³) |
+| 8 | Especialização: só 4m³ — frase oficial "Trabalhamos só com 4m³" (Doug, 23/11/2026) |
 | 9 | Velocidade: sem pressa, qualidade > velocidade |
 | 10 | Execução: Doug + IA, sem contratar dev |
 | 11 | URLs planas, HTML estático na Vercel — não migrar de stack nem de estrutura de URL |
@@ -519,6 +519,7 @@ Leitura: no celular, quem não sai logo para no meio do artigo — só 3 de 8 (t
 - **14/10** — revisão do site como robô de IA (preço "carregando", CTR sozinho, contradição de preço) e checagem da tag do Ads
 - **09/11** — esta auditoria e migração
 - **23/11 (noite)** — Clarity lido pelo Chrome (só leitura): entradas pelos artigos de tamanho, CTR, guia, descarte e quanto-custa, Ads por `gclid`, mapas de rolagem/atenção/cliques mortos e Citações de IA registrados na seção 9, com plano proposto não aplicado. Nada alterado no site.
+- **23/11 (noite, 2)** — commit `7a2c230`: plano do Clarity aplicado nos artigos de tamanho, CTR e guia (seção 9); Doug decidiu "trabalhamos só com 4m³" (seções 1 e 10).
 - **23/11** — commit `6730501`: item 5 (/cacamba-de-entulho) aplicado; ponto de partida do Search Console registrado no item 5; medição marcada para 21/12/2026. Rotina: `dados/precos.json` passa a mudar só quando um preço muda; novo bloco `bairros-links`.
 - **16/11 (noite)** — commit `4d724af`: pendência 25, FAQ visível = schema nos artigos guia e 5 mentiras.
 - **16/11 (fim do dia)** — Doug, fora do Claude: Litoral SP R$ 350 → R$ 590 no `precos_zonas` (rotina rodada manualmente, publicado pelo bot em `1a427d7`) e RLS em `bairro_coords`/`cidade_coords`. Claude, commit `3e55749`: itens 4, 12, 15, 23 e 24 (home CTR/MTR e um só bloco de golpe, og:image nova, botões flutuantes, Clarity, MTR nos .md, FAQ visível nos artigos); tabela gerada passa a mostrar o Litoral como preço único.
