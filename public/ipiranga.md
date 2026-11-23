@@ -2,7 +2,7 @@
 title: "Caçamba em Ipiranga SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Ipiranga e Museu do Ipiranga. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/ipiranga"
-date_modified: 2026-11-16
+date_modified: 2026-11-23
 ---
 
 # Caçamba em Ipiranga, SP
@@ -35,7 +35,7 @@ Página atualizada em <!--d-->16/11/2026<!--/d-->.
 Sim. Até 3 dias em via pública conforme a Subprefeitura Ipiranga. Calçada não é permitido.
 
 **Vocês atendem reformas de casas antigas no Ipiranga?**
-Sim. A caçamba 4m³ suporta até 4 toneladas de entulho seco.
+Sim. Na caçamba 4m³, o peso depende do material — cheia, normalmente fica em torno de 2 toneladas.
 
 **Em quanto tempo a caçamba é entregue?**
 Em até 24h após confirmação. Entrega comercial 7h–17h.

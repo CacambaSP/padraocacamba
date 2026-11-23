@@ -2,7 +2,7 @@
 title: "Caçamba em Penha SP | Padrão Caçamba"
 description: "Aluguel de caçamba 4m³ em Penha e Metrô Penha. Entrega em até 24h. CNPJ 44.538.708/0001-76. Nota fiscal inclusa. CTR incluído. Desde 2004."
 url: "https://padraocacamba.com.br/penha"
-date_modified: 2026-11-16
+date_modified: 2026-11-23
 ---
 
 # Caçamba em Penha, SP
@@ -43,7 +43,7 @@ Lixo doméstico, líquidos, tintas, pneus, eletrônicos, resíduos tóxicos.
 <!--p:b:Penha-->R$ 600<!--/p--> com NF e CTR incluídos. PIX após a entrega.
 
 **Estou reformando casa antiga na Penha com muito entulho pesado — a caçamba 4m³ aguenta?**
-A caçamba 4m³ suporta até 4 toneladas de entulho seco. Para obras grandes, o PC orienta sobre quantas locações serão necessárias.
+Na caçamba 4m³, o peso depende do material — cheia, normalmente fica em torno de 2 toneladas. Para obras grandes, o PC orienta sobre quantas locações serão necessárias.
 
 **Em quanto tempo a caçamba é entregue?**
 Em até 24h após confirmação. Entrega comercial 7h–17h.
