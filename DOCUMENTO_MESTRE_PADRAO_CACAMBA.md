@@ -1,6 +1,6 @@
 # DOCUMENTO MESTRE — PADRÃO CAÇAMBA
 **Versão:** 5.0 — documento único para migração de conta do Claude
-**Data:** 09/11/2026 (fechado em 16/11/2026 — Clarity ficou pendente porque a sessão do Clarity estava expirada) · **Última atualização:** 23/11/2026 — Doug decidiu "trabalhamos só com 4m³" (seções 1 e 10); plano do Clarity aplicado nos artigos de tamanho, CTR e guia (commit `7a2c230`, seção 9); Clarity levantado (seção 9: artigos, Ads, citações de IA); item 5 aplicado e ponto de partida de medição registrado; antes, em 16/11 — pendências 1, 2, 3, 4, 7, 10, 11, 12, 13, 15, 23, 24 e 25 feitas; rotina automática de preços no ar; Litoral R$ 590; RLS nas tabelas de coordenadas (seções 2, 3, 11 e 13)
+**Data:** 09/11/2026 (fechado em 16/11/2026 — Clarity ficou pendente porque a sessão do Clarity estava expirada) · **Última atualização:** 23/11/2026 — Doug decidiu "trabalhamos só com 4m³" (seções 1 e 10); plano do Clarity aplicado nos artigos de tamanho, CTR e guia (commit `7a2c230`, seção 9); "OU 5m³" e "95%" sem fonte retirados dos artigos (commit `59fb7a7`, seção 7); Clarity levantado (seção 9: artigos, Ads, citações de IA); item 5 aplicado e ponto de partida de medição registrado; antes, em 16/11 — pendências 1, 2, 3, 4, 7, 10, 11, 12, 13, 15, 23, 24 e 25 feitas; rotina automática de preços no ar; Litoral R$ 590; RLS nas tabelas de coordenadas (seções 2, 3, 11 e 13)
 **Domínio:** padraocacamba.com.br
 **Substitui tudo:** DOC MESTRE V4.1 (instruções do projeto "DOC MESTRE V4.1 Padrão Caçambas"), os 12 arquivos e a memória do projeto "SITE PADRÃO CAÇAMBA", `MASTER_CONTEXT_PADRAO_CACAMBA.md`, `CONTEXTO_MESTRE_PADRAO_CACAMBA_v2.docx`, os dois `CONTEXTO_NOVO_CHAT_*`, `PROMPT_BLOG_PADRAO_CACAMBA.md` e a pasta `claude/` (análise GSC + propostas/diffs de título-meta). Tudo que importava desses arquivos está aqui dentro.
 
@@ -285,7 +285,8 @@ Fotografia de produto: metal escovado, fundo preto puro, luz de estúdio dramát
 
 - 3 modos: **página de bairro nova** (demanda geográfica validada no GSC, alto esforço), **artigo novo** (cluster validado sem conteúdo existente, 1.500-3.000 palavras), **enriquecimento** (interesse com volume <100/mês → 1-3 parágrafos + 1-2 FAQs numa página existente do mesmo tema). Volume baixo rebaixa de "artigo" para "enriquecimento", não descarta.
 - Nunca criar URL concorrente para a mesma intenção de busca (canibalização).
-- Nunca inventar capacidade que a empresa não tem — 4m³ único é absoluto, inclusive na calculadora de tamanho (sempre recomenda 4m³).
+- Nunca inventar capacidade que a empresa não tem — 4m³ único é absoluto, inclusive na calculadora de tamanho (sempre recomenda 4m³). Nunca recomendar 5m³ como opção da Padrão (o artigo de obra comercial dizia "4m³ … OU 5m³" — corrigido em 23/11/2026).
+- Não usar percentual sem fonte ("4m³ resolve 95% das obras"): em 23/11/2026 os 4 lugares (artigos tamanho — inclusive FAQ e schema —, obra comercial e quanto-custa) passaram a dizer "a grande maioria".
 - Keyword nº1: "caçamba de entulho" (9.900/mês, KD 17) em `/cacamba-de-entulho` — mas estava na **posição 39** em set/2026, longe de "bem otimizada". Reavaliar.
 - Ignorar "caminhão caçamba" (intenção de veículo), "como se escreve caçamba" (ortografia) e "cacamba" sem cedilha (o Google trata acento sozinho).
 - Cluster "perto de mim" (2.700+/mês): sem página dedicada (o site não tem Google Meu Negócio próprio, por decisão) — vai como FAQ nas páginas de bairro.
@@ -519,6 +520,7 @@ Leitura: no celular, quem não sai logo para no meio do artigo — só 3 de 8 (t
 - **14/10** — revisão do site como robô de IA (preço "carregando", CTR sozinho, contradição de preço) e checagem da tag do Ads
 - **09/11** — esta auditoria e migração
 - **23/11 (noite)** — Clarity lido pelo Chrome (só leitura): entradas pelos artigos de tamanho, CTR, guia, descarte e quanto-custa, Ads por `gclid`, mapas de rolagem/atenção/cliques mortos e Citações de IA registrados na seção 9, com plano proposto não aplicado. Nada alterado no site.
+- **23/11 (noite, 3)** — commit `59fb7a7`: obra comercial sem a opção 5m³ ("4m³ com troca planejada… a Padrão Caçamba trabalha só com 4m³"); "95%" sem fonte → "a grande maioria" em 4 lugares (tamanho ×2, obra comercial, quanto-custa). Conferido no ar.
 - **23/11 (noite, 2)** — commit `7a2c230`: plano do Clarity aplicado nos artigos de tamanho, CTR e guia (seção 9); Doug decidiu "trabalhamos só com 4m³" (seções 1 e 10).
 - **23/11** — commit `6730501`: item 5 (/cacamba-de-entulho) aplicado; ponto de partida do Search Console registrado no item 5; medição marcada para 21/12/2026. Rotina: `dados/precos.json` passa a mudar só quando um preço muda; novo bloco `bairros-links`.
 - **16/11 (noite)** — commit `4d724af`: pendência 25, FAQ visível = schema nos artigos guia e 5 mentiras.
