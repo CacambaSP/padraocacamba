@@ -1,6 +1,6 @@
 # DOCUMENTO MESTRE — PADRÃO CAÇAMBA
 **Versão:** 5.0 — documento único para migração de conta do Claude
-**Data:** 09/11/2026 (fechado em 16/11/2026 — Clarity ficou pendente porque a sessão do Clarity estava expirada) · **Última atualização:** 23/11/2026 — item 5 aplicado e ponto de partida de medição registrado; antes, em 16/11 — pendências 1, 2, 3, 4, 7, 10, 11, 12, 13, 15, 23, 24 e 25 feitas; rotina automática de preços no ar; Litoral R$ 590; RLS nas tabelas de coordenadas (seções 2, 3, 11 e 13)
+**Data:** 09/11/2026 (fechado em 16/11/2026 — Clarity ficou pendente porque a sessão do Clarity estava expirada) · **Última atualização:** 23/11/2026 — Clarity levantado (seção 9: artigos, Ads, citações de IA); item 5 aplicado e ponto de partida de medição registrado; antes, em 16/11 — pendências 1, 2, 3, 4, 7, 10, 11, 12, 13, 15, 23, 24 e 25 feitas; rotina automática de preços no ar; Litoral R$ 590; RLS nas tabelas de coordenadas (seções 2, 3, 11 e 13)
 **Domínio:** padraocacamba.com.br
 **Substitui tudo:** DOC MESTRE V4.1 (instruções do projeto "DOC MESTRE V4.1 Padrão Caçambas"), os 12 arquivos e a memória do projeto "SITE PADRÃO CAÇAMBA", `MASTER_CONTEXT_PADRAO_CACAMBA.md`, `CONTEXTO_MESTRE_PADRAO_CACAMBA_v2.docx`, os dois `CONTEXTO_NOVO_CHAT_*`, `PROMPT_BLOG_PADRAO_CACAMBA.md` e a pasta `claude/` (análise GSC + propostas/diffs de título-meta). Tudo que importava desses arquivos está aqui dentro.
 
@@ -384,7 +384,50 @@ Leitura: buscas com **"preço"** já ranqueiam bem (posição 6-8); buscas no fo
 **Efeito da troca de títulos (10/09):** depois dela os cliques subiram de 17 (ago) para 25 (set) e 32 (out), e a posição foi de 14,1 para 9,1. As impressões também cresceram, então não dá para atribuir tudo aos títulos, mas a direção é boa.
 
 ### Microsoft Clarity — projeto `wlu14vvzwg`
-**PENDENTE:** páginas mais vistas, celular x desktop, rolagem, cliques mortos/de raiva, mapa de calor dos CTAs e **Visibilidade da IA → Citações**.
+Lido em 23/11/2026 pelo Chrome, só leitura. Período "últimos 90 dias" (e 30 dias onde indicado). Só números vistos na tela.
+
+**Site inteiro (30 dias):** 164 sessões (293 de bot excluídas) · 1,37 página/sessão · rolagem média 37,91% · tempo ativo 1,2 min (de 3,4 min) · cliques mortos 6,10% (10 sessões) · cliques de raiva 0. Referenciador: google.com 68, cacambasp.com.br 41, bing.com 20, o próprio site 9, yahoo 2. Páginas de entrada: home 60, 02-como-escolher-tamanho 10, guia-completo 10, ctr-nf 7, /cacamba-de-entulho 7, /precos 6. Eventos inteligentes: "Clique de saída" 31 sessões, "Entre em contato conosco" 5. Não há evento próprio para Pedir caçamba / WhatsApp / PC — clique nesses botões só aparece no mapa de calor e nas gravações.
+
+**Google Ads (90 dias, URL de entrada com `gclid`):** 169 sessões — entrada em /cacamba-de-entulho 89, /precos 25, /carapicuiba 19, /guarulhos 14, /osasco 9, /barueri 8. O Ads cai nos hubs e cidades, não nos artigos.
+
+**Artigos — sessões que ENTRARAM pela página (90 dias; entre parênteses, 30 dias):**
+
+| Página | Sessões | Origem | Celular | Rolagem | Tempo ativo | Pedir / WhatsApp / PC | Próxima página |
+|---|---|---|---|---|---|---|---|
+| 02-como-escolher-tamanho-cacamba | 15 (10) | Google 13, Yahoo 1, sem origem 1 | 8 (53%) | 50% | 1,5 min | 1 / 1 / 0 | nenhuma |
+| ctr-nf-empresa-verdade | 14 (7) | Google 11, Bing 3 | 4 (29%) | 51% | 3,9 min* | 0 / 0 / 0 | nenhuma** |
+| guia-completo-alugar-cacamba-sp | 10 (9) | Google 7, sem origem 3 | 7 (70%) | 47,5% | 32 s | 1 / 0 / 0 | nenhuma |
+| descarte-entulho-sao-paulo | 4 (1) | Google 1, Bing 1, sem origem 2 | 2 (50%) | 77% | 59 s | 0 / 0 / 0 | nenhuma |
+| quanto-custa-descartar-entulho-sp | 2 (0) | Bing 2 | 0 | 77% | 14 s | 0 / 0 / 0 | nenhuma |
+
+\* puxado por 3 sessões de 40+ min. \*\* as 1,29 página/sessão do CTR são recarga/abas do próprio artigo (conferido nas gravações). Nenhuma sessão das 5 páginas foi para outra página do site. Cliques de raiva: 0 em todas. Cliques mortos (mapa "toques sem efeito", 90 dias): só no CTR — celular 1 toque no diagrama `flow-card`; computador 3 cliques em texto (parágrafo CTR-e/MTR, "Desconfie se a resposta for vaga…", cabeçalho). Tamanho e guia: 0. Sessões vindas do Google batem com os cliques do Search Console nos 3 meses (tamanho 13 x 9, CTR 11 x 11, guia 7 x 7).
+
+**O que as gravações mostram (as únicas sessões com clique de pedido/WhatsApp, mais 2 de contexto):**
+- Tamanho, 17/11 14:55, celular, Google: tocou "Pedir caçamba" com 12 s, ainda no topo (título e imagem), sem rolar.
+- Tamanho, 15/09, computador, Google: clicou na imagem comparativa, mexeu na calculadora, clicou nos destaques do cabeçalho e aos 2:31 clicou em WhatsApp. Sessão de 57 min com aba quase toda oculta — pode ser visita interna.
+- Guia, 22/11 14:10, celular, Google: leu o passo a passo (confirmação, entrega, permanência, pagamento) e aos 39 s tocou "Pedir caçamba", logo antes da tabela de preços.
+- Guia, 20/11, celular, Google: aos 40 s tocou em "Preço transparente — R$ … a R$ … com NF" (lista de resumo da Conclusão, ~85% da página; é `<strong>`, não é link) e saiu.
+- CTR: nenhum clique em pedido em 14 sessões; no computador, os cliques são em "+" do FAQ, no parágrafo CTR-e/MTR (5 cliques, mais clicado) e em "Confirme o CNPJ…".
+
+**Mapa de rolagem e de atenção (90 dias; visualizações da página, não só entradas; % = ponto da página; posição das seções medida na captura do Clarity):**
+
+| Artigo | Quem chega a cada ponto da página | Onde as seções ficam | Atenção (fatia do tempo) |
+|---|---|---|---|
+| Tamanho — celular (8) | 10%: 8 · 20–40%: 5 · 50%: 4 · 60–95%: 3 · 100%: 0 | 3m³ 17% · 4m³ padrão 26% · 5m³ 39% · caçambinha 49% · calculadora 67–71% · FAQ 74% · "Fale com a gente" 90% | 10–45% = 73,5% do tempo; pico 30–40% (fim da seção 4m³ / início da 5m³) |
+| Tamanho — computador (7) | 10%: 7 · 20%: 5 · 30–40%: 3 · 50–80%: 2 · 90–100%: 1 | 3m³ 21% · 4m³ 30% · 5m³ 44% · calculadora 63% · FAQ 71% | 15–25% = 69% (distorcido pela sessão de 57 min) |
+| CTR — celular (5) | 10%: 5 · 20–40%: 4 · 50%: 3 · 60–80%: 1 · 90%: 0 | O que é CTR 17% · NF 23% · CTR ou MTR 35% · CDF 40% · "O que acontece se você contratar sem…" 54% · WhatsApp no texto 64% · FAQ 77% · CTA final 89–91% | 0–30% = 81%; depois de 50% ≈ 0 |
+| CTR — computador (13) | 10%: 13 · 20%: 11 · 30%: 7 · 40%: 6 · 50–80%: 5 · 90%: 4 · 100%: 3 | O que é CTR 17% · CTR ou MTR 32% · CDF 35% · FAQ 80% · CTA final 89% | 5–20% = 88% (distorcido por 3 sessões de 40+ min) |
+| Guia — celular (9) | 10–30%: 6 · 40–60%: 5 · 70%: 4 · 80–90%: 3 · 100%: 1 | processo 22% · tabela de preços 35% · regras 48% · golpe 58% · FAQ 75% · Conclusão 82% · "Pronto pra alugar" 89% | FAQ 70–80% = 22%; tabela de preços 35–50% = 20% |
+| Guia — computador (4) | 10%: 4 · 20–80%: 2 · 90%: 1 · 100%: 0 | tabela de preços 37% · regras 50% · FAQ 74% | 40–55% (tabela e regras) = 42% |
+| Descarte (2 celular + 2 computador) e quanto-custa (2 computador) | volume pequeno demais para leitura de rolagem | — | não analisado |
+
+Leitura: no celular, quem não sai logo para no meio do artigo — só 3 de 8 (tamanho), 0 de 5 (CTR) e 3 de 9 (guia) chegam à chamada do fim. **Links no corpo (conferido no repositório em 23/11):** tamanho e CTR não têm nenhum link para `/precos`; o guia tem um só, dentro da resposta de uma pergunta do FAQ. Chamadas no corpo hoje: tamanho — `/antifraude` (59%), botão da calculadora (71%), "Fale com a gente" (90%); CTR — "Fale no WhatsApp" (64%), "Fale com a gente" (91%); guia — "Fale com a gente" (90%). Os botões flutuantes (Pedir caçamba, WhatsApp, PC) aparecem o tempo todo.
+
+**Visibilidade da IA → Citações (90 dias, dados até 20/11/2026, fonte Microsoft Copilot e parceiros):** 956 citações, participação de autoridade 23,89%, todas da página `/artigos/amianto-descarte-seguro` — consultas "telha de amianto" 607, "telha amianto" 313, "amianto telha" 36. Nenhum dos artigos de tamanho, CTR, guia, descarte ou quanto-custa é citado. Últimos 7 dias: 0. Tráfego de referência de IA: 10 sessões.
+
+**Limites:** o clique em "Pedir caçamba" sai para o CRM (outro domínio) — o Clarity não mostra se virou cadastro (conferir no CRM 17/11 ~14:55 e 22/11 ~14:10). Referenciador google.com não separa orgânico de anúncio; o card de `gclid` listou 2 entradas no guia, mas o filtro combinado deu 0 — não confirmado. Visitas internas não estão excluídas. Mapa de calor não aceita filtro de URL de entrada (conta todas as visitas à página). Volume de 1–2 cliques por página não é padrão.
+
+**Plano proposto (NÃO aplicado — aguardando o Doug):** (1) chamada de pedido no meio do texto, onde a atenção está, com preço por marcador `faixa:` — no celular poucos chegam à chamada do fim; (2) links internos no corpo para /precos, hub da zona e bairros (hoje tamanho e CTR não linkam /precos); (3) tamanho: chamada "4m³ com NF — {faixa} → Pedir caçamba · Ver preço do seu bairro" no fim da seção 4m³ (~39%, pico de atenção no celular, antes de metade sair); responder 5m³ no topo com as medidas que já estão no artigo + "a Padrão trabalha com 4m³"; título/descrição para "caçamba 5m³ dimensões"; resultado da calculadora com 4m³ + preço marcado + botão — ⚠️ o artigo diz "não oferecemos 5m³" e a seção 1 diz "às vezes 5m³": Doug decide a frase verdadeira; (4) CTR: chamada logo depois de "CTR ou MTR? Depende da cidade" (~35%, dentro da faixa onde fica 81% da atenção no celular): "vai em 100% das entregas, sem custo — ver preço com NF → /precos"; FAQ "Quanto custa caçamba com NF e CTR/MTR?" com faixa marcada (schema junto); conferir se o diagrama `flow-card` parece botão; (5) guia: botão "Pedir caçamba" + link /precos logo abaixo da tabela de preços (35%); transformar "Preço transparente" da Conclusão em link para /precos.
 
 ---
 
@@ -475,6 +518,7 @@ Leitura: buscas com **"preço"** já ranqueiam bem (posição 6-8); buscas no fo
 - **28/09** — tag do Google Ads em todas as páginas + linker só na home
 - **14/10** — revisão do site como robô de IA (preço "carregando", CTR sozinho, contradição de preço) e checagem da tag do Ads
 - **09/11** — esta auditoria e migração
+- **23/11 (noite)** — Clarity lido pelo Chrome (só leitura): entradas pelos artigos de tamanho, CTR, guia, descarte e quanto-custa, Ads por `gclid`, mapas de rolagem/atenção/cliques mortos e Citações de IA registrados na seção 9, com plano proposto não aplicado. Nada alterado no site.
 - **23/11** — commit `6730501`: item 5 (/cacamba-de-entulho) aplicado; ponto de partida do Search Console registrado no item 5; medição marcada para 21/12/2026. Rotina: `dados/precos.json` passa a mudar só quando um preço muda; novo bloco `bairros-links`.
 - **16/11 (noite)** — commit `4d724af`: pendência 25, FAQ visível = schema nos artigos guia e 5 mentiras.
 - **16/11 (fim do dia)** — Doug, fora do Claude: Litoral SP R$ 350 → R$ 590 no `precos_zonas` (rotina rodada manualmente, publicado pelo bot em `1a427d7`) e RLS em `bairro_coords`/`cidade_coords`. Claude, commit `3e55749`: itens 4, 12, 15, 23 e 24 (home CTR/MTR e um só bloco de golpe, og:image nova, botões flutuantes, Clarity, MTR nos .md, FAQ visível nos artigos); tabela gerada passa a mostrar o Litoral como preço único.
